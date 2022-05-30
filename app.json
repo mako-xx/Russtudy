@@ -8,6 +8,7 @@
 
   ],
   "tabBar": {
+      "custom": true,
     "list": [
       {
       "pagePath": "pages/home/home",
