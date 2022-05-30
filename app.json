@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/application/all/application",
     "pages/home/home",
+    "pages/application/all/application",    
     "pages/my/my",
     "pages/life/life",
     "pages/school/index/school"
@@ -16,9 +16,6 @@
     }, {
       "pagePath": "pages/school/index/school",
       "text": "学校"
-    }, {
-      "pagePath": "pages/application/all/application",
-      "text": "申请"
     }, {
       "pagePath": "pages/life/life",
       "text": "生活"
