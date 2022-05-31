@@ -20,7 +20,7 @@ Component({
         "text": "首页"
       }, {
         "pagePath": "pages/school/index/school",
-        "text": "学校"
+        "text": "选学校"
       }, {
         "pagePath": "pages/life/life",
         "text": "生活"

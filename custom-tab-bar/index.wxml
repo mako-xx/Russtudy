@@ -1,26 +1,26 @@
 <view class="cu-bar tabbar">
-    <view class="action {{selected === 0 ? 'active' : 'default'}}" data-index="0" bindtap="switchTab">
-      <view class="cuIcon-homefill"></view>
-      首页
-    </view>
-    <view class="action {{selected === 1 ? 'active' : 'default'}}" data-index="1" bindtap="switchTab">
-      <view class="cuIcon-similar"></view>
-      学校
-    </view>
-    <view class="action text-gray add-action">
-      <button class="cu-btn cuIcon-add bg-green shadow"></button>
-      申请
-    </view>
-    <view class="action {{selected === 2 ? 'active' : 'default'}}" data-index="2" bindtap="switchTab">
-      <view class="cuIcon-cart">
-       
-      </view>
-      生活
-    </view>
-    <view class="action {{selected === 3 ? 'active' : 'default'}}" data-index="3" bindtap="switchTab">
-      <view class="cuIcon-my">
-       
-      </view>
-      我的
-    </view>
+  <view class="action {{selected === 0 ? 'active' : 'default'}}" data-index="0" bindtap="switchTab">
+    <view class="cuIcon-homefill"></view>
+    首页
   </view>
+  <view class="action {{selected === 1 ? 'active' : 'default'}}" data-index="1" bindtap="switchTab">
+    <view class="cuIcon-similar"></view>
+    学校
+  </view>
+  <view class="action text-gray add-action">
+    <button class="cu-btn cuIcon-add bg-green shadow"></button>
+    我要申请
+  </view>
+  <view class="action {{selected === 2 ? 'active' : 'default'}}" data-index="2" bindtap="switchTab">
+    <view class="cuIcon-cart">
+
+    </view>
+    生活
+  </view>
+  <view class="action {{selected === 3 ? 'active' : 'default'}}" data-index="3" bindtap="switchTab">
+    <view class="cuIcon-my">
+
+    </view>
+    我的
+  </view>
+</view>

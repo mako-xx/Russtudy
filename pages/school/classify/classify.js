@@ -18,8 +18,10 @@ Page({
     //   during: 2000
     // });
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
+    var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight - app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
     this.setData({
-      HeadBar: HeadBar
+      HeadBar: HeadBar,
+      ShowHeight: ShowHeight
     })
 
     let list = [{ "name": "QS排名", id: 0 }, { "name": "智能推荐", id: 1 }, { "name": "城市分类", id: 2 }, { "name": "热度排行", id: 3 }, { "name": "我的收藏", id: 4 }];
@@ -33,45 +35,18 @@ Page({
       listCur: list[0]
     })
   },
-  onReady() {
-    wx.hideLoading()
-  },
-  tabSelect(e) {
-    this.setData({
-      TabCur: e.currentTarget.dataset.id,
-      MainCur: e.currentTarget.dataset.id,
-      VerticalNavTop: (e.currentTarget.dataset.id - 1) * 50
+  toggle(e) {
+    console.log(e);
+    var anmiaton = e.currentTarget.dataset.class;
+    var that = this;
+    that.setData({
+      animation: anmiaton
     })
-  },
-  VerticalMain(e) {
-    let that = this;
-    let list = this.data.list;
-    let tabHeight = 0;
-    if (this.data.load) {
-      for (let i = 0; i < list.length; i++) {
-        let view = wx.createSelectorQuery().select("#main-" + list[i].id);
-        view.fields({
-          size: true
-        }, data => {
-          list[i].top = tabHeight;
-          tabHeight = tabHeight + data.height;
-          list[i].bottom = tabHeight;
-        }).exec();
-      }
+    setTimeout(function () {
       that.setData({
-        load: false,
-        list: list
+        animation: ''
       })
-    }
-    let scrollTop = e.detail.scrollTop + 20;
-    for (let i = 0; i < list.length; i++) {
-      if (scrollTop > list[i].top && scrollTop < list[i].bottom) {
-        that.setData({
-          VerticalNavTop: (list[i].id - 1) * 50,
-          TabCur: list[i].id
-        })
-        return false
-      }
-    }
-  }
+    }, 1000)
+  },
+
 })

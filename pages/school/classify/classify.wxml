@@ -12,35 +12,55 @@
 <view class='cu-custom'>
     <view class="cu-bar fixed bg-shadeTop" style="height:{{0}}px;padding-top:{{StatusBar}}px;">
         <navigator class='action' open-type="navigateBack" delta="1" hover-class="none"
-            style="height:auto;position: absolute;top:200rpx;color:black">
+            style="height:auto;position: absolute;top:{{HeadBar+30}}rpx;color:black">
             <text class='cuIcon-back'></text> 返回
         </navigator>
         <view class='content' style='top:{{StatusBar}}px;'>Tab索引</view>
     </view>
 </view>
-<swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000"
+<!-- <swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000"
     duration="500">
     <swiper-item wx:for="{{4}}" wx:key>
         <image src="{{src[index]}}" mode='aspectFill'></image>
     </swiper-item>
-</swiper>
+</swiper> -->
 <view class="VerticalBox">
     <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}"
-        style="height:calc(100vh - 375rpx)">
+        style="height:{{ShowHeight-70}}rpx;margin-top:70rpx">
         <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{list}}" wx:key bindtap='tabSelect'
             data-id="{{index}}">
             {{item.name}}
         </view>
     </scroll-view>
-    <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 375rpx)"
+    <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:{{ShowHeight}}rpx"
         scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
-        <view class="padding-top padding-lr" wx:for="{{list}}" wx:key id="main-{{index}}">
+        <view class="padding-top padding-lr">
             <view class='cu-bar solid-bottom bg-white'>
                 <view class='action'>
-                    <text class='cuIcon-title text-green'></text> {{item.name}}
+                    <text class='cuIcon-title text-green'></text> QS排名
                 </view>
             </view>
             <view class="cu-list menu-avatar">
+                <view class="cu-item solids-top" wx:for="{{20}}" wx:key wx:for-index="sub">
+                    <!-- <view class="cu-avatar round lg">1</view> -->
+                    <view class="content" style="left:30rpx">
+                        <view class="text-grey">远东联邦大学
+                        </view>
+                        <view class="text-gray text-sm">
+                            QS世界排名：10
+                        </view>
+                        <view class="text-gray text-sm">
+                            QS国内排名：4
+                        </view>
+                    </view>
+                    <button class="cu-btn bg-blue animation-slide-lefts animation-reverse margin-sm basis-sm shadow"
+                        bindtap="toggle" data-class="slide-lefts">555</button>
+                    <view class="cu-avatar round lg"
+                        style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);left:70%">
+                    </view>
+                </view>
+            </view>
+            <!-- <view class="cu-list menu-avatar">
                 <view class="cu-item">
                     <view class="cu-avatar round lg"
                         style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);">
@@ -135,7 +155,7 @@
                         <view class="cuIcon-notice_forbid_fill text-gray"></view>
                     </view>
                 </view>
-            </view>
+            </view> -->
 
         </view>
     </scroll-view>
