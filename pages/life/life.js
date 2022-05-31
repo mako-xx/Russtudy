@@ -1,4 +1,4 @@
-// pages/life/life.js
+// pages/home/home.js
 Page({
 
   /**
@@ -7,6 +7,14 @@ Page({
   data: {
 
   },
+  tabBar() {
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 2
+      })
+    }
+  },
+  
 
   /**
    * 生命周期函数--监听页面加载
@@ -26,7 +34,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.tabBar() ;
   },
 
   /**
