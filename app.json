@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/school/classify/classify",
     "pages/application/all/application",
     "pages/home/home",
     "pages/my/my",

@@ -1,2 +1,26 @@
 @import "colorui/main.wxss";
 @import "colorui/icon.wxss";
+
+
+.head {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.head .titles {
+    margin-top: auto;
+}
+
+.head .titles .title {
+    font-size: large;
+    font-weight: 800;
+    margin-left: 10%;
+}
+
+.head .titles .sudtitle {
+    font-size: small;
+    font-weight: 200;
+    margin-left: 10%;
+}
