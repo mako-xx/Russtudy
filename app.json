@@ -7,6 +7,14 @@
     "pages/life/life",
     "pages/school/index/school",
     "pages/home/home/home"
+    "pages/school/programs/programs",
+    "pages/school/question/question",
+    "pages/school/oneschool/condition/condition",
+    "pages/school/oneschool/dorm/dorm",
+    "pages/school/oneschool/faculty/faculty",
+    "pages/school/oneschool/index/index",
+    "pages/school/oneschool/preparatory/preparatory",
+    "pages/school/oneschool/rank/rank"
   ],
   "tabBar": {
     "custom": true,

@@ -1,0 +1,102 @@
+.head{
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+  }
+  .body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .topImg{
+    position:fixed;
+    height:70rpx;
+    width:70rpx;
+    z-index: 10;
+    margin-top:20rpx;
+    margin-left:20rpx
+  }
+  
+  .scroll{
+    display: flex;
+    align-items: center;
+    background-color: white;
+  }
+  .card{
+    height: 30%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card .item{
+    height:90%;
+    width:90%;
+    margin:auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 30rpx;
+    background-color: aquamarine;
+    font-size:xx-large;
+    font-weight: 400;
+    color: white;
+    box-shadow: 5px 5px 5px #888888;
+  }
+
+  .labelHome .labelLine{
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    width:90%;
+    margin: 5rpx auto 5rpx auto;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .labelHome .labelLine .label{
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    width: auto;
+    padding:5rpx 15rpx 5rpx 15rpx;
+    margin: auto;
+    border-radius: 30rpx;
+    font-size:25rpx;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-width: 3rpx;
+    border-color: black;
+    border-style: solid;
+    box-shadow: 6rpx 6rpx 10rpx #888888;
+  }
+.textContainer{
+  height: auto;
+  width:80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.textContainer .textBlock{
+  height:auto;
+  width:100%;
+  margin: 10rpx;
+}
+.textContainer .textBlock .textTitle{
+  font-size: large;
+  font-weight: 600;
+  color: coral;
+  margin-bottom: 10rpx;
+}
+.textContainer .textBlock .textBody{
+    text-align: left;
+    /* text-indent:2em; */
+    word-break: break-all;
+  }
+  .division{
+    height:1rpx;
+    width:60%;
+    margin: 20rpx auto 20rpx auto;
+    background-color:rgb(29, 189, 109);
+    }
