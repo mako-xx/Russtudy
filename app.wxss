@@ -24,3 +24,9 @@
     font-weight: 200;
     margin-left: 10%;
 }
+
+.myTxtCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

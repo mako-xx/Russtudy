@@ -43,6 +43,15 @@ page {
 	--pinkLight: #f9d7ea;
 	--brownLight: #ede1d9;
 	--greyLight: #e7ebed;
+	/*自己加的*/
+	--greyDIY: #76879B;
+	--yellowDIY: #FAF0D4;
+	--brownDIY: #C8A695;
+	--whiteDIY: #DBE0E8;
+	--redDIY: #822428;
+	--darkyellowDIY: #D6981E;
+	--greyDIY2: #A7A7A7;
+	--whiteDIY2: #EDE3E0;
 	/* 渐变色 */
 	--gradualRed: linear-gradient(45deg, #f43f3b, #ec008c);
 	--gradualOrange: linear-gradient(45deg, #ff9700, #ed1c24);
@@ -2537,11 +2546,13 @@ button.icon.lg {
 .cu-modal.drawer-modal.show .cu-dialog {
 	transform: translateX(0%);
 }
-.cu-modal .cu-dialog>.cu-bar:first-child .action{
-  min-width: 100rpx;
-  margin-right: 0;
-  min-height: 100rpx;
+
+.cu-modal .cu-dialog>.cu-bar:first-child .action {
+	min-width: 100rpx;
+	margin-right: 0;
+	min-height: 100rpx;
 }
+
 /* ==================
          轮播
  ==================== */
@@ -2999,7 +3010,7 @@ scroll-view.cu-steps .cu-item {
 .grid.col-2.grid-square>view:nth-child(2n),
 .grid.col-3.grid-square>view:nth-child(3n),
 .grid.col-4.grid-square>view:nth-child(4n),
-.grid.col-5.grid-square>view:nth-child(5n){
+.grid.col-5.grid-square>view:nth-child(5n) {
 	margin-right: 0;
 }
 

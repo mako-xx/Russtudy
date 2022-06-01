@@ -18,13 +18,16 @@ Component({
       {
         "pagePath": "pages/home/home",
         "text": "首页"
-      }, {
+      },
+      {
         "pagePath": "pages/school/index/school",
         "text": "选学校"
-      }, {
+      },
+      {
         "pagePath": "pages/life/life",
         "text": "生活"
-      }, {
+      },
+      {
         "pagePath": "pages/my/my",
         "text": "我的"
       }
@@ -39,15 +42,12 @@ Component({
       let key = Number(e.currentTarget.dataset.index);
       let tabList = this.data.tabList;
       let selected = this.data.selected;
-
-      if (selected !== key) {
-        this.setData({
-          selected: key
-        });
-        wx.switchTab({
-          url: `/${tabList[key].pagePath}`,
-        })
-      }
+      this.setData({
+        selected: key
+      });
+      wx.switchTab({
+        url: `/${tabList[key].pagePath}`,
+      })
     },
 
   }

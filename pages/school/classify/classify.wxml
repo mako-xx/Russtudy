@@ -1,4 +1,4 @@
-<view class="head" style="height:{{HeadBar}}rpx;">
+<view class="head" style="height:{{HeadBar}}rpx;position:relative">
     <view class="titles">
         <view class="title">
             KeLi
@@ -6,6 +6,10 @@
         <view class="sudtitle">
             副标题
         </view>
+    </view>
+    <view class=""
+        style="height:auto;width:100%;position:absolute;font-size:40rpx;display:flex;justify-content:center;bottom:10rpx">
+        学校列表
     </view>
 </view>
 
@@ -15,7 +19,7 @@
             style="height:auto;position: absolute;top:{{HeadBar+30}}rpx;color:black">
             <text class='cuIcon-back'></text> 返回
         </navigator>
-        <view class='content' style='top:{{StatusBar}}px;'>Tab索引</view>
+        <view class='content' style='top:{{0}}px;'>Tab索引</view>
     </view>
 </view>
 <!-- <swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000"
@@ -26,137 +30,184 @@
 </swiper> -->
 <view class="VerticalBox">
     <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}"
-        style="height:{{ShowHeight-70}}rpx;margin-top:70rpx">
+        style="height:{{ShowHeight-90}}rpx;margin-top:90rpx">
         <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{list}}" wx:key bindtap='tabSelect'
             data-id="{{index}}">
             {{item.name}}
         </view>
     </scroll-view>
     <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:{{ShowHeight}}rpx"
-        scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
-        <view class="padding-top padding-lr">
-            <view class='cu-bar solid-bottom bg-white'>
-                <view class='action'>
-                    <text class='cuIcon-title text-green'></text> QS排名
-                </view>
-            </view>
-            <view class="cu-list menu-avatar">
-                <view class="cu-item solids-top" wx:for="{{20}}" wx:key wx:for-index="sub">
-                    <!-- <view class="cu-avatar round lg">1</view> -->
-                    <view class="content" style="left:30rpx">
-                        <view class="text-grey">远东联邦大学
-                        </view>
-                        <view class="text-gray text-sm">
-                            QS世界排名：10
-                        </view>
-                        <view class="text-gray text-sm">
-                            QS国内排名：4
-                        </view>
-                    </view>
-                    <button class="cu-btn bg-blue animation-slide-lefts animation-reverse margin-sm basis-sm shadow"
-                        bindtap="toggle" data-class="slide-lefts">555</button>
-                    <view class="cu-avatar round lg"
-                        style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);left:70%">
+        scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain" scroll-into-view="main-{{MainCur}}"
+        bindscroll="VerticalMain">
+        <view class="padding-top padding-lr" id="main-0">
+            <view class="padding-top padding-lr">
+                <view class='cu-bar solid-bottom bg-white'>
+                    <view class='action'>
+                        <text class='cuIcon-title text-green'></text> QS排名
                     </view>
                 </view>
-            </view>
-            <!-- <view class="cu-list menu-avatar">
-                <view class="cu-item">
-                    <view class="cu-avatar round lg"
-                        style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);">
-                    </view>
-                    <view class="content">
-                        <view class="text-grey">凯尔</view>
-                        <view class="text-gray text-sm flex">
-                            <text class="text-cut">
-                                <text class="cuIcon-infofill text-red  margin-right-xs"></text>
-                                我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。
-                            </text>
-                        </view>
-                    </view>
-                    <view class="action">
-                        <view class="text-grey text-xs">22:20</view>
-                        <view class="cu-tag round bg-grey sm">5</view>
-                    </view>
-                </view>
-                <view class="cu-item">
-                    <view class="cu-avatar round lg"
-                        style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Taric.png);">
-                        <view class="cu-tag badge">99+</view>
-                    </view>
-                    <view class="content">
-                        <view class="text-grey">
-                            <text class="text-cut">瓦洛兰之盾-塔里克</text>
-                            <view class="cu-tag round bg-orange sm">战士</view>
-                        </view>
-                        <view class="text-gray text-sm flex">
-                            <text class="text-cut">
-                                塔里克是保护者星灵，用超乎寻常的力量守护着符文之地的生命、仁爱以及万物之美。塔里克由于渎职而被放逐，离开了祖国德玛西亚，前去攀登巨神峰寻找救赎，但他找到的却是来自星界的更高层的召唤。现在的塔里克与古代巨神族的神力相融合，以瓦洛兰之盾的身份，永不疲倦地警惕着阴险狡诈的虚空腐化之力。
-                            </text>
-                        </view>
-                    </view>
-                    <view class="action">
-                        <view class="text-grey text-xs">22:20</view>
-                        <view class="cuIcon-notice_forbid_fill text-gray"></view>
-                    </view>
-                </view>
-                <view class="cu-item ">
-                    <view class="cu-avatar radius lg"
-                        style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);">
-                    </view>
-                    <view class="content">
-                        <view class="text-pink">
-                            <text class="text-cut">莫甘娜</text>
-                        </view>
-                        <view class="text-gray text-sm flex">
-                            <text class="text-cut">凯尔，你被自己的光芒变的盲目！</text>
-                        </view>
-                    </view>
-                    <view class="action">
-                        <view class="text-grey text-xs">22:20</view>
-                        <view class="cu-tag round bg-red sm">5</view>
-                    </view>
-                </view>
-                <view class="cu-item grayscale">
-                    <view class="cu-avatar radius lg"
-                        style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg);">
-                    </view>
-                    <view class="content">
-                        <view>
-                            <text class="text-cut">伊泽瑞尔</text>
-                            <view class="cu-tag round bg-orange sm">断开连接...</view>
-                        </view>
-                        <view class="text-gray text-sm flex">
-                            <text class="text-cut"> 等我回来一个打十个</text>
-                        </view>
-                    </view>
-                    <view class="action">
-                        <view class="text-grey text-xs">22:20</view>
-                        <view class="cu-tag round bg-red sm">5</view>
-                    </view>
-                </view>
-                <view class="cu-item cur">
-                    <view class="cu-avatar radius lg"
-                        style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81020.jpg);">
-                        <view class="cu-tag badge"></view>
-                    </view>
-                    <view class="content">
-                        <view>
-                            <text class="text-cut">瓦罗兰大陆-睡衣守护者-新手保护营</text>
-                            <view class="cu-tag round bg-orange sm">6人</view>
-                        </view>
-                        <view class="text-gray text-sm flex">
-                            <text class="text-cut"> 伊泽瑞尔：<text
-                                    class="cuIcon-locationfill text-orange margin-right-xs"></text> 传送中...</text>
-                        </view>
-                    </view>
-                    <view class="action">
-                        <view class="text-grey text-xs">22:20</view>
-                        <view class="cuIcon-notice_forbid_fill text-gray"></view>
-                    </view>
-                </view>
-            </view> -->
+                <view class="cu-list menu-avatar">
 
+                    <view class="cu-item solids-top" wx:for="{{4}}" wx:key wx:for-index="sub">
+                        <!-- <view class="cu-avatar round lg">1</view> -->
+                        <view class="cu-avatar round lg  shadow-blur"
+                            style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);left:10rpx;">
+                        </view>
+                        <view class="content" style="">
+
+                            <view class="text-grey" style="color:#996179">圣彼得堡大学
+                            </view>
+                            <view class="text-gray text-sm">
+                                QS世界排名：10
+                            </view>
+                            <view class="text-gray text-sm">
+                                QS国内排名：4
+                            </view>
+                        </view>
+                        <view class="radius fr padding-sm shadow-blur myTxtCenter"
+                            style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;">
+                            了解更多</view>
+
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="padding-top padding-lr" id="main-1">
+            <view class="padding-top padding-lr">
+                <view class='cu-bar solid-bottom bg-white'>
+                    <view class='action'>
+                        <text class='cuIcon-title text-green'></text> 智能推荐
+                    </view>
+                </view>
+                <view class="cu-list menu-avatar">
+
+                    <view class="cu-item solids-top" wx:for="{{4}}" wx:key wx:for-index="sub">
+                        <!-- <view class="cu-avatar round lg">1</view> -->
+                        <view class="cu-avatar round lg  shadow-blur"
+                            style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);">
+                        </view>
+                        <view class="content">
+
+                            <view class="text-grey" style="color:#996179">圣彼得堡大学
+                            </view>
+                            <view class="text-gray text-sm">
+                                匹配度：90%
+                            </view>
+                            <view class="text-gray text-sm">
+                                综合排名：5
+                            </view>
+                        </view>
+                        <view class="radius fr padding-sm shadow-blur myTxtCenter"
+                            style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;">
+                            了解更多</view>
+
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="padding-top padding-lr" id="main-2">
+            <view class="padding-top padding-lr">
+                <view class='cu-bar solid-bottom bg-white'>
+                    <view class='action'>
+                        <text class='cuIcon-title text-green'></text> 城市分类
+                    </view>
+                </view>
+                <view class='cu-bar solid-bottom  bg-grey' style="min-height: 0;">
+                    <view class='action text-black' style="margin-left:60rpx;">
+                        <text class='cuIcon-title text-red'></text> 莫斯科
+                    </view>
+                </view>
+                <view class="cu-list menu-avatar">
+
+                    <view class="cu-item solids-top" wx:for="{{4}}" wx:key wx:for-index="sub">
+                        <!-- <view class="cu-avatar round lg">1</view> -->
+                        <view class="cu-avatar round lg  shadow-blur"
+                            style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);">
+                        </view>
+                        <view class="content">
+
+                            <view class="text-grey" style="color:#996179">圣彼得堡大学
+                            </view>
+                            <view class="text-gray text-sm">
+                                QS世界排名：10
+                            </view>
+                            <view class="text-gray text-sm">
+                                QS国内排名：4
+                            </view>
+                        </view>
+                        <view class="radius fr padding-sm shadow-blur myTxtCenter"
+                            style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;">
+                            了解更多</view>
+
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="padding-top padding-lr" id="main-3">
+            <view class="padding-top padding-lr">
+                <view class='cu-bar solid-bottom bg-white'>
+                    <view class='action'>
+                        <text class='cuIcon-title text-green'></text> 热度排行
+                    </view>
+                </view>
+                <view class="cu-list menu-avatar">
+
+                    <view class="cu-item solids-top" wx:for="{{4}}" wx:key wx:for-index="sub">
+                        <!-- <view class="cu-avatar round lg">1</view> -->
+                        <view class="cu-avatar round lg  shadow-blur"
+                            style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);">
+                        </view>
+                        <view class="content">
+
+                            <view class="text-grey" style="color:#996179">圣彼得堡大学
+                            </view>
+                            <view class="text-gray text-sm">
+                                QS世界排名：10
+                            </view>
+                            <view class="text-gray text-sm">
+                                QS国内排名：4
+                            </view>
+                        </view>
+                        <view class="radius fr padding-sm shadow-blur myTxtCenter"
+                            style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;">
+                            了解更多</view>
+
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="padding-top padding-lr" id="main-4">
+            <view class="padding-top padding-lr">
+                <view class='cu-bar solid-bottom bg-white'>
+                    <view class='action'>
+                        <text class='cuIcon-title text-green'></text> 我的收藏
+                    </view>
+                </view>
+                <view class="cu-list menu-avatar">
+
+                    <view class="cu-item solids-top" wx:for="{{4}}" wx:key wx:for-index="sub">
+                        <!-- <view class="cu-avatar round lg">1</view> -->
+                        <view class="cu-avatar round lg  shadow-blur"
+                            style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);">
+                        </view>
+                        <view class="content">
+
+                            <view class="text-grey" style="color:#996179">圣彼得堡大学
+                            </view>
+                            <view class="text-gray text-sm">
+                                QS世界排名：10
+                            </view>
+                            <view class="text-gray text-sm">
+                                QS国内排名：4
+                            </view>
+                        </view>
+                        <view class="radius fr padding-sm shadow-blur myTxtCenter"
+                            style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;">
+                            了解更多</view>
+
+                    </view>
+                </view>
+            </view>
         </view>
     </scroll-view>
 </view>
