@@ -1,2 +1,17 @@
-<!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class="head"style="height:{{HeadBar}}rpx;">
+  <view class="titles">
+      <view class="title">
+          KeLi
+      </view>
+      <view class="sudtitle">
+          副标题
+      </view>
+  </view>
+</view>
+<scroll-view scroll-y="true"style="height:{{ShowHeight}}rpx;">
+
+ 
+
+
+
+</scroll-view>

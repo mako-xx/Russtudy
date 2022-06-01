@@ -9,36 +9,29 @@
     "miniprogram": {
       "list": [
         {
-          "name": "school首页",
-          "pathName": "pages/school/index/school",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "学校列表",
-          "pathName": "pages/school/classify/classify",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "项目分类",
-          "pathName": "pages/school/programs/programs",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "问卷",
-          "pathName": "pages/school/question/question",
+          "name": "",
+          "pathName": "pages/home/home",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "pages/school/question/question",
+          "pathName": "pages/school/classify/classify",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/my/my",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/home/home/home",
           "query": "",
           "launchMode": "default",
           "scene": null

@@ -1,0 +1,32 @@
+<view class="head"style="height:{{HeadBar}}rpx;">
+  <view class="titles">
+      <view class="title">
+          KeLi
+      </view>
+      <view class="sudtitle">
+          副标题
+      </view>
+  </view>
+</view>
+<image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/home.jpg" style="position: relative; left: 0rpx; top: 6rpx; width: 750rpx; height: 483rpx; display: inline-block; box-sizing: border-box">
+</image>
+<view class="slogen">梦想从此开始</view>
+<view class="tubiao">
+
+</view>
+<view class="row">
+<view class="button.red" style="position: relative; left: 40rpx; top: 0rpx">
+为什么选择俄罗斯
+</view>
+<view class="button.yellow" style="position: relative; left: -40rpx; top: 0rpx">
+如何学习俄语
+</view>
+</view>
+<view class="row">
+<view class="button.blue" style="position: relative; left: 40rpx; top: 46rpx">
+俄罗斯的生活
+</view>
+<view class="button.green" style="position: relative; left: -40rpx; top: 46rpx">
+俄罗斯的高校
+</view>
+</view>
