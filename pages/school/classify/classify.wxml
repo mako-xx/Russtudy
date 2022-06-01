@@ -69,7 +69,8 @@
                             </view>
                         </view>
                         <view class="radius fr padding-sm shadow-blur myTxtCenter"
-                            style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695; position: relative; left: -8rpx; top: 0rpx">
+                            style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695; position: relative; left: -8rpx; top: 0rpx"
+                            bindtap="learn_more" data-id="{{item.id}}">
                             了解更多</view>
 
                     </view>
