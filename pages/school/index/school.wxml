@@ -9,6 +9,17 @@
 
   </view>
 </view>
+<!-- 真搜索框 -->
+<view class="cu-bar bg-white search fixed" style="position: fixed;margin-top:{{HeadBar}}rpx">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" confirm-type="search"></input>
+  </view>
+  <view class="action" style="width:120rpx">
+    <button class="cu-btn bg-gradual-green shadow-blur round">搜索</button>
+  </view>
+</view>
+<!-- 假搜索框，只是用来做占位用 -->
 <view class="cu-bar bg-white search fixed" style="position: inherit;margin-top:{{HeadBar}}rpx">
   <view class="search-form round">
     <text class="cuIcon-search"></text>
@@ -18,6 +29,7 @@
     <button class="cu-btn bg-gradual-green shadow-blur round">搜索</button>
   </view>
 </view>
+
 <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
   autoplay="true" interval="5000" duration="500" style="height:200rpx">
   <swiper-item wx:for="{{swiperList}}" wx:key>
@@ -31,7 +43,7 @@
     <view class="action sub-title" style="left:0">
       <text class="cuIcon-title text-blue"></text>
       <text class="text-xl text-bold text-blue">快速查询</text>
-      <text class="text-ABC text-blue">Begin</text>
+      <text class="text-ABC text-blue" style="position: absolute; left: 51rpx; top: 16rpx">Begin</text>
       <!-- last-child选择器-->
     </view>
   </view>
@@ -66,7 +78,7 @@
         <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large"> 挑专业</view>
         <view class="text-content" style="height:auto;"> 3000余项专业，超大范围供您选择</view>
         <view class="margin-tb-sm text-center" style="height:25%;">
-          <button class="cu-btn round">点击进入</button>
+          <button class="cu-btn round" bindtap="choosesubject">点击进入</button>
         </view>
       </view>
     </view>
@@ -77,7 +89,7 @@
     <view class="action sub-title" style="left:0">
       <text class="cuIcon-title text-green"></text>
       <text class="text-xl text-bold text-green">工具箱</text>
-      <text class="text-ABC text-green">Tools</text>
+      <text class="text-ABC text-green" style="position: absolute; left: 51rpx; top: 16rpx">Tools</text>
       <!-- last-child选择器-->
     </view>
   </view>
@@ -112,7 +124,7 @@
     </view>
   </view>
   <view class="padding-sm">
-    <view class="bg-white shadow-blur text-center padding-sm" style="height:250rpx">
+    <view class="bg-white shadow-blur text-center padding-sm" style="height:250rpx" bindtap="clickquestion">
       <image class="" src="../../../image/icons/ask.png" style="height:160rpx" mode="aspectFit">
       </image>
       <view class="margin-top-sm text-lg">

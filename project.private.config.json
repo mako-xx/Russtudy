@@ -24,7 +24,21 @@
         },
         {
           "name": "项目分类",
-          "pathName": "pages/school/programs/prorams",
+          "pathName": "pages/school/programs/programs",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "问卷",
+          "pathName": "pages/school/question/question",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/school/question/question",
           "query": "",
           "launchMode": "default",
           "scene": null

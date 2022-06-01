@@ -108,6 +108,15 @@ Page({
     wx.navigateTo({
       url: "../classify/classify",
     })
-
+  },
+  choosesubject() {
+    wx.navigateTo({
+      url: "../programs/programs",
+    })
+  },
+  clickquestion() {
+    wx.navigateTo({
+      url: "../question/question",
+    })
   }
 })

@@ -4,7 +4,7 @@
             KeLi
         </view>
         <view class="sudtitle">
-            副标题
+            在俄罗斯留学
         </view>
     </view>
     <view class=""
@@ -29,7 +29,7 @@
         <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}"
             style="height:{{ShowHeight-90}}rpx;margin-top:{{HeadBar+90}}rpx;width:100%">
             <view class="cu-list menu text-left">
-                <view class="cu-item" wx:for="{{list}}" wx:key>
+                <view class="cu-item" wx:for="{{citylist}}" wx:key>
                     <view class="content">
                         <view>{{item.name}}</view>
                     </view>
@@ -48,22 +48,22 @@
     </swiper-item>
 </swiper> -->
 <view class="VerticalBox">
-    <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}"
-        style="height:{{ShowHeight-90}}rpx;margin-top:90rpx;width:100rpx">
-        <view class="cu-form-group margin-top radius padding" bindtap="showModal" data-target="DrawerModalL">
-            高级筛选
+    <scroll-view class="VerticalNav nav padding-sm" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}"
+        style="width:{{WinWidth*0.2}}rpx;height:{{ShowHeight-90}}rpx;margin-top:90rpx;">
+        <view class="cu-form-group margin-top radius padding" bindtap="showModal" data-target="DrawerModalL">筛选城市
         </view>
     </scroll-view>
-    <view class="" style="height: 0;">
+    <view class="" style="height: 0;display:flex;flex-direction: column;">
 
 
         <scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}"
-            style="height:auto">
-            <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{10}}" wx:key bindtap="tabSelect"
+            style="height:auto;width:{{WinWidth*0.8}}rpx">
+            <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{toplist}}" wx:key bindtap="tabSelect"
                 data-id="{{index}}">
-                Tab{{index}}
+                {{item.name}}
             </view>
         </scroll-view>
+
         <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:{{ShowHeight-90}}rpx"
             scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain" scroll-into-view="main-{{MainCur}}"
             bindscroll="VerticalMain">
@@ -71,24 +71,24 @@
                 <view class="">
                     <view class="cu-list menu-avatar">
 
-                        <view class="cu-item solids-top" wx:for="{{10}}" wx:key wx:for-index="sub">
+                        <view class="cu-item solids-top" wx:for="{{20}}" wx:key wx:for-index="sub">
                             <!-- <view class="cu-avatar round lg">1</view> -->
                             <view class="cu-avatar round lg  shadow-blur"
                                 style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);left:10rpx;">
                             </view>
-                            <view class="content" style="">
+                            <view class="content">
 
-                                <view class="text-grey" style="color:#996179">圣彼得堡大学
+                                <view class="text-grey" style="color:#996179;">人员管理学
+                                </view>
+                                <view class="text-gray text-sm oneline">
+                                    弗拉迪沃斯拓客/远东联邦大学
                                 </view>
                                 <view class="text-gray text-sm">
-                                    QS世界排名：10
-                                </view>
-                                <view class="text-gray text-sm">
-                                    QS国内排名：4
+                                    综合排名：4
                                 </view>
                             </view>
                             <view class="radius fr padding-sm shadow-blur myTxtCenter"
-                                style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;">
+                                style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;color:#EDE3E0;right:10rpx">
                                 了解更多</view>
 
                         </view>
