@@ -11,10 +11,10 @@
 <scroll-view scroll-y="true"style="height:{{ShowHeight}}rpx;">
 
   <image style="position: relative; width: 750rpx; height: 468rpx; display: inline-block; box-sizing: border-box; left: 1rpx; top: 0rpx" src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/russia.jpg" />
-  <text class="bgtitle" style="position: relative; left: 180rpx; top: -419rpx">为什么选择俄罗斯</text>
+  <text class="bgtitle" style="position: relative; left: 176rpx; top: -480rpx">为什么选择俄罗斯</text>
 <view class="card">
-  <view class="mask" style="position: relative; left: 0rpx; top: -319rpx; width: 750rpx; height: 49rpx; display: block; box-sizing: border-box"></view>
-  <view class="text" style="position: relative; left: 0rpx; top: -319rpx; width: 750rpx; height: 1185rpx; display: block; box-sizing: border-box">
+  <view class="mask" style="position: relative; left: 0rpx; top: -471rpx; width: 750rpx; height: 49rpx; display: block; box-sizing: border-box"></view>
+  <view class="text" style="position: relative; left: 0rpx; top: -471rpx; width: 750rpx; height: 1185rpx; display: block; box-sizing: border-box">
     <view class="texttile">
     1.教育资源充沛
     </view>
@@ -33,21 +33,7 @@
     <view class="textbody">
     中俄两国政府签署了相互承认对方学位及学历的友好协议，归国回来的学生取得的学历及学位证书在中国教育部留学服务中心即可办理认证手续。俄罗斯是与我国签订互认学历协议的少数国家之一，所以俄罗斯留学所获得的学历文凭，自然会得到我国的绝对认可。这也就消除了众多学子们学成归来后学历认可问题的后顾之忧。且伴随着我国“一带一路”的发展与升温，中俄关系合作日益紧密，中国与俄罗斯在很多方面都展开了合作，石油产业，通讯产业，贸易产业等诸多产业。与此成鲜明对比的，是国内俄语人才的紧缺。按照中俄合作的发展趋势，俄语的复合型人才缺口最大，也就是说熟练掌握俄语，并在某一专业领域拥有经验和突出表现的人，将在未来十分抢手。
     </view>
-
   </view>
-
-<view class="buttonarea">
-<view class="button" bindtap="navilanguage">
-我该如何学习俄语
-</view>
-<view class="button" bindtap="navicollege">
-  进入俄罗斯高校
-</view>
-<view class="button" bindtap="navilife">
-  俄罗斯的生活
-</view>
-</view>
-
 </view>
 
 

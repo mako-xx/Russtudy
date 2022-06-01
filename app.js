@@ -37,7 +37,7 @@ App({
         // 状态栏的高度
         let ktxStatusHeight = res.statusBarHeight;
         // 导航栏的高度
-        let navigationHeight = 74;
+        let navigationHeight = 65;
         // window的宽度
         let ktxWindowWidth = res.windowWidth;
         // window的高度
