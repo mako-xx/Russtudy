@@ -1,9 +1,24 @@
 // pages/home/home.js
+const app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
+  navilanguage(){
+    wx.navigateTo({
+      url: 'url',
+    })
+  },
+  navicollege(){
+    wx.navigateTo({
+      url: 'url',
+    })
+  },
+  navilife(){
+    wx.navigateTo({
+      url: 'url',
+    })
+  },
   data: {
 
   },
@@ -20,7 +35,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
+    // var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight) * app.globalData.pxToRpxScale;
+    var windowHeight = (app.globalData.ktxWindowHeight-app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
+    var ShowHeight = windowHeight - HeadBar;
+    this.setData({
+      HeadBar: HeadBar,
+      ShowHeight: ShowHeight
+    })
   },
 
   /**
