@@ -1,11 +1,12 @@
 {
   "pages": [
-    "pages/school/classify/classify",
     "pages/home/home",
+    "pages/life/life",
+    "pages/school/classify/classify",
     "pages/application/all/application",
     "pages/my/my",
-    "pages/life/life",
-    "pages/school/index/school"
+    "pages/school/index/school",
+    "pages/school/programs/prorams"
   ],
   "tabBar": {
     "custom": true,

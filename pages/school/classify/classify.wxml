@@ -1,4 +1,4 @@
-<view class="head" style="height:{{HeadBar}}rpx;">
+<view class="head" style="height:{{HeadBar}}rpx;position:relative">
     <view class="titles">
         <view class="title">
             KeLi
@@ -6,6 +6,10 @@
         <view class="sudtitle">
             副标题
         </view>
+    </view>
+    <view class=""
+        style="height:auto;width:100%;position:absolute;font-size:40rpx;display:flex;justify-content:center;bottom:10rpx">
+        学校列表
     </view>
 </view>
 
@@ -15,7 +19,7 @@
             style="height:auto;position: absolute;top:{{HeadBar+30}}rpx;color:black">
             <text class='cuIcon-back'></text> 返回
         </navigator>
-        <view class='content' style='top:{{StatusBar}}px;'>Tab索引</view>
+        <view class='content' style='top:{{0}}px;'>Tab索引</view>
     </view>
 </view>
 <!-- <swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000"
@@ -47,9 +51,9 @@
                     <view class="cu-item solids-top" wx:for="{{4}}" wx:key wx:for-index="sub">
                         <!-- <view class="cu-avatar round lg">1</view> -->
                         <view class="cu-avatar round lg  shadow-blur"
-                            style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);">
+                            style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);left:10rpx;">
                         </view>
-                        <view class="content">
+                        <view class="content" style="">
 
                             <view class="text-grey" style="color:#996179">圣彼得堡大学
                             </view>
@@ -87,10 +91,10 @@
                             <view class="text-grey" style="color:#996179">圣彼得堡大学
                             </view>
                             <view class="text-gray text-sm">
-                                QS世界排名：10
+                                匹配度：90%
                             </view>
                             <view class="text-gray text-sm">
-                                QS国内排名：4
+                                综合排名：5
                             </view>
                         </view>
                         <view class="radius fr padding-sm shadow-blur myTxtCenter"

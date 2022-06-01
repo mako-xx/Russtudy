@@ -1,0 +1,129 @@
+<view class="head" style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
+  <view class="titles">
+    <view class="title">
+      KeLi
+    </view>
+    <view class="sudtitle">
+      去俄罗斯留学
+    </view>
+
+  </view>
+</view>
+<view class="cu-bar bg-white search fixed" style="position: inherit;margin-top:{{HeadBar}}rpx">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" confirm-type="search"></input>
+  </view>
+  <view class="action" style="width:120rpx">
+    <button class="cu-btn bg-gradual-green shadow-blur round">搜索</button>
+  </view>
+</view>
+<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
+  autoplay="true" interval="5000" duration="500" style="height:200rpx">
+  <swiper-item wx:for="{{swiperList}}" wx:key>
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
+      wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper>
+<view class="box" wx:if="{{true}}">
+  <view class="cu-bar bg-white">
+    <view class="action sub-title" style="left:0">
+      <text class="cuIcon-title text-blue"></text>
+      <text class="text-xl text-bold text-blue">快速查询</text>
+      <text class="text-ABC text-blue">Begin</text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+</view>
+<view class=" cu-card article" style="width:95%;margin:20rpx auto;">
+  <view class="cu-item shadow"
+    style="height:200rpx;margin:auto auto;padding-bottom:0;display: flex;flex-direction: row;">
+    <view class="content" style="height:100%;width:30%;margin:auto">
+      <image src="../../../image/icons/school.png" style="height:90%;width:90%;margin:auto" mode="aspectFit">
+      </image>
+    </view>
+    <view class="content" style="height:100%;width:70%;margin:auto">
+      <view class="desc" style="height:100%;width:60%;margin:auto">
+        <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large"> 选学校</view>
+        <view class="text-content" style="height:auto;"> 多维搜索，精确定位</view>
+        <view class="margin-tb-sm text-center" style="height:25%;">
+          <button class="cu-btn round" bindtap="chooseschool">点击进入</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class=" cu-card article" style="width:95%;margin:20rpx auto;">
+  <view class="cu-item shadow"
+    style="height:200rpx;margin:auto auto;padding-bottom:0;display: flex;flex-direction: row;">
+    <view class="content" style="height:100%;width:30%;margin:auto">
+      <image src="../../../image/icons/program.png" style="height:90%;width:90%;margin:auto" mode="aspectFit">
+      </image>
+    </view>
+    <view class="content" style="height:100%;width:70%;margin:auto">
+      <view class="desc" style="height:100%;width:60%;margin:auto">
+        <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large"> 挑专业</view>
+        <view class="text-content" style="height:auto;"> 3000余项专业，超大范围供您选择</view>
+        <view class="margin-tb-sm text-center" style="height:25%;">
+          <button class="cu-btn round">点击进入</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="box" wx:if="{{true}}">
+  <view class="cu-bar bg-white">
+    <view class="action sub-title" style="left:0">
+      <text class="cuIcon-title text-green"></text>
+      <text class="text-xl text-bold text-green">工具箱</text>
+      <text class="text-ABC text-green">Tools</text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+</view>
+
+<view class="grid col-2 padding-sm">
+  <view class="padding-sm">
+    <view class="radius bg-white shadow-blur text-center padding-sm" style="height:250rpx">
+      <image class="" src="../../../image/icons/test.png" style="height:160rpx" mode="aspectFit">
+      </image>
+      <view class="margin-top-sm text-lg">
+        留学自测
+      </view>
+    </view>
+  </view>
+  <view class="padding-sm">
+    <view class="bg-white shadow-blur text-center padding-sm" style="height:250rpx">
+      <image class="" src="../../../image/icons/artificial.png" style="height:160rpx" mode="aspectFit">
+      </image>
+      <view class="margin-top-sm text-lg">
+        智能推荐
+      </view>
+    </view>
+  </view>
+  <view class="padding-sm">
+    <view class="bg-white shadow-blur text-center padding-sm" style="height:250rpx">
+      <image class="" src="../../../image/icons/search.png" style="height:160rpx" mode="aspectFit">
+      </image>
+      <view class="margin-top-sm text-lg">
+        精确查找
+      </view>
+    </view>
+  </view>
+  <view class="padding-sm">
+    <view class="bg-white shadow-blur text-center padding-sm" style="height:250rpx">
+      <image class="" src="../../../image/icons/ask.png" style="height:160rpx" mode="aspectFit">
+      </image>
+      <view class="margin-top-sm text-lg">
+        留学咨询
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
+<view class="whitecard" style="height:250rpx;background:white">
+
+</view>

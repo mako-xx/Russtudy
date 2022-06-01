@@ -14,6 +14,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "学校列表",
+          "pathName": "pages/school/classify/classify",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "项目分类",
+          "pathName": "pages/school/programs/prorams",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

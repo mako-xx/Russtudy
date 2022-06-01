@@ -5,7 +5,7 @@
   </view>
   <view class="action {{selected === 1 ? 'active' : 'default'}}" data-index="1" bindtap="switchTab">
     <view class="cuIcon-similar"></view>
-    学校
+    选学校
   </view>
   <view class="action text-gray add-action">
     <button class="cu-btn cuIcon-add bg-green shadow"></button>
