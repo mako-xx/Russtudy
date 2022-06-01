@@ -1,14 +1,14 @@
 /* pages/home/home.wxss */
 .page {
-  background-color: lightgray;
+  background-color:white;
 }
 .card {
-  background-color: lightgray;
+  background-color: white;
   display: flex;
   flex-direction: column;
 }
 .text{
-  background-color: lightgray;
+  background-color:white;
   width: 90%;
   position: relative;
   left: 40rpx;
@@ -21,7 +21,7 @@
   width:90%;
   border-top-left-radius: 30rpx;
   border-top-right-radius: 30rpx;
-  background-color: lightgray;
+  background-color:white;
   position: relative;
   bottom: 50rpx;
   left: 40rpx;
@@ -44,7 +44,7 @@
   font-size: 50rpx;
   color: black;
   position: relative;
-  bottom: 250rpx;
+  bottom: 0rpx;
 }
 .texttile{
   font-size: large;

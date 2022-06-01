@@ -1,4 +1,4 @@
-<view class="head" style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
+<view class="head"style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
   <view class="titles">
     <view class="title">
       KeLi
@@ -9,7 +9,7 @@
 
   </view>
 </view>
-<view class="cu-bar bg-white search fixed" style="position: inherit;margin-top:{{HeadBar}}rpx">
+<view class="cu-bar bg-white search fixed"style="position: inherit;margin-top:{{HeadBar}}rpx">
   <view class="search-form round">
     <text class="cuIcon-search"></text>
     <input type="text" placeholder="输入搜索的关键词" confirm-type="search"></input>

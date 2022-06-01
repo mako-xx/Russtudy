@@ -1,1 +1,24 @@
 /* pages/home/home/home.wxss */
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.button{
+  position: relative;
+  width: 300rpx;
+  height: 250rpx;
+  color: white;
+}
+.button.red{
+  background-color: rgb(236, 100, 100);
+}
+.button.blue{
+  background-color: rgb(115, 115, 255);
+}
+.button.yellow{
+  background-color: rgb(205, 79, 255);
+}
+.button.green{
+  background-color: rgb(0, 221, 0);
+}
