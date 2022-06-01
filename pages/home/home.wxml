@@ -10,11 +10,10 @@
 </view>
 <scroll-view scroll-y="true"style="height:{{ShowHeight}}rpx;">
 
-  <image style="position: relative; width: 750rpx; height: 468rpx; display: inline-block; box-sizing: border-box; left: 1rpx; top: 0rpx" src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/russia.jpg" />
-  <text class="bgtitle" style="position: relative; left: 176rpx; top: -480rpx">为什么选择俄罗斯</text>
-<view class="card">
-  <view class="mask" style="position: relative; left: 0rpx; top: -471rpx; width: 750rpx; height: 49rpx; display: block; box-sizing: border-box"></view>
-  <view class="text" style="position: relative; left: 0rpx; top: -471rpx; width: 750rpx; height: 1185rpx; display: block; box-sizing: border-box">
+  
+  <text class="bgtitle" style="position: relative; left: 175rpx; top: 4rpx">为什么选择俄罗斯</text>
+<view class="card">  
+  <view class="text" style="position: relative; left: 1rpx; top: 30rpx; width: 750rpx; height: 1185rpx; display: block; box-sizing: border-box">
     <view class="texttile">
     1.教育资源充沛
     </view>
@@ -35,7 +34,4 @@
     </view>
   </view>
 </view>
-
-
-
 </scroll-view>
