@@ -7,7 +7,8 @@ Page({
     TabCur: 0,
     MainCur: 0,
     VerticalNavTop: 0,
-    list: [{ "name": "全部", "index": 0 }, { "name": "莫斯科", "index": 1 }, { "name": "圣彼得堡", "index": 2 }, { "name": "喀山", "index": 3 },],
+    citylist: [{ "name": "全部", "index": 0 }, { "name": "莫斯科", "index": 1 }, { "name": "圣彼得堡", "index": 2 }, { "name": "喀山", "index": 3 }, { "name": "符拉迪沃斯托克", "index": 4 }],
+    toplist: [{ "name": "全部", "index": 0 }, { "name": "商科", "index": 1 }, { "name": "工科", "index": 2 }, { "name": "理科", "index": 3 }, { "name": "文科", "index": 4 }],
     // src: ['https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e188mpn7j30rs0ijn1l.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e187stc7j30ws0kathf.jpg', 'https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e18a31bsj31kw11ykjl.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e188bymfj313d0mvwiq.jpg'],
     load: true
   },
@@ -21,7 +22,8 @@ Page({
     var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight - app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
     this.setData({
       HeadBar: HeadBar,
-      ShowHeight: ShowHeight
+      ShowHeight: ShowHeight,
+      WinWidth: app.globalData.ktxWindowWidth * app.globalData.pxToRpxScale
     })
 
     // for (let i = 0; i < 26; i++) {
@@ -52,30 +54,30 @@ Page({
   },
   VerticalMain(e) {
     let that = this;
-    let list = this.data.list;
+    let citylist = this.data.citylist;
     let tabHeight = 0;
     if (this.data.load) {
-      for (let i = 0; i < list.length; i++) {
+      for (let i = 0; i < citylist.length; i++) {
         let view = wx.createSelectorQuery().select("#main-" + list[i].id);
         view.fields({
           size: true
         }, data => {
-          list[i].top = tabHeight;
+          citylist[i].top = tabHeight;
           tabHeight = tabHeight + data.height;
-          list[i].bottom = tabHeight;
+          citylist[i].bottom = tabHeight;
         }).exec();
       }
       that.setData({
         load: false,
-        list: list
+        citylist: citylist
       })
     }
     let scrollTop = e.detail.scrollTop + 20;
-    for (let i = 0; i < list.length; i++) {
-      if (scrollTop > list[i].top && scrollTop < list[i].bottom) {
+    for (let i = 0; i < citylist.length; i++) {
+      if (scrollTop > citylist[i].top && scrollTop < citylist[i].bottom) {
         that.setData({
-          VerticalNavTop: (list[i].id - 1) * 50,
-          TabCur: list[i].id
+          VerticalNavTop: (citylist[i].id - 1) * 50,
+          TabCur: citylist[i].id
         })
         return false
       }

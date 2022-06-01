@@ -1,0 +1,26 @@
+/* .move-container {
+  width: 100%;
+  min-height: 500px;
+} */
+
+#mychart-dom-line {
+  width: 80%;
+  height: 300px;
+  margin: 0 auto 0 auto;
+  padding-top: 20rpx;
+  border: 1px solid rgb(255, 213, 0);
+  border-radius: 20rpx;
+  display: block;
+}
+
+/* .head{
+  background-color: white;
+  display:flex;
+  flex-direction: column;
+}
+.division{
+  height:1rpx;
+  width:60%;
+  margin: 20rpx auto 20rpx auto;
+  background-color:rgb(29, 189, 109);
+} */

@@ -1,0 +1,40 @@
+<view class="container" style="width:100%;height:{{windowHeight}}rpx">
+  <view class="head" style="width:100%;height:{{topHeight}}rpx;background-color: white;">
+    <view style="margin-top: auto;">
+      <view class="title" style="font-size: large;font-weight: 800;margin-left: 10%;">
+        KeLi
+      </view>
+      <view class="subhead" style="font-size: small;font-weight: 200;margin-left: 10%;">
+        在俄罗斯留学
+      </view>
+    </view>
+  </view>
+  <view class="body" style="width:100%;height:{{trueHeight}}rpx;background-color:white;">
+    <scroll-view class='scroll' style="height:100%;" scroll-y="true" scroll-anchoring scroll-with-animation>
+      <image class="topImg" src="../../images/icons/backblank.png" mode="aspectFit" bindtap="back">
+      </image>
+      <view class=""
+        style="background-image: url('{{backPic}}');background-position-y: center;background-position-x: center;background-size: 100% 100%;height:30%;width:100%;display:flex;align-items:flex-end">
+        <view class="top-mask"></view>
+        <view class="top-name">
+          宿舍
+        </view>
+      </view>
+      <block wx:for="{{printvalue}}">
+
+        <view class=" textContainer" style="width:90%">
+          <view class="textBlock">
+            <view class="textTitle">
+              {{item.question}}
+            </view>
+            <view class="textBody">
+              {{item.answer}}
+            </view>
+          </view>
+        </view>
+        <view class="" style="height:30rpx"></view>
+      </block>
+
+    </scroll-view>
+  </view>
+</view>

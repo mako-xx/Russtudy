@@ -48,24 +48,28 @@
                 </view>
                 <view class="cu-list menu-avatar">
 
-                    <view class="cu-item solids-top" wx:for="{{4}}" wx:key wx:for-index="sub">
+                    <view class="cu-item solids-top" wx:for="{{QSlist}}" wx:key wx:for-index="sub">
                         <!-- <view class="cu-avatar round lg">1</view> -->
                         <view class="cu-avatar round lg  shadow-blur"
-                            style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);left:10rpx;">
+                            style="background-image:url({{item.logo}});left:10rpx;">
                         </view>
-                        <view class="content" style="">
+                        <view class="content"
+                            style="height: 100%; left: 114rpx; width: auto; position: absolute; top: 0rpx">
 
-                            <view class="text-grey" style="color:#996179">圣彼得堡大学
+                            <view class="text-grey text-sm oneline"
+                                style="color: #996179; display: -webkit-box; width: 264rpx; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
+                                {{item.name}}
                             </view>
-                            <view class="text-gray text-sm">
-                                QS世界排名：10
+                            <view class="text-gray text-sm" style="position: relative; left: 0rpx; top: 10rpx">
+                                QS世界排名：{{item.QS_all}}
                             </view>
-                            <view class="text-gray text-sm">
-                                QS国内排名：4
+                            <view class="text-gray text-sm"
+                                style="width: 264rpx; height: 42rpx; display: block; box-sizing: border-box">
+                                QS国内排名：{{item.QS_dome}}
                             </view>
                         </view>
                         <view class="radius fr padding-sm shadow-blur myTxtCenter"
-                            style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;">
+                            style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695; position: relative; left: -8rpx; top: 0rpx">
                             了解更多</view>
 
                     </view>
@@ -76,13 +80,58 @@
             <view class="padding-top padding-lr">
                 <view class='cu-bar solid-bottom bg-white'>
                     <view class='action'>
+                        <text class='cuIcon-title text-green'></text> 城市分类
+                    </view>
+                </view>
+                <block wx:for="{{CityList}}" wx:key>
+                    <view class='cu-bar solid-bottom '
+                        style="min-height: 0;background-color: rgba(114, 130, 138, 0.2);">
+                        <view class='action text-black' style="">
+                            <text class='cuIcon-title text-red'></text> {{item.name}}
+                        </view>
+                    </view>
+                    <view class="cu-list menu-avatar">
+
+                        <view class="cu-item solids-top" wx:for="{{item.list}}" wx:key wx:for-index="sub"
+                            wx:for-item="it">
+                            <!-- <view class="cu-avatar round lg">1</view> -->
+                            <view class="cu-avatar round lg  shadow-blur"
+                                style="background-image:url({{it.logo}});left:10rpx;">
+                            </view>
+                            <view class="content"
+                                style="height: 100%; left: 114rpx; width: auto; position: absolute; top: 0rpx">
+
+                                <view class="text-grey text-sm oneline"
+                                    style="color: #996179; display: -webkit-box; width: 264rpx; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
+                                    {{it.name}}
+                                </view>
+                                <view class="text-gray text-sm" style="position: relative; left: 0rpx; top: 10rpx">
+                                    QS世界排名：{{it.QS_all}}
+                                </view>
+                                <view class="text-gray text-sm"
+                                    style="width: 264rpx; height: 42rpx; display: block; box-sizing: border-box">
+                                    QS国内排名：{{it.QS_dome}}
+                                </view>
+                            </view>
+                            <view class="radius fr padding-sm shadow-blur myTxtCenter"
+                                style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695; position: relative; left: -8rpx; top: 0rpx">
+                                了解更多</view>
+
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="padding-top padding-lr" id="main-2">
+            <!-- <view class="padding-top padding-lr">
+                <view class='cu-bar solid-bottom bg-white'>
+                    <view class='action'>
                         <text class='cuIcon-title text-green'></text> 智能推荐
                     </view>
                 </view>
                 <view class="cu-list menu-avatar">
 
                     <view class="cu-item solids-top" wx:for="{{4}}" wx:key wx:for-index="sub">
-                        <!-- <view class="cu-avatar round lg">1</view> -->
                         <view class="cu-avatar round lg  shadow-blur"
                             style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);">
                         </view>
@@ -103,46 +152,9 @@
 
                     </view>
                 </view>
-            </view>
+            </view> -->
         </view>
-        <view class="padding-top padding-lr" id="main-2">
-            <view class="padding-top padding-lr">
-                <view class='cu-bar solid-bottom bg-white'>
-                    <view class='action'>
-                        <text class='cuIcon-title text-green'></text> 城市分类
-                    </view>
-                </view>
-                <view class='cu-bar solid-bottom  bg-grey' style="min-height: 0;">
-                    <view class='action text-black' style="margin-left:60rpx;">
-                        <text class='cuIcon-title text-red'></text> 莫斯科
-                    </view>
-                </view>
-                <view class="cu-list menu-avatar">
 
-                    <view class="cu-item solids-top" wx:for="{{4}}" wx:key wx:for-index="sub">
-                        <!-- <view class="cu-avatar round lg">1</view> -->
-                        <view class="cu-avatar round lg  shadow-blur"
-                            style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);">
-                        </view>
-                        <view class="content">
-
-                            <view class="text-grey" style="color:#996179">圣彼得堡大学
-                            </view>
-                            <view class="text-gray text-sm">
-                                QS世界排名：10
-                            </view>
-                            <view class="text-gray text-sm">
-                                QS国内排名：4
-                            </view>
-                        </view>
-                        <view class="radius fr padding-sm shadow-blur myTxtCenter"
-                            style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;">
-                            了解更多</view>
-
-                    </view>
-                </view>
-            </view>
-        </view>
         <view class="padding-top padding-lr" id="main-3">
             <view class="padding-top padding-lr">
                 <view class='cu-bar solid-bottom bg-white'>
