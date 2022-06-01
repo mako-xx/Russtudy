@@ -1,9 +1,6 @@
 // pages/home/home.js
 const app = getApp()
-Page({
-  /**
-   * 页面的初始数据
-   */
+Page({  
   navilanguage(){
     wx.navigateTo({
       url: 'url',
@@ -19,6 +16,11 @@ Page({
       url: 'url',
     })
   },
+
+  
+  /**
+   * 页面的初始数据
+   */
   data: {
 
   },
