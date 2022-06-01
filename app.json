@@ -1,33 +1,40 @@
 {
   "pages": [
+    "pages/home/home",
+    "pages/life/life",
     "pages/school/classify/classify",
     "pages/application/all/application",
-    "pages/home/home",
     "pages/my/my",
-    "pages/life/life",
-    "pages/school/index/school"
-
+    "pages/school/index/school",
+    "pages/school/programs/programs",
+    "pages/school/question/question",
+    "pages/school/oneschool/condition/condition",
+    "pages/school/oneschool/dorm/dorm",
+    "pages/school/oneschool/faculty/faculty",
+    "pages/school/oneschool/index/index",
+    "pages/school/oneschool/preparatory/preparatory",
+    "pages/school/oneschool/rank/rank"
   ],
   "tabBar": {
-      "custom": true,
+    "custom": true,
     "list": [
       {
-      "pagePath": "pages/home/home",
-      "text": "首页"
-    }, {
-      "pagePath": "pages/school/index/school",
-      "text": "学校"
-    }, {
-      "pagePath": "pages/application/all/application",
-      "text": "申请"
-    }, {
-      "pagePath": "pages/life/life",
-      "text": "生活"
-    }, {
-      "pagePath": "pages/my/my",
-      "text": "我的"
-    }
-  ]
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/school/index/school",
+        "text": "选学校"
+      },
+      {
+        "pagePath": "pages/life/life",
+        "text": "生活"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
   },
   "window": {
     "backgroundTextStyle": "light",

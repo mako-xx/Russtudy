@@ -1,0 +1,30 @@
+<view class="container" style="width:100%;height:{{windowHeight}}rpx">
+  <view class="head" style="width:100%;height:{{topHeight}}rpx;background-color: white;">
+    <view style="margin-top: auto;">
+      <view class="title" style="font-size: large;font-weight: 800;margin-left: 10%;">
+        KeLi
+      </view>
+      <view class="subhead" style="font-size: small;font-weight: 200;margin-left: 10%;">
+        在俄罗斯留学
+      </view>
+    </view>
+  </view>
+  <view class="body" style="width:100%;height:{{trueHeight}}rpx;background-color:white;">
+    <image class="topImg" src="../../images/icons/backblank.png" mode="aspectFit" bindtap="back"
+      style="left:0 ;">
+    </image>
+    <view class=""
+      style="background-image: url('https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e18a31bsj31kw11ykjl.jpg');background-position-y: center;background-position-x: center;background-size: 100% 100%;height:30%;width:100%;display:flex;align-items:flex-end">
+      <view class="top-mask"></view>
+      <view class="top-name">
+        QS排名
+      </view>
+    </view>
+    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+    <view
+      style="width:100%;margin: 5rpx auto 0 auto;display: flex;justify-content: center;align-self: center;font-size: x-small;">
+      {{uni_name}}近四年的QS排名
+    </view>
+  </view>
+
+</view>

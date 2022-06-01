@@ -1,6 +1,6 @@
 @import "colorui/main.wxss";
 @import "colorui/icon.wxss";
-
+@import "colorui/animation.wxss";
 
 .head {
     background-color: white;
@@ -23,4 +23,18 @@
     font-size: small;
     font-weight: 200;
     margin-left: 10%;
+}
+
+.myTxtCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.oneline {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

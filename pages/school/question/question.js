@@ -1,4 +1,5 @@
-// pages/home/home.js
+// pages/school/question/question.js
+const app = getApp()
 Page({
 
   /**
@@ -7,20 +8,17 @@ Page({
   data: {
 
   },
-  tabBar() {
-    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
-      this.getTabBar().setData({
-        selected: 3
-      })
-    }
-  },
-  
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
+    var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight) * app.globalData.pxToRpxScale;
+    this.setData({
+      HeadBar: HeadBar,
+      ShowHeight: ShowHeight
+    })
   },
 
   /**
@@ -34,7 +32,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.tabBar() ;
+
   },
 
   /**
