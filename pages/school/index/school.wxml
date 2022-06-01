@@ -10,7 +10,8 @@
   </view>
 </view>
 <!-- 真搜索框 -->
-<view class="cu-bar bg-white search fixed" style="position: fixed;margin-top:{{HeadBar}}rpx">
+<view class="cu-bar bg-white search fixed"style="position: fixed;margin-top:{{HeadBar}}rpx">
+<view class="cu-bar bg-white search fixed"style="position: inherit;margin-top:{{HeadBar}}rpx">
   <view class="search-form round">
     <text class="cuIcon-search"></text>
     <input type="text" placeholder="输入搜索的关键词" confirm-type="search"></input>
@@ -20,7 +21,7 @@
   </view>
 </view>
 <!-- 假搜索框，只是用来做占位用 -->
-<view class="cu-bar bg-white search fixed" style="position: inherit;margin-top:{{HeadBar}}rpx">
+<view class="cu-bar bg-white search fixed"style="position: inherit;margin-top:{{HeadBar}}rpx">
   <view class="search-form round">
     <text class="cuIcon-search"></text>
     <input type="text" placeholder="输入搜索的关键词" confirm-type="search"></input>

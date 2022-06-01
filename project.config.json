@@ -29,8 +29,7 @@
     "useCompilerPlugins": false,
     "minifyWXML": true,
     "useIsolateContext": true,
-    "ignoreUploadUnusedFiles": true,
-    "compileHotReLoad": true
+    "ignoreUploadUnusedFiles": true
   },
   "condition": {},
   "editorSetting": {
@@ -43,6 +42,5 @@
     "ignore": [],
     "include": []
   },
-  "appid": "wxc20df05a36138054",
-  "projectname": "Russtudy"
+  "appid": "wxc20df05a36138054"
 }
