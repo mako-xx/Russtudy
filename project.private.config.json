@@ -56,6 +56,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "院系",
+          "pathName": "pages/school/oneschool/faculty/faculty",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "排名",
+          "pathName": "pages/school/oneschool/rank/rank",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
