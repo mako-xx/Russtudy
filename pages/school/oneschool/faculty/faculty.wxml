@@ -9,7 +9,7 @@
   </view>
   <view class=""
     style="height:auto;width:100%;position:absolute;font-size:40rpx;display:flex;justify-content:center;bottom:10rpx">
-    预科室
+    院系
   </view>
 </view>
 
@@ -36,9 +36,6 @@
       <text class="cuIcon-title text-yellow"></text>{{item.title}}
     </view>
   </view>
-  <!-- <view class="textTitle" style="font-size: large;">
-    {{item.title}}
-  </view> -->
   <view class="text bg-white padding {{index!=0?'padding-top-0':''}}" wx:for="{{item.text}}" wx:for-item="txt"
     style="{{txt.kind=='big'?'font-weight:600;': (txt.kind!='blank'?'text-indent:2em; ':'text-indent:0em;')}}">
     {{txt.value}}

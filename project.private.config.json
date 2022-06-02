@@ -70,6 +70,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "宿舍",
+          "pathName": "pages/school/oneschool/dorm/dorm",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
