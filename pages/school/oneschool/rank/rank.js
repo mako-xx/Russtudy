@@ -1,4 +1,4 @@
-import * as echarts from '../../ec-canvas/echarts';
+import * as echarts from '../../../../ec-canvas/echarts';
 
 const app = getApp();
 Page({
@@ -13,24 +13,11 @@ Page({
     }
   },
   onLoad(options) {
-    var intervalHeight = 10;
-    var SearchHeight = 50;
-    var windowHeight = (app.globalData.ktxWindowHeight) * app.globalData.pxToRpxScale;
-    var topHeight = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
-    var trueHeight = windowHeight - topHeight + SearchHeight + app.globalData.navigationHeight;//非导航栏页需加navigationHeight，非搜索栏页须加SearchHeight
-    var scrollHeight = trueHeight - SearchHeight - 2 * intervalHeight;
-    // var containerPercentage=100*app.globalData.ktxWindowHeight/app.globalData.ktxScreentHeight;
-    // var statusBarHeightPercentage=100*(app.globalData.navigationHeight+app.globalData.ktxStatusHeight)/app.globalData.ktxWindowHeight;
-    // var statusContainerHeightPercentage=100-statusBarHeightPercentage;
-    console.log(app.globalData);
+    var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
+    var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight - app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
     this.setData({
-      windowHeight: windowHeight,
-      topHeight: topHeight,
-      trueHeight: trueHeight,
-      scrollHeight: scrollHeight,
-      intervalHeight: intervalHeight,
-      SearchHeight: SearchHeight,
-      school_id: options.school_id
+      HeadBar: HeadBar,
+      ShowHeight: ShowHeight
     })
     var backPic = wx.getStorageSync("backPic");
     this.setData({
@@ -44,37 +31,7 @@ Page({
   },
   onReady: function () {               //这一步是一定要注意的
     this.oneComponent = this.selectComponent('#mychart-dom-line');
-  },
-  getschool() {
-    // var pages = getCurrentPages();   //当前页面
-    // if (pages.length > 1) {
-    //   var prevPage = pages[pages.length - 2];   //上个页面
-    //   var school = prevPage.data.school;
-    //   this.setData({
-    //     school: school
-    //   })
-    // }
-  },
-  dataprocess() {
-    // var rank = this.data.school.qs_rating;
-    // console.log(rank);
-    // var arr = [];
-    // var ylabel = [];
-    // for (var i = 0; i < rank.length; i++) {
-    //   var one = {};
-    //   one.name = rank[i].rate_num;
-    //   var num = rank[i].rate_num;
-    //   if (num.indexOf('-') != -1) {
-    //     var top = parseInt(num.split('-')[1]);
-    //     var botton = parseInt(num.split('-')[0]);
-    //     var num = Math.round((top + botton) / 2)
-    //   }
-    //   one.value = num;
-    //   arr.push(one);
-    //   ylabel.push(rank[i].rate_year);
-    // }
-    // console.log(arr);
-  },
+  }
 
 });
 function initChart(canvas, width, height, dpr) {
@@ -139,6 +96,7 @@ function initChart(canvas, width, height, dpr) {
       type: 'value',
       min: min,
       max: max,
+      inverse: true
       // data: [0.9000, 0.9200, 0.9400, 0.9600, 0.9800, 1.0000],// 只有type为category时才有效
     }
   };

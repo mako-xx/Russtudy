@@ -28,6 +28,34 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "一个学校首页",
+          "pathName": "pages/school/oneschool/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "准备",
+          "pathName": "pages/school/oneschool/preparatory/preparatory",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "院系",
+          "pathName": "pages/school/oneschool/faculty/faculty",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "排名",
+          "pathName": "pages/school/oneschool/rank/rank",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

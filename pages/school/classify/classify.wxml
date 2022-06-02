@@ -37,8 +37,7 @@
         </view>
     </scroll-view>
     <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:{{ShowHeight}}rpx"
-        scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain" scroll-into-view="main-{{MainCur}}"
-        bindscroll="VerticalMain">
+        bindscroll="VerticalMain" scroll-into-view="main-{{MainCur}}">
         <view class="padding-top padding-lr" id="main-0">
             <view class="padding-top padding-lr">
                 <view class='cu-bar solid-bottom bg-white'>
@@ -69,7 +68,8 @@
                             </view>
                         </view>
                         <view class="radius fr padding-sm shadow-blur myTxtCenter"
-                            style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695; position: relative; left: -8rpx; top: 0rpx">
+                            style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695; position: relative; left: -8rpx; top: 0rpx"
+                            bindtap="learn_more" data-id="{{item.id}}">
                             了解更多</view>
 
                     </view>

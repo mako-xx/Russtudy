@@ -160,5 +160,11 @@ Page({
       CityList: CityList
     })
 
+  },
+  learn_more(e) {
+    console.log(e.currentTarget.dataset.id);
+    wx.navigateTo({
+      url: "../oneschool/index/index?school_id=" + e.currentTarget.dataset.id
+    })
   }
 })

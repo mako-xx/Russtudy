@@ -1,5 +1,5 @@
-// pages/home/home.js
-const app = getApp()
+// pages/school/index/school.js
+const app = getApp();
 Page({
   data: {
     cardCur: 0,
@@ -30,10 +30,8 @@ Page({
   },
   
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
+  onShow() {
+    this.tabBar();
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
     // var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight) * app.globalData.pxToRpxScale;
     var windowHeight = (app.globalData.ktxWindowHeight-app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
@@ -43,7 +41,6 @@ Page({
       ShowHeight: ShowHeight
     })
     this.towerSwiper('swiperList');
-    // 初始化towerSwiper 传已有的数组名即可
   },
   DotStyle(e) {
     this.setData({

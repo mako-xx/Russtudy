@@ -1,9 +1,74 @@
-import * as echarts from '../../ec-canvas/echarts';
+import * as echarts from '../../../../ec-canvas/echarts';
 
 const app = getApp()
 const db = wx.cloud.database()
 
 Page({
+  data: {
+    gridCol: 3,
+    titlepos: false,
+    cardCur: 0,
+    iconList: [{
+      icon: 'writefill',
+      color: 'red',
+      badge: 0,
+      name: '预科室'
+    }, {
+      icon: 'group_fill',
+      color: 'orange',
+      badge: 0,
+      name: '院系'
+    }, {
+      icon: 'locationfill',
+      color: 'yellow',
+      badge: 0,
+      name: '宿舍'
+    }, {
+      icon: 'skin',
+      color: 'olive',
+      badge: 0,
+      name: '留学环境'
+    }, {
+      icon: 'upstagefill',
+      color: 'cyan',
+      badge: 0,
+      name: '历年排名'
+    }, {
+      icon: 'sort',
+      color: 'blue',
+      badge: 0,
+      name: '教育项目'
+    }],
+    swiperList: [{
+      id: 0,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
+    }, {
+      id: 1,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+    }, {
+      id: 2,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
+    }, {
+      id: 3,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
+    }, {
+      id: 4,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
+    }, {
+      id: 5,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg'
+    }, {
+      id: 6,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
+    }],
+  },
   dataprocess() {
     var school = this.data.school;
     var schoolpics = this.data.schoolpics;
@@ -144,22 +209,33 @@ Page({
 
   },
   onLoad(options) {
-    var intervalHeight = 10;
-    var SearchHeight = 50;
-    var windowHeight = (app.globalData.ktxWindowHeight) * app.globalData.pxToRpxScale;
-    var topHeight = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
-    var trueHeight = windowHeight;
+    var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
+    var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight - app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
     this.setData({
-      windowHeight: windowHeight,
-      topHeight: topHeight,
-      trueHeight: trueHeight,
-      intervalHeight: intervalHeight,
-      SearchHeight: SearchHeight,
+      HeadBar: HeadBar,
+      ShowHeight: ShowHeight
+    })
+    this.setData({
       school_id: options.school_id,
       loading: true,
       iflove: 0
     })
     var that = this
+    let query = wx.createSelectorQuery()
+    query.select('#main-back').boundingClientRect((rect) => {
+      let height = rect.height * app.globalData.pxToRpxScale
+      console.log("hei", height, app.globalData.pxToRpxScale)
+      var backheight = (height + 2 * 30); console.log("h", backheight)
+      that.setData({
+        backheight: backheight
+      })
+    }).exec()
+
+
+
+
+    console.log(options.school_id)
+
     this.setData({
       interval: setInterval(function () {
         console.log("interval in oneschool 调用一次");
@@ -195,16 +271,37 @@ Page({
     })
 
   },
+  onPageScroll: function (e) {
+    var that = this
+    this.setData({
+      scrollTop: e.scrollTop
+    })
+    let query = wx.createSelectorQuery()
+    query.select('#main-title').boundingClientRect((rect) => {
+      let top = rect.top
+      console.log("top", typeof (top), typeof ((app.globalData.ktxStatusHeight + app.globalData.navigationHeight)))
+      var titlepos = false
+      if (top < (app.globalData.ktxStatusHeight + app.globalData.navigationHeight))
+        titlepos = true
+      console.log("tit", titlepos)
+      that.setData({
+        titlepos: titlepos
+      })
+
+    }).exec()
+  },
   back() {
     wx.navigateBack({
       delta: 1
     })
   },
   clicklabel(e) {
+    console.log(e)
     var labels = this.data.labels;
+    console.log(labels)
     labels[this.data.tableindex].state = 1;
-    var index = e.target.dataset.value;
-
+    var index = e.currentTarget.dataset.value;
+    console.log(index)
     labels[index].state = 2;
     this.setData({
       tableindex: index,
@@ -222,7 +319,7 @@ Page({
       wx.navigateTo({
         url: '../dorm/dorm',
       })
-    } else if (gotoname == "排名") {
+    } else if (gotoname == "历年排名") {
       wx.navigateTo({
         url: '../rank/rank',
       })
@@ -230,7 +327,7 @@ Page({
       wx.navigateTo({
         url: '../programs/programs?schoolname=' + this.data.school.name,
       })
-    } else if (gotoname == "留学生环境条件") {
+    } else if (gotoname == "留学环境") {
       wx.navigateTo({
         url: '../condition/condition',
       })
@@ -281,5 +378,15 @@ Page({
         collections: this.data.collections
       })
     }
-  }
+  },
+  gridchange: function (e) {
+    this.setData({
+      gridCol: e.detail.value
+    });
+  },
+  gridswitch: function (e) {
+    this.setData({
+      gridBorder: e.detail.value
+    });
+  },
 })

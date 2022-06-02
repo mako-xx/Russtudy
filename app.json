@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/school/oneschool/index/index",
+    "pages/life/life",
     "pages/school/classify/classify",
     "pages/application/all/application",
     "pages/my/my",
@@ -12,7 +14,6 @@
     "pages/school/oneschool/condition/condition",
     "pages/school/oneschool/dorm/dorm",
     "pages/school/oneschool/faculty/faculty",
-    "pages/school/oneschool/index/index",
     "pages/school/oneschool/preparatory/preparatory",
     "pages/school/oneschool/rank/rank"
   ],
@@ -25,7 +26,7 @@
       },
       {
         "pagePath": "pages/school/index/school",
-        "text": "选学校"
+        "text": "学校"
       },
       {
         "pagePath": "pages/life/life",
