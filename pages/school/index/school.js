@@ -1,3 +1,4 @@
+// pages/school/index/school.js
 const app = getApp();
 Page({
   data: {
@@ -28,7 +29,8 @@ Page({
     }
   },
 
-  onLoad() {
+  onShow() {
+    this.tabBar();
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
     var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight) * app.globalData.pxToRpxScale;
     this.setData({
@@ -36,7 +38,6 @@ Page({
       ShowHeight: ShowHeight
     })
     this.towerSwiper('swiperList');
-    // 初始化towerSwiper 传已有的数组名即可
   },
   DotStyle(e) {
     this.setData({
