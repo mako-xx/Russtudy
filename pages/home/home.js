@@ -1,23 +1,6 @@
 // pages/home/home.js
 const app = getApp()
-Page({  
-  navilanguage(){
-    wx.navigateTo({
-      url: 'url',
-    })
-  },
-  navicollege(){
-    wx.navigateTo({
-      url: 'url',
-    })
-  },
-  navilife(){
-    wx.navigateTo({
-      url: 'url',
-    })
-  },
-
-  
+Page({ 
   /**
    * 页面的初始数据
    */
@@ -31,8 +14,22 @@ Page({
       })
     }
   },
-  
-
+ 
+  whyrussia(){
+    wx.navigateTo({
+      url: '../home/home/home',
+    })
+  },
+  college(){
+    wx.switchTab({
+      url: '../school/index/school',
+    })
+  },
+  life(){
+    wx.switchTab({
+      url: '../life/life',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

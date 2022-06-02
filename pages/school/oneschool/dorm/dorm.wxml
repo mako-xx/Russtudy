@@ -11,7 +11,7 @@
   </view>
   <view class="body" style="width:100%;height:{{trueHeight}}rpx;background-color:white;">
     <scroll-view class='scroll' style="height:100%;" scroll-y="true" scroll-anchoring scroll-with-animation>
-      <image class="topImg" src="../../images/icons/backblank.png" mode="aspectFit" bindtap="back">
+      <image class="topImg" src="../../../../image/icons/backblank.png" mode="aspectFit" bindtap="back">
       </image>
       <view class=""
         style="background-image: url('{{backPic}}');background-position-y: center;background-position-x: center;background-size: 100% 100%;height:30%;width:100%;display:flex;align-items:flex-end">
