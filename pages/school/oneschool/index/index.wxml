@@ -1,4 +1,4 @@
-<view class="head" style="height:{{HeadBar}}rpx;position:relative">
+<view class="head" style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
   <view class="titles">
     <view class="title">
       KeLi
@@ -12,137 +12,154 @@
     学校概况
   </view>
 </view>
-<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
-  autoplay="true" interval="5000" duration="500">
-  <swiper-item wx:for="{{swiperList}}" wx:key>
-    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
-    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
-      wx:if="{{item.type=='video'}}"></video>
-  </swiper-item>
-</swiper>
+<view class="blank" style="height:{{HeadBar}}rpx;"></view>
 <view class='cu-custom'>
   <view class="cu-bar fixed bg-shadeTop" style="height:{{0}}px;padding-top:{{StatusBar}}px;">
-    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none" wx:if="{{!modalName}}"
-      style="height:auto;position: absolute;top:{{HeadBar+30}}rpx;color:black;z-index: 2;">
+    <navigator class='action' id="main-back" open-type="navigateBack" delta="1" hover-class="none"
+      wx:if="{{!modalName}}" style="height:auto;position: absolute;top:{{HeadBar+30}}rpx;color:black;z-index: 2;">
       <text class='cuIcon-back'></text> 返回
     </navigator>
     <view class='content' style='top:{{0}}px;'>Tab索引</view>
-  </view>
-</view>
-<view class="body" style="margin-top:auto;width:100%;height:{{trueHeight}}rpx;background-color:white;">
-
-  <view class=""
-    style="width:80%;height:auto;color: rgba(0, 0, 0, 0.418);{{loading ? 'display:flex;margin:500rpx auto 0 auto;' : none}};justify-content: center;align-items: center;"
-    hidden="{{!loading}}">
-    正在加载中。。。
-  </view>
-  <scroll-view class="scroll" scroll-x="false" scroll-y="true" style="height: {{trueHeight}}rpx;" hidden="{{loading}}"
-    enhanced>
-    <image class=" topImg" src="../../images/icons/backblank.png" mode="aspectFit" bindtap="back">
-    </image>
-    <image class="topImg" src="../../images/icons/love{{iflove}}.png" mode="aspectFit" style="right:20rpx;"
+    <!-- <view class="cuIcon-like}"
+      style="height:{{backheight}}rpx;width:{{backheight}}rpx;position: relative;top:{{HeadBar}}rpx;color:black;z-index: 2;right:20rpx"
+      bindtap="clicklove"></view> -->
+    <image class="padding-sm" src="../../../../image/icons/love{{iflove}}.png" mode="aspectFit"
+      style="height:{{backheight}}rpx;width:{{backheight}}rpx;position: absolute;top:{{HeadBar}}rpx;color:black;z-index: 2;right:20rpx"
       bindtap="clicklove">
     </image>
-
-    <!-- <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas> -->
-
-    <view class="picmask" style="background-image: url('{{pic[0]}}');background-position-y: center;">
-      <view class="mask1">
-      </view>
-      <view class="mask2">
-        {{school.name}}
-      </view>
-    </view>
-
-    <view class="textContainer" style="width:90%">
-      <view class="textBlock">
-        <view class="textBody" wx:for="{{short_describe}}" wx:key="this"
-          style="{{item.kind=='big'?'font-weight:600;margin:10rpx 0 10rpx 0': (item.kind!='blank'?'text-indent:2em; ':'')}}">
-          {{item.value}}
-        </view>
-      </view>
-    </view>
-
-    <view class='division'></view>
-    <view class=""
-      style="width:90%;margin: auto;display:flex;align-items: center;justify-content: center;font-size: small;">
-      所在城市：{{school.city}}
-    </view>
-
-    <view class="labelHome" style="display: flex;flex-direction: column;">
-      <view class="labelLine">
-        <view class="label" wx:for="{{labels}}" wx:key="this"
-          style="grid-column-start: span {{item.len}};border-width:3rpx;border-color:{{item.state==0?'black':(item.state==1?'blue':'red')}}"
-          bindtap="clicklabel" data-value="{{index}}">
-          {{item.label}}: {{item.num}}
-
-        </view>
-      </view>
-    </view>
-
-    <view class="tableHome" style="width:80%;display:flex;flex-direction:column;margin: 20rpx auto 0 auto;"
-      wx:if="{{index!=-1}}">
-      <view class="tableLine" style="height: 40rpx;display: flex;flex-direction: row;" wx:for="{{table}}">
-        <view class="tableItem"
-          style="flex:7;border-style: solid;border-width: 3rpx;height: 100%;display: flex;flex-direction: row;align-items: center;padding-left:10rpx;">
-          {{item.label}}
-        </view>
-        <view class="tableItem"
-          style="flex:3;border-style: solid;border-width: 3rpx;height: 100%;display: flex;flex-direction: row;align-items: center;padding-left:10rpx;">
-          {{item.num}}
-        </view>
-      </view>
-      <view class="tableLine" style="height: 40rpx;display: flex;flex-direction: row;">
-        <view class="tableItem"
-          style="flex:7;border-style: solid;border-width: 3rpx;height: 100%;display: flex;flex-direction: row;align-items: center;padding-left:10rpx;">
-          留学生
-        </view>
-        <view class="tableItem"
-          style="flex:3;border-style: solid;border-width: 3rpx;height: 100%;display: flex;flex-direction: row;align-items: center;padding-left:10rpx ;">
-          123
-        </view>
-      </view>
-    </view>
-    <view class="picContainer"
-      style="width: 80%;margin: 30rpx auto;border-color: rgb(207, 207, 207);border-radius: 50rpx;border-style: solid;border-width: 3rpx;box-shadow: 5px 5px 5px #888888;">
-      <view class="picTxt"
-        style="color: rgb(0, 0, 0);font-size: large;font-weight: bold;display: flex;justify-content: center;align-content: center;margin-top: 5rpx;margin-bottom: 5rpx;">
-        大学照片
-      </view>
-      <swiper class="screen-swiper" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500"
-        style="margin: 20rpx;margin-top: 0;">
-        <swiper-item wx:for="{{pic}}" wx:key="this">
-          <image src="{{item}}" mode="aspectFill" style="height: 100%;width:100%;border-radius: 20rpx;"></image>
-        </swiper-item>
-      </swiper>
-    </view>
-
-    <view class="textContainer" style="width:90%">
-      <view class="textBlock">
-        <view class="textTitle" style="font-size: large;">
-          大学描述
-        </view>
-        <view class="textBody" wx:for="{{describe}}" wx:key="this"
-          style="{{item.kind=='big'?'font-weight:600;margin:10rpx 0 10rpx 0': (item.kind!='blank'?'text-indent:2em; ':'text-indent:0')}}">
-          {{item.value}}
-        </view>
-      </view>
-    </view>
-
-    <view class="textContainer">
-      <view class="textBlock">
-        <view class="textTitle">
-          详细信息
-        </view>
-      </view>
-    </view>
-    <view class="v-card" bindtap="clickcard" wx:for="{{cards}}" wx:key="this" data-value="{{item.name}}">
-      <view class="item"
-        style="background-image: url('{{item.img}}');background-position-y: center;background-position-x: center;background-size: 100% 100%;">
-        <view class="" style="width:90%">
-          {{item.name}}
-        </view>
-      </view>
-    </view>
-  </scroll-view>
+  </view>
 </view>
+<view class="bg-white text-center myTxtCenter text-lg text-bold"
+  style="height:{{backheight}}rpx;width:100%;position:fixed;z-index: 10;top:{{HeadBar}}rpx" wx:if="{{true}}">
+  {{school.name}}
+</view>
+<view class="" style="height:{{backheight}}rpx">
+
+</view>
+<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
+  autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{pic}}" wx:key>
+    <image src="{{item}}" mode="aspectFill"></image>
+  </swiper-item>
+</swiper>
+<!-- <view class="bg-white  text-lg text-bold .padding-left" id="main-title" hover-class="none"
+  style="height:{{backheight}}rpx;width:100%;display: flex;align-items: center;" hover-stop-propagation="false">
+  {{school.name}}
+</view> -->
+
+
+
+<!-- <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas> -->
+
+
+
+<view class='division'></view>
+<view class="myTxtCenter " style="color:#aaaaaa;">
+  2022年QS全球排名:{{school.qs_rating[3].rate_num}} QS全国排名:{{school.qsdome}}
+</view>
+<view class="myTxtCenter margin-bottom-sm" style="color:#aaaaaa;">
+  所在城市：{{school.city}}
+</view>
+<view class='division'></view>
+<view class="cu-bar bg-white margin-top solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>简要信息
+  </view>
+</view>
+<view class="text bg-white padding-sm" wx:for="{{short_describe}}" wx:key
+  style="{{item.kind=='big'?'font-weight:600;margin:10rpx 0 10rpx 0': (item.kind!='blank'?'text-indent:2em; ':'')}}">
+  {{item.value}}
+</view>
+
+<view class="blank"></view>
+
+<view class="cu-bar bg-white margin-top solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>数据展示
+  </view>
+</view>
+<view class="labelHome bg-white padding-sm " style="display: flex;flex-direction: column;margin:0">
+  <view class="labelLine" style="">
+    <!-- <view class="label" wx:for="{{labels}}" wx:key="this"
+      style="grid-column-start: span {{item.len}};border-width:3rpx;border-color:{{item.state==0?'black':(item.state==1?'blue':'red')}}"
+      bindtap="clicklabel" data-value="{{index}}">
+      {{item.label}}: {{item.num}}
+
+    </view> -->
+    <view class="cu-capsule round" wx:for="{{labels}}" wx:key style="grid-column-start: span {{item.len}};"
+      bindtap="clicklabel" data-value="{{index}}">
+      <view class="cu-tag bg-{{item.state==0?'brown':(item.state==1?'green light':'olive')}} ">
+        {{item.label}}
+      </view>
+      <view class="cu-tag line-{{item.state==0?'brown':(item.state==1?'green light':'olive')}}">
+        {{item.num}}
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="bg-white padding-sm" style="width:100%;height:auto">
+  表格之后要改，目前还没找到好看的样式
+  <view class="tableHome" style="width:80%;display:flex;flex-direction:column;margin: 0 auto 0 auto;"
+    wx:if="{{index!=-1}}">
+    <view class="tableLine" style="height: 40rpx;display: flex;flex-direction: row;" wx:for="{{table}}">
+      <view class="tableItem"
+        style="flex:7;border-style: solid;border-width: 3rpx;height: 100%;display: flex;flex-direction: row;align-items: center;padding-left:10rpx;">
+        {{item.label}}
+      </view>
+      <view class="tableItem"
+        style="flex:3;border-style: solid;border-width: 3rpx;height: 100%;display: flex;flex-direction: row;align-items: center;padding-left:10rpx;">
+        {{item.num}}
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="blank"></view>
+
+<view class="cu-bar bg-white margin-top solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>大学描述
+  </view>
+</view>
+<view class="text bg-white padding-sm padding-top-0" wx:for="{{describe}}" wx:key
+  style="{{item.kind=='big'?'font-weight:600;margin:10rpx 0 10rpx 0': (item.kind!='blank'?'text-indent:2em; ':'')}}">
+  {{item.value}}
+</view>
+
+
+<!-- <view class="v-card" bindtap="clickcard" wx:for="{{cards}}" wx:key="this" data-value="{{item.name}}">
+  <view class="item"
+    style="background-image: url('{{item.img}}');background-position-y: center;background-position-x: center;background-size: 100% 100%;">
+    <view class="" style="width:90%">
+      {{item.name}}
+    </view>
+  </view>
+</view> -->
+<view class="cu-bar bg-white margin-top solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>更多信息
+  </view>
+</view>
+<view class="cu-list grid col-{{gridCol}} {{gridBorder?'':'no-border'}}">
+  <view class="cu-item" wx:for="{{iconList}}" wx:key wx:if="{{index<gridCol*2}}" bindtap="clickcard"
+    data-value="{{item.name}}">
+    <view class="cuIcon-{{item.icon}} text-{{item.color}}">
+      <view class="cu-tag badge" wx:if="{{item.badge!=0}}">
+        <block wx:if="{{item.badge!=1}}">{{item.badge>99?"99+":item.badge}}</block>
+      </view>
+    </view>
+    <text>{{item.name}}</text>
+  </view>
+</view>
+
+
+<view class="blank"></view>
+
+<view class="myTxtCenter text-gray">
+  KeLi 赴俄留学小助手
+</view>
+<view class="myTxtCenter text-gray">
+  更多咨询，请联系135555555
+</view>
+<view class="blank"></view>

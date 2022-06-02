@@ -3214,6 +3214,10 @@ scroll-view.cu-steps .cu-item {
 	padding: 50rpx;
 }
 
+.padding-top-0 {
+	padding-top: 0;
+}
+
 .padding-top-xs {
 	padding-top: 10rpx;
 }
@@ -3885,10 +3889,19 @@ scroll-view.cu-steps .cu-item {
 	color: var(--olive);
 }
 
+.line-olive.light {
+	color: var(--oliveLight);
+}
+
 .text-green,
 .line-green,
 .lines-green {
 	color: var(--green);
+}
+
+.line-green.light {
+	color: var(--green);
+
 }
 
 .text-cyan,

@@ -42,6 +42,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "一个学校首页",
+          "pathName": "pages/school/oneschool/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "准备",
+          "pathName": "pages/school/oneschool/preparatory/preparatory",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

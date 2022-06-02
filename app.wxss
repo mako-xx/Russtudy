@@ -44,3 +44,23 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.blank {
+    height: 20rpx;
+}
+
+.division {
+    height: 1rpx;
+    width: 60%;
+    margin: 20rpx auto 20rpx auto;
+    background-color: rgb(29, 189, 109);
+}
+
+.topImg {
+    position: fixed;
+    height: 70rpx;
+    width: 70rpx;
+    z-index: 10;
+    margin-top: 20rpx;
+    margin-left: 20rpx
+}

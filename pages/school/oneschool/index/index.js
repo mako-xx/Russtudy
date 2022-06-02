@@ -5,7 +5,40 @@ const db = wx.cloud.database()
 
 Page({
   data: {
+    gridCol: 3,
+    titlepos: false,
     cardCur: 0,
+    iconList: [{
+      icon: 'writefill',
+      color: 'red',
+      badge: 0,
+      name: '预科室'
+    }, {
+      icon: 'group_fill',
+      color: 'orange',
+      badge: 0,
+      name: '院系'
+    }, {
+      icon: 'locationfill',
+      color: 'yellow',
+      badge: 0,
+      name: '宿舍'
+    }, {
+      icon: 'skin',
+      color: 'olive',
+      badge: 0,
+      name: '留学环境'
+    }, {
+      icon: 'upstagefill',
+      color: 'cyan',
+      badge: 0,
+      name: '历年排名'
+    }, {
+      icon: 'sort',
+      color: 'blue',
+      badge: 0,
+      name: '教育项目'
+    }],
     swiperList: [{
       id: 0,
       type: 'image',
@@ -187,8 +220,22 @@ Page({
       loading: true,
       iflove: 0
     })
-    console.log(options.school_id)
     var that = this
+    let query = wx.createSelectorQuery()
+    query.select('#main-back').boundingClientRect((rect) => {
+      let height = rect.height * app.globalData.pxToRpxScale
+      console.log("hei", height, app.globalData.pxToRpxScale)
+      var backheight = (height + 2 * 30); console.log("h", backheight)
+      that.setData({
+        backheight: backheight
+      })
+    }).exec()
+
+
+
+
+    console.log(options.school_id)
+
     this.setData({
       interval: setInterval(function () {
         console.log("interval in oneschool 调用一次");
@@ -224,16 +271,37 @@ Page({
     })
 
   },
+  onPageScroll: function (e) {
+    var that = this
+    this.setData({
+      scrollTop: e.scrollTop
+    })
+    let query = wx.createSelectorQuery()
+    query.select('#main-title').boundingClientRect((rect) => {
+      let top = rect.top
+      console.log("top", typeof (top), typeof ((app.globalData.ktxStatusHeight + app.globalData.navigationHeight)))
+      var titlepos = false
+      if (top < (app.globalData.ktxStatusHeight + app.globalData.navigationHeight))
+        titlepos = true
+      console.log("tit", titlepos)
+      that.setData({
+        titlepos: titlepos
+      })
+
+    }).exec()
+  },
   back() {
     wx.navigateBack({
       delta: 1
     })
   },
   clicklabel(e) {
+    console.log(e)
     var labels = this.data.labels;
+    console.log(labels)
     labels[this.data.tableindex].state = 1;
-    var index = e.target.dataset.value;
-
+    var index = e.currentTarget.dataset.value;
+    console.log(index)
     labels[index].state = 2;
     this.setData({
       tableindex: index,
@@ -251,7 +319,7 @@ Page({
       wx.navigateTo({
         url: '../dorm/dorm',
       })
-    } else if (gotoname == "排名") {
+    } else if (gotoname == "历年排名") {
       wx.navigateTo({
         url: '../rank/rank',
       })
@@ -259,7 +327,7 @@ Page({
       wx.navigateTo({
         url: '../programs/programs?schoolname=' + this.data.school.name,
       })
-    } else if (gotoname == "留学生环境条件") {
+    } else if (gotoname == "留学环境") {
       wx.navigateTo({
         url: '../condition/condition',
       })
@@ -310,5 +378,15 @@ Page({
         collections: this.data.collections
       })
     }
-  }
+  },
+  gridchange: function (e) {
+    this.setData({
+      gridCol: e.detail.value
+    });
+  },
+  gridswitch: function (e) {
+    this.setData({
+      gridBorder: e.detail.value
+    });
+  },
 })
