@@ -47,6 +47,7 @@ Page({
           if (that.data.allprograms) {
             console.log("interval in programs调用结束");
             that.beginprocess();
+            that.getinitlabels();
             console.log("interval in  programs完成数据处理");
             // if (that.data.collectLib != 1) {
             //   // that.pushMore();
@@ -65,7 +66,7 @@ Page({
 
     //获得城市-学校对应表
     var schools = this.data.schools;
-    console.log("sch", schools)
+    // console.log("sch", schools)
     var city_uni = [];
     var _;
     for (var i = 0; i < schools.length; i++) {
@@ -86,23 +87,42 @@ Page({
       }
     }
     city_uni.sort(function (a, b) { return b.schools.length - a.schools.length })
-    console.log("city_uni", city_uni)
+    // console.log("city_uni", city_uni)
+    this.setData({
+      city_uni: city_uni
+    })
+    var citylist = [{ "name": "全部", "checked": 1 }];
+    var schoollist = [{ "name": "全部", "checked": 1 }];
+    for (var i = 0; i < city_uni.length; i++) {
+      var dic = { "name": city_uni[i].city, "checked": 1 };
+      for (var j = 0; j < city_uni[i].schools.length; j++) {
+        var sdic = { "name": city_uni[i].schools[j].name, "checked": 1 };
+        schoollist.push(sdic)
+      }
+      citylist.push(dic)
+    }
+    this.setData({
+      citylist: citylist,
+      schoollist: schoollist
+    })
 
 
     var subject_direction = [{ "name": "全部", "directions": [] }, { "name": "工科", "directions": ["信息安全", "信息学和计算机技术"] }, { "name": "理科", "directions": ["数学和力学", "心理科学"] }, { "name": "文科", "directions": ["法律学", "语言学和文艺学"] }, { "name": "商科", "directions": ["经济和管理"] }]
     this.setData({
       subject_direction: subject_direction
     })
-    console.log(this.data.subject_direction)
+    // console.log(this.data.subject_direction)
 
     var programs = this.data.allprograms;
-    console.log("dp", programs)
+    // console.log("dp", programs)
     var processed = [];
     var level = ["所有"]
     var directions = ["所有"]
     var subjects = [["所有"]]
     var mode = ["所有"]
     var language = ["所有"]
+    var schoolnames = ["所有"]
+
     for (var i = 0; i < programs.length; i++) {
       var index = -1;
       for (var j = 0; j < programs[i].info.length; j++) {
@@ -141,9 +161,13 @@ Page({
           }
         }
       }
+      var name = programs[i].schoolname;
+      if (schoolnames.indexOf(name) == -1) {
+        schoolnames.push(name);
+      }
       // processed.push(this.dataprocess(programs[i]))
     }
-    console.log(subjects)
+    // console.log(subjects)
     // this.getlovelist();
     this.setData({
       levels: level,
@@ -156,10 +180,18 @@ Page({
       modeindex: 0,
       languages: language,
       languageindex: 0,
+      schoolnames: schoolnames
     })
+
+
+
   },
+  getinitlabels() {
 
+  },
+  getcitylist() {
 
+  },
 
   toggle(e) {
     console.log(e);
@@ -178,21 +210,32 @@ Page({
     var index = e.currentTarget.dataset.id;
     var directionnamelist = this.data.subject_direction[index].directions;
     var directionlist = [{ "name": "全部", "checked": 1 }]
+    var subjectlist = [{ "name": "全部", "checked": 1 }]
     console.log("alldir", this.data.directions)
+    console.log("allsub", this.data.subjects)
     for (var i = 0; i < directionnamelist.length; i++) {
-      if (this.data.directions.indexOf(directionnamelist[i]) != -1) {
+      var index = this.data.directions.indexOf(directionnamelist[i])
+      if (index != -1) {
+        console.log("index", index);
         var dic = { "name": directionnamelist[i], "checked": 1 };
         directionlist.push(dic);
+        for (var j = 0; j < this.data.subjects[index].length; j++) {
+          if (this.data.subjects[index][j] != "所有") {
+            subjectlist.push({ "name": this.data.subjects[index][j], "checked": 1 });
+          }
+        }
       } else {
         console.log("没找到", directionnamelist[i])
       }
     }
-    console.log("dir", directionlist)
+    console.log("sub", subjectlist)
+    // console.log("dir", directionlist)
     this.setData({
       TabCur: e.currentTarget.dataset.id,
       MainCur: e.currentTarget.dataset.id,
       VerticalNavTop: (e.currentTarget.dataset.id - 1) * 50,
-      directionlist: directionlist
+      directionlist: directionlist,
+      subjectlist: subjectlist
     })
   },
   hideModal(e) {

@@ -32,7 +32,7 @@
             <view class="cu-list menu text-left">
                 <view class="cu-item" wx:for="{{sel_list}}" wx:key>
                     <view class="content">
-                        <view>{{item.name}}</view>
+                        <view class="oneline" style="display:-webkit-box">{{item.name}}</view>
                     </view>
                     <checkbox class="" value="{{index}}" checked="{{item.checked}}" bindtap="bindcheck"
                         data-mode="{{}}">
