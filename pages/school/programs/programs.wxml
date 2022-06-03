@@ -34,8 +34,8 @@
                     <view class="content">
                         <view class="oneline" style="display:-webkit-box">{{item.name}}</view>
                     </view>
-                    <checkbox class="" value="{{index}}" checked="{{item.checked}}" bindtap="bindcheck"
-                        data-mode="{{}}">
+                    <checkbox class="" value="{{index}}" checked="{{item.checked}}" bindtap="clickcheck"
+                        data-item="{{item}}" data-index="{{index}}">
 
                     </checkbox>
                 </view>
