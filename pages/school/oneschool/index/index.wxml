@@ -80,18 +80,12 @@
 </view>
 <view class="labelHome bg-white padding-sm " style="display: flex;flex-direction: column;margin:0">
   <view class="labelLine" style="">
-    <!-- <view class="label" wx:for="{{labels}}" wx:key="this"
-      style="grid-column-start: span {{item.len}};border-width:3rpx;border-color:{{item.state==0?'black':(item.state==1?'blue':'red')}}"
-      bindtap="clicklabel" data-value="{{index}}">
-      {{item.label}}: {{item.num}}
-
-    </view> -->
     <view class="cu-capsule round" wx:for="{{labels}}" wx:key style="grid-column-start: span {{item.len}};"
       bindtap="clicklabel" data-value="{{index}}">
-      <view class="cu-tag bg-{{item.state==0?'brown':(item.state==1?'green light':'olive')}} ">
+      <view class="cu-tag bg-{{item.state==0?'gray':(item.state==1?'olive':'green')}} ">
         {{item.label}}
       </view>
-      <view class="cu-tag line-{{item.state==0?'brown':(item.state==1?'green light':'olive')}}">
+      <view class="cu-tag line-{{item.state==0?'gray':(item.state==1?'olive':'green')}}">
         {{item.num}}
       </view>
     </view>
@@ -122,7 +116,7 @@
     <text class="cuIcon-title text-blue"></text>大学描述
   </view>
 </view>
-<view class="text bg-white padding-sm padding-top-0" wx:for="{{describe}}" wx:key
+<view class="text bg-white padding-sm " wx:for="{{describe}}" wx:key
   style="{{item.kind=='big'?'font-weight:600;margin:10rpx 0 10rpx 0': (item.kind!='blank'?'text-indent:2em; ':'')}}">
   {{item.value}}
 </view>

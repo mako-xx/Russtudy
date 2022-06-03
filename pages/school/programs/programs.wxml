@@ -22,6 +22,7 @@
         <view class='content' style='top:{{0}}px;'>Tab索引</view>
     </view>
 </view>
+<!-- 高级搜索 -->
 <view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap="hideModal"
     style="z-index: 3;">
     <view class="cu-dialog basis-lg" catchtap style="top:{{0}}rpx;height:{{ShowHeight+HeadBar}}rpx">
@@ -29,11 +30,12 @@
         <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}"
             style="height:{{ShowHeight-90}}rpx;margin-top:{{HeadBar+90}}rpx;width:100%">
             <view class="cu-list menu text-left">
-                <view class="cu-item" wx:for="{{citylist}}" wx:key>
+                <view class="cu-item" wx:for="{{sel_list}}" wx:key>
                     <view class="content">
                         <view>{{item.name}}</view>
                     </view>
-                    <checkbox class="" value="index">
+                    <checkbox class="" value="{{index}}" checked="{{item.checked}}" bindtap="bindcheck"
+                        data-mode="{{}}">
 
                     </checkbox>
                 </view>
@@ -41,33 +43,31 @@
         </scroll-view>
     </view>
 </view>
-<!-- <swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000"
-    duration="500">
-    <swiper-item wx:for="{{4}}" wx:key>
-        <image src="{{src[index]}}" mode='aspectFill'></image>
-    </swiper-item>
-</swiper> -->
+
+
 <view class="VerticalBox">
-    <scroll-view class="VerticalNav nav padding-sm" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}"
-        style="width:{{WinWidth*0.2}}rpx;height:{{ShowHeight-90}}rpx;margin-top:90rpx;">
-        <view class="cu-form-group margin-top radius padding" bindtap="showModal" data-target="DrawerModalL">筛选城市
+    <!-- 左 -->
+    <scroll-view class="VerticalNav nav padding-sm padding-left-0" scroll-y scroll-with-animation
+        style="width:{{WinWidth*0.2}}rpx;margin-top:90rpx;">
+        <view class="cu-form-group margin-top radius-xxxx radius-left-0 padding padding-left-lg bg-gradual-green"
+            style="height:5em;{{item.type==-1?'filter:blur(0rpx)':''}};position:relative;right:{{item.type==1?'0':(item.type==-1?'100rpx':'40rpx')}}"
+            bindtap="showModal" wx:for="{{selectlist}}" data-target="DrawerModalL" data-mode="{{item.mode}}">
+            {{item.name}}
         </view>
     </scroll-view>
     <view class="" style="height: 0;display:flex;flex-direction: column;">
 
-
+        <!-- 头部 -->
         <scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}"
             style="height:auto;width:{{WinWidth*0.8}}rpx">
-            <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{toplist}}" wx:key bindtap="tabSelect"
-                data-id="{{index}}">
+            <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{subject_direction}}" wx:key
+                bindtap="tabSelect" data-id="{{index}}">
                 {{item.name}}
             </view>
         </scroll-view>
-
-        <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:{{ShowHeight-90}}rpx"
-            scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain" scroll-into-view="main-{{MainCur}}"
-            bindscroll="VerticalMain">
-            <view class="" id="main-0">
+        <!-- 主 -->
+        <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:{{ShowHeight}}rpx">
+            <view class="">
                 <view class="">
                     <view class="cu-list menu-avatar">
 
