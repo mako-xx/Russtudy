@@ -23,12 +23,19 @@
   mix-blend-mode: screen;
   height: 120rpx;
 }
-
+.btext{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-items: center;
+}
 .button{
   position: relative;
   width: 300rpx;
   height: 250rpx;
   color: white;
+  border-radius: 25px
+  
 }
 .button.red{
   background-color: rgb(236, 100, 100);
@@ -41,4 +48,21 @@
 }
 .button.green{
   background-color: rgb(0, 221, 0);
+}
+.rainbow{
+  background-image: linear-gradient(to right top, #4fe9b5, #14e6cb, #00e1df, #00dcef, #00d5f9, #00d9f7, #00dcf4, #00e0f0, #3eecd6, #7ef4b4, #baf792, #f6f57c);
+  background-size: 400%;
+  background-position: 0%,50%;
+  animation: rainbow_bg 5s infinite;
+}
+@keyframes rainbow_bg{
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 0%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
 }

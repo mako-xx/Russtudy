@@ -8,31 +8,35 @@
       </view>
   </view>
 </view>
-
-
 <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/home.jpg" style="position: relative; left: 0rpx; top: 6rpx; width: 750rpx; height: 483rpx; display: inline-block; box-sizing: border-box">
 </image>
-
-<view class="slogen" style="position: relative; left: 184rpx; top: -382rpx">梦想从此开始</view>
+<image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/梦想从此开始_www.ssjjss.com_alpha.png" style="position: relative; left: 70rpx; top: -450rpx; width: 610rpx; height: 160rpx; display: inline-block; box-sizing: border-box"></image>
 <view class="tubiao">
 </view>
 <view class="header" style="position: relative; left: 0rpx; top: -381rpx">
-  <image class="bg_ware" src="https://codermoyv.gitee.io/coder-moyv/assets/images/wechat/bg_wave.gif"></image>
+  <image class="bg_ware" src="https://codermoyv.gitee.io/coder-moyv/assets/images/wechat/bg_wave.gif" style="position: absolute; left: -2rpx; top: 98rpx"></image>
 </view>
-
 <view class="row">
-<view class="button.red" style="position: relative; left: 50rpx; top: -306rpx" bindtap="whyrussia">
-为什么选择俄罗斯
+<view class="button.red.rainbow" style="position: relative; left: 50rpx; top: -372rpx" bindtap="whyrussia">
+ <text class="btext">
+ 为什么选择俄罗斯
+ </text>
 </view>
-<view class="button.yellow" style="position: relative; left: -50rpx; top: -306rpx">
+<view class="button.yellow.rainbow" style="position: relative; left: -50rpx; top: -372rpx">
+  <text class="btext">
 如何学习俄语
+  </text>
 </view>
 </view>
 <view class="row">
-<view class="button.blue" style="position: relative; left: 50rpx; top: -216rpx" bindtap="life">
+<view class="button.blue.rainbow" style="position: relative; left: 50rpx; top: -300rpx" bindtap="life">
+  <text class="btext">
 俄罗斯的生活
+  </text>
 </view>
-<view class="button.green" style="position: relative; left: -50rpx; top: -216rpx" bindtap="college">
+<view class="button.green.rainbow" style="position: relative; left: -50rpx; top: -300rpx" bindtap="college">
+  <text class="btext">
 俄罗斯的高校
+  </text>
 </view>
 </view>
