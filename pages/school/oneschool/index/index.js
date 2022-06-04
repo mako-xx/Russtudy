@@ -210,6 +210,10 @@ Page({
 
   },
   onLoad(options) {
+    wx.showLoading({
+      title: '加载中...',
+      mask: true,
+    });
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
     var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight - app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
     this.setData({
@@ -259,6 +263,7 @@ Page({
             loading: false
           })
           console.log(that.data.loading);
+          wx.hideLoading()
           clearInterval(that.data.interval)
 
         }
@@ -319,7 +324,7 @@ Page({
       })
     } else if (gotoname == "教育项目") {
       wx.navigateTo({
-        url: '../programs/programs?schoolname=' + this.data.school.name,
+        url: '../../programs/programs?school_id=' + this.data.school._id,
       })
     } else if (gotoname == "留学环境") {
       wx.navigateTo({
@@ -346,27 +351,39 @@ Page({
       iflove: iflove
     })
     var collections = wx.getStorageSync("collections")
+    var uni_collections = collections.schools;
+    var school_id = this.data.school_id;
+    var index = uni_collections.indexOf(school_id)
+    if (index == -1) {
+      uni_collections.push(school_id);
+    } else {
+      uni_collections[index] = uni_collections[uni_collections.length - 1];
+      uni_collections.pop();
+    }
+    collections.schools = uni_collections;
     this.setData({
       collections: collections
     })
+    wx.setStorageSync("collections", collections)
+    console.log(collections)
   },
   onUnload() {
-    var pages = getCurrentPages();
-    var schoolcollections = this.data.collections.schools;
-    if (pages.length > 1) {
-      var prevPage = pages[pages.length - 2];
-      var info = prevPage.data;
-      var simpleschools = info.simpleschools
-      for (var i = 0; i < simpleschools.length; i++) {
-        if (schoolcollections.indexOf(simpleschools[i].id) != -1) simpleschools[i].ifcollected = 1;
-        else simpleschools[i].ifcollected = 0;
-      }
-      prevPage.setData({
-        iffrash: 0,
-        simpleschools: simpleschools,
-        collections: this.data.collections
-      })
-    }
+    // var pages = getCurrentPages();
+    // var schoolcollections = this.data.collections.schools;
+    // if (pages.length > 1) {
+    //   var prevPage = pages[pages.length - 2];
+    //   var info = prevPage.data;
+    //   var simpleschools = info.simpleschools
+    //   for (var i = 0; i < simpleschools.length; i++) {
+    //     if (schoolcollections.indexOf(simpleschools[i].id) != -1) simpleschools[i].ifcollected = 1;
+    //     else simpleschools[i].ifcollected = 0;
+    //   }
+    //   prevPage.setData({
+    //     iffrash: 0,
+    //     simpleschools: simpleschools,
+    //     collections: this.data.collections
+    //   })
+    // }
   },
   gridchange: function (e) {
     this.setData({

@@ -13,7 +13,8 @@ Page({
     selectlist: [{ "name": "所在城市", "type": "1", "mode": "sel_city" }, { "name": "所在学校", "type": "1", "mode": "sel_sch" }, { "name": "学习方向", "type": "1", "mode": "sel_dir" }, { "name": "科目", "type": "1", "mode": "sel_sub" }, { "name": "学习方式", "type": "1", "mode": "sel_way" }, { "name": "学习语言", "type": "1", "mode": "sel_lau" }],
     load: true
   },
-  onLoad() {
+  onLoad(options) {
+    var school_id = options.school_id;
     wx.showLoading({  // 显示加载中loading效果 
       title: "加载中",
       mask: true  //开启蒙版遮罩
@@ -26,6 +27,19 @@ Page({
       WinWidth: app.globalData.ktxWindowWidth * app.globalData.pxToRpxScale
     })
     var that = this
+    if (school_id) {
+
+      var selectlist = that.data.selectlist;
+      for (var j = 0; j < selectlist.length; j++) {
+        if (selectlist[j].mode == "sel_sch") {
+          selectlist[j].type = 0;
+          break;
+        }
+      }
+      that.setData({
+        selectlist: selectlist
+      })
+    }
     this.setData({
       interval: setInterval(function () {
         console.log("interval in programs调用一次");
@@ -53,9 +67,14 @@ Page({
             console.log("interval in programs调用结束");
             that.beginprocess();
             that.initcitylabels();
+
             that.initdirectionlabels();
             that.initotherlabels();
-            that.pushMore();
+            if (school_id) {
+              that.changeschoollabels(school_id);
+              that.repick();
+            } else
+              that.pushMore();
             console.log("interval in  programs完成数据处理");
             that.setData({
               finish1: true
@@ -232,6 +251,26 @@ Page({
       schoollist: schoollist
     })
   },
+  changeschoollabels(school_id) {
+    var schools = this.data.schools;
+    var schoollist = this.data.schoollist;
+    var name;
+    for (var i = 0; i < schools.length; i++) {
+      if (schools[i]._id == school_id) {
+        name = schools[i].name;
+        break;
+      }
+    }
+    if (name) {
+
+      for (var i = 0; i < schoollist.length; i++) {
+        if (schoollist[i].name != name) schoollist[i].checked = false;
+      }
+    } else { "name未知" }
+    this.setData({
+      schoollist: schoollist
+    })
+  },
   initdirectionlabels() {
     //获取初始的所有学习方向和科目
     var directions = this.data.directions;
@@ -292,13 +331,13 @@ Page({
     var directionlist = [{ "name": "全部", "checked": true }]
     var subjectlist = [{ "name": "全部", "checked": true }]
     for (var i = 0; i < directionnamelist.length; i++) {
-      var index = this.data.directions.indexOf(directionnamelist[i])
-      if (index != -1) {
+      var z = this.data.directions.indexOf(directionnamelist[i])
+      if (z != -1) {
         var dic = { "name": directionnamelist[i], "checked": true };
         directionlist.push(dic);
-        for (var j = 0; j < this.data.subjects[index].length; j++) {
-          if (this.data.subjects[index][j] != "所有") {
-            subjectlist.push({ "name": this.data.subjects[index][j], "checked": true });
+        for (var j = 0; j < this.data.subjects[z].length; j++) {
+          if (this.data.subjects[z][j] != "所有") {
+            subjectlist.push({ "name": this.data.subjects[z][j], "checked": true });
           }
         }
       } else {
@@ -316,10 +355,33 @@ Page({
     if (index == 0) {
       this.initdirectionlabels()
     }
+    var wantdirection = this.data.subject_direction[index].directions
+    var directions = this.data.directions;
+
+    var directionlist = [{ "name": "全部", "checked": true }];
+    var subjects = this.data.subjects;
+    var subjectlist = [{ "name": "全部", "checked": true }];
+    for (var i = 0; i < wantdirection.length; i++) {
+      var z = directions.indexOf(wantdirection[i]);
+      if (z != -1) {
+        var dic = { "name": wantdirection[i], "checked": true }
+        directionlist.push(dic)
+        for (var j = 1; j < subjects[z].length; j++) {
+          var sdic = { "name": subjects[z][j], "checked": true };
+          subjectlist.push(sdic)
+        }
+      }
+    }
+    this.setData({
+      directionlist: directionlist,
+      subjectlist: subjectlist
+    })
     this.setData({
       sel_list: this.data.directionlist
     })
     this.updateSel("sel_dir")
+
+
     this.setData({
       sel_list: this.data.subjectlist
     })
@@ -422,17 +484,17 @@ Page({
       var directionlist = this.data.directionlist;
       var subjects = this.data.subjects;
       var subjectlist = [{ "name": "全部", "checked": true }];
-
-
+      var directions = this.data.directions;
       for (var i = 1; i < directionlist.length; i++) {
-        if (directionlist[i].checked == true) {
-          for (var j = 1; j < subjects[i].length; j++) {
-            var sdic = { "name": subjects[i][j], "checked": true };
+        var z = directions.indexOf(directionlist[i].name);
+        if (z != -1) {
+          for (var j = 1; j < subjects[z].length; j++) {
+            var sdic = { "name": subjects[z][j], "checked": true };
             subjectlist.push(sdic)
           }
         }
-
       }
+
       this.setData({
         subjectlist: subjectlist
       })

@@ -12,11 +12,10 @@ Page({
     load: true
   },
   onLoad() {
-    // wx.showLoading({
-    //   title: '加载中...',
-    //   mask: true,
-    //   during: 2000
-    // });
+    wx.showLoading({
+      title: '加载中...',
+      mask: true,
+    });
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
     var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight - app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
     this.setData({
@@ -25,11 +24,6 @@ Page({
     })
 
     let list = [{ "name": "QS排名", id: 0 }, { "name": "城市分类", id: 1 }, { "name": "智能推荐", id: 2 }, { "name": "热度排行", id: 3 }, { "name": "我的收藏", id: 4 }];
-    // for (let i = 0; i < 26; i++) {
-    //   list[i] = {};
-    //   list[i].name = String.fromCharCode(65 + i);
-    //   list[i].id = i;
-    // }
     this.setData({
       list: list,
       listCur: list[0]
@@ -57,12 +51,14 @@ Page({
           that.getCommendList();
           that.getHeatList();
           that.getCollectList();
+          wx.hideLoading();
           clearInterval(that.data.interval)
         }
       }, 1000)
     })
-
-
+  },
+  onShow() {
+    this.getCollectList();
   },
   toggle(e) {
     console.log(e);
@@ -213,7 +209,8 @@ Page({
     })
   },
   getCollectList() {
-    var schcollections = this.data.collections.schools;
+    var collections = wx.getStorageSync("collections");
+    var schcollections = collections.schools;
     var schools = this.data.schools
     var CollectList = [];
     for (var j = 0; j < schcollections.length; j++) {
@@ -229,7 +226,6 @@ Page({
         }
       }
     }
-
     this.setData({
       CollectList: CollectList
     })
