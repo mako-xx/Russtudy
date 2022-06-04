@@ -24,18 +24,28 @@
   height: 120rpx;
 }
 .btext{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-items: center;
+
+font-size: 35rpx;
+font-weight: 550;
+}
+.bimage{
+  z-index: 6;
+  height: 100rpx;
+  width: 100rpx;
+  position: relative;
+  top: 20rpx;
+
 }
 .button{
   position: relative;
   width: 300rpx;
   height: 250rpx;
   color: white;
-  border-radius: 25px
-  
+  border-radius: 25px;
+  display: flex;
+flex-direction: column;
+align-items: center;
+justify-items: center;
 }
 .button.red{
   background-color: rgb(236, 100, 100);
