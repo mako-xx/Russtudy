@@ -67,6 +67,8 @@
         {
           "name": "",
           "pathName": "pages/my/my",
+          "name": "onepro",
+          "pathName": "pages/school/oneprogram/programs",
           "query": "",
           "launchMode": "default",
           "scene": null

@@ -4,7 +4,7 @@
             KeLi
         </view>
         <view class="sudtitle">
-            副标题
+            在俄罗斯学习
         </view>
     </view>
     <view class=""
@@ -38,7 +38,7 @@
     </scroll-view>
     <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:{{ShowHeight}}rpx"
         bindscroll="VerticalMain" scroll-into-view="main-{{MainCur}}">
-        <view class="padding-top padding-lr" id="main-0">
+        <view class="padding-top " id="main-0">
             <view class="padding-top padding-lr">
                 <view class='cu-bar solid-bottom bg-white'>
                     <view class='action'>
@@ -76,7 +76,7 @@
                 </view>
             </view>
         </view>
-        <view class="padding-top padding-lr" id="main-1">
+        <view class="padding-top" id="main-1">
             <view class="padding-top padding-lr">
                 <view class='cu-bar solid-bottom bg-white'>
                     <view class='action'>
@@ -122,10 +122,44 @@
                 </block>
             </view>
         </view>
-        <view class="padding-top padding-lr" id="main-2">
+        <view class="padding-top" id="main-2">
+            <view class="padding-top padding-lr">
+                <view class='cu-bar solid-bottom bg-white'>
+                    <view class='action'>
+                        <text class='cuIcon-title text-green'></text> 智能推荐
+                    </view>
+                </view>
+                <view class="cu-list menu-avatar">
+                    <view class="cu-item solids-top" wx:for="{{CommendList}}" wx:key wx:for-index="sub">
+                        <!-- <view class="cu-avatar round lg">1</view> -->
+                        <view class="cu-avatar round lg  shadow-blur"
+                            style="background-image:url({{item.logo}});left:10rpx;">
+                        </view>
+                        <view class="content"
+                            style="height: 100%; left: 114rpx; width: auto; position: absolute; top: 0rpx">
+
+                            <view class="text-grey text-sm oneline"
+                                style="color: #996179; display: -webkit-box; width: 264rpx; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
+                                {{item.name}}
+                            </view>
+                            <view class="text-gray text-sm" style="position: relative; left: 0rpx; top: 10rpx">
+                                匹配度：{{item.percentage}}%
+                            </view>
+                            <view class="text-gray text-sm"
+                                style="width: 264rpx; height: 42rpx; display: block; box-sizing: border-box">
+                                综合实力排名：{{item.QS_dome}}
+                            </view>
+                        </view>
+                        <view class="radius fr padding-sm shadow-blur myTxtCenter"
+                            style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695; position: relative; left: -8rpx; top: 0rpx"
+                            bindtap="learn_more" data-id="{{item.id}}">
+                            了解更多</view>
+                    </view>
+                </view>
+            </view>
         </view>
 
-        <view class="padding-top padding-lr" id="main-3">
+        <view class="padding-top" id="main-3">
             <view class="padding-top padding-lr">
                 <view class='cu-bar solid-bottom bg-white'>
                     <view class='action'>
@@ -133,32 +167,36 @@
                     </view>
                 </view>
                 <view class="cu-list menu-avatar">
-
-                    <view class="cu-item solids-top" wx:for="{{4}}" wx:key wx:for-index="sub">
+                    <view class="cu-item solids-top" wx:for="{{HeatList}}" wx:key wx:for-index="sub">
                         <!-- <view class="cu-avatar round lg">1</view> -->
                         <view class="cu-avatar round lg  shadow-blur"
-                            style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);">
+                            style="background-image:url({{item.logo}});left:10rpx;">
                         </view>
-                        <view class="content">
+                        <view class="content"
+                            style="height: 100%; left: 114rpx; width: auto; position: absolute; top: 0rpx">
 
-                            <view class="text-grey" style="color:#996179">圣彼得堡大学
+                            <view class="text-grey text-sm oneline"
+                                style="color: #996179; display: -webkit-box; width: 264rpx; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
+                                {{item.name}}
                             </view>
-                            <view class="text-gray text-sm">
-                                QS世界排名：10
+                            <view class="text-gray text-sm" style="position: relative; left: 0rpx; top: 10rpx">
+                                热度指数：{{item.heatnum}}
                             </view>
-                            <view class="text-gray text-sm">
-                                QS国内排名：4
+                            <view class="text-gray text-sm"
+                                style="width: 264rpx; height: 42rpx; display: block; box-sizing: border-box">
+                                综合实力排名：{{item.QS_dome}}
                             </view>
                         </view>
                         <view class="radius fr padding-sm shadow-blur myTxtCenter"
-                            style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;">
+                            style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695; position: relative; left: -8rpx; top: 0rpx"
+                            bindtap="learn_more" data-id="{{item.id}}">
                             了解更多</view>
 
                     </view>
                 </view>
             </view>
         </view>
-        <view class="padding-top padding-lr" id="main-4">
+        <view class="padding-top " id="main-4">
             <view class="padding-top padding-lr">
                 <view class='cu-bar solid-bottom bg-white'>
                     <view class='action'>
@@ -167,29 +205,43 @@
                 </view>
                 <view class="cu-list menu-avatar">
 
-                    <view class="cu-item solids-top" wx:for="{{4}}" wx:key wx:for-index="sub">
+                    <view class="cu-item solids-top" wx:for="{{CollectList}}" wx:key wx:for-index="sub">
                         <!-- <view class="cu-avatar round lg">1</view> -->
                         <view class="cu-avatar round lg  shadow-blur"
-                            style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);">
+                            style="background-image:url({{item.logo}});left:10rpx;">
                         </view>
-                        <view class="content">
+                        <view class="content"
+                            style="height: 100%; left: 114rpx; width: auto; position: absolute; top: 0rpx">
 
-                            <view class="text-grey" style="color:#996179">圣彼得堡大学
+                            <view class="text-grey text-sm oneline"
+                                style="color: #996179; display: -webkit-box; width: 264rpx; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
+                                {{item.name}}
                             </view>
-                            <view class="text-gray text-sm">
-                                QS世界排名：10
+                            <view class="text-gray text-sm" style="position: relative; left: 0rpx; top: 10rpx">
+                                QS世界排名：{{item.QS_all}}
                             </view>
-                            <view class="text-gray text-sm">
-                                QS国内排名：4
+                            <view class="text-gray text-sm"
+                                style="width: 264rpx; height: 42rpx; display: block; box-sizing: border-box">
+                                QS国内排名：{{item.QS_dome}}
                             </view>
                         </view>
                         <view class="radius fr padding-sm shadow-blur myTxtCenter"
-                            style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;">
-                            了解更多</view>
+                            style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695; position: relative; left: -8rpx; top: 0rpx"
+                            bindtap="learn_more" data-id="{{item.id}}">
+                            了解更多
+                        </view>
 
+                    </view>
+                    <view class="cu-item padding text-gray"
+                        style="height: auto;display: flex;align-items: center;justify-content: center;"
+                        wx:if="{{CollectList.length==0}}">
+                        您目前还没有任何收藏~
                     </view>
                 </view>
             </view>
+        </view>
+        <view class="" style="height:200rpx">
+
         </view>
     </scroll-view>
 </view>
