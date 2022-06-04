@@ -36,7 +36,7 @@ Page({
     }, {
       icon: 'sort',
       color: 'blue',
-      badge: 0,
+      badge: 100,
       name: '教育项目'
     }],
     swiperList: [{
@@ -230,12 +230,6 @@ Page({
         backheight: backheight
       })
     }).exec()
-
-
-
-
-    console.log(options.school_id)
-
     this.setData({
       interval: setInterval(function () {
         console.log("interval in oneschool 调用一次");
@@ -269,7 +263,6 @@ Page({
         }
       }, 1000)
     })
-
   },
   onPageScroll: function (e) {
     var that = this
@@ -351,11 +344,6 @@ Page({
     this.setData({
       iflove: iflove
     })
-    // var pages = getCurrentPages();   //当前页面
-    // if (pages.length > 1) {
-    //   var prevPage = pages[pages.length - 2];   //上个页面
-    // }
-    // prevPage.changeStorUni(this.data.school._id)
     var collections = wx.getStorageSync("collections")
     this.setData({
       collections: collections

@@ -123,36 +123,6 @@
             </view>
         </view>
         <view class="padding-top padding-lr" id="main-2">
-            <!-- <view class="padding-top padding-lr">
-                <view class='cu-bar solid-bottom bg-white'>
-                    <view class='action'>
-                        <text class='cuIcon-title text-green'></text> 智能推荐
-                    </view>
-                </view>
-                <view class="cu-list menu-avatar">
-
-                    <view class="cu-item solids-top" wx:for="{{4}}" wx:key wx:for-index="sub">
-                        <view class="cu-avatar round lg  shadow-blur"
-                            style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);">
-                        </view>
-                        <view class="content">
-
-                            <view class="text-grey" style="color:#996179">圣彼得堡大学
-                            </view>
-                            <view class="text-gray text-sm">
-                                匹配度：90%
-                            </view>
-                            <view class="text-gray text-sm">
-                                综合排名：5
-                            </view>
-                        </view>
-                        <view class="radius fr padding-sm shadow-blur myTxtCenter"
-                            style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;">
-                            了解更多</view>
-
-                    </view>
-                </view>
-            </view> -->
         </view>
 
         <view class="padding-top padding-lr" id="main-3">

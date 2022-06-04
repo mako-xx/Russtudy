@@ -98,8 +98,31 @@ image {
 	border-radius: 5000rpx;
 }
 
+
+
 .radius {
 	border-radius: 6rpx;
+}
+
+.radius-x {
+	border-radius: 12rpx;
+}
+
+.radius-xx {
+	border-radius: 20rpx;
+}
+
+.radius-xxx {
+	border-radius: 30rpx;
+}
+
+.radius-xxxx {
+	border-radius: 40rpx;
+}
+
+.radius-left-0 {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
 }
 
 /* ==================
@@ -3284,6 +3307,10 @@ scroll-view.cu-steps .cu-item {
 
 .padding-left-sm {
 	padding-left: 20rpx;
+}
+
+.padding-left-0 {
+	padding-left: 0rpx;
 }
 
 .padding-left {
