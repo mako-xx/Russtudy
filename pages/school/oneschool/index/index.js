@@ -5,6 +5,7 @@ const db = wx.cloud.database()
 
 Page({
   data: {
+    backheight: 0,
     gridCol: 3,
     titlepos: false,
     cardCur: 0,

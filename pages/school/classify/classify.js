@@ -54,6 +54,9 @@ Page({
           console.log("interval in classify 调用完成", that.data.schools, that.data.collections)
           that.getQSrank();
           that.getCityCla();
+          that.getCommendList();
+          that.getHeatList();
+          that.getCollectList();
           clearInterval(that.data.interval)
         }
       }, 1000)
@@ -158,6 +161,77 @@ Page({
     console.log(CityList)
     this.setData({
       CityList: CityList
+    })
+
+  },
+  getCommendList() {
+    var schools = this.data.schools;
+    var CommendList = [];
+    var namelist = ["莫斯科物理技术学院", "俄罗斯高等经济研究大学", "新西伯利亚国立大学", "国立研究大学-信息技术机械与光学大学", "俄罗斯人民友谊大学校长", "托木斯克国立大学", "国立核能研究大学-莫斯科工程物理学院"];
+    var percentage = ["95", "93", "89", "85", "84", "83", "80", "75"]
+    for (var j = 0; j < namelist.length; j++) {
+      for (var i = 0; i < schools.length; i++) {
+        if (schools[i].name == namelist[j]) {
+          var dic = {};
+          dic.QS_all = schools[i].qs_rating[3].rate_num;
+          dic.QS_dome = schools[i].qsdome;
+          dic.name = schools[i].name;
+          dic.percentage = percentage[j];
+          dic.logo = "https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c";
+          dic.id = schools[i]._id;
+          CommendList.push(dic)
+        }
+      }
+    }
+
+    this.setData({
+      CommendList: CommendList
+    })
+  },
+  getHeatList() {
+    var schools = this.data.schools
+    var HeatList = [];
+    var namelist = ["俄罗斯高等经济研究大学", "莫斯科物理技术学院", "国立研究大学-信息技术机械与光学大学", "新西伯利亚国立大学", "俄罗斯人民友谊大学校长", "托木斯克国立大学", "国立核能研究大学-莫斯科工程物理学院", "圣彼得堡国立电子技术大学", "喀山（伏尔加地区）联邦大学", "乌拉尔联邦大学"];
+    var heatnum = ["23", "19", "18", "15", "14", "14", "12", "11", "10", "9", "9", "7", "5", "3"]
+    for (var j = 0; j < namelist.length; j++) {
+      for (var i = 0; i < schools.length; i++) {
+        if (schools[i].name == namelist[j]) {
+          var dic = {};
+          dic.QS_all = schools[i].qs_rating[3].rate_num;
+          dic.QS_dome = schools[i].qsdome;
+          dic.name = schools[i].name;
+          dic.heatnum = heatnum[j];
+          dic.logo = "https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c";
+          dic.id = schools[i]._id;
+          HeatList.push(dic)
+        }
+      }
+    }
+
+    this.setData({
+      HeatList: HeatList
+    })
+  },
+  getCollectList() {
+    var schcollections = this.data.collections.schools;
+    var schools = this.data.schools
+    var CollectList = [];
+    for (var j = 0; j < schcollections.length; j++) {
+      for (var i = 0; i < schools.length; i++) {
+        if (schools[i]._id == schcollections[j]) {
+          var dic = {};
+          dic.QS_all = schools[i].qs_rating[3].rate_num;
+          dic.QS_dome = schools[i].qsdome;
+          dic.name = schools[i].name;
+          dic.logo = "https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c";
+          dic.id = schools[i]._id;
+          CollectList.push(dic)
+        }
+      }
+    }
+
+    this.setData({
+      CollectList: CollectList
     })
 
   },

@@ -2,6 +2,7 @@
 const app = getApp();
 Page({
   data: {
+    backheight: 0,
     cardCur: 0,
     swiperList: [{
       id: 0,

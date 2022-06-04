@@ -269,9 +269,6 @@ Page({
       languagelist: languagelist
     })
   },
-  getcitylist() {
-
-  },
 
   toggle(e) {
     var anmiaton = e.currentTarget.dataset.class;
@@ -609,6 +606,9 @@ Page({
   getallpro() {
     return this.data.allprograms1.concat(this.data.allprograms2).concat(this.data.allprograms3)
   },
+  getselectpro() {
+    return this.data.selectedprograms1.concat(this.data.selectedprograms2).concat(this.data.selectedprograms3)
+  },
   //获得符合筛选信息后得到的
   repick: function () {
     this.setData({
@@ -736,5 +736,16 @@ Page({
       checkfinish: checkfinish
     })
   },
-
+  learnmore: function (e) {
+    var index = e.currentTarget.dataset.value;
+    var selectedprograms = this.getselectpro();
+    var giveProgram = selectedprograms[index]
+    this.setData({
+      giveProgram: giveProgram,
+      indexinlist: index
+    })
+    wx.navigateTo({
+      url: '../oneprogram/programs'
+    })
+  },
 })

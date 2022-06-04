@@ -77,6 +77,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "onepro",
+          "pathName": "pages/school/oneprogram/programs",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

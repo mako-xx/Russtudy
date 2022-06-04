@@ -13,7 +13,8 @@
     "pages/school/oneschool/dorm/dorm",
     "pages/school/oneschool/faculty/faculty",
     "pages/school/oneschool/preparatory/preparatory",
-    "pages/school/oneschool/rank/rank"
+    "pages/school/oneschool/rank/rank",
+    "pages/school/oneprogram/programs"
   ],
   "tabBar": {
     "custom": true,

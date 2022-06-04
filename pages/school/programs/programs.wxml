@@ -95,7 +95,8 @@
                                 </view>
                             </view>
                             <view class="radius fr padding-sm shadow-blur myTxtCenter"
-                                style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;color:#EDE3E0;right:10rpx">
+                                style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;color:#EDE3E0;right:10rpx"
+                                bindtap="learnmore" data-value="{{sub}}">
                                 了解更多</view>
 
                         </view>
