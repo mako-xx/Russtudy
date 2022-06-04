@@ -14,6 +14,10 @@ Page({
     load: true
   },
   onLoad() {
+    wx.showLoading({  // 显示加载中loading效果 
+      title: "加载中",
+      mask: true  //开启蒙版遮罩
+    });
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
     var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight - app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
     this.setData({
@@ -53,29 +57,31 @@ Page({
             that.initotherlabels();
             that.pushMore();
             console.log("interval in  programs完成数据处理");
-            // if (that.data.collectLib != 1) {
-            //   // that.pushMore();
-            //   console.log("interval in programs完成push");
-            // }
-            // else if (that.data.collectLib == 1) { that.repick() }
+            that.setData({
+              finish1: true
+            })
             clearInterval(that.data.interval)
           }
         }
+        if (that.data.finish1 && that.data.finish2) wx.hideLoading();
       }, 1000),
       interval2: setInterval(function () {
         console.log("interval2调用一次", that.data.mainheadheight)
         let query = wx.createSelectorQuery()
         query.select('#main-headscroll').boundingClientRect((rect) => {
           var height = rect.height * app.globalData.pxToRpxScale;
-          console.log(height, that.data.ShowHeight)
           that.setData({
             mainheadheight: height
           })
         }).exec()
         if (that.data.mainheadheight) {
           console.log("获取到mainheadheight", that.data.mainheadheight)
+          that.setData({
+            finish2: true
+          })
           clearInterval(that.data.interval2)
         }
+        if (that.data.finish1 && that.data.finish2) wx.hideLoading();
       }, 1000)
     })
 
@@ -91,7 +97,6 @@ Page({
     selectedprograms.sort(function (a, b) { return a.rank - b.rank })
     var one = parseInt(len / 3);
     var two = parseInt((2 * len) / 3);
-    console.log("len", len, one, two)
     var selectedprograms1 = selectedprograms.slice(0, one);
     var selectedprograms2 = selectedprograms.slice(one, two);
     var selectedprograms3 = selectedprograms.slice(two, len);
@@ -104,14 +109,12 @@ Page({
     this.setData({
       selectedprograms3: selectedprograms3,
     })
-    console.log(this.data.selectedprograms1, this.data.selectedprograms2, this.data.selectedprograms3)
   },
   //获得筛选标签
   beginprocess() {
 
     //获得城市-学校对应表
     var schools = this.data.schools;
-    // console.log("sch", schools)
     var city_uni = [];
     var _;
     for (var i = 0; i < schools.length; i++) {
@@ -132,7 +135,6 @@ Page({
       }
     }
     city_uni.sort(function (a, b) { return b.schools.length - a.schools.length })
-    // console.log("city_uni", city_uni)
     this.setData({
       city_uni: city_uni
     })
@@ -143,11 +145,8 @@ Page({
     this.setData({
       subject_direction: subject_direction
     })
-    // console.log(this.data.subject_direction)
 
     var programs = this.getallpro();
-    console.log(programs)
-    // console.log("dp", programs)
     var processed = [];
     var level = ["所有"]
     var directions = ["所有"]
@@ -174,13 +173,12 @@ Page({
 
         }
         if (index != -1 && programs[i].info[j].label == "科目" && subjects[index].indexOf(programs[i].info[j].answer) == -1) {
-          // console.log(programs[i])
           subjects[index].push(programs[i].info[j].answer);
         }
         if (programs[i].info[j].label == "学习方式") {
           var ways = programs[i].info[j].answer.split(",");
           for (var t = 0; t < ways.length; t++) {
-            if (mode.indexOf(ways[t]) == -1) {
+            if (mode.indexOf(ways[t]) == -1 && ways[t] != '') {
               mode.push(ways[t]);
             }
           }
@@ -188,7 +186,7 @@ Page({
         if (programs[i].info[j].label == "学习语言") {
           var languages = programs[i].info[j].answer.split(",");
           for (var t = 0; t < languages.length; t++) {
-            if (language.indexOf(languages[t]) == -1) {
+            if (language.indexOf(languages[t]) == -1 && languages[t] != '') {
               language.push(languages[t]);
             }
           }
@@ -200,8 +198,6 @@ Page({
       }
       // processed.push(this.dataprocess(programs[i]))
     }
-    // console.log(subjects)
-    // this.getlovelist();
     this.setData({
       levels: level,
       levelindex: 0,
@@ -290,6 +286,10 @@ Page({
     }, 1000)
   },
   tabSelect(e) {
+    wx.showLoading({  // 显示加载中loading效果 
+      title: "加载中",
+      mask: true  //开启蒙版遮罩
+    });
     var index = e.currentTarget.dataset.id;
     var directionnamelist = this.data.subject_direction[index].directions;
     var directionlist = [{ "name": "全部", "checked": true }]
@@ -328,6 +328,7 @@ Page({
     })
     this.updateSel("sel_sub");
     this.repick();
+    wx.hideLoading();
   },
   updateSel(mode) {
     var sel_list = this.data.sel_list;
@@ -380,6 +381,10 @@ Page({
       })
       return
     }
+    wx.showLoading({  // 显示加载中loading效果 
+      title: "加载中",
+      mask: true  //开启蒙版遮罩
+    });
     this.setData({
       modalName: null
     })
@@ -448,12 +453,15 @@ Page({
       })
     }
     this.repick();
+    wx.hideLoading();
   },
   showModal(e) {
     var mode = e.currentTarget.dataset.mode
+    var name = e.currentTarget.dataset.name
     this.setData({
       modalName: e.currentTarget.dataset.target,
-      mode: mode
+      mode: mode,
+      sel_name: name
     })
 
     if (mode == 'sel_city') {
@@ -569,7 +577,6 @@ Page({
         break;
       }
     }
-    console.log(newpro["city"], newpro["schoolid"]);
     newpro["index"] = program.index
     var allinfos = program.info
     var newinfo = []
@@ -577,6 +584,7 @@ Page({
     for (var i = 0; i < allinfos.length; i++) {
       for (var j = 0; j < labels.length; j++) {
         if (allinfos[i].label == labels[j]) {
+          if (allinfos[i].label == '水平') newpro["level"] = allinfos[i].answer;
           newinfo.push(allinfos[i])
           labels[j] = "pass"
           break;
@@ -707,6 +715,8 @@ Page({
     var processed = this.data.showprograms;
     var len = this.data.showprograms.length
     var selectedprograms = this.data.selectedprograms1.concat(this.data.selectedprograms2).concat(this.data.selectedprograms3)
+    var checkfinish = 0;
+    if (Math.min(selectedprograms.length, len + 10) == selectedprograms.length) checkfinish = 1;
     for (var i = len; i < Math.min(selectedprograms.length, len + 10); i++) {
       var simpro = selectedprograms[i]
 
@@ -722,9 +732,9 @@ Page({
     this.setData({
       showprograms: processed,
       unblank: unblank,
-      searching: 0
+      searching: 0,
+      checkfinish: checkfinish
     })
-    console.log(this.data.showprograms)
   },
 
 })

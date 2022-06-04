@@ -10,13 +10,13 @@ App({
       env: 'cloudtest-3g82y8a0d914b437'
     })
     // 获取openid等登录信息，对应的代码在cloudfunctions/getInformation/index.js下
-    wx.cloud.callFunction({
-      name: 'getInformation',
-    }).then(res => {
-      console.log(res)
-    }).catch(err => {
-      console.log(err)
-    })
+    // wx.cloud.callFunction({
+    //   name: 'getInformation',
+    // }).then(res => {
+    //   console.log(res)
+    // }).catch(err => {
+    //   console.log(err)
+    // })
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
