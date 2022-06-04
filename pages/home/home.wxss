@@ -1,4 +1,5 @@
 /* pages/home/home/home.wxss */
+
 .row{
   display: flex;
   flex-direction: row;
@@ -74,5 +75,59 @@ justify-items: center;
   }
   100%{
     background-position: 0% 50%;
+  }
+}
+.clouds{
+  margin-top:320rpx; 
+}
+.yun1{
+  width:340rpx;
+  height: 200rpx;
+  z-index: 10;
+  animation: cloud1 5s infinite;
+}
+.yun2{
+  width:170rpx;
+  height: 100rpx;
+  z-index: 10;
+  animation: cloud2 10s infinite;
+}
+.yun3{
+  width:238rpx;
+  height: 140rpx;
+  z-index: 10;
+  animation: cloud3 7s infinite;
+}
+@keyframes cloud1{
+  0%{
+left: 352rpx;
+  }
+  50%{
+left: 150rpx;
+  }
+  100%{
+left: 352rpx;
+  }
+}
+@keyframes cloud2{
+  0%{
+left: 60rpx;
+  }
+  50%{
+left: 400rpx;
+  }
+  100%{
+left: 60rpx;
+  }
+}
+@keyframes cloud3{
+  0%{
+left: 100rpx;
+  }
+  50%{
+left: 500rpx;
+  }
+  100%{
+left: 100rpx;
   }
 }
