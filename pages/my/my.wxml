@@ -8,8 +8,98 @@
       </view>
   </view>
 </view>
-<scroll-view scroll-y="true"style="height:{{ShowHeight}}rpx;">
+<scroll-view scroll-y="true"style="height:{{ShowHeight}}rpx;background-color: lightblue;">
+  <view class="login">
+    <image class="login-bg" style="z-index: 0; width: 750rpx; height: 483rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"
+      src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/back_user.png">
+    </image>
+    <view class="ava-nick">
+      <image class="cu-avatar.xl" src='{{avatarUrl}}'></image>
+      <view class="nickname" bindtap="changeNickname">
+        {{nickname}}
+      </view>
+    </view>
+    <view class="ligin-bu">
+      <button class="cu-btn.round" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" bindtap="login" style="position: relative; top: 60rpx">
+        {{iflogin?'更换头像':'点击登录'}}
+      </button>
+    </view>
+  </view>
+  <view class="collection" style="position: relative; left: 50rpx; top: -20rpx">
+    <view class="collection-2">
+      <view class="collection-text">收藏</view>
+      <image class="collection-hart-icon"
+        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/收藏12 1.png">
+      </image>
+    </view>
+    <view class="collection-3">
+      <button class="collection-item" bindtap="switchcity">
+        <image class="collection-icons"
+          src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/城市2 1.png">
+        </image>
+      </button>
+      <button class="collection-item" bindtap="switchschool">
+        <image class="collection-icons"
+          src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/学校2 1.png">
+        </image>
+      </button>
+      <button class="collection-item" bindtap="switchprogram">
+        <image class="collection-icons"
+          src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/项目2 1.png">
+        </image>
+      </button>
+    </view>
+    <view class="collection-3-text">
+      <text class="collection-item-text">城市</text>
+      <text class="collection-item-text">学校</text>
+      <text class="collection-item-text">项目</text>
+    </view>
+  </view>
 
+  <view class="detail" style="position: relative; left: 50rpx; top: 20rpx">
+    <button class="bdetail">
+      <image class="idetail"
+        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/关于我们1 1.png">
+      </image>
+      <text class="tdetail">关于我们</text>
+      <image class="jiantou"
+        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/箭头 右.png"></image>
+    </button>
+    <button class="bdetail" bindtap="kefu">
+      <image class="idetail"
+        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/客服1 1.png"></image>
+      <text class="tdetail">联系客服</text>
+      <image class="jiantou"
+        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/箭头 右.png"></image>
+    </button>
+    <button class="bdetail" bindtap="clean">
+      <image class="idetail"
+        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/清空缓存1 1.png">
+      </image>
+      <text class="tdetail">清空缓存</text>
+      <image class="jiantou"
+        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/箭头 右.png"></image>
+    </button>
+    <button class="bdetail" bindtap="{{iflogin?'exit':''}}">
+      <image class=" idetail"
+        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/退出1 1.png"></image>
+      <text class="tdetail">退出登录</text>
+      <image class="jiantou"
+        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/箭头 右.png"></image>
+    </button>
+  </view>
+
+  <view class="model" catchtouchmove='preventTouchMove' wx:if='{{showModal}}'></view>
+  <view class="modalDlg" catchtouchmove='preventTouchMove' wx:if='{{showModal}}' style="width: 678rpx; height: 444rpx; display: flex; box-sizing: border-box; left: -6rpx; top: 580rpx; position: fixed">
+    <view class='windowRow'>
+      <text class='userTitle'>修改姓名</text>
+      <view class='back' bindtap='back'>返回</view>
+    </view>
+    <view style="width: 570rpx; height: 146rpx; display: flex; box-sizing: border-box" class='wishName'>
+      <input style="width: 566rpx; height: 90rpx; display: block; box-sizing: border-box" bindinput='wish_put' placeholder='{{holder}}' placeholder-class="holder_cls" class='wish_put' bindfocus="holder_disappear" 	bindblur="holder_appear"></input>
+    </view>
+    <view style="width:94%" class='wishbnt' bindtap='name'>确定</view>
+  </view>
  
 
 

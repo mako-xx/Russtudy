@@ -1,1 +1,305 @@
 /* pages/my/my.wxss */
+page {
+	background-color: lightblue;
+}
+
+.cu-avatar.xl {
+	position: relative;
+	width: 150rpx;
+	height: 150rpx;
+	top: 0;
+	font-size: 2.5em;
+	border-radius: 50%;
+	overflow: hidden;
+	border-width: 2srpx;
+	border-color: black;
+	border-style: solid;
+	flex-grow: 0;
+	flex-shrink: 0;
+
+}
+
+/* 昵称按钮 */
+.nickname {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+	position: relative;
+	bottom: 0;
+	background-color: transparent;
+	width: 150rpx;
+	height: auto;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  white-space:nowrap;
+}
+
+/* 弹窗样式 */
+.model {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	z-index: 999;
+	opacity: 0.5;
+	top: 0;
+	left: 0;
+}
+
+.modalDlg {
+	width: 80%;
+	position: fixed;
+	top: 300rpx;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	margin: 0 auto;
+	padding: 55rpx;
+	background-color: #fff;
+	border-radius: 20rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.windowRow {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 15rpx;
+	width: 100%;
+}
+
+.userTitle {
+	font-size: 42rpx;
+}
+
+.back {
+	text-align: center;
+	color: gray;
+	font-size: 30rpx;
+}
+
+.wishName {
+	width: 100%;
+	justify-content: center;
+	flex-direction: row;
+	display: flex;
+	margin: 40rpx 0rpx;
+}
+
+.wish_put {
+	width: 100%;
+	border: #ededef 1rpx solid;
+	background-color: #f6f7fb;
+  border-radius: 12rpx;
+  text-align: center;
+}
+
+.holder_cls {
+  color: #909399;
+  line-height: normal;
+  text-align: center;
+}
+
+.wishbnt {
+	background-color: lightblue;
+	text-align: center;
+	border-radius: 50rpx;
+	padding: 25rpx;
+	color: white;
+}
+
+
+
+.cu-btn.round {
+	width: 130rpx;
+	height: 40rpx;
+	border-radius: 1000rpx;
+	color: black;
+	border-width: 2rpx;
+	border-color: black;
+	border-style: solid;
+	font-weight: 500;
+	font-size: 23rpx;
+	word-break: keep-all;
+
+}
+
+
+
+.collection-3-text {
+	display: flex;
+	flex-direction: row;
+	background-color: transparent;
+	justify-content: space-around;
+	position: relative;
+	bottom: 15rpx;
+}
+
+.login {
+	margin-bottom: auto;
+	width: 750rpx;
+	height: 500rpx;
+	position: relative;
+}
+
+.login-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.ava-nick {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 200rpx;
+	width: 150rpx;
+	margin-top: -100rpx;
+	margin-left: -75rpx;
+}
+
+.ligin-bu {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 200rpx;
+	width: 150rpx;
+	margin-top: -100rpx;
+	margin-left: 100rpx;
+}
+
+
+.collection-2 {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	left: 50rpx;
+	top: 10rpx;
+}
+
+.collection-hart-icon {
+	width: 70rpx;
+	height: 70rpx;
+}
+
+.collection {
+	margin-bottom: auto;
+	display: flex;
+	flex-direction: column;
+	border-radius: 25rpx;
+	border-width: 8rpx;
+	border-style: solid;
+	border-color: grey;
+	background-color: whitesmoke;
+	width: 650rpx;
+	position: relative;
+	bottom: 50rpx;
+	height: 350rpx;
+}
+
+.collection-3 {
+	display: flex;
+	flex-direction: row;
+	background-color: transparent;
+	justify-content: space-around;
+}
+
+.collection-text {
+	width: 300;
+	font-size: 25px;
+	font-weight: 800;
+	color: grey;
+}
+
+.collection-item-text {
+	color: gray;
+	font-size: 40rpx;
+	font-weight: 400;
+}
+
+.collection-item {
+	width: 120rpx;
+	height: 200rpx;
+	background-color: transparent;
+	position: relative;
+	top: 50rpx;
+}
+
+.collection-icons {
+	width: 100rpx;
+	height: 100rpx;
+}
+
+.detail {
+	margin-bottom: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 25rpx;
+	border-width: 8rpx;
+	border-style: solid;
+	border-color: grey;
+	background-color: whitesmoke;
+	width: 650rpx;
+	position: relative;
+	bottom: 40rpx;
+	height: 350rpx;
+}
+
+.bdetail {
+	border-bottom: 8rpx grey !important;
+	width: 100% !important;
+	height: 25% !important;
+	background-color: transparent;
+}
+
+.idetail {
+	width: 50rpx;
+	height: 50rpx;
+	position: relative;
+	right: 180rpx;
+}
+
+.tdetail {
+	color: grey;
+	font-weight: 400;
+	font-size: 40rpx;
+	position: relative;
+	right: 160rpx;
+	bottom: 13rpx;
+}
+
+.jiantou {
+	width: 50rpx;
+	height: 50rpx;
+	position: relative;
+	left: 180rpx;
+}
+
+.cu-btn {
+	position: relative;
+	border: 0rpx;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	padding: 0 30rpx;
+	font-size: 28rpx;
+	height: 64rpx;
+	line-height: 1;
+	text-align: center;
+	text-decoration: none;
+	overflow: visible;
+	margin-left: initial;
+	transform: translate(0rpx, 0rpx);
+	margin-right: initial;
+}
