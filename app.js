@@ -62,53 +62,6 @@ App({
 
 
 
-    const provalue1 = wx.getStorageSync('programs1')
-    var programs1 = provalue1
-    if (!programs1) {
-      console.log("缓存获取programs1失败,进行数据库查询");
-      var allvalue;
-      db.collection("programs").limit(5).get()
-        .then(res => {
-          allvalue = res
-          programs1 = [];
-          for (var i = 0; i < allvalue.data.length; i++)
-            programs1 = programs1.concat(allvalue.data[i].programs)
-          console.log("programs1完成", programs1);
-          wx.setStorageSync('programs1', programs1)
-        })
-    }
-
-    const provalue2 = wx.getStorageSync('programs2')
-    var programs2 = provalue2
-    if (!programs2) {
-      console.log("缓存获取programs2失败,进行数据库查询");
-      var allvalue;
-      db.collection("programs").skip(6).limit(5).get()
-        .then(res => {
-          allvalue = res
-          programs2 = [];
-          for (var i = 0; i < allvalue.data.length; i++)
-            programs2 = programs2.concat(allvalue.data[i].programs)
-          console.log("programs2完成", programs2);
-          wx.setStorageSync('programs2', programs2)
-        })
-    }
-
-    const provalue3 = wx.getStorageSync('programs3')
-    var programs3 = provalue3
-    if (!programs3) {
-      console.log("缓存获取programs3失败,进行数据库查询");
-      var allvalue;
-      db.collection("programs").skip(11).limit(5).get()
-        .then(res => {
-          allvalue = res
-          programs3 = [];
-          for (var i = 0; i < allvalue.data.length; i++)
-            programs3 = programs3.concat(allvalue.data[i].programs)
-          console.log("programs3完成", programs3);
-          wx.setStorageSync('programs3', programs3)
-        })
-    }
 
     const schvalue = wx.getStorageSync('schools')
     var schools = schvalue
@@ -133,6 +86,87 @@ App({
     }
 
 
+    const provalue1 = wx.getStorageSync('programs1')
+    var programs1 = provalue1
+    if (!programs1) {
+      console.log("缓存获取programs1失败,进行数据库查询");
+      var allvalue;
+      db.collection("programs").limit(5).get()
+        .then(res => {
+          allvalue = res
+          programs1 = [];
+          for (var i = 0; i < allvalue.data.length; i++) {
+            var prs = allvalue.data[i].programs;
+            var schname = prs[0].schoolname;
+            var index;
+            for (var index = 0; index < schools.length; index++) {
+              if (schools[index].name == schname) break;
+            }
+            var rank = schools[index].qsdome;
+            for (var j = 0; j < prs.length; j++) {
+              prs[j].schoolrank = rank;
+            }
+            programs1 = programs1.concat(prs)
+          }
+
+          console.log("programs1完成", programs1);
+          wx.setStorageSync('programs1', programs1)
+        })
+    }
+
+    const provalue2 = wx.getStorageSync('programs2')
+    var programs2 = provalue2
+    if (!programs2) {
+      console.log("缓存获取programs2失败,进行数据库查询");
+      var allvalue;
+      db.collection("programs").skip(6).limit(5).get()
+        .then(res => {
+          allvalue = res
+          programs2 = [];
+          for (var i = 0; i < allvalue.data.length; i++) {
+            var prs = allvalue.data[i].programs;
+            var schname = prs[0].schoolname;
+            var index;
+            for (var index = 0; index < schools.length; index++) {
+              if (schools[index].name == schname) break;
+            }
+            var rank = schools[index].qsdome;
+            for (var j = 0; j < prs.length; j++) {
+              prs[j].schoolrank = rank;
+            }
+            programs2 = programs2.concat(prs)
+          }
+          console.log("programs2完成", programs2);
+          wx.setStorageSync('programs2', programs2)
+        })
+    }
+
+    const provalue3 = wx.getStorageSync('programs3')
+    var programs3 = provalue3
+    if (!programs3) {
+      console.log("缓存获取programs3失败,进行数据库查询");
+      var allvalue;
+      db.collection("programs").skip(11).limit(5).get()
+        .then(res => {
+          allvalue = res
+          programs3 = [];
+          for (var i = 0; i < allvalue.data.length; i++) {
+            var prs = allvalue.data[i].programs;
+            var schname = prs[0].schoolname;
+            var index;
+            for (var index = 0; index < schools.length; index++) {
+              if (schools[index].name == schname) break;
+            }
+            var rank = schools[index].qsdome;
+            for (var j = 0; j < prs.length; j++) {
+              prs[j].schoolrank = rank;
+            }
+            programs3 = programs3.concat(prs)
+          }
+          console.log("programs3完成", programs3);
+          wx.setStorageSync('programs3', programs3)
+        })
+    }
 
     const citvalue = wx.getStorageSync('citys')
     var citys = citvalue

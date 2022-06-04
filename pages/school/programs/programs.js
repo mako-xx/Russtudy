@@ -10,7 +10,7 @@ Page({
     citylist: [{ "name": "全部", "checked": true }, { "name": "莫斯科", "checked": false }, { "name": "圣彼得堡", "checked": false }, { "name": "喀山", "checked": false }, { "name": "符拉迪沃斯托克", "checked": false }],
     toplist: [{ "name": "全部", "index": 0 }, { "name": "商科", "index": 1 }, { "name": "工科", "index": 2 }, { "name": "理科", "index": 3 }, { "name": "文科", "index": 4 }],
     // src: ['https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e188mpn7j30rs0ijn1l.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e187stc7j30ws0kathf.jpg', 'https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e18a31bsj31kw11ykjl.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e188bymfj313d0mvwiq.jpg'],
-    selectlist: [{ "name": "所在城市", "type": "0", "mode": "sel_city" }, { "name": "所在学校", "type": "0", "mode": "sel_sch" }, { "name": "学习方向", "type": "0", "mode": "sel_dir" }, { "name": "科目", "type": "0", "mode": "sel_sub" }, { "name": "学习方式", "type": "0", "mode": "sel_way" }, { "name": "学习语言", "type": "0", "mode": "sel_lau" }],
+    selectlist: [{ "name": "所在城市", "type": "1", "mode": "sel_city" }, { "name": "所在学校", "type": "1", "mode": "sel_sch" }, { "name": "学习方向", "type": "1", "mode": "sel_dir" }, { "name": "科目", "type": "1", "mode": "sel_sub" }, { "name": "学习方式", "type": "1", "mode": "sel_way" }, { "name": "学习语言", "type": "1", "mode": "sel_lau" }],
     load: true
   },
   onLoad() {
@@ -31,25 +31,27 @@ Page({
           var allprograms3 = wx.getStorageSync('programs3');
           var schools = wx.getStorageSync("schools");
           if (allprograms1 && allprograms2 && allprograms3 && schools) {
-            var allprograms = allprograms1;
-            allprograms.concat(allprograms2);
-            allprograms.concat(allprograms3);
-
             that.setData({
-              allprograms: allprograms,
-              selectedprograms: allprograms,
+              allprograms1: allprograms1,
               schools: schools,
               showprograms: []
             })
-
+            that.setData({
+              allprograms2: allprograms2,
+            })
+            that.setData({
+              allprograms3: allprograms3,
+            })
+            that.setselect(allprograms1.concat(allprograms2).concat(allprograms3))
           }
 
-          if (that.data.allprograms) {
+          if (that.data.allprograms1 && that.data.allprograms2 && that.data.allprograms3) {
             console.log("interval in programs调用结束");
             that.beginprocess();
             that.initcitylabels();
             that.initdirectionlabels();
             that.initotherlabels();
+            that.pushMore();
             console.log("interval in  programs完成数据处理");
             // if (that.data.collectLib != 1) {
             //   // that.pushMore();
@@ -59,10 +61,51 @@ Page({
             clearInterval(that.data.interval)
           }
         }
+      }, 1000),
+      interval2: setInterval(function () {
+        console.log("interval2调用一次", that.data.mainheadheight)
+        let query = wx.createSelectorQuery()
+        query.select('#main-headscroll').boundingClientRect((rect) => {
+          var height = rect.height * app.globalData.pxToRpxScale;
+          console.log(height, that.data.ShowHeight)
+          that.setData({
+            mainheadheight: height
+          })
+        }).exec()
+        if (that.data.mainheadheight) {
+          console.log("获取到mainheadheight", that.data.mainheadheight)
+          clearInterval(that.data.interval2)
+        }
       }, 1000)
     })
-  },
 
+
+  },
+  setselect(selectedprograms) {
+    var len = selectedprograms.length;
+    for (var i = 0; i < len; i++) {
+      selectedprograms[i].rank = selectedprograms[i].schoolrank + parseInt(Math.random() * (20 + 2) - 2)
+      while (selectedprograms[i].rank <= 0) selectedprograms[i].rank = selectedprograms[i].schoolrank + parseInt(Math.random() * (4 + 3) - 3);
+    }
+
+    selectedprograms.sort(function (a, b) { return a.rank - b.rank })
+    var one = parseInt(len / 3);
+    var two = parseInt((2 * len) / 3);
+    console.log("len", len, one, two)
+    var selectedprograms1 = selectedprograms.slice(0, one);
+    var selectedprograms2 = selectedprograms.slice(one, two);
+    var selectedprograms3 = selectedprograms.slice(two, len);
+    this.setData({
+      selectedprograms1: selectedprograms1,
+    })
+    this.setData({
+      selectedprograms2: selectedprograms2,
+    })
+    this.setData({
+      selectedprograms3: selectedprograms3,
+    })
+    console.log(this.data.selectedprograms1, this.data.selectedprograms2, this.data.selectedprograms3)
+  },
   //获得筛选标签
   beginprocess() {
 
@@ -102,7 +145,8 @@ Page({
     })
     // console.log(this.data.subject_direction)
 
-    var programs = this.data.allprograms;
+    var programs = this.getallpro();
+    console.log(programs)
     // console.log("dp", programs)
     var processed = [];
     var level = ["所有"]
@@ -234,7 +278,6 @@ Page({
   },
 
   toggle(e) {
-    console.log(e);
     var anmiaton = e.currentTarget.dataset.class;
     var that = this;
     that.setData({
@@ -251,12 +294,9 @@ Page({
     var directionnamelist = this.data.subject_direction[index].directions;
     var directionlist = [{ "name": "全部", "checked": true }]
     var subjectlist = [{ "name": "全部", "checked": true }]
-    console.log("alldir", this.data.directions)
-    console.log("allsub", this.data.subjects)
     for (var i = 0; i < directionnamelist.length; i++) {
       var index = this.data.directions.indexOf(directionnamelist[i])
       if (index != -1) {
-        console.log("index", index);
         var dic = { "name": directionnamelist[i], "checked": true };
         directionlist.push(dic);
         for (var j = 0; j < this.data.subjects[index].length; j++) {
@@ -268,7 +308,6 @@ Page({
         console.log("没找到", directionnamelist[i])
       }
     }
-    console.log("sub", subjectlist)
     // console.log("dir", directionlist)
     this.setData({
       TabCur: e.currentTarget.dataset.id,
@@ -277,15 +316,98 @@ Page({
       directionlist: directionlist,
       subjectlist: subjectlist
     })
+    if (index == 0) {
+      this.initdirectionlabels()
+    }
+    this.setData({
+      sel_list: this.data.directionlist
+    })
+    this.updateSel("sel_dir")
+    this.setData({
+      sel_list: this.data.subjectlist
+    })
+    this.updateSel("sel_sub");
+    this.repick();
+  },
+  updateSel(mode) {
+    var sel_list = this.data.sel_list;
+    var index;
+
+    var selectlist = this.data.selectlist;
+    for (index = 0; index < selectlist.length; index++) {
+      if (selectlist[index].mode == mode) break;
+    }
+    if (index == selectlist.length) console.log("wrong");
+    var type;
+    if (sel_list.length <= 1) {
+      type = 1;
+      sel_list[0].checked = true;
+    } else {
+      var _ = sel_list[1].checked;
+      var out = 0;
+      for (var i = 1; i < sel_list.length; i++) {
+        if (_ != sel_list[i].checked) {
+          type = 0;
+          out = 1;
+          sel_list[0].checked = false;
+          break;
+        }
+      }
+      if (out == 0) {
+        sel_list[0].checked = _;
+        if (_ == true) {
+          type = 1;
+        } else {
+          type = -1;
+        }
+      }
+    }
+    selectlist[index].type = type;
+    this.setData({
+      selectlist: selectlist,
+      sel_list: sel_list
+    })
+    return type
   },
   hideModal(e) {
     var mode = this.data.mode;
+    var type = this.updateSel(mode);
+    if (type == -1) {
+      wx.showToast({
+        "title": "请勾选至少一项",
+        "icon": "error",
+        duration: 2000
+      })
+      return
+    }
     this.setData({
       modalName: null
     })
     if (mode == 'sel_city') {
       this.setData({
         citylist: this.data.sel_list
+      })
+      var citylist = this.data.citylist;
+      var city_uni = this.data.city_uni
+      var schoollist = [{ "name": "全部", "checked": true }];
+
+      for (var i = 1; i < citylist.length; i++) {
+        if (citylist[i].checked == true) {
+          var city = citylist[i].name;
+          var index;
+          for (index = 0; index < city_uni.length; index++) {
+            if (city_uni[index].city == city) break;
+          }
+          if (index != city_uni.length) {
+            for (var j = 0; j < city_uni[index].schools.length; j++) {
+              var sdic = { "name": city_uni[index].schools[j].name, "checked": true };
+              schoollist.push(sdic)
+            }
+          } else { console.log("out range") }
+        }
+      }
+      this.setData({
+        schoollist: schoollist
       })
     } else if (mode == 'sel_sch') {
       this.setData({
@@ -294,6 +416,23 @@ Page({
     } else if (mode == 'sel_dir') {
       this.setData({
         directionlist: this.data.sel_list
+      })
+      var directionlist = this.data.directionlist;
+      var subjects = this.data.subjects;
+      var subjectlist = [{ "name": "全部", "checked": true }];
+
+
+      for (var i = 1; i < directionlist.length; i++) {
+        if (directionlist[i].checked == true) {
+          for (var j = 1; j < subjects[i].length; j++) {
+            var sdic = { "name": subjects[i][j], "checked": true };
+            subjectlist.push(sdic)
+          }
+        }
+
+      }
+      this.setData({
+        subjectlist: subjectlist
       })
     } else if (mode == 'sel_sub') {
       this.setData({
@@ -308,6 +447,7 @@ Page({
         languagelist: this.data.sel_list
       })
     }
+    this.repick();
   },
   showModal(e) {
     var mode = e.currentTarget.dataset.mode
@@ -346,29 +486,245 @@ Page({
     var sel_list = this.data.sel_list
     var index = e.currentTarget.dataset.index
     if (index == 0) {
-      for (var i = 1; i < sel_list.length; i++) {
-        sel_list[i].checked = !sel_list[0].checked;
+      var back = !sel_list[0].checked;
+      for (var i = 0; i < sel_list.length; i++) {
+        sel_list[i].checked = back;
       }
-      sel_list[0].checked = !sel_list[0].checked;
-
     } else {
       sel_list[index].checked = !sel_list[index].checked;
-      var checkall = sel_list[1].checked;
+      var checkall = true;
       for (var i = 1; i < sel_list.length; i++) {
-        if (sel_list[i].checked != checkall) {
-          checkall = null;
+        if (sel_list[i].checked != true) {
+          checkall = false;
           break;
         }
       }
-      console.log(checkall)
-      if (checkall) {
-        sel_list[0].checked = checkall;
-      } else {
-        sel_list[0].checked = false;
-      }
+      sel_list[0].checked = checkall;
+
     }
     this.setData({
       sel_list: sel_list
     })
-  }
+  },
+  checkq: function () {
+    var list = this.data.sel_list;
+    list[0].checked = !list[0].checked;
+    if (list[0].checked) {
+      for (var i = 1; i < list.length; i++) {
+        var item = list[i];
+        item.checked = true
+        // list.splice(i,1,item)
+      }
+    } else {
+      for (var i = 1; i < list.length; i++) {
+        var item = list[i];
+        item.checked = false
+        // list.splice(i,1,item)
+      }
+    }
+    this.setData({
+      sel_list: list
+    })
+  },
+  chlik: function (e) {
+    var index = e.currentTarget.dataset.index;
+    var list = this.data.sel_list;
+    var item = list[index];
+    item.checked = !item.checked;
+    // list.splice(index,1,item)
+
+    var qb = 0
+    for (var i = 1; i < list.length; i++) {
+      if (list[i].checked) {
+        qb++
+      }
+    }
+    if (qb === list.length - 1) {
+      list[0].checked = true
+    } else {
+      list[0].checked = false
+    }
+    this.setData({
+      sel_list: list
+    })
+  },
+  dataprocess(program) {
+    var newpro = {}
+    newpro["name"] = program.name
+    newpro["enschoolname"] = program.enschoolname
+    newpro["schoolname"] = program.schoolname
+    newpro["rank"] = program.rank
+    const city_uni = this.data.city_uni;
+    for (var i = 0; i < city_uni.length; i++) {
+      var j;
+      for (j = 0; j < city_uni[i].schools.length; j++) {
+        // console.log("gg", city_uni[i].schools[j].name, program.schoolname)
+        if (city_uni[i].schools[j].name == program.schoolname) {
+          newpro["city"] = city_uni[i].city;
+          newpro["schoolid"] = city_uni[i].schools[j].id;
+          break;
+        }
+      }
+      if (j != city_uni[i].schools.length) {
+        break;
+      }
+    }
+    console.log(newpro["city"], newpro["schoolid"]);
+    newpro["index"] = program.index
+    var allinfos = program.info
+    var newinfo = []
+    var labels = ["方向", "水平", "学习方式", "学习语言", "长度", "科目"]
+    for (var i = 0; i < allinfos.length; i++) {
+      for (var j = 0; j < labels.length; j++) {
+        if (allinfos[i].label == labels[j]) {
+          newinfo.push(allinfos[i])
+          labels[j] = "pass"
+          break;
+        }
+      }
+
+    }
+    while (newinfo.length < 4) {
+      newinfo.push({})
+    }
+    // var collectedPros = this.data.collection.programs;
+    newpro["ifcollected"] = 0;
+    // for (var i = 0; i < collectedPros.length; i++) {
+    //   if (collectedPros[i] == program.index) {
+    //     newpro["ifcollected"] = 1;
+    //     break;
+    //   }
+    // }
+    newpro["info"] = newinfo;
+    return newpro
+  },
+  getallpro() {
+    return this.data.allprograms1.concat(this.data.allprograms2).concat(this.data.allprograms3)
+  },
+  //获得符合筛选信息后得到的
+  repick: function () {
+    this.setData({
+      searching: 1
+    })
+    var selectlist = this.data.selectlist;
+    var processed = [];
+    var allprograms = this.getallpro();
+    var selectedprograms = []
+
+    const learnwaylist = this.data.learnwaylist;
+    const subjectlist = this.data.subjectlist;
+    const schoollist = this.data.schoollist;
+    const languagelist = this.data.languagelist;
+    for (var i = 0; i < allprograms.length; i++) {
+      var infos = allprograms[i].info;
+      var conform = 1;
+      // //根据收藏状态筛选
+      // if (this.data.collectLib) {
+      //   var checkcollect = 0;
+      //   if (this.data.collection.programs.indexOf(allprograms[i].index) != -1) {
+      //     checkcollect = 1;
+      //   }
+
+      //   if (checkcollect == 0) continue;
+      // }
+      //对学习方式进行筛选
+      conform = 0;
+      for (var y = 1; y < learnwaylist.length; y++) {
+        if (learnwaylist[y].checked == true) {
+          var index;
+          for (index = 0; index < infos.length; index++) {
+            if (infos[index].label == '学习方式' && infos[index].answer.split(',').indexOf(learnwaylist[y].name) != -1) {
+              conform = 1;
+              break;
+            }
+
+          }
+          if (conform == 1)
+            break;
+        }
+      }
+      if (conform == 0) { continue; }
+
+      //对学习语言进行筛选
+      conform = 0;
+      for (var y = 1; y < languagelist.length; y++) {
+        if (languagelist[y].checked == true) {
+          var index;
+          for (index = 0; index < infos.length; index++) {
+            if (infos[index].label == '学习语言' && infos[index].answer.split(',').indexOf(languagelist[y].name) != -1) {
+              conform = 1;
+              break;
+            }
+
+          }
+          if (conform == 1)
+            break;
+        }
+      }
+      if (conform == 0) { continue; }
+
+      //对学校进行筛选
+      conform = 0;
+      for (var y = 1; y < schoollist.length; y++) {
+        if (schoollist[y].checked == true && allprograms[i].schoolname == schoollist[y].name) {
+
+          conform = 1;
+          // console.log(allprograms[i].schoolname)
+          break;
+        }
+      }
+      if (conform == 0) { continue; }
+
+      //对科目进行筛选
+      conform = 0;
+      for (var y = 1; y < subjectlist.length; y++) {
+        if (subjectlist[y].checked == true) {
+          var index;
+          for (index = 0; index < infos.length; index++) {
+            if (infos[index].label == '科目' && infos[index].answer.split(',').indexOf(subjectlist[y].name) != -1) {
+              conform = 1;
+              break;
+            }
+          }
+          if (conform == 1)
+            break;
+        }
+      }
+      if (conform == 0) { continue; }
+
+      selectedprograms.push(allprograms[i])
+    }
+    this.setselect(selectedprograms)
+    this.setData({
+      showprograms: [],
+      unblank: false,
+      topNum: 0,
+      searching: 0
+    })
+    this.pushMore();
+  },
+  pushMore(e) {
+    var processed = this.data.showprograms;
+    var len = this.data.showprograms.length
+    var selectedprograms = this.data.selectedprograms1.concat(this.data.selectedprograms2).concat(this.data.selectedprograms3)
+    for (var i = len; i < Math.min(selectedprograms.length, len + 10); i++) {
+      var simpro = selectedprograms[i]
+
+      processed.push(this.dataprocess(simpro))
+
+    }
+    var unblank;
+    if (processed.length != 0) {
+      unblank = true;
+    } else {
+      unblank = false;
+    }
+    this.setData({
+      showprograms: processed,
+      unblank: unblank,
+      searching: 0
+    })
+    console.log(this.data.showprograms)
+  },
+
 })
