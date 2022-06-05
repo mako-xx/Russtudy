@@ -117,8 +117,8 @@ page {
 
 
 .cu-btn.round {
-	width: 130rpx;
-	height: 40rpx;
+	width: 150rpx;
+	height: 150rpx;
 	border-radius: 1000rpx;
 	color: black;
 	border-width: 2rpx;
@@ -127,7 +127,7 @@ page {
 	font-weight: 500;
 	font-size: 23rpx;
 	word-break: keep-all;
-
+background-color: transparent;
 }
 
 

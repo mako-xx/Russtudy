@@ -17,6 +17,11 @@ Page({
     iflogin: false,
     holder: '请输入欲修改的姓名'
   },
+  kefu(){
+    wx.navigateTo({
+      url: '../my/contact/contact',
+    })
+  },
   holder_disappear(){
     console.log('点击')
     this.setData({

@@ -14,14 +14,14 @@
       src="">
     </image>
     <view class="ava-nick">
-      <image class="cu-avatar.xl" src='{{avatarUrl}}'></image>
-      <view class="nickname" bindtap="changeNickname">
+      <image  class="cu-avatar.xl" src='{{avatarUrl}}' style="position: relative; left: 0rpx; top: -60rpx"></image>
+      <view class="nickname" bindtap="changeNickname" style="position: relative; left: 0rpx; top: -30rpx">
         {{nickname}}
       </view>
     </view>
     <view class="ligin-bu">
-      <button class="cu-btn.round" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" bindtap="login" style="position: relative; top: 60rpx">
-        {{iflogin?'更换头像':'点击登录'}}
+      <button class="cu-btn.round" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" bindtap="login" style="position: relative; top: -60rpx; left: -175rpx" >
+   
       </button>
     </view>
   </view>
