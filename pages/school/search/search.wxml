@@ -1,0 +1,54 @@
+<view class="head" style="height:{{HeadBar}}rpx;">
+    <view class="titles">
+        <view class="title">
+            KeLi
+        </view>
+        <view class="sudtitle">
+            去俄罗斯留学
+        </view>
+    </view>
+</view>
+<view class="cu-bar bg-white search" id="main-search">
+    <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder="输入高校或城市关键字进行搜索" confirm-type="search" value="{{searchValue}}"
+            bindinput="searchValueInput"></input>
+    </view>
+    <view class="action" style="width:120rpx">
+        <button class="cu-btn bg-gradual-green shadow-blur round" bindtap="suo">搜索</button>
+    </view>
+</view>
+<scroll-view class="" scroll-y scroll-with-animation style="height:{{WinHeight-HeadBar-searchheight}}rpx">
+    <view class="cu-list menu-avatar">
+
+        <view class="cu-item solids-top" wx:for="{{schoollist}}" wx:key wx:for-index="sub" wx:for-item="it">
+            <!-- <view class="cu-avatar round lg">1</view> -->
+            <view class="cu-avatar round lg  shadow-blur" style="background-image:url({{it.logo}});left:10rpx;">
+            </view>
+            <view class="content" style="height: 100%; left: 114rpx; width: auto; position: absolute; top: 0rpx">
+
+                <view class="text-grey text-sm oneline"
+                    style="color: #996179; display: -webkit-box; width: 500rpx; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
+                    {{it.name}}
+                </view>
+                <view class="text-gray text-sm" style="position: relative; left: 0rpx; top: 10rpx">
+                    所在城市{{it.city}}
+                </view>
+                <view class="text-gray text-sm"
+                    style="width: 264rpx; height: 42rpx; display: block; box-sizing: border-box">
+                    QS国内排名：{{it.QS_dome}}
+                </view>
+            </view>
+            <view class="radius fr padding-sm shadow-blur myTxtCenter" bindtap="learn_more" data-id="{{it.id}}"
+                style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695; position: relative; left: -8rpx; top: 0rpx">
+                了解更多</view>
+
+        </view>
+        <view class="" wx:if="{{schoollist.length==0&&init==0}}">
+            貌似没有符合的高校
+        </view>
+        <view class="" style="height:200rpx">
+
+        </view>
+    </view>
+</scroll-view>

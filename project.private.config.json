@@ -84,6 +84,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "搜索",
+          "pathName": "pages/school/search/search",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

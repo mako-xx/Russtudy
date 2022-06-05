@@ -14,7 +14,8 @@
     "pages/school/oneschool/faculty/faculty",
     "pages/school/oneschool/preparatory/preparatory",
     "pages/school/oneschool/rank/rank",
-    "pages/school/oneprogram/programs"
+    "pages/school/oneprogram/programs",
+    "pages/school/search/search"
   ],
   "tabBar": {
     "custom": true,

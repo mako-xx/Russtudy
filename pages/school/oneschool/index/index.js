@@ -9,37 +9,7 @@ Page({
     gridCol: 3,
     titlepos: false,
     cardCur: 0,
-    iconList: [{
-      icon: 'writefill',
-      color: 'red',
-      badge: 0,
-      name: '预科室'
-    }, {
-      icon: 'group_fill',
-      color: 'orange',
-      badge: 0,
-      name: '院系'
-    }, {
-      icon: 'locationfill',
-      color: 'yellow',
-      badge: 0,
-      name: '宿舍'
-    }, {
-      icon: 'skin',
-      color: 'olive',
-      badge: 0,
-      name: '留学环境'
-    }, {
-      icon: 'upstagefill',
-      color: 'cyan',
-      badge: 0,
-      name: '历年排名'
-    }, {
-      icon: 'sort',
-      color: 'blue',
-      badge: 100,
-      name: '教育项目'
-    }],
+    iconList: [],
     swiperList: [{
       id: 0,
       type: 'image',
@@ -197,6 +167,61 @@ Page({
         break;
       }
     }
+    var lab = school.labnav;
+    var prepare = lab["准备"];
+    var facu = lab["院系"];
+    var dorm = lab["宿舍"];
+    var condition = lab["留学生环境条件"];
+    var rank = 1;
+    var programs = lab["教育项目"];
+    var iconList = [{
+      icon: 'writefill',
+      color: 'red',
+      badge: 0,
+      name: '预科室',
+      type: prepare
+    }, {
+      icon: 'group_fill',
+      color: 'orange',
+      badge: 0,
+      name: '院系',
+      type: facu
+    }, {
+      icon: 'locationfill',
+      color: 'yellow',
+      badge: 0,
+      name: '宿舍',
+      type: dorm
+    }, {
+      icon: 'skin',
+      color: 'olive',
+      badge: 0,
+      name: '留学环境',
+      type: condition
+    }, {
+      icon: 'upstagefill',
+      color: 'cyan',
+      badge: 0,
+      name: '历年排名',
+      type: rank
+    }, {
+      icon: 'sort',
+      color: 'blue',
+      badge: 100,
+      name: '教育项目',
+      type: programs
+    }]
+    var count = 0;
+    for (var i = 0; i < iconList.length; i++) {
+      if (iconList[i].type == 1) count++;
+    }
+    if (count == 4)
+      this.setData({
+        gridCol: 2
+      })
+    this.setData({
+      iconList: iconList
+    })
     var iflove = this.data.collections.schools.indexOf(school._id)
     if (iflove == -1) iflove = 0
     else iflove = 1
@@ -207,7 +232,6 @@ Page({
     if (school)
       wx.setStorageSync("school", school)
     console.log(this.data.school);
-
   },
   onLoad(options) {
     wx.showLoading({
@@ -270,25 +294,23 @@ Page({
       }, 1000)
     })
   },
-  onPageScroll: function (e) {
-    var that = this
-    this.setData({
-      scrollTop: e.scrollTop
-    })
-    let query = wx.createSelectorQuery()
-    query.select('#main-title').boundingClientRect((rect) => {
-      let top = rect.top
-      console.log("top", typeof (top), typeof ((app.globalData.ktxStatusHeight + app.globalData.navigationHeight)))
-      var titlepos = false
-      if (top < (app.globalData.ktxStatusHeight + app.globalData.navigationHeight))
-        titlepos = true
-      console.log("tit", titlepos)
-      that.setData({
-        titlepos: titlepos
-      })
+  // onPageScroll: function (e) {
+  //   var that = this
+  //   this.setData({
+  //     scrollTop: e.scrollTop
+  //   })
+  //   let query = wx.createSelectorQuery()
+  //   query.select('#main-title').boundingClientRect((rect) => {
+  //     let top = rect.top
+  //     var titlepos = false
+  //     if (top < (app.globalData.ktxStatusHeight + app.globalData.navigationHeight))
+  //       titlepos = true
+  //     that.setData({
+  //       titlepos: titlepos
+  //     })
 
-    }).exec()
-  },
+  //   }).exec()
+  // },
   back() {
     wx.navigateBack({
       delta: 1
