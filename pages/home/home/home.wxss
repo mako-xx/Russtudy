@@ -2,6 +2,14 @@
 .page {
   background-color:white;
 }
+
+
+.blank{
+  z-index: 40;
+  position: relative;
+  top: 20rpx;
+  height: 50rpx;
+}
 .card {
   background-color: white;
   display: flex;

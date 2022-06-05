@@ -65,10 +65,22 @@
           "scene": null
         },
         {
-          "name": "",
-          "pathName": "pages/my/my",
           "name": "onepro",
           "pathName": "pages/school/oneprogram/programs",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/home/home/home",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/home/home",
           "query": "",
           "launchMode": "default",
           "scene": null

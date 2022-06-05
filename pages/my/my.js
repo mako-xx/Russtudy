@@ -13,7 +13,7 @@ Page({
     citycollection: {},
     collegecollection: {},
     programecollection: {},
-    showModal: true,
+    showModal: false,
     iflogin: false,
     holder: '请输入欲修改的姓名'
   },

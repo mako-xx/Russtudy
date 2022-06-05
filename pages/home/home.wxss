@@ -1,6 +1,10 @@
 /* pages/home/home/home.wxss */
+.back {
+  background-image: linear-gradient(to top, #d3d3d3, #dedede, #e9e9e9, #f4f4f4, #ffffff);
+}
 
 .row{
+  background-color: #d3d3d3;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -79,12 +83,14 @@ justify-items: center;
 }
 .clouds{
   margin-top:320rpx; 
+  background-color: transparent;
 }
 .yun1{
   width:340rpx;
   height: 200rpx;
   z-index: 10;
   animation: cloud1 5s infinite;
+  background-color: transparent;
 }
 .yun2{
   width:170rpx;

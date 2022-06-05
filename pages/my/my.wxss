@@ -30,7 +30,7 @@ page {
 	background-color: transparent;
 	width: 150rpx;
 	height: auto;
-	color: white;
+	color: black;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -198,8 +198,8 @@ page {
 	border-radius: 25rpx;
 	border-width: 8rpx;
 	border-style: solid;
-	border-color: grey;
-	background-color: whitesmoke;
+	border-color: white;
+	background-color: white;
 	width: 650rpx;
 	position: relative;
 	bottom: 50rpx;
@@ -217,7 +217,6 @@ page {
 	width: 300;
 	font-size: 25px;
 	font-weight: 800;
-	color: grey;
 }
 
 .collection-item-text {
@@ -247,8 +246,8 @@ page {
 	border-radius: 25rpx;
 	border-width: 8rpx;
 	border-style: solid;
-	border-color: grey;
-	background-color: whitesmoke;
+	border-color: white;
+	background-color: white;
 	width: 650rpx;
 	position: relative;
 	bottom: 40rpx;

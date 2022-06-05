@@ -1,1 +1,4 @@
 /* pages/life/life.wxss */
+page{
+  background-color: lightblue;
+}
