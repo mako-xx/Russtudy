@@ -1,0 +1,11 @@
+<view class="head" style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
+    <view class="titles">
+        <view class="title">
+            KeLi
+        </view>
+        <view class="sudtitle">
+            在俄罗斯留学
+        </view>
+    </view>
+</view>
+<view class="blank" style="height:{{HeadBar}}rpx;"></view>

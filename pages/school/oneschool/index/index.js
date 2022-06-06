@@ -9,36 +9,7 @@ Page({
     gridCol: 3,
     titlepos: false,
     cardCur: 0,
-    iconList: [],
-    swiperList: [{
-      id: 0,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
-    }, {
-      id: 1,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
-    }, {
-      id: 2,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
-    }, {
-      id: 3,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
-    }, {
-      id: 4,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
-    }, {
-      id: 5,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg'
-    }, {
-      id: 6,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
-    }],
+    iconList: []
   },
   dataprocess() {
     var school = this.data.school;
@@ -311,11 +282,6 @@ Page({
 
   //   }).exec()
   // },
-  back() {
-    wx.navigateBack({
-      delta: 1
-    })
-  },
   clicklabel(e) {
     console.log(e)
     var labels = this.data.labels;
@@ -388,24 +354,6 @@ Page({
     })
     wx.setStorageSync("collections", collections)
     console.log(collections)
-  },
-  onUnload() {
-    // var pages = getCurrentPages();
-    // var schoolcollections = this.data.collections.schools;
-    // if (pages.length > 1) {
-    //   var prevPage = pages[pages.length - 2];
-    //   var info = prevPage.data;
-    //   var simpleschools = info.simpleschools
-    //   for (var i = 0; i < simpleschools.length; i++) {
-    //     if (schoolcollections.indexOf(simpleschools[i].id) != -1) simpleschools[i].ifcollected = 1;
-    //     else simpleschools[i].ifcollected = 0;
-    //   }
-    //   prevPage.setData({
-    //     iffrash: 0,
-    //     simpleschools: simpleschools,
-    //     collections: this.data.collections
-    //   })
-    // }
   },
   gridchange: function (e) {
     this.setData({

@@ -91,6 +91,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "一个城市",
+          "pathName": "pages/life/onecity/onecity",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "生活首页",
+          "pathName": "pages/life/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

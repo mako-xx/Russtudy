@@ -38,6 +38,8 @@ Page({
       HeadBar: HeadBar,
       ShowHeight: ShowHeight
     })
+  },
+  onLoad() {
     this.towerSwiper('swiperList');
     var that = this;
     this.setData({
