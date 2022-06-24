@@ -50,9 +50,11 @@
     <view class="content" style="height:100%;width:60%;margin:auto;padding: 30rpx;">
       <view class="desc" style="height:100%;width:50%;margin:auto">
         <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large"> 选学校</view>
-        <view class="text-content" style="height:auto;"> 多维搜索，精确定位</view>
+        <view class="text-content"
+          style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 多维搜索，精确定位</view>
         <view class="margin-tb-sm text-center" style="height:25%;">
-          <button class="cu-btn round" bindtap="chooseschool">点击进入</button>
+          <button class="cu-btn round" bindtap="chooseschool"
+            style="font-family:‘Times New Roman’, Times, serif;">点击进入</button>
         </view>
       </view>
     </view>
@@ -68,9 +70,12 @@
     <view class="content" style="height:100%;width:60%;margin:auto;padding: 30rpx;">
       <view class="desc" style="height:100%;width:50%;margin:auto">
         <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large"> 挑专业</view>
-        <view class="text-content" style="height:auto;"> 3000余项专业，超大范围供您选择</view>
+        <view class="text-content"
+          style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 3000余项专业，超大范围供您选择
+        </view>
         <view class="margin-tb-sm text-center" style="height:25%;">
-          <button class="cu-btn round" bindtap="choosesubject">点击进入</button>
+          <button class="cu-btn round" bindtap="choosesubject"
+            style="font-family:‘Times New Roman’, Times, serif;">点击进入</button>
         </view>
       </view>
     </view>
@@ -92,7 +97,7 @@
     <view class="radius bg-white shadow-blur text-center padding-sm" style="height:250rpx">
       <image class="" src="../../../image/icons/test.png" style="height:160rpx" mode="aspectFit">
       </image>
-      <view class="margin-top-sm text-lg">
+      <view class="margin-top-sm text-lg" style="font-family:‘Courier New’, Courier, monospace;font-weight: 600;">
         留学自测
       </view>
     </view>
@@ -101,7 +106,7 @@
     <view class="bg-white shadow-blur text-center padding-sm" style="height:250rpx">
       <image class="" src="../../../image/icons/artificial.png" style="height:160rpx" mode="aspectFit">
       </image>
-      <view class="margin-top-sm text-lg">
+      <view class="margin-top-sm text-lg" style="font-family:‘Courier New’, Courier, monospace;font-weight: 600;">
         智能推荐
       </view>
     </view>
@@ -110,7 +115,7 @@
     <view class="bg-white shadow-blur text-center padding-sm" style="height:250rpx" bindtap="choosesearch">
       <image class="" src="../../../image/icons/search.png" style="height:160rpx" mode="aspectFit">
       </image>
-      <view class="margin-top-sm text-lg">
+      <view class="margin-top-sm text-lg" style="font-family:‘Courier New’, Courier, monospace;font-weight: 600;">
         精确查找
       </view>
     </view>
@@ -119,7 +124,7 @@
     <view class="bg-white shadow-blur text-center padding-sm" style="height:250rpx" bindtap="clickquestion">
       <image class="" src="../../../image/icons/ask.png" style="height:160rpx" mode="aspectFit">
       </image>
-      <view class="margin-top-sm text-lg">
+      <view class="margin-top-sm text-lg" style="font-family:‘Courier New’, Courier, monospace;font-weight: 600;">
         留学咨询
       </view>
     </view>
