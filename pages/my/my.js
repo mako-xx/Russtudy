@@ -297,13 +297,13 @@ exit() {
 switchcity() {
   getApp().globalData.ifcollectcity = 1
   wx.switchTab({
-    url: '../city/city'
+    url: '../life/index/index'
   });
 },
 switchschool() {
   getApp().globalData.ifcollectschool = 1
   wx.switchTab({
-    url: '../school/school'
+    url: '../school/index/school'
   });
 },
 switchprogram() {
