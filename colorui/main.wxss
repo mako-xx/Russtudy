@@ -1551,6 +1551,7 @@ button.icon.lg {
 	padding: 20rpx 10rpx
 }
 
+.cu-list.grid.col-2>.cu-item:nth-child(2n):after,
 .cu-list.grid.col-3>.cu-item:nth-child(3n):after,
 .cu-list.grid.col-4>.cu-item:nth-child(4n):after,
 .cu-list.grid.col-5>.cu-item:nth-child(5n):after {

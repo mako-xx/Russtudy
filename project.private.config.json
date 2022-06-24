@@ -72,22 +72,22 @@
           "scene": null
         },
         {
-          "name": "",
-          "pathName": "pages/home/home/home",
+          "name": "搜索",
+          "pathName": "pages/school/search/search",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
-          "name": "",
-          "pathName": "pages/home/home",
+          "name": "一个城市",
+          "pathName": "pages/life/onecity/onecity",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
-          "name": "",
-          "pathName": "pages/my/contact/contact",
+          "name": "生活首页",
+          "pathName": "pages/life/index/index",
           "query": "",
           "launchMode": "default",
           "scene": null

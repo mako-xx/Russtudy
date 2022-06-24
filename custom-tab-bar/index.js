@@ -83,7 +83,10 @@ Component({
         "pagePath": "pages/school/index/school",
         "text": "学校"
       }, {
-        "pagePath": "pages/life/life",
+        "pagePath": "pages/application/index/index",
+        "text": "申请"
+      }, {
+        "pagePath": "pages/life/index/index",
         "text": "生活"
       }, {
         "pagePath": "pages/my/my",

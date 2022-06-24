@@ -1,0 +1,81 @@
+<view class="head" style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
+  <view class="titles">
+    <view class="title">
+      KeLi
+    </view>
+    <view class="sudtitle">
+      在俄罗斯留学
+    </view>
+  </view>
+  <view class=""
+    style="height:auto;width:100%;position:absolute;font-size:40rpx;display:flex;justify-content:center;bottom:10rpx">
+    城市信息
+  </view>
+</view>
+<view class="blank" style="height:{{HeadBar}}rpx;"></view>
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-shadeTop" style="height:{{0}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' id="main-back" open-type="navigateBack" delta="1" hover-class="none"
+      wx:if="{{!modalName}}" style="height:auto;position: absolute;top:{{HeadBar+30}}rpx;color:black;z-index: 2;">
+      <text class='cuIcon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{0}}px;'>Tab索引</view>
+  </view>
+</view>
+<view class="bg-white text-center myTxtCenter text-lg text-bold"
+  style="height:{{backheight}}rpx;width:100%;position:fixed;z-index: 10;top:{{HeadBar}}rpx" wx:if="{{true}}">
+  {{city.name}}
+</view>
+<view class="" style="height:{{backheight}}rpx">
+
+</view>
+<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
+  autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{city.pics}}" wx:key>
+    <image src="{{item}}" mode="aspectFill"></image>
+  </swiper-item>
+</swiper>
+
+<view class="text bg-white padding-sm"
+  style="{{item.kind=='big'?'font-weight:600;margin:10rpx 0 10rpx 0': (item.kind!='blank'?'text-indent:2em; ':'')}}">
+  {{city.describe}}
+</view>
+<view class="labelHome bg-white padding-sm " style="display: flex;flex-direction: column;margin:0">
+  <view class="labelLine" style="">
+    <view class="cu-capsule round" wx:for="{{city.info}}" wx:key style="grid-column-start: span 1;">
+      <view class="cu-tag bg-green ">
+        {{item.label}}
+      </view>
+      <view class="cu-tag line-green">
+        {{item.num}}
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="blank"></view>
+
+<view class="cu-bar bg-white margin-top solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>详细信息
+  </view>
+</view>
+<block wx:for="{{city.text}}">
+  <view class="textTitle bg-white text-orange padding-left padding-right padding-top}}"
+    style="font-size: larger;font-weight: 600;">
+    {{item.label}}
+  </view>
+  <view class="textBody bg-white  padding-left padding-right" wx:for="{{item.text}}" wx:key="this" wx:for-item="initem"
+    style="text-indent:2em;">
+    {{initem}}
+  </view>
+</block>
+<view class="blank"></view>
+
+<view class="myTxtCenter text-gray">
+  KeLi 赴俄留学小助手
+</view>
+<view class="myTxtCenter text-gray">
+  更多咨询，请联系135555555
+</view>
+<view class="blank"></view>

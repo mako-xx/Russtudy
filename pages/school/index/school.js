@@ -41,7 +41,34 @@ Page({
       HeadBar: HeadBar,
       ShowHeight: ShowHeight
     })
+  },
+  onLoad() {
     this.towerSwiper('swiperList');
+    var that = this;
+    this.setData({
+      interval: setInterval(function () {
+        console.log("interval in school 调用一次");
+        var schools = that.data.schools;
+        if (!schools) {
+          schools = wx.getStorageSync('schools');
+        }
+        that.setData({
+          schools: schools
+        })
+        if (that.data.schools) {
+          console.log("interval in school 调用完成", that.data.schools)
+          clearInterval(that.data.interval)
+        }
+      }, 1000)
+    })
+    let query = wx.createSelectorQuery()
+    query.select('#main-search').boundingClientRect((rect) => {
+      let height = rect.height * app.globalData.pxToRpxScale
+      var searchheight = height;
+      that.setData({
+        searchheight: searchheight
+      })
+    }).exec()
   },
   DotStyle(e) {
     this.setData({
@@ -108,6 +135,11 @@ Page({
         swiperList: list
       })
     }
+  },
+  choosesearch() {
+    wx.navigateTo({
+      url: "../search/search",
+    })
   },
   chooseschool() {
     wx.navigateTo({

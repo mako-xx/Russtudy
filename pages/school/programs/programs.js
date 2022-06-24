@@ -20,7 +20,7 @@ Page({
       mask: true  //开启蒙版遮罩
     });
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
-    var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight - app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
+    var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight) * app.globalData.pxToRpxScale;
     this.setData({
       HeadBar: HeadBar,
       ShowHeight: ShowHeight,
@@ -88,7 +88,7 @@ Page({
         console.log("interval2调用一次", that.data.mainheadheight)
         let query = wx.createSelectorQuery()
         query.select('#main-headscroll').boundingClientRect((rect) => {
-          var height = rect.height * app.globalData.pxToRpxScale;
+          var height = rect.height //* app.globalData.pxToRpxScale;
           that.setData({
             mainheadheight: height
           })
