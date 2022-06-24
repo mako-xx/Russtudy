@@ -27,7 +27,7 @@ Page({
   },
   life(){
     wx.switchTab({
-      url: '../life/life',
+      url: '../life/index/index',
     })
   },
   /**

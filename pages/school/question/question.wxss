@@ -32,7 +32,11 @@ button {
     border-radius: 20rpx;
 
 }
-
+.birthday {
+  color: black;
+  line-height: normal;
+  text-align: center;
+}
 .view_title {
     font-weight: bold;
     padding: 15rpx;

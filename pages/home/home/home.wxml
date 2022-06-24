@@ -52,5 +52,5 @@ style="height: auto; position: absolute; top: 15rpx; color: black; left: 38rpx">
   更多咨询，请联系135555555
 </view>
 </view>
-<view class="blank" style="width: 750rpx; height: 88rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></view>
+<view class="blank" style="width: 750rpx; height: 88rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx;"></view>
 </scroll-view>

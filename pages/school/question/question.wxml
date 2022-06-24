@@ -24,166 +24,134 @@
         </view>
     </view>
 </view>
-<view class="" style="height:{{HeadBar+50}}rpx;">
+<view class=""style="height:{{HeadBar+50}}rpx;">
+  <navigator class='action' open-type="navigateBack" delta="1" hover-class="none"
+  style="height: auto; position: absolute; top: 225rpx; color: black; left: -6rpx">
+  <text class='cuIcon-back'></text> 返回
+</navigator>
+
 
 </view>
-<text style="text-align: center;font-weight: bolder;padding-left: 15rpx;padding-right: 15rpx;">招标项目中标单位实施及相关工作情况反馈评价表
+<text style="font-size: medium; position: relative; left: 0rpx; top: 14rpx">亲爱的同学，您好！如果您对于留学方面抱有疑惑，可以完成这份调查问卷，我们将为您推荐最适合的学校以及专业！
 </text>
 
-
-
-<text style="font-size:medium;">亲爱的同学，您好！如果您对于留学方面抱有疑惑，可以完成这份调查问卷，我们将为您推荐最适合的学校以及专业！
-</text>
-<text style="text-indent: 2em;font-size: medium;color: #18222c;">如果您
-</text>
-<text style="text-indent: 2em;font-size: medium;color: #18222c;">请您对<text
-        style="text-decoration: underline;">{{pramgramname}}({{pramgramtime}})</text>项目做出评价。
-</text>
 
 <form bindsubmit="formSubmit_">
     <view class="radio_view">
-        <view class="view_title">1.您对招标采购的设备（或服务）质量是否满意？</view>
+        <view class="view_title">1.您的性别是：</view>
         <radio-group bindchange="change" data-temp="1" name="ans1">
             <label>
-                <radio value="0" />满意
+                <radio value="0" />男
             </label>
             <label>
-                <radio value="1" />较满意
+                <radio value="1" />女
             </label>
-            <label>
-                <radio value="2" />一般
-            </label>
-            <label>
-                <radio value="3" />不满意
-            </label>
-
         </radio-group>
-        <view wx:if="{{isShow1}}" style="padding-top: 10rpx;">
-            <view class="view_title">您不满意的原因是：</view>
-            <input bindinput="changeinput" data-temp="1_false" name="ans1_false" style="width:100%;height:400rpx"
-                placeholder="" />
-        </view>
+    </view>
+    <view class="radio_view">
+        <view class="view_title">2.你的出生日期？</view>
+        <radio-group bindchange="change" data-temp="2" name="ans2" style="width: 674rpx; height: 87rpx; display: block; box-sizing: border-box">
+          <input bindinput="changeinput" data-temp="age" name="age"
+          style="width:100%;height:50rpx;background-color: lightgray; border-radius: 20rpx;"
+          class="birthday"
+          placeholder="" />          
+        </radio-group>
+      
     </view>
 
     <view class="radio_view">
-        <view class="view_title">2.您对最终的中标价格是否满意？</view>
-        <radio-group bindchange="change" data-temp="2" name="ans2">
-            <label>
-                <radio value="0" />满意
-            </label>
-            <label>
-                <radio value="1" />较满意
-            </label>
-            <label>
-                <radio value="2" />一般
-            </label>
-            <label>
-                <radio value="3" />不满意
-            </label>
-
-        </radio-group>
-        <view wx:if="{{isShow2}}" style="padding-top: 10rpx;">
-            <view class="view_title">您不满意的原因是：</view>
-            <input bindinput="changeinput" data-temp="2_false" name="ans2_false" style="width:100%;height:400rpx"
-                placeholder="" />
-        </view>
-    </view>
-
-    <view class="radio_view">
-        <view class="view_title">3.您对中标单位的配合程度是否满意？</view>
+        <view class="view_title">3.您的学历是？</view>
         <radio-group bindchange="change" data-temp="3" name="ans3">
             <label>
-                <radio value="0" />满意
+                <radio value="0" />本科
             </label>
             <label>
-                <radio value="1" />较满意
+                <radio value="1" />研究生
             </label>
             <label>
-                <radio value="2" />一般
+                <radio value="2" />博士生
             </label>
-            <label>
-                <radio value="3" />不满意
-            </label>
-
         </radio-group>
-        <view wx:if="{{isShow3}}" style="padding-top: 10rpx;">
-            <view class="view_title">您不满意的原因是：</view>
-            <input bindinput="changeinput" data-temp="3_false" name="ans3_false" style="width:100%;height:400rpx"
-                placeholder="" />
-        </view>
+
     </view>
 
     <view class="radio_view">
-        <view class="view_title">4.您对中标单位的服务质量是否满意？</view>
+        <view class="view_title">4.您可接受的留学成本？(每年)</view>
         <radio-group bindchange="change" data-temp="4" name="ans4">
             <label>
-                <radio value="0" />满意
+                <radio value="0" />5万及以下
             </label>
             <label>
-                <radio value="1" />较满意
+                <radio value="1" />5万 ~ 7万
             </label>
             <label>
-                <radio value="2" />一般
+                <radio value="2" />7万 ~ 10万
             </label>
             <label>
-                <radio value="3" />不满意
+                <radio value="3" />10万及以上
             </label>
 
         </radio-group>
-        <view wx:if="{{isShow4}}" style="padding-top: 10rpx;">
-            <view class="view_title">您不满意的原因是：</view>
-            <input bindinput="changeinput" data-temp="4_false" name="ans4_false" style="width:100%;height:400rpx"
-                placeholder="" />
-        </view>
+
     </view>
 
     <view class="radio_view">
-        <view class="view_title">5.您对招采中心招标程序及效率是否满意？</view>
+        <view class="view_title">5.你希望选择的专业方向？</view>
         <radio-group bindchange="change" data-temp="5" name="ans5">
             <label>
-                <radio value="0" />满意
+                <radio value="0" />文科
             </label>
             <label>
-                <radio value="1" />较满意
+                <radio value="1" />理科
             </label>
             <label>
-                <radio value="2" />一般
+                <radio value="2" />工科
             </label>
             <label>
-                <radio value="3" />不满意
+                <radio value="3" />商科
             </label>
 
         </radio-group>
-        <view wx:if="{{isShow5}}" style="padding-top: 10rpx;">
-            <view class="view_title">您不满意的原因是：</view>
-            <input bindinput="changeinput" data-temp="5_false" name="ans5_false" style="width:100%;height:400rpx"
-                placeholder="" />
-        </view>
+
     </view>
 
     <view class="radio_view">
-        <view class="view_title">6.您对招采中心工作人员服务质量是否满意？</view>
+        <view class="view_title">6.您预计的留学时间？</view>
         <radio-group bindchange="change" data-temp="6" name="ans6">
             <label>
-                <radio value="0" />满意
+                <radio value="0" />2年或以下
             </label>
             <label>
-                <radio value="1" />较满意
+                <radio value="1" />3年
             </label>
             <label>
-                <radio value="2" />一般
+                <radio value="2" />4年
             </label>
             <label>
-                <radio value="3" />不满意
+                <radio value="3" />5年及以上
             </label>
 
         </radio-group>
-        <view wx:if="{{isShow6}}" style="padding-top: 10rpx;">
-            <view class="view_title">您不满意的原因是：</view>
-            <input bindinput="changeinput" data-temp="6_false" name="ans6_false" style="width:100%;height:400rpx"
-                placeholder="" />
-        </view>
+
     </view>
+    <view class="radio_view">
+      <view class="view_title">7.您以前是否有过留学经验？</view>
+      <radio-group bindchange="change" data-temp="7" name="ans7">
+          <label>
+              <radio value="0" />是
+          </label>
+          <label>
+              <radio value="1" />否
+          </label>
+  
+
+      </radio-group>
+      <view wx:if="{{isShow6}}" style="padding-top: 10rpx;">
+          <view class="view_title">您不满意的原因是：</view>
+          <input bindinput="changeinput" data-temp="6_false" name="ans6_false" style="width:100%;height:400rpx"
+              placeholder="" />
+      </view>
+  </view>
 
     <!-- <view class="radio_view">
         <view class="view_title">7.您对招标采购工作的合理化建议：(选填)</view>
