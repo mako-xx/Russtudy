@@ -1,4 +1,4 @@
-<view class="head" style="height:{{HeadBar}}rpx;position:relative">
+<view class="head" style="height:{{HeadBar}}rpx;position:fixed">
     <view class="titles">
         <view class="title">
             KeLi
@@ -12,7 +12,6 @@
         专业全览
     </view>
 </view>
-
 <view class='cu-custom'>
     <view class="cu-bar fixed bg-shadeTop" style="height:{{0}}px;padding-top:{{StatusBar}}px;">
         <navigator class='action' open-type="navigateBack" delta="1" hover-class="none" wx:if="{{!modalName}}"
@@ -48,7 +47,7 @@
 </view>
 
 
-<view class="VerticalBox" style="height:{{ShowHeight}}rpx">
+<view class="VerticalBox" style="height:{{ShowHeight}}rpx;margin-top:{{HeadBar}}rpx;position: fixed;">
     <!-- 左 -->
     <scroll-view class="VerticalNav nav padding-sm padding-left-0" scroll-y scroll-with-animation
         style="width:{{WinWidth*0.2}}rpx;margin-top:90rpx;">

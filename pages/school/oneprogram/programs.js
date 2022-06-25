@@ -26,33 +26,38 @@ Page({
       HeadBar: HeadBar,
       ShowHeight: ShowHeight
     })
-    var pages = getCurrentPages();   //当前页面
-    if (pages.length > 1) {
-      var prevPage = pages[pages.length - 2];   //上个页面
-      var program = prevPage.data.giveProgram
-      this.setData({
-        program: program,
-        backPic: "https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2dezuv331j30rs0ijtbr.jpg"
-      })
-      console.log(program);
-      this.dataprocess();
-      var ifcollect = this.ifcollect();
-      this.setData({
-        ifcollected: ifcollect
-      })
-    }
+
     var that = this;
     this.setData({
       interval: setInterval(function () {
         console.log("interval in oneprogram 调用一次");
-        var schools = that.data.schools;
-        if (!schools) {
-          schools = wx.getStorageSync('schools');
+        if (!that.data.schools || !that.data.collections) {
+          var schools = wx.getStorageSync('schools');
+          var collections = wx.getStorageSync('collections');
+          if (schools && collections) {
+            that.setData({
+              schools: schools,
+              collections: collections
+            })
+          }
         }
-        that.setData({
-          schools: schools,
-        })
-        if (that.data.schools) {
+
+        if (that.data.schools && that.data.collections) {
+          var pages = getCurrentPages();   //当前页面
+          if (pages.length > 1) {
+            var prevPage = pages[pages.length - 2];   //上个页面
+            var program = prevPage.data.giveProgram
+            that.setData({
+              program: program,
+              backPic: "https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2dezuv331j30rs0ijtbr.jpg"
+            })
+            console.log(program);
+            that.dataprocess();
+            var ifcollect = that.ifcollect();
+            that.setData({
+              ifcollected: ifcollect
+            })
+          }
           console.log("interval in classify oneprogram")
           clearInterval(that.data.interval)
         }
@@ -92,9 +97,32 @@ Page({
       ifcollected: ifcollected,
       ifupdata: 1
     })
+    var collections = this.data.collections;
+    if (ifcollected == 1) {
+      if (collections.programs.indexOf(this.data.program.index) == -1) {
+        collections.programs.push(this.data.program.index);
+        this.setData({
+          collections: collections
+        })
+        wx.setStorageSync("collections", collections);
+      }
+
+    } else if (ifcollected == 0) {
+      var _ = collections.programs.indexOf(this.data.program.index);
+      if (_ != -1) {
+        collections.programs[_] = collections.programs[collections.programs.length - 1];
+        collections.programs.pop();
+        this.setData({
+          collections: collections
+        })
+        wx.setStorageSync("collections", collections);
+      }
+    }
+    console.log(collections)
   },
   ifcollect() {
-    var collection = wx.getStorageSync("collections").programs;
+    console.log(this.data.collections)
+    var collection = this.data.collections.programs;
     var index = this.data.program.index;
     if (collection.indexOf(index) != -1)
       return 1;
@@ -102,6 +130,7 @@ Page({
   },
   dataprocess() {
     var program = this.data.program;
+    console.log(program);
     var block1labels = ["方向", "水平", "学习方式", "学习语言", "科目"]
     var block2labels = ["免费学习的可能性", "长度", "学习费用", "学习地点",]
     var block3labels = ["方案保管人", "电话", "E-mail"]
@@ -138,20 +167,20 @@ Page({
       block3: block3
     })
   },
-  onUnload() {
-    if (this.data.ifupdata == 1) {
-      var pages = getCurrentPages();
-      console.log("len");
-      if (pages.length > 1) {
-        var prevPage = pages[pages.length - 2];
-        var info = prevPage.data;
-        console.log("onload", info);
-        console.log("prevPage", prevPage);
-        prevPage.directChange(this.data.ifcollected)
-      }
+  // onUnload() {
+  //   if (this.data.ifupdata == 1) {
+  //     var pages = getCurrentPages();
+  //     console.log("len");
+  //     if (pages.length > 1) {
+  //       var prevPage = pages[pages.length - 2];
+  //       var info = prevPage.data;
+  //       console.log("onload", info);
+  //       console.log("prevPage", prevPage);
+  //       prevPage.directChange(this.data.ifcollected)
+  //     }
 
-    }
-  },
+  //   }
+  // },
   switch(e) {
     var name = e.currentTarget.dataset.name;
     var schools = this.data.schools;

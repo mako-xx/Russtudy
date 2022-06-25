@@ -10,7 +10,7 @@ Page({
     citylist: [{ "name": "全部", "checked": true }, { "name": "莫斯科", "checked": false }, { "name": "圣彼得堡", "checked": false }, { "name": "喀山", "checked": false }, { "name": "符拉迪沃斯托克", "checked": false }],
     toplist: [{ "name": "全部", "index": 0 }, { "name": "商科", "index": 1 }, { "name": "工科", "index": 2 }, { "name": "理科", "index": 3 }, { "name": "文科", "index": 4 }],
     // src: ['https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e188mpn7j30rs0ijn1l.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e187stc7j30ws0kathf.jpg', 'https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e18a31bsj31kw11ykjl.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e188bymfj313d0mvwiq.jpg'],
-    selectlist: [{ "name": "所在城市", "type": "1", "mode": "sel_city" }, { "name": "所在学校", "type": "1", "mode": "sel_sch" }, { "name": "学习方向", "type": "1", "mode": "sel_dir" }, { "name": "科目", "type": "1", "mode": "sel_sub" }, { "name": "学习方式", "type": "1", "mode": "sel_way" }, { "name": "学习语言", "type": "1", "mode": "sel_lau" }],
+    selectlist: [{ "name": "所在城市", "type": 1, "mode": "sel_city" }, { "name": "所在学校", "type": 1, "mode": "sel_sch" }, { "name": "学习方向", "type": 1, "mode": "sel_dir" }, { "name": "科目", "type": 1, "mode": "sel_sub" }, { "name": "学习方式", "type": 1, "mode": "sel_way" }, { "name": "学习语言", "type": 1, "mode": "sel_lau" }, { "name": "我的收藏", "type": 1, "mode": "sel_col" }],
     load: true
   },
   onLoad(options) {
@@ -48,11 +48,13 @@ Page({
           var allprograms2 = wx.getStorageSync('programs2');
           var allprograms3 = wx.getStorageSync('programs3');
           var schools = wx.getStorageSync("schools");
-          if (allprograms1 && allprograms2 && allprograms3 && schools) {
+          var collections = wx.getStorageSync("collections");
+          if (allprograms1 && allprograms2 && allprograms3 && schools && collections) {
             that.setData({
               allprograms1: allprograms1,
               schools: schools,
-              showprograms: []
+              showprograms: [],
+              collections: collections
             })
             that.setData({
               allprograms2: allprograms2,
@@ -63,7 +65,7 @@ Page({
             that.setselect(allprograms1.concat(allprograms2).concat(allprograms3))
           }
 
-          if (that.data.allprograms1 && that.data.allprograms2 && that.data.allprograms3) {
+          if (that.data.allprograms1 && that.data.allprograms2 && that.data.allprograms3 && that.data.collections) {
             console.log("interval in programs调用结束");
             that.beginprocess();
             that.initcitylabels();
@@ -431,15 +433,19 @@ Page({
   },
   hideModal(e) {
     var mode = this.data.mode;
-    var type = this.updateSel(mode);
-    if (type == -1) {
-      wx.showToast({
-        "title": "请勾选至少一项",
-        "icon": "error",
-        duration: 2000
-      })
-      return
+    if (this.data.modalName) {
+      var type = this.updateSel(mode);
+      if (type == -1) {
+        wx.showToast({
+          "title": "请勾选至少一项",
+          "icon": "error",
+          duration: 2000
+        })
+        return
+      }
     }
+
+
     wx.showLoading({  // 显示加载中loading效果 
       title: "加载中",
       mask: true  //开启蒙版遮罩
@@ -510,6 +516,12 @@ Page({
       this.setData({
         languagelist: this.data.sel_list
       })
+    } else if (mode == 'sel_col') {
+      var selectlist = this.data.selectlist;
+      selectlist[6].type = 1 - selectlist[6].type;
+      this.setData({
+        selectlist: selectlist
+      })
     }
     this.repick();
     wx.hideLoading();
@@ -547,6 +559,11 @@ Page({
       this.setData({
         sel_list: this.data.languagelist
       })
+    } else if (mode == 'sel_col') {
+      this.setData({
+        modalName: null,
+      })
+      this.hideModal();
     }
   },
   clickcheck(e) {
@@ -685,18 +702,19 @@ Page({
     const subjectlist = this.data.subjectlist;
     const schoollist = this.data.schoollist;
     const languagelist = this.data.languagelist;
+    const collections = this.data.collections;
+    const collpros = collections.programs;
+    const ifshowcol = selectlist[6].type;
+    console.log(selectlist, ifshowcol)
     for (var i = 0; i < allprograms.length; i++) {
       var infos = allprograms[i].info;
+
       var conform = 1;
       // //根据收藏状态筛选
-      // if (this.data.collectLib) {
-      //   var checkcollect = 0;
-      //   if (this.data.collection.programs.indexOf(allprograms[i].index) != -1) {
-      //     checkcollect = 1;
-      //   }
+      if (!ifshowcol) {
 
-      //   if (checkcollect == 0) continue;
-      // }
+        if (collpros.indexOf(allprograms[i].index) == -1) continue;
+      }
       //对学习方式进行筛选
       conform = 0;
       for (var y = 1; y < learnwaylist.length; y++) {
@@ -761,7 +779,6 @@ Page({
         }
       }
       if (conform == 0) { continue; }
-
       selectedprograms.push(allprograms[i])
     }
     this.setselect(selectedprograms)

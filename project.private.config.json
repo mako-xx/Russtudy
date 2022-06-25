@@ -93,8 +93,8 @@
           "scene": null
         },
         {
-          "name": "问卷",
-          "pathName": "pages/school/question/question",
+          "name": "申请",
+          "pathName": "pages/application/index/index",
           "query": "",
           "launchMode": "default",
           "scene": null
