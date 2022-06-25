@@ -9,29 +9,28 @@
   </view>
 </view>
 <scroll-view scroll-y="true"style="height:{{ShowHeight}}rpx;"  class="bg-gray">
+  <view class="triangleD" style="position: relative; left: -604rpx; top: -24rpx">
+
+  </view>
   <view class="login">
-    <image class="login-bg" style="z-index: 0; width: 750rpx; height: 483rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"
-      src="">
-    </image>
+
     <view class="ava-nick">
-      <image  class="cu-avatar.xl" src='{{avatarUrl}}' style="position: relative; left: 0rpx; top: -60rpx"></image>
-      <view class="nickname" bindtap="changeNickname" style="position: relative; left: 0rpx; top: -30rpx">
+      <image  class="cu-avatar.xl" src='{{avatarUrl}}' style="position: relative; left: 0rpx; top: -1200rpx"></image>
+      <view class="nickname" bindtap="changeNickname" style="position: relative; left: 0rpx; top: -1200rpx">
         {{nickname}}
       </view>
     </view>
     <view class="ligin-bu">
-      <button class="cu-btn.round" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" bindtap="login" style="position: relative; top: -60rpx; left: -175rpx" >
+      <button class="cu-btn.round" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" bindtap="login" style="position: relative; top: -1200rpx; left: -175rpx" >
    
       </button>
     </view>
   </view>
-  <view class="collection" style="position: relative; left: 50rpx; top: -114rpx">
+  <view class="collection" style="position: relative; left: 50rpx; top: -1314rpx">
     <view class="collection-2">
       <text class=" text-bold text-blue collection-text" >收藏</text>
       <text class="text-ABC text-blue  text-bold " style="position: absolute; left: -30rpx; top: 47rpx; opacity:0.5">collection</text>
-      <image class="collection-hart-icon"
-        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/收藏12 1.png" style="position: relative; left: 74rpx; top: 1rpx; width: 94rpx; height: 92rpx; display: block; box-sizing: border-box">
-      </image>
+      
     </view>
     <view class="collection-3">
       <button class="collection-item" bindtap="switchcity">
@@ -57,7 +56,7 @@
     </view>
   </view>
 
-  <view class="detail" style="position: relative; left: 50rpx; top: -46rpx">
+  <view class="detail" style="position: relative; left: 50rpx; top: -1224rpx">
     <button class="bdetail">
       <image class="idetail"
         src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/关于我们1 1.png">

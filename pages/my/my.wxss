@@ -99,6 +99,15 @@ page {
   border-radius: 12rpx;
   text-align: center;
 }
+.triangleD {
+  margin-right: 5rpx;
+  margin-top: 10rpx;
+  width: 0rpx;
+  height: 0rpx;
+  border-style: solid;
+  border-color: #333333 transparent transparent transparent;
+  border-width: 600rpx;
+}
 
 .holder_cls {
   color: #909399;
