@@ -17,7 +17,9 @@
 .btn-area {
     margin: 20rpx;
 }
-
+.age {
+  font-size: 40rpx;
+}
 button {
     margin: 10rpx 0;
     color: white;

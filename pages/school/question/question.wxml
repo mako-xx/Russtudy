@@ -39,37 +39,38 @@
 <form bindsubmit="formSubmit_">
     <view class="radio_view">
         <view class="view_title">1.您的性别是：</view>
-        <radio-group bindchange="change" data-temp="1" name="ans1">
+        <radio-group bindchange="change1" data-temp="1" name="sex">
             <label>
-                <radio value="0" />男
+                <radio value="男"/>男
             </label>
             <label>
-                <radio value="1" />女
+                <radio value="女"/>女
             </label>
         </radio-group>
     </view>
     <view class="radio_view">
-        <view class="view_title">2.你的出生日期？</view>
-        <radio-group bindchange="change" data-temp="2" name="ans2" style="width: 674rpx; height: 87rpx; display: block; box-sizing: border-box">
-          <input bindinput="changeinput" data-temp="age" name="age"
-          style="width:100%;height:50rpx;background-color: lightgray; border-radius: 20rpx;"
-          class="birthday"
-          placeholder="" />          
-        </radio-group>
+        <view class="view_title">2.你的年龄是？</view>
+        <view style="width: 674rpx; height: 87rpx; display: block; box-sizing: border-box;">
+          <picker mode="selector" value="{{AGEindex}}" bindchange="bindAgeChange" range="{{AGE}}" style="position: relative; left: 0rpx; top: 2rpx" name="age">
+            <view class="picker"  style="position: relative; left: 6rpx; top: 18rpx" class="age">           
+            当前选择是：{{AGE[AGEindex]}}
+            </view>           
+            </picker>      
+        </view>
       
     </view>
 
     <view class="radio_view">
         <view class="view_title">3.您的学历是？</view>
-        <radio-group bindchange="change" data-temp="3" name="ans3">
+        <radio-group bindchange="change3" data-temp="3" name="degree">
             <label>
-                <radio value="0" />本科
+                <radio value="本科" />本科
             </label>
             <label>
-                <radio value="1" />研究生
+                <radio value="研究生" />研究生
             </label>
             <label>
-                <radio value="2" />博士生
+                <radio value="博士生" />博士生
             </label>
         </radio-group>
 
@@ -77,18 +78,18 @@
 
     <view class="radio_view">
         <view class="view_title">4.您可接受的留学成本？(每年)</view>
-        <radio-group bindchange="change" data-temp="4" name="ans4">
+        <radio-group bindchange="change4" data-temp="4" name="cost">
             <label>
-                <radio value="0" />5万及以下
+                <radio value="5万及以下" />5万及以下
             </label>
             <label>
-                <radio value="1" />5万 ~ 7万
+                <radio value="5万 ~ 7万" />5万 ~ 7万
             </label>
             <label>
-                <radio value="2" />7万 ~ 10万
+                <radio value="7万 ~ 10万" />7万 ~ 10万
             </label>
             <label>
-                <radio value="3" />10万及以上
+                <radio value="10万及以上" />10万及以上
             </label>
 
         </radio-group>
@@ -97,18 +98,18 @@
 
     <view class="radio_view">
         <view class="view_title">5.你希望选择的专业方向？</view>
-        <radio-group bindchange="change" data-temp="5" name="ans5">
+        <radio-group bindchange="change5" data-temp="5" name="profession">
             <label>
-                <radio value="0" />文科
+                <radio value="文科" />文科
             </label>
             <label>
-                <radio value="1" />理科
+                <radio value="理科" />理科
             </label>
             <label>
-                <radio value="2" />工科
+                <radio value="工科" />工科
             </label>
             <label>
-                <radio value="3" />商科
+                <radio value="商科" />商科
             </label>
 
         </radio-group>
@@ -117,18 +118,18 @@
 
     <view class="radio_view">
         <view class="view_title">6.您预计的留学时间？</view>
-        <radio-group bindchange="change" data-temp="6" name="ans6">
+        <radio-group bindchange="change6" data-temp="6" name="duration">
             <label>
-                <radio value="0" />2年或以下
+                <radio value="2年或以下" />2年或以下
             </label>
             <label>
-                <radio value="1" />3年
+                <radio value="3年" />3年
             </label>
             <label>
-                <radio value="2" />4年
+                <radio value="4年" />4年
             </label>
             <label>
-                <radio value="3" />5年及以上
+                <radio value="5年及以上" />5年及以上
             </label>
 
         </radio-group>
@@ -136,20 +137,21 @@
     </view>
     <view class="radio_view">
       <view class="view_title">7.您以前是否有过留学经验？</view>
-      <radio-group bindchange="change" data-temp="7" name="ans7">
+      <radio-group bindchange="change7" data-temp="7" name="exp">
           <label>
-              <radio value="0" />是
+              <radio value="1"/>是
           </label>
           <label>
-              <radio value="1" />否
+              <radio value="0"/>否
           </label>
-  
-
       </radio-group>
-      <view wx:if="{{isShow6}}" style="padding-top: 10rpx;">
-          <view class="view_title">您不满意的原因是：</view>
-          <input bindinput="changeinput" data-temp="6_false" name="ans6_false" style="width:100%;height:400rpx"
-              placeholder="" />
+      <view wx:if="{{isShow7}}" style="padding-top: 10rpx;">
+          <view class="view_title">您的留学经历有几年？</view>
+          <picker mode="selector" value="{{EXPindex}}" bindchange="bindExpChange" range="{{EXP}}" style="position: relative; left: 0rpx; top: 2rpx; width: 674rpx; height: 93rpx; display: block; box-sizing: border-box" name="expAge">
+            <view class="picker"  style="position: relative; left: 6rpx; top: 18rpx" class="age">           
+            当前选择是：{{EXP[EXPindex]}}年
+            </view>           
+            </picker>  
       </view>
   </view>
 
@@ -165,7 +167,6 @@
 <view class="modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showModa2}}"></view>
 <view class="modal-dialog" wx:if="{{showModa2}}">
     <view class="modal-title1">感谢填写</view>
-
 
     <view class="modal-footer">
         <navigator class="btn-confirm1" target="miniProgram" open-type="exit">确定</navigator>
