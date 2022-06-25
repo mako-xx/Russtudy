@@ -105,6 +105,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "申请",
+          "pathName": "pages/application/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
