@@ -27,12 +27,18 @@ button {
 }
 
 .radio_view {
-    display: flex;
-    flex-direction: column;
-    margin: 40rpx;
-    background-color: rgb(253, 253, 253);
-    border-radius: 20rpx;
-
+  position: relative;
+  left: -40rpx;
+  top: -30rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 40rpx;
+  background-color: rgb(253, 253, 253);
+}
+.radio{
+  display: flex;
+  flex-direction: column;
 }
 .birthday {
   color: black;
@@ -42,15 +48,15 @@ button {
 .view_title {
     font-weight: bold;
     padding: 15rpx;
-    border-bottom-width: 2px;
+    border-bottom-width: 1px;
     border-bottom-style: groove;
+    border-bottom-color: rgb(255, 255, 255);
 }
 
 radio-group {
     display: flex;
     flex-direction: column;
     padding: 20rpx;
-
 }
 
 text {

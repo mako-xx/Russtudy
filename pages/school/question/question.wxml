@@ -26,20 +26,21 @@
 </view>
 <view class=""style="height:{{HeadBar+50}}rpx;">
   <navigator class='action' open-type="navigateBack" delta="1" hover-class="none"
-  style="height: auto; position: absolute; top: 225rpx; color: black; left: -6rpx">
+  style="height: 54rpx; position: absolute; top: 225rpx; color: black; left: -6rpx; width: 162rpx; display: block; box-sizing: border-box">
   <text class='cuIcon-back'></text> 返回
 </navigator>
 
 
 </view>
-<text style="font-size: medium; position: relative; left: 0rpx; top: 14rpx">亲爱的同学，您好！如果您对于留学方面抱有疑惑，可以完成这份调查问卷，我们将为您推荐最适合的学校以及专业！
+<text style="font-size: 50rpx; position: relative; left: 91rpx; top: -31rpx; color: rgb(63, 134, 241); font-weight: 600">
+  俄罗斯留学智能推荐问卷
 </text>
 
 
 <form bindsubmit="formSubmit_">
     <view class="radio_view">
         <view class="view_title">1.您的性别是：</view>
-        <radio-group bindchange="change1" data-temp="1" name="sex">
+        <radio-group bindchange="change1" data-temp="1" name="sex" class="radio">
             <label>
                 <radio value="男"/>男
             </label>
@@ -53,7 +54,7 @@
         <view style="width: 674rpx; height: 87rpx; display: block; box-sizing: border-box;">
           <picker mode="selector" value="{{AGEindex}}" bindchange="bindAgeChange" range="{{AGE}}" style="position: relative; left: 0rpx; top: 2rpx" name="age">
             <view class="picker"  style="position: relative; left: 6rpx; top: 18rpx" class="age">           
-            当前选择是：{{AGE[AGEindex]}}
+            当前选择是：{{AGE[AGEindex]}}岁
             </view>           
             </picker>      
         </view>
@@ -62,7 +63,7 @@
 
     <view class="radio_view">
         <view class="view_title">3.您的学历是？</view>
-        <radio-group bindchange="change3" data-temp="3" name="degree">
+        <radio-group bindchange="change3" data-temp="3" name="degree" class="radio">
             <label>
                 <radio value="本科" />本科
             </label>
@@ -78,7 +79,7 @@
 
     <view class="radio_view">
         <view class="view_title">4.您可接受的留学成本？(每年)</view>
-        <radio-group bindchange="change4" data-temp="4" name="cost">
+        <radio-group bindchange="change4" data-temp="4" name="cost" class="radio">
             <label>
                 <radio value="5万及以下" />5万及以下
             </label>
@@ -98,7 +99,7 @@
 
     <view class="radio_view">
         <view class="view_title">5.你希望选择的专业方向？</view>
-        <radio-group bindchange="change5" data-temp="5" name="profession">
+        <radio-group bindchange="change5" data-temp="5" name="profession" class="radio">
             <label>
                 <radio value="文科" />文科
             </label>
@@ -118,7 +119,7 @@
 
     <view class="radio_view">
         <view class="view_title">6.您预计的留学时间？</view>
-        <radio-group bindchange="change6" data-temp="6" name="duration">
+        <radio-group bindchange="change6" data-temp="6" name="duration" class="radio">
             <label>
                 <radio value="2年或以下" />2年或以下
             </label>
@@ -137,7 +138,7 @@
     </view>
     <view class="radio_view">
       <view class="view_title">7.您以前是否有过留学经验？</view>
-      <radio-group bindchange="change7" data-temp="7" name="exp">
+      <radio-group bindchange="change7" data-temp="7" name="exp" class="radio">
           <label>
               <radio value="1"/>是
           </label>
