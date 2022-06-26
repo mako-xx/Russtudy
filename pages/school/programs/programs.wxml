@@ -86,11 +86,11 @@
                                 <view class="text-grey oneline" style="color:#996179;display: -webkit-box;">
                                     {{item.name}}
                                 </view>
-                                <view class="text-gray text-sm {{topIndex?'oneline':'twoline'}}">
+                                <view class="text-gray text-sm oneline">
                                     {{item.schoolname}}{{item.level?'/':''}}{{item.level}}
                                 </view>
-                                <view class="text-gray text-sm" wx:if="{{topIndex}}">
-                                    综合排名：{{item.rank}}
+                                <view class="text-gray text-sm">
+                                    综合排名：{{sub+1}}
                                 </view>
                             </view>
                             <view class="radius fr padding-sm shadow-blur myTxtCenter"

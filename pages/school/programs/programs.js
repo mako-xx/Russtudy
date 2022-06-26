@@ -119,12 +119,12 @@ Page({
   },
   setselect(selectedprograms) {
     var len = selectedprograms.length;
-    for (var i = 0; i < len; i++) {
-      selectedprograms[i].rank = selectedprograms[i].schoolrank + parseInt(Math.random() * (20 + 2) - 2)
-      while (selectedprograms[i].rank <= 0) selectedprograms[i].rank = selectedprograms[i].schoolrank + parseInt(Math.random() * (4 + 3) - 3);
-    }
+    // for (var i = 0; i < len; i++) {
+    //   selectedprograms[i].rank = selectedprograms[i].schoolrank + parseInt(Math.random() * (20 + 2) - 2)
+    //   while (selectedprograms[i].rank <= 0) selectedprograms[i].rank = selectedprograms[i].schoolrank + parseInt(Math.random() * (4 + 3) - 3);
+    // }
 
-    selectedprograms.sort(function (a, b) { return a.rank - b.rank })
+    // selectedprograms.sort(function (a, b) { return a.rank - b.rank })
     var one = parseInt(len / 3);
     var two = parseInt((2 * len) / 3);
     var selectedprograms1 = selectedprograms.slice(0, one);
