@@ -15,7 +15,7 @@ function initData(that) {
   msgList = [{
       speaker: 'server',
       contentType: 'text',
-      content: '这里是中俄留学小助手客服，请输入你想问的问题'
+      content: '这里是中俄留学小助手，请输入你想问的问题'
     }
   ]
   that.setData({
@@ -40,13 +40,18 @@ Page({
    */
   data: {
     scrollHeight: '100vh',
-    inputBottom: 0
+    inputBottom: 0,
+    message: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log(options.message_)
+    this.setData({
+      message:options.message_
+    })
     initData(this);
     var collection=wx.getStorageSync("collections")
     console.log("res",collection.openid)

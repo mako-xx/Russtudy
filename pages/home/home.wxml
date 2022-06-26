@@ -35,13 +35,13 @@
  <text class="btext">
  为什么选择俄罗斯
  </text>
- <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/russia.png"class="bimage"></image>
+ <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/russia.png"class="bimage" style="width: 130rpx; height: 130rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
 </view>
 <view class="button.yellow.rainbow" style="position: relative; left: -40rpx; top: -1830rpx">
   <text class="btext">
 如何学习俄语
   </text>
-  <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/book.png" class="bimage"></image>
+  <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/book.png" class="bimage" style="width: 130rpx; height: 130rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
 </view>
 </view>
 <view class="row">
@@ -49,13 +49,13 @@
   <text class="btext">
 俄罗斯的生活
   </text>
-  <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/life.png"class="bimage"></image>
+  <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/life.png"class="bimage" style="width: 130rpx; height: 130rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
 </view>
 <view class="button.green.rainbow" style="position: relative; left: -40rpx; top: -1722rpx" bindtap="college">
   <text class="btext">
 俄罗斯的高校
   </text>
-  <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/college.png"class="bimage"></image>
+  <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/college.png"class="bimage" style="width: 130rpx; height: 130rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
 </view>
 </view>
 </view>

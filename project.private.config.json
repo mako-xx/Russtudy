@@ -105,6 +105,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/school/oneprogram/programs",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

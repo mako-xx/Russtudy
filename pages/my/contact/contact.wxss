@@ -48,3 +48,17 @@ input {
   border-radius: 10rpx;
   z-index: 10;
 }
+.info{
+  display: inline-block;
+  margin: 20rpx auto;
+  font-size: 24rpx;
+  padding: 8rpx 12rpx;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 6rpx;
+  color: var(--white);
+  max-width: 400rpx;
+  line-height: 1.4;
+  position: relative;
+  left: 150rpx;
+  width: 45%;
+}

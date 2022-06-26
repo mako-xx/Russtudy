@@ -2250,7 +2250,8 @@ button.icon.lg {
 	border-radius: 6rpx;
 	color: var(--white);
 	max-width: 400rpx;
-	line-height: 1.4;
+  line-height: 1.4;
+  position: relative;
 }
 
 /* ==================

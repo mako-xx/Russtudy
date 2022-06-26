@@ -19,7 +19,7 @@ Page({
   },
   kefu(){
     wx.navigateTo({
-      url: '../my/contact/contact',
+      url: '../my/contact/contact?message_="这里是客服联系界面，如果有相关问题可以进行询问。"',
     })
   },
   holder_disappear(){
