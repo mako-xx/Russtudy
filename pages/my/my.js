@@ -82,7 +82,7 @@ Page({
     wx.setStorageSync('collections', _user);
     onslotchange.log("finish")
   },
-  //登录按钮兼头像更换
+  // //登录按钮兼头像更换
   onChooseAvatar(e) {
     console.log("获取头像", e)
     //获取头像
@@ -105,7 +105,6 @@ Page({
       }
     })
   },
-
   async login() {
     var nickname
     var avatarUrl
@@ -114,6 +113,7 @@ Page({
         desc: '用于完善用户资料',
       });
       nickname = info.userInfo.nickName
+      console.log("nicename", nickname)
       avatarUrl = info.userInfo.avatarUrl
     } else {
       var collection = wx.getStorageSync("collections")
@@ -158,8 +158,8 @@ Page({
           console.log("open", that.data.openid);
           var collection = wx.getStorageSync("collections")
           collection.openid = that.data.openid;
-          if (nickname)
-            collection.nickname = nickname;
+          // if (nickname)
+          //   collection.nickname = nickname;
           if (!collection) {
             collection.citys = [];
             collection.schools = [];
@@ -187,12 +187,14 @@ Page({
         }
         else if (!res.data.length == 0) {
           console.log(res)
+          var nick = res.data[0].nickname;
+          if (!nick) nick = nickname;
           that.setData({
             citys: res.data[0].citycollection,
             schools: res.data[0].collegecollection,
             programs: res.data[0].programecollection,
             avatarurl: res.data[0].avatarurl,
-            nickname: res.data[0].nickname,
+            nickname: nickname,
           })
           console.log("nick", that.data.nickname);
           wx.setStorageSync('collections', {
@@ -264,6 +266,7 @@ Page({
               nickname: collection.nickname
             },
             success: function (res) {
+              console.log(collection)
               console.log("更新缓存成功")
             },
             fail: function (res) {
@@ -295,19 +298,16 @@ Page({
 
   },
   switchcity() {
-    getApp().globalData.ifcollectcity = 1
     wx.switchTab({
       url: '../life/index/index'
     });
   },
   switchschool() {
-    getApp().globalData.ifcollectschool = 1
-    wx.switchTab({
-      url: '../school/index/school'
+    wx.navigateTo({
+      url: '../school/classify/classify?lookcollect=1'
     });
   },
   switchprogram() {
-    getApp().globalData.collectLib = 1
     wx.redirectTo({
       url: '../programs/programs'
     });

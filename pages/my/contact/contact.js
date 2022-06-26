@@ -13,10 +13,10 @@ function initData(that) {
   inputVal = '';
 
   msgList = [{
-      speaker: 'server',
-      contentType: 'text',
-      content: '这里是中俄留学小助手客服，请输入你想问的问题'
-    }
+    speaker: 'server',
+    contentType: 'text',
+    content: '这里是中俄留学小助手客服，请问您有什么想咨询的吗'
+  }
   ]
   that.setData({
     msgList,
@@ -46,12 +46,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     initData(this);
-    var collection=wx.getStorageSync("collections")
-    console.log("res",collection.openid)
+    var collection = wx.getStorageSync("collections")
+    console.log("res", collection.openid)
     this.setData({
-      cusHeadIcon:'cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/avatar/' + collection.openid + '.png'
+      cusHeadIcon: 'cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/avatar/' + collection.openid + '.png'
     });
 
   },
@@ -59,28 +59,28 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 获取聚焦
    */
-  focus: function(e) {
+  focus: function (e) {
     keyHeight = e.detail.height;
     this.setData({
       scrollHeight: (windowHeight - keyHeight) + 'px'
@@ -95,7 +95,7 @@ Page({
   },
 
   //失去聚焦(软键盘消失)
-  blur: function(e) {
+  blur: function (e) {
     this.setData({
       scrollHeight: '100vh',
       inputBottom: 0
@@ -109,7 +109,7 @@ Page({
   /**
    * 发送点击监听
    */
-  sendClick: function(e) {
+  sendClick: function (e) {
     msgList.push({
       speaker: 'customer',
       contentType: 'text',
@@ -127,7 +127,7 @@ Page({
   /**
    * 退回上一页
    */
-  toBackClick: function() {
+  toBackClick: function () {
     wx.navigateBack({})
   }
 

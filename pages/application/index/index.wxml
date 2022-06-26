@@ -28,6 +28,12 @@
     <swiper-item style="min-height:2000rpx">
         <scroll-view class="margin" scroll-x="false" scroll-y="true"
             style="height:{{WinHeight-titleheight-stepsheight-HeadBar}}rpx;width:auto;">
+            <view class="bg-white padding" style="text-indent:2em;font-weight: 600;">
+                挑选想去的学校，开启一段留学生活吧！
+            </view>
+            <view class="" style="height:15rpx">
+
+            </view>
             <view class='cu-bar solid-bottom bg-white'>
                 <view class='action'>
                     <text class='cuIcon-title text-green'></text> 我收藏的学校
@@ -80,10 +86,28 @@
 
                 <view class="cu-item solids-top" wx:for="{{showprograms}}" wx:key wx:for-index="sub">
                     <!-- <view class="cu-avatar round lg">1</view> -->
-                    <view class="cu-avatar round lg  shadow-blur"
+                    <!-- <view class="cu-avatar round lg  shadow-blur"
                         style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);left:10rpx;">
+                    </view> -->
+                    <view class="cu-avatar round lg  shadow-blur"
+                        style="background-image:url({{item.logo}});left:10rpx;">
                     </view>
-                    <view class="content">
+                    <view class="content"
+                        style="height: 100%; left: 114rpx; width: auto; position: absolute; top: 0rpx">
+
+                        <view class="text-grey text-sm oneline"
+                            style="color: #996179; display: -webkit-box; width: 264rpx; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
+                            {{item.name}}
+                        </view>
+                        <view class="text-gray text-sm" style="position: relative; left: 0rpx; top: 10rpx">
+                            {{item.schoolname}}{{item.level?'/':''}}{{item.level}}
+                        </view>
+                        <view class="text-gray text-sm"
+                            style="width: 264rpx; height: 42rpx; display: block; box-sizing: border-box">
+                            综合排名：{{item.rank}}
+                        </view>
+                    </view>
+                    <!-- <view class="content">
 
                         <view class="text-grey oneline" style="color:#996179;display: -webkit-box;">
                             {{item.name}}
@@ -94,10 +118,10 @@
                         <view class="text-gray text-sm">
                             综合排名：{{item.rank}}
                         </view>
-                    </view>
+                    </view> -->
                     <view class="radius fr padding-sm shadow-blur myTxtCenter margin-right"
                         style=" height:4em;width:4em;font-size: 20rpx;background-color: #ff08009f;color:#EDE3E0;right:10rpx"
-                        bindtap="learnmore" data-value="{{sub}}">
+                        bindtap="kefu" data-value="{{sub}}">
                         我要申请
                     </view>
                     <view class="radius fr padding-sm shadow-blur myTxtCenter"
@@ -132,18 +156,28 @@
             <view class="bg-white padding" style="">
                 你需要准备以下材料：
             </view>
-            <view class="bg-white padding-left padding-right">
-                <text class='cuIcon-title text-black'></text>关于学过的科目和成绩文件的复印件和俄文翻译件
+            <view class="bg-white padding" style="display: flex;flex-direction: row;">
+                <view class="" style="flex:2">
+                    <view class="">
+                        <text class='cuIcon-title text-black'></text>关于学过的科目和成绩文件的复印件和俄文翻译件
+                    </view>
+                    <view class="">
+                        <text class='cuIcon-title text-black'></text>填妥的申请表格 （由学校或者俄罗斯合作署提供）
+                    </view>
+                    <view class="">
+                        <text class='cuIcon-title text-black'></text>身份证复印件
+                    </view>
+                    <view class="">
+                        <text class='cuIcon-title text-black'></text>照片
+                    </view>
+                </view>
+                <view class="" style="flex:1">
+                    <image class="" src="../../../image//pics/form.png" mode="aspectFill">
+
+                    </image>
+                </view>
             </view>
-            <view class="bg-white padding-left padding-right">
-                <text class='cuIcon-title text-black'></text>填妥的申请表格 （由学校或者俄罗斯合作署提供）
-            </view>
-            <view class="bg-white padding-left padding-right">
-                <text class='cuIcon-title text-black'></text>身份证复印件
-            </view>
-            <view class="bg-white padding-left padding-right">
-                <text class='cuIcon-title text-black'></text>照片
-            </view>
+
 
             <view class="bg-white padding" style="text-indent:2em; color:red">
                 注意，1.所有文件必须翻译成俄文，并按照规定程序核证（公证或在使馆领事部）2.请找相关高校确定所需的资料清单与认证程序
@@ -174,7 +208,7 @@
             <view class="bg-white padding" style="text-indent:2em;color:red;margin-top:15rpx">
                 如果您是自己入学，您可以向大学国际部门的工作人员寻求每个阶段所需文件相关的信息。
             </view>
-            <view class="bg-white padding" style="text-indent:2em;color:red;">
+            <view class="bg-white padding padding-top-0" style="text-indent:2em;color:red;">
                 如果您参与奖学金名额竞争选择，您可以向中国的俄罗斯大使馆或者俄罗斯合作署代表处的工作人员寻求每个阶段所需文件相关的信息。
             </view>
             <view class="" style="height:250rpx">
@@ -211,8 +245,21 @@
                 </view>
             </view>
             <view class="bg-white padding" style="text-indent:2em; ">
-                每年在俄罗斯和国外组织举行十多个奥林匹克竞赛。 其中对于一些优胜者或者获奖者进入俄罗斯大学时，不需要进行考试或者享有特惠条款。 外国人也可以参加在俄罗斯举行的以及由大学的各种协会为他们专门举行的奥林匹克竞赛。
+                每年在俄罗斯和国外组织举行十多个奥林匹克竞赛。 其中对于一些优胜者或者获奖者进入俄罗斯大学时，不需要进行考试或者享有特惠条款。
             </view>
+            <view class="bg-white padding" style="display: flex;flex-direction: row;text-indent:2em;padding-top: 0;">
+                <view class="" style="flex:1">
+                    外国人也可以参加在俄罗斯举行的以及由大学的各种协会为他们专门举行的奥林匹克竞赛。
+                </view>
+                <view class="" style="flex:2">
+                    <image class="" src="../../../image/pics/aolin.png" mode="aspectFill">
+
+                    </image>
+                </view>
+            </view>
+
+
+
             <view class='cu-bar solid-bottom bg-white' style="margin-top:15rpx">
                 <view class='action'>
                     <text class='cuIcon-title text-green'></text> 测试
@@ -221,7 +268,7 @@
             <view class="bg-white padding" style="text-indent:2em; ">
                 许多俄罗斯高校单独或联合进行测试，其目的是选择有才能的外国学生。 为此，高校的代表前往不同的国家，或将课题发送给他的同事们进行测试。 对于在测试中，成绩突出的应届生，具有优先进入俄罗斯高校的资格。
             </view>
-            <view class="" style="height:200rpx">
+            <view class="" style="height:300rpx">
 
             </view>
         </scroll-view>
@@ -232,16 +279,26 @@
             <view class="bg-white padding" style="text-indent:2em;">
                 当您收到邀请函并办理完学生签证便完成了入学俄罗斯的最后一步
             </view>
-            <view class="bg-white padding-left padding-right" style="text-indent:2em; ">
-                持有俄罗斯免签证制度国家的应招生，进入其领土只需要出示护照。
-                （具有俄罗斯免签证制度国家的名单公布在俄罗斯外交部网站https://mid.ru/ru/上）。
+            <view class="" style="display:flex;flex-direction: row;">
+                <view class="bg-white padding" style="flex:2">
+                    <view class="" style="text-indent:2em; ">
+                        持有俄罗斯免签证制度国家的应招生，进入其领土只需要出示护照。
+                        （具有俄罗斯免签证制度国家的名单公布在俄罗斯外交部网站https://mid.ru/ru/上）。
+                    </view>
+                    <view class="" style="text-indent:2em; ">
+                        在其他情况下，进入俄罗斯境内，除了身份证明文件以外，还需要出示学生签证。
+                    </view>
+                    <view class=" padding-bottom" style="text-indent:2em; ">
+                        办理签证，您需要出示由俄罗斯外交部和俄罗斯联邦移民局签发的邀请函。
+                    </view>
+                </view>
+                <view class="bg-white padding" style="flex:1">
+                    <image class="" src="../../../image/pics/visa.png" mode="aspectFill">
+
+                    </image>
+                </view>
             </view>
-            <view class="bg-white padding-left padding-right" style="text-indent:2em; ">
-                在其他情况下，进入俄罗斯境内，除了身份证明文件以外，还需要出示学生签证。
-            </view>
-            <view class="bg-white padding-left padding-right padding-bottom" style="text-indent:2em; ">
-                办理签证，您需要出示由俄罗斯外交部和俄罗斯联邦移民局签发的邀请函。
-            </view>
+
             <view class="" style="height:15rpx">
 
             </view>
@@ -251,6 +308,14 @@
 
                 </image>
             </view>
+            <view class="" style="height:30rpx">
+
+            </view>
+            <button class=" bg-red lg">行动起来！</button>
+            <view class="" style="height:200rpx">
+
+            </view>
         </scroll-view>
+
     </swiper-item>
 </swiper>

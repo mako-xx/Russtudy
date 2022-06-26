@@ -8,6 +8,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/application/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/school/programs/programs",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

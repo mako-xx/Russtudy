@@ -30,13 +30,13 @@
 </swiper> -->
 <view class="VerticalBox">
     <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}"
-        style="height:{{ShowHeight-90}}rpx;margin-top:90rpx">
+        style="height:{{ShowHeight-HeadBar-90}}rpx;margin-top:90rpx">
         <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{list}}" wx:key bindtap='tabSelect'
             data-id="{{index}}">
             {{item.name}}
         </view>
     </scroll-view>
-    <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:{{ShowHeight}}rpx"
+    <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:{{ShowHeight-HeadBar}}rpx"
         bindscroll="VerticalMain" scroll-into-view="main-{{MainCur}}">
         <view class="padding-top " id="main-0">
             <view class="padding-top padding-lr">
