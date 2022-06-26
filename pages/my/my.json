@@ -1,10 +1,6 @@
 {
-<<<<<<< HEAD
-  "usingComponents": {}
-=======
   "component": true,
   "navigationStyle": "custom",
   "usingComponents": {},
   "disableScroll": true
->>>>>>> origin/branchwld
 }

@@ -1,40 +1,38 @@
-<<<<<<< HEAD
-<!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
-=======
-<view class="head"style="height:{{HeadBar}}rpx;">
+<view class="head" style="height:{{HeadBar}}rpx;">
   <view class="titles">
-      <view class="title">
-          KeLi
-      </view>
-      <view class="sudtitle">
-          副标题
-      </view>
+    <view class="title">
+      KeLi
+    </view>
+    <view class="sudtitle">
+      副标题
+    </view>
   </view>
 </view>
-<scroll-view scroll-y="true"style="height:{{ShowHeight}}rpx;"  class="bg-gray">
+<scroll-view scroll-y="true" style="height:{{ShowHeight}}rpx;" class="bg-gray">
   <view class="triangleD" style="position: relative; left: -604rpx; top: -24rpx">
 
   </view>
   <view class="login">
 
     <view class="ava-nick">
-      <image  class="cu-avatar.xl" src='{{avatarUrl}}' style="position: relative; left: 0rpx; top: -1200rpx"></image>
+      <image class="cu-avatar.xl" src='{{avatarUrl}}' style="position: relative; left: 0rpx; top: -1200rpx"></image>
       <view class="nickname" bindtap="changeNickname" style="position: relative; left: 0rpx; top: -1200rpx">
         {{nickname}}
       </view>
     </view>
     <view class="ligin-bu">
-      <button class="cu-btn.round" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" bindtap="login" style="position: relative; top: -1200rpx; left: -175rpx" >
-   
+      <button class="cu-btn.round" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" bindtap="login"
+        style="position: relative; top: -1200rpx; left: -175rpx">
+
       </button>
     </view>
   </view>
   <view class="collection" style="position: relative; left: 50rpx; top: -1314rpx">
     <view class="collection-2">
-      <text class=" text-bold text-blue collection-text" >收藏</text>
-      <text class="text-ABC text-blue  text-bold " style="position: absolute; left: -30rpx; top: 47rpx; opacity:0.5">collection</text>
-      
+      <text class=" text-bold text-blue collection-text">收藏</text>
+      <text class="text-ABC text-blue  text-bold "
+        style="position: absolute; left: -30rpx; top: 47rpx; opacity:0.5">collection</text>
+
     </view>
     <view class="collection-3">
       <button class="collection-item" bindtap="switchcity">
@@ -94,19 +92,21 @@
   </view>
 
   <view class="model" catchtouchmove='preventTouchMove' wx:if='{{showModal}}'></view>
-  <view class="modalDlg" catchtouchmove='preventTouchMove' wx:if='{{showModal}}' style="width: 678rpx; height: 444rpx; display: flex; box-sizing: border-box; left: -6rpx; top: 580rpx; position: fixed">
+  <view class="modalDlg" catchtouchmove='preventTouchMove' wx:if='{{showModal}}'
+    style="width: 678rpx; height: 444rpx; display: flex; box-sizing: border-box; left: -6rpx; top: 580rpx; position: fixed">
     <view class='windowRow'>
       <text class='userTitle'>修改姓名</text>
       <view class='back' bindtap='back'>返回</view>
     </view>
     <view style="width: 570rpx; height: 146rpx; display: flex; box-sizing: border-box" class='wishName'>
-      <input style="width: 566rpx; height: 90rpx; display: block; box-sizing: border-box" bindinput='wish_put' placeholder='{{holder}}' placeholder-class="holder_cls" class='wish_put' bindfocus="holder_disappear" 	bindblur="holder_appear"></input>
+      <input style="width: 566rpx; height: 90rpx; display: block; box-sizing: border-box" bindinput='wish_put'
+        placeholder='{{holder}}' placeholder-class="holder_cls" class='wish_put' bindfocus="holder_disappear"
+        bindblur="holder_appear"></input>
     </view>
     <view style="width:94%" class='wishbnt' bindtap='name'>确定</view>
   </view>
- 
+
 
 
 
 </scroll-view>
->>>>>>> origin/branchwld

@@ -1,11 +1,6 @@
 // pages/home/home.js
-<<<<<<< HEAD
-Page({
-
-=======
 const app = getApp()
-Page({ 
->>>>>>> origin/branchwld
+Page({
   /**
    * 页面的初始数据
    */
@@ -20,17 +15,17 @@ Page({
     }
   },
 
-  whyrussia(){
+  whyrussia() {
     wx.navigateTo({
       url: '../home/home/home',
     })
   },
-  college(){
+  college() {
     wx.switchTab({
       url: '../school/index/school',
     })
   },
-  life(){
+  life() {
     wx.switchTab({
       url: '../life/index/index',
     })
@@ -39,33 +34,29 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-<<<<<<< HEAD
-
-=======
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
     // var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight) * app.globalData.pxToRpxScale;
-    var windowHeight = (app.globalData.ktxWindowHeight-app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
+    var windowHeight = (app.globalData.ktxWindowHeight - app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
     var ShowHeight = windowHeight - HeadBar;
     this.setData({
       HeadBar: HeadBar,
       ShowHeight: ShowHeight
     })
-    
->>>>>>> origin/branchwld
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-   
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.tabBar() ;
+    this.tabBar();
   },
 
   /**
