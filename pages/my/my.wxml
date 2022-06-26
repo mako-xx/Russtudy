@@ -8,7 +8,7 @@
       </view>
   </view>
 </view>
-<scroll-view scroll-y="true"style="height:{{ShowHeight}}rpx;"  class="bg-gray">
+
   <view class="triangleD" style="position: relative; left: -604rpx; top: -24rpx">
 
   </view>
@@ -104,4 +104,3 @@
 
 
 
-</scroll-view>
