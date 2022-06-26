@@ -1,0 +1,78 @@
+/* pages/home/home.wxss */
+.page {
+  background-color:white;
+}
+
+
+.blank{
+  z-index: 40;
+  position: relative;
+  top: 20rpx;
+  height: 50rpx;
+}
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.text{
+  background-color:white;
+  width: 90%;
+  position: relative;
+  left: 40rpx;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  padding-bottom: 80rpx;
+}
+.mask{
+  height: 50rpx;
+  width:90%;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  background-color:white;
+  position: relative;
+  bottom: 50rpx;
+  left: 40rpx;
+}
+.home{
+  height: 700rpx;
+}
+.buttonarea{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  bottom: 250rpx;
+}
+.button{
+  height: 70rpx;
+  width: 300rpx;
+  border: 3rpx solid black;
+}
+.bgtitle{
+  font-size: 50rpx;
+  color: black;
+  position: relative;
+  bottom: 0rpx;
+  background-color: white;
+}
+.scv{
+  background-color: white;
+}
+.action{
+  z-index: 5;
+  height: 50rpx;
+  font-size: 35rpx;
+}
+.texttile{
+  font-size: large;
+  font-weight: 600;
+  color: coral;
+  margin-bottom: 10rpx;
+  height: 40rpx;
+  margin-top: 15rpx;
+  margin-bottom: 20rpx;
+}
+
+
+
+

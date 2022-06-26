@@ -8,6 +8,10 @@
     "pages/application/index/index",
     "pages/my/my",
     "pages/school/index/school",
+<<<<<<< HEAD
+=======
+    "pages/home/home/home",
+>>>>>>> origin/branchwld
     "pages/school/programs/programs",
     "pages/school/question/question",
     "pages/school/oneschool/condition/condition",
@@ -16,6 +20,7 @@
     "pages/school/oneschool/preparatory/preparatory",
     "pages/school/oneschool/rank/rank",
     "pages/school/oneprogram/programs",
+    "pages/my/contact/contact",
     "pages/school/search/search"
   ],
   "tabBar": {

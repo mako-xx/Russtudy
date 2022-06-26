@@ -1,71 +1,38 @@
-// pages/home/home.js
-<<<<<<< HEAD
+// pages/home/home/home.js
+const app = getApp()
 Page({
 
-=======
-const app = getApp()
-Page({ 
->>>>>>> origin/branchwld
   /**
    * 页面的初始数据
    */
   data: {
 
   },
-  tabBar() {
-    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
-      this.getTabBar().setData({
-        selected: 0
-      })
-    }
-  },
 
-  whyrussia(){
-    wx.navigateTo({
-      url: '../home/home/home',
-    })
-  },
-  college(){
-    wx.switchTab({
-      url: '../school/index/school',
-    })
-  },
-  life(){
-    wx.switchTab({
-      url: '../life/index/index',
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-<<<<<<< HEAD
-
-=======
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
-    // var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight) * app.globalData.pxToRpxScale;
-    var windowHeight = (app.globalData.ktxWindowHeight-app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
-    var ShowHeight = windowHeight - HeadBar;
+    var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight - app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
     this.setData({
       HeadBar: HeadBar,
       ShowHeight: ShowHeight
     })
-    
->>>>>>> origin/branchwld
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-   
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.tabBar() ;
+
   },
 
   /**

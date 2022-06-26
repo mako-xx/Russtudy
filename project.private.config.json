@@ -37,6 +37,7 @@
           "scene": null
         },
         {
+<<<<<<< HEAD
           "name": "",
           "pathName": "pages/school/question/question",
           "query": "",
@@ -44,6 +45,8 @@
           "scene": null
         },
         {
+=======
+>>>>>>> origin/branchwld
           "name": "一个学校首页",
           "pathName": "pages/school/oneschool/index/index",
           "query": "",
@@ -109,6 +112,13 @@
         {
           "name": "申请",
           "pathName": "pages/application/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/school/question/question",
           "query": "",
           "launchMode": "default",
           "scene": null
