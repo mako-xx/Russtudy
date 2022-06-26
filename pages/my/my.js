@@ -308,8 +308,8 @@ Page({
     });
   },
   switchprogram() {
-    wx.redirectTo({
-      url: '../programs/programs'
+    wx.navigateTo({
+      url: '../school/programs/programs?lookcollect=1'
     });
   },
   /**

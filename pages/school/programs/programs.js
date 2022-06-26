@@ -72,10 +72,19 @@ Page({
             that.initcitylabels();
             that.initdirectionlabels();
             that.initotherlabels();
+            if (options.lookcollect == 1) {
+              var selectlist = that.data.selectlist;
+              selectlist[6].type = 0;
+              that.setData({
+                selectlist: selectlist
+              })
+            }
             if (school_id) {
               that.changeschoollabels(school_id);
               that.repick();
-            } else
+            } else if (options.lookcollect == 1)
+              that.repick();
+            else
               that.pushMore();
             console.log("interval in  programs完成数据处理");
             that.setData({
