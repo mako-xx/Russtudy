@@ -11,11 +11,19 @@ Page({
     // src: ['https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e188mpn7j30rs0ijn1l.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e187stc7j30ws0kathf.jpg', 'https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e18a31bsj31kw11ykjl.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e188bymfj313d0mvwiq.jpg'],
     load: true
   },
-  onLoad() {
+  onLoad(option) {
     wx.showLoading({
       title: '加载中...',
       mask: true,
     });
+    console.log("op", option)
+    if (option.lookcollect == 1) {
+      console.log("yes");
+      this.setData({
+        MainCur: 4,//跳到收藏夹
+        TabCur: 4
+      })
+    }
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
     var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight) * app.globalData.pxToRpxScale;
     this.setData({
@@ -51,6 +59,13 @@ Page({
           that.getCommendList();
           that.getHeatList();
           that.getCollectList();
+          if (option.lookcollect == 1) {
+            console.log("yes");
+            that.setData({
+              MainCur: 4,//跳到收藏夹
+              TabCur: 4
+            })
+          }
           wx.hideLoading();
           clearInterval(that.data.interval)
         }

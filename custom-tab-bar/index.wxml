@@ -14,6 +14,7 @@
   </view>
   <view class="action {{selected === 3 ? 'active' : 'default'}}" data-index="3" bindtap="switchTab">
     <view class="cuIcon-cart">
+
     </view>
     生活
   </view>

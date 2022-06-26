@@ -90,7 +90,7 @@
                                     {{item.schoolname}}{{item.level?'/':''}}{{item.level}}
                                 </view>
                                 <view class="text-gray text-sm">
-                                    综合排名：{{item.rank}}
+                                    综合排名：{{sub+1}}
                                 </view>
                             </view>
                             <view class="radius fr padding-sm shadow-blur myTxtCenter"

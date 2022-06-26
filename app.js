@@ -37,7 +37,7 @@ App({
         // 状态栏的高度
         let ktxStatusHeight = res.statusBarHeight;
         // 导航栏的高度
-        let navigationHeight = 65;
+        let navigationHeight = 44;
         // window的宽度
         let ktxWindowWidth = res.windowWidth;
         // window的高度
@@ -62,7 +62,7 @@ App({
 
 
 
-
+    var that = this;
     const schvalue = wx.getStorageSync('schools')
     var schools = schvalue
     if (!schools) {
@@ -85,7 +85,7 @@ App({
         })
     }
 
-
+    schools.sort(function (a, b) { return a.qsdome - b.qsdome });
     const provalue1 = wx.getStorageSync('programs1')
     var programs1 = provalue1
     if (!programs1) {
@@ -103,15 +103,26 @@ App({
               if (schools[index].name == schname) break;
             }
             var rank = schools[index].qsdome;
+            var relativerank = parseInt(index / 5) + 1;
             for (var j = 0; j < prs.length; j++) {
               prs[j].schoolrank = rank;
+              prs[j].relativerank = relativerank;
+              var max = 2 * relativerank > 8 ? 2 * relativerank : 8;
+              var move = that.randn_bm() * max - max / 2;
+              prs[j].fakerank = relativerank - move;
+              if (prs[j].fakerank < 0) prs[j].fakerank = relativerank + move;
+              // if (relativerank <= 2) prs[j].fakerank = prs[j].fakerank + that.randn_bm() * 4.3;
+              // console.log(prs[j].fakerank)
             }
             programs1 = programs1.concat(prs)
           }
 
           console.log("programs1完成", programs1);
-          wx.setStorageSync('programs1', programs1)
+          // wx.setStorageSync('programs1', programs1)
+          that.globalData.programs1 = programs1;
         })
+    } else {
+      that.globalData.programs1 = programs1
     }
 
     const provalue2 = wx.getStorageSync('programs2')
@@ -131,14 +142,25 @@ App({
               if (schools[index].name == schname) break;
             }
             var rank = schools[index].qsdome;
+            var relativerank = parseInt(index / 5) + 1;
             for (var j = 0; j < prs.length; j++) {
               prs[j].schoolrank = rank;
+              prs[j].relativerank = relativerank;
+              var max = 2 * relativerank > 8 ? 2 * relativerank : 8;
+              var move = that.randn_bm() * max - max / 2;
+              prs[j].fakerank = relativerank - move;
+              if (prs[j].fakerank < 0) prs[j].fakerank = relativerank + move;
+              // if (relativerank <= 2) prs[j].fakerank = prs[j].fakerank + that.randn_bm() * 4.3;
+              // console.log(prs[j].fakerank)
             }
             programs2 = programs2.concat(prs)
           }
           console.log("programs2完成", programs2);
-          wx.setStorageSync('programs2', programs2)
+          // wx.setStorageSync('programs2', programs2)
+          that.globalData.programs2 = programs2;
         })
+    } else {
+      that.globalData.programs2 = programs2
     }
 
     const provalue3 = wx.getStorageSync('programs3')
@@ -158,16 +180,32 @@ App({
               if (schools[index].name == schname) break;
             }
             var rank = schools[index].qsdome;
+            var relativerank = parseInt(index / 5) + 1;
             for (var j = 0; j < prs.length; j++) {
               prs[j].schoolrank = rank;
+              prs[j].relativerank = relativerank;
+              var max = 2 * relativerank > 8 ? 2 * relativerank : 8;
+              var move = that.randn_bm() * max - max / 2;
+              prs[j].fakerank = relativerank - move;
+              if (prs[j].fakerank < 0) prs[j].fakerank = relativerank + move;
+              // if (relativerank <= 2) prs[j].fakerank = prs[j].fakerank + that.randn_bm() * 4.3;
+              // console.log(prs[j].fakerank)
             }
             programs3 = programs3.concat(prs)
           }
           console.log("programs3完成", programs3);
-          wx.setStorageSync('programs3', programs3)
+          // wx.setStorageSync('programs3', programs3)
+          that.globalData.programs3 = programs3;
         })
+    } else {
+      that.globalData.programs3 = programs3
     }
 
+    that.globalData.intervalID = setInterval(that.process, 1000)
+
+
+
+    console.log(allprograms)
     const citvalue = wx.getStorageSync('citys')
     var citys = citvalue
     if (!citys) {
@@ -247,15 +285,42 @@ App({
       console.log("出错", e)// Do something when catch error
     }
   },
-  getProgramDatas(db) {
-    var value;
-    var allprograms;
-    db.collection("programs").get()
-      .then(res => {
-        value = res
-        allprograms = value.data[0].programs
-        console.log("allpro", allprograms);
-        wx.setStorageSync('programs', allprograms)
-      })
+  // getProgramDatas(db) {
+  //   var value;
+  //   var allprograms;
+  //   db.collection("programs").get()
+  //     .then(res => {
+  //       value = res
+  //       allprograms = value.data[0].programs
+  //       console.log("allpro", allprograms);
+  //       wx.setStorageSync('programs', allprograms)
+  //     })
+  // },
+  randn_bm() {
+    let u = 0, v = 0;
+    while (u === 0) u = Math.random(); //Converting [0,1) to (0,1)
+    while (v === 0) v = Math.random();
+    let num = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+    num = num / 10.0 + 0.5; // Translate to 0 -> 1
+    if (num > 1 || num < 0) return randn_bm() // resample between 0 and 1
+    return num
+  },
+  process() {
+    console.log("interval in app调用一次");
+    // console.log(this.globalData.programs1)
+    if (this.globalData.programs1 && this.globalData.programs2 && this.globalData.programs3) {
+      var allprograms = this.globalData.programs1.concat(this.globalData.programs2).concat(this.globalData.programs3);
+      allprograms = allprograms.sort(function (a, b) { return a.fakerank - b.fakerank })
+      console.log('allprograms', allprograms);
+      var allprograms1 = allprograms.slice(0, parseInt(allprograms.length / 3));
+      var allprograms2 = allprograms.slice(parseInt(allprograms.length / 3), parseInt(allprograms.length * 2 / 3));
+      var allprograms3 = allprograms.slice(parseInt(allprograms.length * 2 / 3), allprograms.length);
+      wx.setStorageSync('programs1', allprograms1)
+      wx.setStorageSync('programs2', allprograms2)
+      wx.setStorageSync('programs3', allprograms3)
+      console.log("interval in app调用结束");
+
+      clearInterval(this.globalData.intervalID);
+    }
   }
 })

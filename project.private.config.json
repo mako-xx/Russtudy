@@ -1,23 +1,24 @@
 {
-  "projectname": "Russtudy",
-  "setting": {
-    "compileHotReLoad": true,
-    "urlCheck": false
-  },
-  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
   "condition": {
     "miniprogram": {
       "list": [
         {
           "name": "",
-          "pathName": "pages/home/home",
+          "pathName": "pages/school/index/school",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "pages/school/classify/classify",
+          "pathName": "pages/application/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/school/programs/programs",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -28,92 +29,9 @@
           "query": "",
           "launchMode": "default",
           "scene": null
-        },
-        {
-          "name": "一个学校首页",
-          "pathName": "pages/school/oneschool/index/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "准备",
-          "pathName": "pages/school/oneschool/preparatory/preparatory",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "院系",
-          "pathName": "pages/school/oneschool/faculty/faculty",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "排名",
-          "pathName": "pages/school/oneschool/rank/rank",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "宿舍",
-          "pathName": "pages/school/oneschool/dorm/dorm",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "onepro",
-          "pathName": "pages/school/oneprogram/programs",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "搜索",
-          "pathName": "pages/school/search/search",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "一个城市",
-          "pathName": "pages/life/onecity/onecity",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "生活首页",
-          "pathName": "pages/life/index/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "申请",
-          "pathName": "pages/application/index/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/school/question/question",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/school/oneprogram/programs",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
         }
       ]
     }
-  }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html"
 }

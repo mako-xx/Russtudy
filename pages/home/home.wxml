@@ -1,26 +1,29 @@
-<view class="head"style="height:{{HeadBar}}rpx;">
+<view class="head" style="height:{{HeadBar}}rpx;">
   <view class="titles">
-      <view class="title">
-          KeLi
-      </view>
-      <view class="sudtitle">
-          副标题
-      </view>
+    <view class="title">
+      KeLi
+    </view>
+    <view class="sudtitle">
+      副标题
+    </view>
   </view>
 </view>
 <view class="back">
-<view class="clouds">
-  <image animation="{{animationCloudData}}"  class="yun1" 
-  src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png" style="position: relative; left: 352rpx; top: 381rpx; opacity: 0.5"></image>
-</view>
-<view class="clouds">
-  <image animation="{{animationCloudData}}"  class="yun2" 
-  src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png" style="position: relative; left: 118rpx; top: -394rpx; opacity: 0.5"></image>
-</view>
-<view class="clouds">
-  <image animation="{{animationCloudData}}"  class="yun3" 
-  src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png" style="position: relative; left: 100rpx; top: -234rpx; opacity: 0.5"></image>
-</view>
+  <view class="clouds">
+    <image animation="{{animationCloudData}}" class="yun1"
+      src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png"
+      style="position: relative; left: 352rpx; top: 381rpx; opacity: 0.5"></image>
+  </view>
+  <view class="clouds">
+    <image animation="{{animationCloudData}}" class="yun2"
+      src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png"
+      style="position: relative; left: 118rpx; top: -394rpx; opacity: 0.5"></image>
+  </view>
+  <view class="clouds">
+    <image animation="{{animationCloudData}}" class="yun3"
+      src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png"
+      style="position: relative; left: 100rpx; top: -234rpx; opacity: 0.5"></image>
+  </view>
 
 <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/home.jpg" style="position: relative; left: 0rpx; top: -1422rpx; width: 750rpx; height: 483rpx; display: inline-block; box-sizing: border-box">
 </image>

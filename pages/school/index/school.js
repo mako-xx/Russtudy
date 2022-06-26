@@ -29,14 +29,11 @@ Page({
       })
     }
   },
-  
 
   onShow() {
     this.tabBar();
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
-    // var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight) * app.globalData.pxToRpxScale;
-    var windowHeight = (app.globalData.ktxWindowHeight-app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
-    var ShowHeight = windowHeight - HeadBar;
+    var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight) * app.globalData.pxToRpxScale;
     this.setData({
       HeadBar: HeadBar,
       ShowHeight: ShowHeight
