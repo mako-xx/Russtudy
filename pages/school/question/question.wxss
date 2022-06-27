@@ -40,6 +40,10 @@ button {
   display: flex;
   flex-direction: column;
 }
+.checkbox{
+  display: flex;
+  flex-direction: column;
+}
 .birthday {
   color: black;
   line-height: normal;

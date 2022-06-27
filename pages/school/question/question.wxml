@@ -101,21 +101,186 @@
         <view class="view_title">5.你希望选择的专业方向？</view>
         <radio-group bindchange="change5" data-temp="5" name="profession" class="radio">
             <label>
-                <radio value="文科" />文科
+                <radio value="文科"/>文科
             </label>
             <label>
-                <radio value="理科" />理科
+                <radio value="理科"/>理科
             </label>
             <label>
-                <radio value="工科" />工科
+                <radio value="工科"/>工科
             </label>
             <label>
-                <radio value="商科" />商科
+                <radio value="商科"/>商科
             </label>
-
+            <label>
+                <radio value="体育"/>体育
+            </label>
         </radio-group>
+        <view wx:if="{{isShow_Gong}}" style="padding-top: 10rpx;">
+          <view class="view_title">你希望选择的专业是？</view>
+          <checkbox-group bindchange="changeG" data-temp="8" name="gong" class="checkbox">
+            <label>
+                <checkbox value="信息安全" />信息安全
+            </label>
+            <label>
+                <checkbox value="信息学和计算机技术" />信息学和计算机技术
+            </label>
+            <label>
+                <checkbox value="电子、无线电技术和通讯系统" />电子、无线电技术和通讯系统
+            </label>
+            <label>
+                <checkbox value="建筑学" />建筑学
+            </label>           
+            <label>
+                <checkbox value="工程系统管理" />工程系统管理
+            </label>            
+            <label>
+                <checkbox value="光电，仪器仪表，光电和生物技术系统和技术" />光电，仪器仪表，光电和生物技术系统和技术
+            </label>
+            <label>
+                <checkbox value="地面交通技术和工艺学" />地面交通技术和工艺学
+            </label>
+            <label>
+                <checkbox value="航空和火箭和空间技术" />航空和火箭和空间技术
+            </label>
+            <label>
+                <checkbox value="物理技术科学和工艺学" />物理技术科学和工艺学
+            </label>
+            <label>
+                <checkbox value="核能与核技术" />核能与核技术
+            </label>
+            <label>
+                <checkbox value="化学技术" />化学技术
+            </label>
+            <label>
+                <checkbox value="工业生态与生物技术" />工业生态与生物技术
+            </label>
+            <label>
+                <checkbox value="机械制造" />机械制造
+            </label>
+            <label>
+                <checkbox value="工艺领域安全和自然设备安装" />工艺领域安全和自然设备安装
+            </label>
+            <label>
+                <checkbox value="电力和热力工程学" />电力和热力工程学
+            </label>
+            <label>
+                <checkbox value="计算机和信息学" />计算机和信息学
+            </label>
+            <label>
+                <checkbox value="纳米技术和纳米材料" />纳米技术和纳米材料
+            </label>
+            <label>
+                <checkbox value="应用地质学、矿业、石油天然气业和测量学" />应用地质学、矿业、石油天然气业和测量学
+            </label>
+            <label>
+                <checkbox value="材料工艺学" />材料工艺学
+            </label>
+            <label>
+                <checkbox value="航空导航和火箭和空间技术操作" />航空导航和火箭和空间技术操作
+            </label>
+            <label>
+                <checkbox value="农业，林业和渔业" />农业，林业和渔业
+            </label>
+            <label>
+                <checkbox value="基础医学" />基础医学
+            </label>
+            </checkbox-group>
+            </view>
+        <view wx:if="{{isShow_Li}}" style="padding-top: 10rpx;">
+          <view class="view_title">你希望选择的专业是？</view>
+          <checkbox-group bindchange="changeL" data-temp="9" name="li" class="checkbox">
+            <label>
+              <checkbox value="数学和力学" />数学和力学
+            </label>
+            <label>
+              <checkbox value="心理科学" />心理科学
+            </label>
+            <label>
+              <checkbox value="教育和师范科学" />教育和师范科学
+            </label>
+            <label>
+              <checkbox value="物理学和天文学" />物理学和天文学
+            </label>
+            <label>
+              <checkbox value="化学" />化学
+            </label>
+            <label>
+              <checkbox value="生物科学" />生物科学
+            </label>            
+          </checkbox-group>
+        </view>
+        <view wx:if="{{isShow_Wen}}" style="padding-top: 10rpx;">
+          <view class="view_title">你希望选择的专业是？</view>
+          <checkbox-group bindchange="changeW" data-temp="10" name="wen" class="checkbox">
+            <label>
+              <checkbox value="法律学" />法律学
+            </label>
+            <label>
+              <checkbox value="语言学和文艺学" />语言学和文艺学
+            </label>
+            <label>
+              <checkbox value="历史学和考古学" />历史学和考古学
+            </label>
+            <label>
+              <checkbox value="政治学和区域学" />政治学和区域学
+            </label>
+            <label>
+              <checkbox value="媒体和出版业" />媒体和出版业
+            </label>
+            <label>
+              <checkbox value="美术和应用艺术" />美术和应用艺术
+            </label>
+            <label>
+              <checkbox value="社会学和社会工作" />社会学和社会工作
+            </label>
+            <label>
+              <checkbox value="哲学、伦理学和宗教学" />哲学、伦理学和宗教学
+            </label>
+            <label>
+              <checkbox value="教育和师范科学" />教育和师范科学
+            </label>
+            <label>
+              <checkbox value="心理科学" />心理科学
+            </label>
+            <label>
+              <checkbox value="文化学和社会文化计划" />文化学和社会文化计划
+            </label>
+            <label>
+              <checkbox value="艺术史" />艺术史
+            </label>
+            <label>
+              <checkbox value="神学" />神学
+            </label>
+          </checkbox-group>
+        </view>
 
-    </view>
+        <view wx:if="{{isShow_Shang}}" style="padding-top: 10rpx;">
+          <view class="view_title">你希望选择的专业是？</view>
+          <checkbox-group bindchange="changeS" data-temp="11" name="shang" class="checkbox">
+            <label>
+              <checkbox value="经济和管理" />经济和管理
+            </label>
+            <label>
+              <checkbox value="服务和旅游" />服务和旅游
+            </label>
+          </checkbox-group>
+        </view>
+
+        <view wx:if="{{isShow_Ti}}" style="padding-top: 10rpx;">
+          <view class="view_title">你希望选择的专业是？</view>
+          <checkbox-group bindchange="changeT" data-temp="12" name="ti" class="checkbox">
+            <label>
+              <checkbox value="体育与运动" />体育与运动
+            </label>
+          </checkbox-group>
+        </view>
+
+
+
+
+
+      </view>
 
     <view class="radio_view">
         <view class="view_title">6.您预计的留学时间？</view>
