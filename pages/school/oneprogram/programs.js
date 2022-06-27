@@ -1,11 +1,11 @@
 const app = getApp()
-
 Page({
   data: ({
     imgwidth: 0,
     HeadBar: 2000,
     backheight: 2000,
-    titleheight: 2000
+    titleheight: 2000,
+    intervaltimes: 0
   }),
   back() {
     var pages = getCurrentPages();   //当前页面
@@ -36,6 +36,11 @@ Page({
     this.setData({
       interval: setInterval(function () {
         console.log("interval in oneprogram 调用一次");
+        that.setData({
+          intervaltimes: that.data.intervaltimes + 1
+        })
+        console.log("intervaltimes", that.data.intervaltimes)
+        if (that.data.intervaltimes > 3) clearInterval(that.data.interval)
         if (!that.data.schools || !that.data.collections) {
           var schools = wx.getStorageSync('schools');
           var collections = wx.getStorageSync('collections');
@@ -51,12 +56,16 @@ Page({
           var pages = getCurrentPages();   //当前页面
           if (pages.length > 1) {
             var prevPage = pages[pages.length - 2];   //上个页面
-            var program = prevPage.data.giveProgram
+            var program = prevPage.data.giveProgram;
+            prevPage.setData({
+              allownavigate: 1
+            })
+            console.log(prevPage)
+            console.log("get", program)
             that.setData({
               program: program,
               backPic: "https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2dezuv331j30rs0ijtbr.jpg"
             })
-            console.log(program);
             that.dataprocess();
             var ifcollect = that.ifcollect();
             that.setData({
@@ -126,8 +135,8 @@ Page({
     console.log(collections)
   },
   ifcollect() {
-    console.log(this.data.collections)
-    var collection = this.data.collections.programs;
+    var collections = wx.getStorageSync("collections");
+    var collection = collections.programs;
     var index = this.data.program.index;
     if (collection.indexOf(index) != -1)
       return 1;
@@ -135,10 +144,13 @@ Page({
   },
   dataprocess() {
     var program = this.data.program;
-    console.log(program);
     var block1labels = ["方向", "水平", "学习方式", "学习语言", "科目"]
     var block2labels = ["免费学习的可能性", "长度", "学习费用", "学习地点",]
     var block3labels = ["方案保管人", "电话", "E-mail"]
+    var logo = this.findlogo(program.enschoolname)
+    this.setData({
+      logo: logo
+    })
     var block1 = [];
     var block2 = [];
     var block3 = [];
@@ -186,6 +198,12 @@ Page({
 
   //   }
   // },
+  findlogo(enname) {
+    var schoolpics = wx.getStorageSync("schoolpics");
+    for (var i = 0; i < schoolpics.length; i++) {
+      if (schoolpics[i].enname == enname) { return schoolpics[i].logo; }
+    }
+  },
   switch(e) {
     var name = e.currentTarget.dataset.name;
     var schools = this.data.schools;

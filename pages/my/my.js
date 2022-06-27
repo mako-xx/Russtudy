@@ -19,7 +19,7 @@ Page({
   },
   kefu() {
     wx.navigateTo({
-      url: '../my/contact/contact?message_="这里是客服联系界面，如果有相关问题可以进行询问。"',
+      url: '../my/contact/contact?index=0',
     })
   },
   holder_disappear() {
@@ -317,9 +317,7 @@ Page({
    */
   onLoad(options) {
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
-    // var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight) * app.globalData.pxToRpxScale;
-    var windowHeight = (app.globalData.ktxWindowHeight - app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
-    var ShowHeight = windowHeight - HeadBar;
+    var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight) * app.globalData.pxToRpxScale;
     this.setData({
       HeadBar: HeadBar,
       ShowHeight: ShowHeight

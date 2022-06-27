@@ -1,6 +1,7 @@
 const app = getApp();
 Page({
   data: {
+    allownavigate: 1,
     currentId: 0,
     basicsList: [{
       icon: 'usefullfill',
@@ -145,6 +146,7 @@ Page({
     newpro["schoolname"] = program.schoolname
     newpro["rank"] = program.rank
     newpro["index"] = program.index
+    newpro["logo"] = this.findlogo(newpro["enschoolname"])
     var allinfos = program.info
     var newinfo = []
     var labels = ["方向", "水平", "学习方式", "学习语言", "长度", "科目"]
@@ -203,7 +205,7 @@ Page({
           dic.QS_all = schools[i].qs_rating[3].rate_num;
           dic.QS_dome = schools[i].qsdome;
           dic.name = schools[i].name;
-          dic.logo = "https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c";
+          dic.logo = this.findlogo(schools[i].enname);
           dic.id = schools[i]._id;
           CollectList.push(dic)
         }
@@ -213,6 +215,12 @@ Page({
       CollectList: CollectList
     })
 
+  },
+  findlogo(enname) {
+    var schoolpics = wx.getStorageSync("schoolpics");
+    for (var i = 0; i < schoolpics.length; i++) {
+      if (schoolpics[i].enname == enname) { return schoolpics[i].logo; }
+    }
   },
   kefu() {
     wx.navigateTo({
@@ -226,15 +234,35 @@ Page({
     })
   },
   learnmore: function (e) {
-    var index = e.currentTarget.dataset.value;
-    var selectedprograms = this.data.collectprograms
-    var giveProgram = selectedprograms[index]
-    this.setData({
-      giveProgram: giveProgram,
-      indexinlist: index
-    })
-    wx.navigateTo({
-      url: '../../school/oneprogram/programs'
-    })
+
+    if (this.data.allownavigate) {
+      this.setData({
+        giveProgram: giveProgram
+      })
+      var index = e.currentTarget.dataset.value;
+      var selectedprograms = this.data.collectprograms
+      var giveProgram = selectedprograms[index]
+      console.log("giveProgram", giveProgram)
+      this.setData({
+        giveProgram: giveProgram,
+        indexinlist: index,
+        allownavigate: 0
+      })
+      wx.navigateTo({
+        url: '../../school/oneprogram/programs',
+      })
+    } else {
+      console.log("not allowed")
+    }
+    //   var index = e.currentTarget.dataset.value;
+    //   var selectedprograms = this.data.collectprograms
+    //   var giveProgram = selectedprograms[index]
+    //   this.setData({
+    //     giveProgram: giveProgram,
+    //     indexinlist: index
+    //   })
+    //   wx.navigateTo({
+    //     url: '../../school/oneprogram/programs'
+    //   })
   }
 })

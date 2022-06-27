@@ -52,6 +52,7 @@ Page({
       tableindex: tableindex,
       describe: describe,
       pic: pic,
+      logo: logo,
       labels: labels,
     })
     var labnav = school.labnav;

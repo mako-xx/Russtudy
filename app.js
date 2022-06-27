@@ -204,8 +204,6 @@ App({
     that.globalData.intervalID = setInterval(that.process, 1000)
 
 
-
-    console.log(allprograms)
     const citvalue = wx.getStorageSync('citys')
     var citys = citvalue
     if (!citys) {
@@ -218,6 +216,14 @@ App({
           console.log(citys);
           that.globalData.citys = citys;
         })
+    }
+
+    const messages = wx.getStorageSync('messages')
+    var msg = messages
+    if (!msg) {
+      msg = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]
+      wx.setStorageSync('messages', msg)
+      console.log(msg);
     }
 
     //获取城市图片

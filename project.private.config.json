@@ -32,14 +32,14 @@
         },
         {
           "name": "",
-          "pathName": "pages/school/question/question",
+          "pathName": "pages/my/contact/contact",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "pages/home/home",
+          "pathName": "pages/school/classify/classify",
           "query": "",
           "launchMode": "default",
           "scene": null
