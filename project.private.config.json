@@ -36,6 +36,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/school/classify/classify",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

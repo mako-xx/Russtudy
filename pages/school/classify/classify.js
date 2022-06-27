@@ -136,7 +136,8 @@ Page({
       dic.QS_all = schools[i].qs_rating[3].rate_num;
       dic.QS_dome = schools[i].qsdome;
       dic.name = schools[i].name;
-      dic.logo = "https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c";
+      dic.enname = schools[i].enname;
+      dic.logo = this.findlogo(dic.enname);
       dic.id = schools[i]._id;
       QSlist.push(dic)
     }
@@ -159,7 +160,8 @@ Page({
         dic.QS_all = school.qs_rating[3].rate_num;
         dic.QS_dome = school.qsdome;
         dic.name = school.name;
-        dic.logo = "https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c";
+        dic.enname = school.enname;
+        dic.logo = this.findlogo(dic.enname);
         dic.id = school._id;
         CityList[index].list.push(dic);
       }
@@ -188,7 +190,8 @@ Page({
           dic.QS_dome = schools[i].qsdome;
           dic.name = schools[i].name;
           dic.percentage = percentage[j];
-          dic.logo = "https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c";
+          dic.enname = schools[i].enname;
+          dic.logo = this.findlogo(dic.enname);
           dic.id = schools[i]._id;
           CommendList.push(dic)
         }
@@ -212,7 +215,8 @@ Page({
           dic.QS_dome = schools[i].qsdome;
           dic.name = schools[i].name;
           dic.heatnum = heatnum[j];
-          dic.logo = "https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c";
+          dic.enname = schools[i].enname;
+          dic.logo = this.findlogo(dic.enname);
           dic.id = schools[i]._id;
           HeatList.push(dic)
         }
@@ -222,6 +226,12 @@ Page({
     this.setData({
       HeatList: HeatList
     })
+  },
+  findlogo(enname) {
+    var schoolpics = wx.getStorageSync("schoolpics");
+    for (var i = 0; i < schoolpics.length; i++) {
+      if (schoolpics[i].enname == enname) { return schoolpics[i].logo; }
+    }
   },
   getCollectList() {
     var collections = wx.getStorageSync("collections");
@@ -235,7 +245,8 @@ Page({
           dic.QS_all = schools[i].qs_rating[3].rate_num;
           dic.QS_dome = schools[i].qsdome;
           dic.name = schools[i].name;
-          dic.logo = "https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c";
+          dic.enname = schools[i].enname;
+          dic.logo = this.findlogo(dic.enname);
           dic.id = schools[i]._id;
           CollectList.push(dic)
         }

@@ -47,7 +47,7 @@
                         style="background-image:url({{item.logo}});left:10rpx;">
                     </view>
                     <view class="content"
-                        style="height: 100%; left: 114rpx; width: auto; position: absolute; top: 0rpx">
+                        style="height: 100%; left: 120rpx; width: auto; position: absolute; top: 0rpx">
 
                         <view class="text-grey text-sm oneline"
                             style="color: #996179; display: -webkit-box; width: 264rpx; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
@@ -62,7 +62,7 @@
                         </view>
                     </view>
                     <view class="radius fr padding-sm shadow-blur myTxtCenter"
-                        style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695; position: relative; left: -8rpx; top: 0rpx"
+                        style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695;color:#EDE3E0; position: relative; left: -8rpx; top: 0rpx"
                         bindtap="learn_more" data-id="{{item.id}}">
                         了解更多
                     </view>
@@ -93,19 +93,19 @@
                         style="background-image:url({{item.logo}});left:10rpx;">
                     </view>
                     <view class="content"
-                        style="height: 100%; left: 114rpx; width: auto; position: absolute; top: 0rpx">
+                        style="height: 100%; left: 120rpx; width: auto; position: absolute; top: 0rpx">
 
                         <view class="text-grey text-sm oneline"
                             style="color: #996179; display: -webkit-box; width: 264rpx; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
                             {{item.name}}
                         </view>
-                        <view class="text-gray text-sm" style="position: relative; left: 0rpx; top: 10rpx">
+                        <view class="text-gray text-sm twoline" style="position: relative; left: 0rpx; top: 10rpx">
                             {{item.schoolname}}{{item.level?'/':''}}{{item.level}}
                         </view>
-                        <view class="text-gray text-sm"
+                        <!-- <view class="text-gray text-sm"
                             style="width: 264rpx; height: 42rpx; display: block; box-sizing: border-box">
                             综合排名：{{item.rank}}
-                        </view>
+                        </view> -->
                     </view>
                     <!-- <view class="content">
 
@@ -131,9 +131,15 @@
                     </view>
 
                 </view>
-                <view class="text-grey padding-sm" style="display: flex;justify-content: center;height:200rpx">
+                <!-- <view class="text-grey padding-sm" style="display: flex;justify-content: center;height:200rpx">
+                    {{showprograms.length==0?'这里空空如也':''}}
+                </view> -->
+                <view class="cu-item padding text-gray"
+                    style="height: auto;display: flex;align-items: center;justify-content: center;"
+                    wx:if="{{CollectList.length==0}}">
                     {{showprograms.length==0?'这里空空如也':''}}
                 </view>
+
             </view>
             <view class="" style="height:200rpx">
 

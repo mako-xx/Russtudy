@@ -32,25 +32,30 @@
 </view>
 
 <view class="bg-white padding radius-xx" style="width:80%;margin:auto;position:relative">
-  <image class="" src="https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c"
-    mode="aspectFit"
-    style="position:absolute;height:{{imgwidth}}rpx;width:{{imgwidth}}rpx;right:5%;top:{{titleheight+30}}rpx">
 
-  </image>
   <view class="text-bold myTxtCenter text-orange text-xxl padding" id="main-title" style="">
     {{proname}}
   </view>
-
-  <view class="" wx:for="{{block1}}" style="width:90%;margin: 0 auto 0 auto;">
-    <view class="" style="display:flex;flex-direction: row;">
-      <view class="" style="font-weight: 600;">
-        {{item.label}}:
-      </view>
-      <view class="">
-        {{item.answer}}
+  <view class="" style="display:flex;flex-direction: row;">
+    <view class="" style="flex:2">
+      <view class="" wx:for="{{block1}}" style="width:90%;margin: 0 auto 0 auto;">
+        <view class="" style="display:flex;flex-direction: row;">
+          <view class="" style="font-weight: 600;">
+            {{item.label}}:
+          </view>
+          <view class="">
+            {{item.answer}}
+          </view>
+        </view>
       </view>
     </view>
+    <view class="" style="flex:1">
+      <image class="round" src="{{logo}}" mode="aspectFit"
+        style="height:{{imgwidth}}rpx;width:{{imgwidth}}rpx;right:5%;">
+      </image>
+    </view>
   </view>
+
   <view class="" style="height:50rpx">
 
   </view>

@@ -8,6 +8,7 @@ Page({
     topIndex: 0,
     MainCur: 0,
     VerticalNavTop: 0,
+    allownavigate: 1,
     citylist: [{ "name": "全部", "checked": true }, { "name": "莫斯科", "checked": false }, { "name": "圣彼得堡", "checked": false }, { "name": "喀山", "checked": false }, { "name": "符拉迪沃斯托克", "checked": false }],
     toplist: [{ "name": "全部", "index": 0 }, { "name": "商科", "index": 1 }, { "name": "工科", "index": 2 }, { "name": "理科", "index": 3 }, { "name": "文科", "index": 4 }],
     // src: ['https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e188mpn7j30rs0ijn1l.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e187stc7j30ws0kathf.jpg', 'https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e18a31bsj31kw11ykjl.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e188bymfj313d0mvwiq.jpg'],
@@ -23,7 +24,9 @@ Page({
 
     { "name": "商科", "directions": ["经济和管理", "服务和旅游"] },
     { "name": "体育", "directions": ["体育与运动"] }
-    ]
+    ],
+    intervaltime1: 0,
+    intervaltime2: 0
   },
   onLoad(options) {
     var school_id = options.school_id;
@@ -62,6 +65,10 @@ Page({
     this.setData({
       interval: setInterval(function () {
         console.log("interval in programs调用一次");
+        that.setData({
+          intervaltime1: that.data.intervaltime1 + 1
+        })
+        if (that.data.intervaltime1 > 3) clearInterval(that.data.interval)
         if (!that.data.allprograms) {
           var allprograms1 = wx.getStorageSync('programs1');
           var allprograms2 = wx.getStorageSync('programs2');
@@ -108,6 +115,10 @@ Page({
       }, 1000),
       interval2: setInterval(function () {
         console.log("interval2调用一次", that.data.mainheadheight)
+        that.setData({
+          intervaltime2: that.data.intervaltime2 + 1
+        })
+        if (that.data.intervaltime2 > 10) { console.log("interval2调用结束,失败"); clearInterval(that.data.interval2) }
         let query = wx.createSelectorQuery()
         query.select('#main-headscroll').boundingClientRect((rect) => {
           var height = rect.height //* app.globalData.pxToRpxScale;
@@ -458,24 +469,26 @@ Page({
     return type
   },
   hideModal(e) {
+    wx.showLoading({  // 显示加载中loading效果 
+      title: "加载中",
+      mask: true  //开启蒙版遮罩
+    });
     var mode = this.data.mode;
     if (this.data.modalName) {
       var type = this.updateSel(mode);
       if (type == -1) {
+        wx.hideLoading();
         wx.showToast({
           "title": "请勾选至少一项",
           "icon": "error",
-          duration: 2000
+          duration: 500
         })
         return
       }
     }
 
 
-    wx.showLoading({  // 显示加载中loading效果 
-      title: "加载中",
-      mask: true  //开启蒙版遮罩
-    });
+
     this.setData({
       modalName: null
     })
@@ -556,12 +569,19 @@ Page({
     wx.hideLoading();
   },
   showModal(e) {
+    wx.showLoading({  // 显示加载中loading效果 
+      title: "加载中",
+      mask: true  //开启蒙版遮罩
+    });
     var mode = e.currentTarget.dataset.mode
     var name = e.currentTarget.dataset.name
-    if (mode != 'sel_col')
+    if (mode != 'sel_col') {
       this.setData({
         modalName: e.currentTarget.dataset.target,
       })
+      wx.hideLoading();
+    }
+
     this.setData({
       mode: mode,
       sel_name: name
@@ -669,6 +689,7 @@ Page({
     newpro["enschoolname"] = program.enschoolname
     newpro["schoolname"] = program.schoolname
     newpro["rank"] = program.rank
+    newpro["logo"] = this.findlogo(newpro["enschoolname"])
     const city_uni = this.data.city_uni;
     for (var i = 0; i < city_uni.length; i++) {
       var j;
@@ -713,6 +734,12 @@ Page({
     newpro["info"] = newinfo;
     return newpro
   },
+  findlogo(enname) {
+    var schoolpics = wx.getStorageSync("schoolpics");
+    for (var i = 0; i < schoolpics.length; i++) {
+      if (schoolpics[i].enname == enname) { return schoolpics[i].logo; }
+    }
+  },
   getallpro() {
     return this.data.allprograms1.concat(this.data.allprograms2).concat(this.data.allprograms3)
   },
@@ -733,7 +760,7 @@ Page({
     const subjectlist = this.data.subjectlist;
     const schoollist = this.data.schoollist;
     const languagelist = this.data.languagelist;
-    const collections = this.data.collections;
+    const collections = wx.getStorageSync('collections');
     const collpros = collections.programs;
     const ifshowcol = selectlist[6].type;
     console.log(selectlist, ifshowcol)
@@ -847,15 +874,24 @@ Page({
     })
   },
   learnmore: function (e) {
-    var index = e.currentTarget.dataset.value;
-    var selectedprograms = this.getselectpro();
-    var giveProgram = selectedprograms[index]
-    this.setData({
-      giveProgram: giveProgram,
-      indexinlist: index
-    })
-    wx.navigateTo({
-      url: '../oneprogram/programs'
-    })
+    if (this.data.allownavigate) {
+      this.setData({
+        allownavigate: 0
+      })
+      var that = this
+      var index = e.currentTarget.dataset.value;
+      var selectedprograms = this.getselectpro();
+      var giveProgram = selectedprograms[index]
+      console.log("giveProgram", giveProgram, this)
+      this.setData({
+        giveProgram: giveProgram,
+        indexinlist: index
+      })
+      wx.navigateTo({
+        url: '../oneprogram/programs',
+      })
+    } else {
+      console.log("not allowed")
+    }
   },
 })
