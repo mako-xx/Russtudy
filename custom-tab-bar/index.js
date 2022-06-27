@@ -74,6 +74,11 @@ Component({
   data: {
     //当前高亮项
     selected: 0,
+    select1: 'unselect',
+    select2: 'unselect',
+    //图标
+    icon_college: 'https://wx2.sinaimg.cn/mw690/008qNTbqly1h3mv29fql8j306z05kdfq.jpg',
+    icon_life: 'https://wx4.sinaimg.cn/mw690/008qNTbqly1h3mv3e0x4mj305k05k3yd.jpg',
     //tabBar页面数据
     tabList: [
       {
@@ -103,13 +108,30 @@ Component({
       let key = Number(e.currentTarget.dataset.index);
       let tabList = this.data.tabList;
       let selected = this.data.selected;
-
       if (selected !== key) {
         this.setData({
           selected: key
         });
         wx.switchTab({
           url: `/${tabList[key].pagePath}`,
+        })
+      }
+      if(selected == 1){
+        this.setData({
+          icon_college: 'https://wx2.sinaimg.cn/mw690/008qNTbqly1h3mv29avz4j306z05kdfs.jpg',         
+        })
+      } else{
+        this.setData({
+          icon_college: 'https://wx2.sinaimg.cn/mw690/008qNTbqly1h3mv29fql8j306z05kdfq.jpg',          
+        })
+      }
+      if(selected == 3){
+        this.setData({
+          icon_life: 'https://wx4.sinaimg.cn/mw690/008qNTbqly1h3mv3e6wecj305k05kq2u.jpg',          
+        })
+      }else{
+        this.setData({
+          icon_life: 'https://wx4.sinaimg.cn/mw690/008qNTbqly1h3mv3e0x4mj305k05k3yd.jpg',
         })
       }
     },

@@ -8,7 +8,7 @@
     </view>
   </view>
 </view>
-  <view class="triangleD" style="position: relative; left: -604rpx; top: -24rpx">
+  <view class="triangleD" style="position: relative; left: -604rpx; top: -10rpx">
 
   </view>
   <view class="login">

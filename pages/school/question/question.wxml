@@ -26,7 +26,7 @@
 </view>
 <view class=""style="height:{{HeadBar+50}}rpx;">
   <navigator class='action' open-type="navigateBack" delta="1" hover-class="none"
-  style="height: 54rpx; position: absolute; top: 225rpx; color: black; left: -6rpx; width: 162rpx; display: block; box-sizing: border-box">
+  style="height: 54rpx; position: absolute; top: 200rpx; color: black; left: -8rpx; width: 162rpx; display: block; box-sizing: border-box">
   <text class='cuIcon-back'></text> 返回
 </navigator>
 
