@@ -16,7 +16,7 @@ function initData(that) {
     {
       speaker: 'mid',
       contentType: 'text',
-      content: '中俄留学小助手为您解答'
+      content: '中俄留学小助手为您服务'
     },
     {
       speaker: 'server',
@@ -76,7 +76,7 @@ Page({
         {
           speaker: 'mid',
           contentType: 'text',
-          content: '中俄留学小助手为您解答'
+          content: '中俄留学小助手为您服务'
         },
         {
           speaker: 'server',
@@ -88,7 +88,7 @@ Page({
       msgList.push({
         speaker: 'mid',
         contentType: 'text',
-        content: '中俄留学小助手为您解答'
+        content: '中俄留学小助手为您服务'
       })
     }
     messages[index] = msgList
