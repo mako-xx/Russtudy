@@ -12,7 +12,18 @@ Page({
     toplist: [{ "name": "全部", "index": 0 }, { "name": "商科", "index": 1 }, { "name": "工科", "index": 2 }, { "name": "理科", "index": 3 }, { "name": "文科", "index": 4 }],
     // src: ['https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e188mpn7j30rs0ijn1l.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e187stc7j30ws0kathf.jpg', 'https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e18a31bsj31kw11ykjl.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e188bymfj313d0mvwiq.jpg'],
     selectlist: [{ "name": "所在城市", "type": 1, "mode": "sel_city" }, { "name": "所在学校", "type": 1, "mode": "sel_sch" }, { "name": "学习方向", "type": 1, "mode": "sel_dir" }, { "name": "科目", "type": 1, "mode": "sel_sub" }, { "name": "学习方式", "type": 1, "mode": "sel_way" }, { "name": "学习语言", "type": 1, "mode": "sel_lau" }, { "name": "我的收藏", "type": 1, "mode": "sel_col" }],
-    load: true
+    load: true,
+    subject_direction: [{ "name": "全部", "directions": [] },
+
+    { "name": "工科", "directions": ["信息安全", "信息学和计算机技术", "电子、无线电技术和通讯系统", "建筑学", "工程系统管理", "光电，仪器仪表，光电和生物技术系统和技术", "地面交通技术和工艺学", "航空和火箭和空间技术", "物理技术科学和工艺学", "核能与核技术", "化学技术", "工业生态与生物技术", "机械制造", "工艺领域安全和自然设备安装", "电力和热力工程学", "计算机和信息学", "纳米技术和纳米材料", "应用地质学、矿业、石油天然气业和测量学", "材料工艺学", "航空导航和火箭和空间技术操作", "农业，林业和渔业", "基础医学"] },
+
+    { "name": "理科", "directions": ["数学和力学", "心理科学", "教育和师范科学", "物理学和天文学", "化学", "生物科学"] },
+
+    { "name": "文科", "directions": ["法律学", "语言学和文艺学", "历史学和考古学", "政治学和区域学", "媒体和出版业", "美术和应用艺术", "社会学和社会工作", "社会学和社会工作", "哲学、伦理学和宗教学", "教育和师范科学", "心理科学", "文化学和社会文化计划", "艺术史", "神学"] },
+
+    { "name": "商科", "directions": ["经济和管理", "服务和旅游"] },
+    { "name": "体育", "directions": ["体育与运动"] }
+    ]
   },
   onLoad(options) {
     var school_id = options.school_id;
@@ -37,6 +48,13 @@ Page({
           break;
         }
       }
+      that.setData({
+        selectlist: selectlist
+      })
+    }
+    if (options.lookcollect == 1) {
+      var selectlist = that.data.selectlist;
+      selectlist[6].type = 0;
       that.setData({
         selectlist: selectlist
       })
@@ -72,13 +90,6 @@ Page({
             that.initcitylabels();
             that.initdirectionlabels();
             that.initotherlabels();
-            if (options.lookcollect == 1) {
-              var selectlist = that.data.selectlist;
-              selectlist[6].type = 0;
-              that.setData({
-                selectlist: selectlist
-              })
-            }
             if (school_id) {
               that.changeschoollabels(school_id);
               that.repick();
@@ -171,20 +182,7 @@ Page({
 
 
 
-    var subject_direction = [{ "name": "全部", "directions": [] },
-
-    { "name": "工科", "directions": ["信息安全", "信息学和计算机技术", "电子、无线电技术和通讯系统", "建筑学", "工程系统管理", "光电，仪器仪表，光电和生物技术系统和技术", "地面交通技术和工艺学", "航空和火箭和空间技术", "物理技术科学和工艺学", "核能与核技术", "化学技术", "工业生态与生物技术", "机械制造", "工艺领域安全和自然设备安装", "电力和热力工程学", "计算机和信息学", "纳米技术和纳米材料", "应用地质学、矿业、石油天然气业和测量学", "材料工艺学", "航空导航和火箭和空间技术操作", "农业，林业和渔业", "基础医学"] },
-
-    { "name": "理科", "directions": ["数学和力学", "心理科学", "教育和师范科学", "物理学和天文学", "化学", "生物科学"] },
-
-    { "name": "文科", "directions": ["法律学", "语言学和文艺学", "历史学和考古学", "政治学和区域学", "媒体和出版业", "美术和应用艺术", "社会学和社会工作", "社会学和社会工作", "哲学、伦理学和宗教学", "教育和师范科学", "心理科学", "文化学和社会文化计划", "艺术史", "神学"] },
-
-    { "name": "商科", "directions": ["经济和管理", "服务和旅游"] },
-    { "name": "体育", "directions": ["体育与运动"] }
-    ]
-    this.setData({
-      subject_direction: subject_direction
-    })
+    var subject_direction = this.data.subject_direction
 
     var programs = this.getallpro();
     var processed = [];
@@ -560,12 +558,14 @@ Page({
   showModal(e) {
     var mode = e.currentTarget.dataset.mode
     var name = e.currentTarget.dataset.name
+    if (mode != 'sel_col')
+      this.setData({
+        modalName: e.currentTarget.dataset.target,
+      })
     this.setData({
-      modalName: e.currentTarget.dataset.target,
       mode: mode,
       sel_name: name
     })
-
     if (mode == 'sel_city') {
       this.setData({
         sel_list: this.data.citylist

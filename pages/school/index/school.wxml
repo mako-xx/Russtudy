@@ -97,7 +97,8 @@
     <view class="radius bg-white shadow-blur text-center padding-sm" style="height:250rpx">
       <image class="" src="../../../image/icons/test.png" style="height:160rpx" mode="aspectFit">
       </image>
-      <view class="margin-top-sm text-lg" style="font-family:‘Courier New’, Courier, monospace;font-weight: 600;">
+      <view class="margin-top-sm text-lg" style="font-family:‘Courier New’, Courier, monospace;font-weight: 600;"
+        bindtap="clickquestion">
         留学自测
       </view>
     </view>
@@ -121,7 +122,7 @@
     </view>
   </view>
   <view class="padding-sm">
-    <view class="bg-white shadow-blur text-center padding-sm" style="height:250rpx" bindtap="clickquestion">
+    <view class="bg-white shadow-blur text-center padding-sm" style="height:250rpx" bindtap="">
       <image class="" src="../../../image/icons/ask.png" style="height:160rpx" mode="aspectFit">
       </image>
       <view class="margin-top-sm text-lg" style="font-family:‘Courier New’, Courier, monospace;font-weight: 600;">

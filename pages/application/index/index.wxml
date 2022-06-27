@@ -172,7 +172,8 @@
                     </view>
                 </view>
                 <view class="" style="flex:1">
-                    <image class="" src="../../../image//pics/form.png" mode="aspectFill">
+                    <image class="" src="https://wx3.sinaimg.cn/mw2000/008tQ72zly1h3mupbrm1uj303w04gaab.jpg"
+                        mode="aspectFill">
 
                     </image>
                 </view>
@@ -252,7 +253,8 @@
                     外国人也可以参加在俄罗斯举行的以及由大学的各种协会为他们专门举行的奥林匹克竞赛。
                 </view>
                 <view class="" style="flex:2">
-                    <image class="" src="../../../image/pics/aolin.png" mode="aspectFill">
+                    <image class="" src="https://wx4.sinaimg.cn/mw2000/008tQ72zly1h3mupbl3uyj30mw0cuk1g.jpg"
+                        mode="aspectFill">
 
                     </image>
                 </view>
@@ -293,7 +295,8 @@
                     </view>
                 </view>
                 <view class="bg-white padding" style="flex:1">
-                    <image class="" src="../../../image/pics/visa.png" mode="aspectFill">
+                    <image class="" src="https://wx2.sinaimg.cn/mw2000/008tQ72zly1h3mupd25t6j30fn0kq13m.jpg"
+                        mode="aspectFill">
 
                     </image>
                 </view>

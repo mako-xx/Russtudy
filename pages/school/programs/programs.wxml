@@ -89,7 +89,7 @@
                                 <view class="text-gray text-sm oneline">
                                     {{item.schoolname}}{{item.level?'/':''}}{{item.level}}
                                 </view>
-                                <view class="text-gray text-sm">
+                                <view class="text-gray text-sm" wx:if="{{selectlist[6].type==1}}">
                                     综合排名：{{sub+1}}
                                 </view>
                             </view>
