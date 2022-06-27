@@ -36,7 +36,7 @@
             {{item.name}}
         </view>
     </scroll-view>
-    <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:{{ShowHeight-HeadBar}}rpx"
+    <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:{{ShowHeight}}rpx"
         bindscroll="VerticalMain" scroll-into-view="main-{{MainCur}}">
         <view class="padding-top " id="main-0">
             <view class="padding-top padding-lr">

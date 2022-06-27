@@ -25,7 +25,7 @@ Page({
       })
     }
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
-    var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight) * app.globalData.pxToRpxScale;
+    var ShowHeight = (app.globalData.ktxWindowHeight) * app.globalData.pxToRpxScale - HeadBar;
     this.setData({
       HeadBar: HeadBar,
       ShowHeight: ShowHeight
