@@ -106,7 +106,7 @@
 <view class="grid col-2" style="height:auto">
   <button class="cu-btn bg-{{ifcollected?'grey':'yellow'}} margin-tb-sm lg"
     bindtap="clicklove">{{ifcollected?'取消收藏':'加入收藏'}}</button>
-  <button class="cu-btn bg-red margin-tb-sm lg">我要申请</button>
+  <button class="cu-btn bg-red margin-tb-sm lg" bindtap="kefu">我要申请</button>
 </view>
 <view class="blank"></view>
 <view class="" style="height:100rpx">

@@ -61,6 +61,11 @@
   所在城市：{{school.city}}
 </view>
 <view class='division'></view>
+
+
+
+
+
 <view class="cu-bar bg-white margin-top solid-bottom">
   <view class="action">
     <text class="cuIcon-title text-blue"></text>简要信息
@@ -162,6 +167,28 @@
 
 
 <view class="blank"></view>
+
+
+
+<view class="cu-bar bg-white margin-top solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>校友咨询
+  </view>
+</view>
+<view class="cu-list grid col-2 no-border">
+  <view class="cu-item " wx:for="{{linkman}}" wx:key>
+    <text>{{item.desc}}</text>
+    <image class="" id="stu-image-{{index}}" style="width:60%;height:{{stuwidth?stuwidth:0}}rpx;margin: auto;"
+      bindtap="asklinker" data-index="{{index}}" src="{{item.pic}}" mode="aspectFit">
+
+    </image>
+    <text>{{item.name}}</text>
+    <text>{{item.position}}</text>
+  </view>
+</view>
+
+
+
 
 <view class="myTxtCenter text-gray">
   KeLi 赴俄留学小助手

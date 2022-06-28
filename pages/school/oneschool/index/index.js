@@ -9,7 +9,10 @@ Page({
     gridCol: 3,
     titlepos: false,
     cardCur: 0,
-    iconList: []
+    iconList: [],
+    intervaltime1: 0,
+    intervaltime2: 0,
+    linkman: [{ "pic": "https://wx3.sinaimg.cn/mw2000/008tQ72zly1h3mmxzu8taj30dz0ggq5x.jpg", "name": "王同学", "position": "在读硕士", "desc": "奖学金获得者" }, { "pic": "https://wx3.sinaimg.cn/mw2000/008tQ72zly1h3mmxzu8taj30dz0ggq5x.jpg", "name": "王同学", "position": "在读硕士", "desc": "奖学金获得者" }]
   },
   dataprocess() {
     var school = this.data.school;
@@ -263,8 +266,26 @@ Page({
           clearInterval(that.data.interval)
 
         }
+      }, 1000),
+      interval2: setInterval(function () {
+        console.log("interval2调用一次", that.data.mainheadheight)
+        that.setData({
+          intervaltime2: that.data.intervaltime2 + 1
+        })
+        if (that.data.intervaltime2 > 10) { console.log("interval2调用结束,失败"); clearInterval(that.data.interval2) }
+        let query = wx.createSelectorQuery()
+        query.select('#stu-image-0').boundingClientRect((rect) => {
+          var width = rect.width //* app.globalData.pxToRpxScale;
+          that.setData({
+            stuwidth: width * app.globalData.pxToRpxScale
+          })
+        }).exec()
+        if (that.data.stuwidth) {
+          clearInterval(that.data.interval2)
+        }
       }, 1000)
     })
+
   },
   // onPageScroll: function (e) {
   //   var that = this
@@ -366,4 +387,10 @@ Page({
       gridBorder: e.detail.value
     });
   },
+  asklinker: function (e) {
+    console.log(e)
+    wx.navigateTo({
+      url: "../../../my/contact/contact?index=1"
+    })
+  }
 })
