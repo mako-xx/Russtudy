@@ -49,7 +49,7 @@ style="height: 54rpx; position: absolute; top: 200rpx; color: black; left: -8rpx
   </view>
   <view class="radio_view">
       <view class="view_title">2.你的年龄是？</view>
-      <view class="cu-form-group margin-top-xs">
+      <view class="cu-form-group margin-top-xs round">
         <view class="title">当前选择是：</view>
         <picker bindchange="bindAgeChange" value="{{AGEindex}}" range="{{AGE}}" name="age">
           <view class="picker">
@@ -306,7 +306,7 @@ style="height: 54rpx; position: absolute; top: 200rpx; color: black; left: -8rpx
     </radio-group>
     <view wx:if="{{isShow7}}" style="padding-top: 10rpx;">
         <view class="view_title">您的留学经历有几年？</view>
-        <view class="cu-form-group margin-top-xs">
+        <view class="cu-form-group margin-top-xs round">
           <view class="title">当前选择是：</view>
           <picker bindchange="bindExpChange" value="{{EXPindex}}" range="{{EXP}}"  name="expAge">
             <view class="picker">
