@@ -94,17 +94,16 @@
 
 <view class="grid col-2 padding-sm">
   <view class="padding-sm">
-    <view class="radius bg-white shadow-blur text-center padding-sm" style="height:250rpx">
+    <view class="radius bg-white shadow-blur text-center padding-sm" style="height:250rpx" bindtap="clickquestion">
       <image class="" src="../../../image/icons/test.png" style="height:160rpx" mode="aspectFit">
       </image>
-      <view class="margin-top-sm text-lg" style="font-family:‘Courier New’, Courier, monospace;font-weight: 600;"
-        bindtap="clickquestion">
+      <view class="margin-top-sm text-lg" style="font-family:‘Courier New’, Courier, monospace;font-weight: 600;">
         留学自测
       </view>
     </view>
   </view>
   <view class="padding-sm">
-    <view class="bg-white shadow-blur text-center padding-sm" style="height:250rpx">
+    <view class="bg-white shadow-blur text-center padding-sm" style="height:250rpx" bindtap="clickrecommend">
       <image class="" src="../../../image/icons/artificial.png" style="height:160rpx" mode="aspectFit">
       </image>
       <view class="margin-top-sm text-lg" style="font-family:‘Courier New’, Courier, monospace;font-weight: 600;">
