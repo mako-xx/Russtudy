@@ -12,53 +12,79 @@
   <view class="clouds">
     <image animation="{{animationCloudData}}" class="yun1"
       src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png"
-      style="position: relative; left: 352rpx; top: 381rpx; opacity: 0.5"></image>
+      style="position: relative; left: 121rpx; top: 374rpx; opacity: 0.4"></image>
   </view>
   <view class="clouds">
     <image animation="{{animationCloudData}}" class="yun2"
       src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png"
-      style="position: relative; left: 118rpx; top: -394rpx; opacity: 0.5"></image>
+      style="position: relative; left: 118rpx; top: -394rpx; opacity: 0.4"></image>
   </view>
   <view class="clouds">
     <image animation="{{animationCloudData}}" class="yun3"
       src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png"
-      style="position: relative; left: 100rpx; top: -234rpx; opacity: 0.5"></image>
+      style="position: relative; left: 100rpx; top: -234rpx; opacity: 0.4"></image>
   </view>
 
-<image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/home.jpg" style="position: relative; left: 0rpx; top: -1422rpx; width: 750rpx; height: 483rpx; display: inline-block; box-sizing: border-box">
-</image>
-<image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/梦想从此开始_www.ssjjss.com_alpha.png" style="position: relative; left: 71rpx; top: -1872rpx; width: 610rpx; height: 160rpx; display: inline-block; box-sizing: border-box"></image>
+  <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
+  autoplay="true" interval="5000" duration="500" style="height: 200rpx; position: relative; left: 0rpx; top: -1416rpx">
+  <swiper-item wx:for="{{swiperList}}" wx:key style="position: relative; left: 0rpx; top: 0rpx">
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
+      wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper>
+
 <view class="tubiao">
 </view>
-<view class="header" style="position: relative; left: 0rpx; top: -387rpx">
-  <image class="bg_ware" src="https://codermoyv.gitee.io/coder-moyv/assets/images/wechat/bg_wave.gif" style="position: absolute; left: 0rpx; top: -1326rpx"></image>
+<view class="header" style="position: relative; left: 0rpx; top: 0rpx">
+  <image class="bg_wave" src="https://codermoyv.gitee.io/coder-moyv/assets/images/wechat/bg_wave.gif" style="position: absolute; left: 0rpx; top: -1535rpx"></image>
+</view>
+<view class="box" wx:if="{{true}}">
+  <view class="cu-bar bg-white" style="position: relative; left: 0rpx; top: -1720rpx; z-index: 8; opacity: 0.8;">
+    <view class="action sub-title" style="left:0">
+      <text class="cuIcon-title text-blue"></text>
+      <text class="text-xl text-bold text-blue">初步了解</text>
+      <text class="text-ABC text-blue" style="position: absolute; left: 51rpx; top: 16rpx">Why</text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
 </view>
 <view class="row">
-<view class="button.red.rainbow" style="position: relative; left: 40rpx; top: -1830rpx" bindtap="whyrussia">
+<view class="button.white" style="position: relative; left: 24rpx; top: -1695rpx" bindtap="whyrussia">
  <text class="btext">
  为什么选择俄罗斯
  </text>
- <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/russia.png"class="bimage" style="width: 130rpx; height: 130rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
+ <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/russia.png"class="bimage" style="width: 164rpx; height: 147rpx; display: block; box-sizing: border-box; left: -10rpx; top: 14rpx; position: relative"></image>
 </view>
-<view class="button.yellow.rainbow" style="position: relative; left: -40rpx; top: -1830rpx">
+<view class="button.white" style="position: relative; left: -24rpx; top: -1695rpx">
   <text class="btext">
 如何学习俄语
   </text>
   <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/book.png" class="bimage" style="width: 130rpx; height: 130rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
 </view>
 </view>
+<view class="box" wx:if="{{true}}">
+  <view class="cu-bar bg-white" style="position: relative; left: 0rpx; top: -1670rpx; z-index: 8; opacity: 0.8">
+    <view class="action sub-title" style="left:0">
+      <text class="cuIcon-title text-green"></text>
+      <text class="text-xl text-bold text-green">快捷跳转</text>
+      <text class="text-ABC text-green" style="position: absolute; left: 51rpx; top: 16rpx">jump</text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+</view>
 <view class="row">
-<view class="button.blue.rainbow" style="position: relative; left: 40rpx; top: -1722rpx" bindtap="life">
+<view class="button.white" style="position: relative; left: 24rpx; top: -1645rpx" bindtap="life">
   <text class="btext">
 俄罗斯的生活
   </text>
   <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/life.png"class="bimage" style="width: 130rpx; height: 130rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
 </view>
-<view class="button.green.rainbow" style="position: relative; left: -40rpx; top: -1722rpx" bindtap="college">
+<view class="button.white" style="position: relative; left: -24rpx; top: -1645rpx" bindtap="college">
   <text class="btext">
 俄罗斯的高校
   </text>
-  <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/college.png"class="bimage" style="width: 130rpx; height: 130rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
+  <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/college.png"class="bimage" style="width: 175rpx; height: 129rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
 </view>
 </view>
 </view>

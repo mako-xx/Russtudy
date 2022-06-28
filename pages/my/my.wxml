@@ -16,7 +16,7 @@
 
   <view class="ava-nick">
     <image class="cu-avatar.xl" src='{{avatarUrl}}' style="position: relative; left: 0rpx; top: -1200rpx"></image>
-    <view class="nickname" bindtap="changeNickname" style="position: relative; left: 0rpx; top: -1200rpx">
+    <view class="nickname" bindtap="changeNickname" style="position: relative; left: -21rpx; top: -1200rpx; width: 191rpx; height: 35rpx; display: flex; box-sizing: border-box">
       {{nickname}}
     </view>
   </view>

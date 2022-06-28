@@ -29,7 +29,7 @@ Page({
     })
   }
   },
-  changeS(){
+  changeS(e){
     this.setData({
       flag: true,
     })
@@ -39,7 +39,7 @@ Page({
       })
     }
   },
-  changeT(){
+  changeT(e){
     this.setData({
       flag: true,
     })
@@ -49,7 +49,7 @@ Page({
       })
      }
   },
-  changeL(){
+  changeL(e){
     this.setData({
       flag: true,
     })
@@ -59,7 +59,7 @@ Page({
       })
     }
   },
-  changeW(){
+  changeW(e){
     this.setData({
       flag: true,
     })

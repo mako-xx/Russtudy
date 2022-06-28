@@ -9,7 +9,7 @@
 
   </view>
 </view>
-<view class="cu-bar bg-white search fixed" id="main-search" style="position: fixed;margin-top:{{HeadBar}}rpx">
+<view class="cu-bar bg-white search fixed" id="main-search" style="position: fixed;margin-top:{{HeadBar-1}}rpx">
   <view class="search-form round" bindtap="choosesearch">
     <text class="cuIcon-search"></text>
     <input type="text" placeholder="输入高校或城市关键字进行搜索" confirm-type="search"></input>
@@ -122,7 +122,7 @@
     </view>
   </view>
   <view class="padding-sm">
-    <view class="bg-white shadow-blur text-center padding-sm" style="height:250rpx" bindtap="">
+    <view class="bg-white shadow-blur text-center padding-sm" style="height:250rpx" bindtap="clickquestion">
       <image class="" src="../../../image/icons/ask.png" style="height:160rpx" mode="aspectFit">
       </image>
       <view class="margin-top-sm text-lg" style="font-family:‘Courier New’, Courier, monospace;font-weight: 600;">
