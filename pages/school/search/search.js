@@ -70,7 +70,7 @@ Page({
         dic.city = school.city;
         dic.QS_dome = school.qsdome;
         dic.name = school.name;
-        dic.logo = "https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c";
+        dic.logo = this.findlogo(school.enname)
         dic.id = school._id;
         schoollist.push(dic);
       }
@@ -87,5 +87,11 @@ Page({
     wx.navigateTo({
       url: "../oneschool/index/index?school_id=" + e.currentTarget.dataset.id
     })
-  }
+  },
+  findlogo(enname) {
+    var schoolpics = wx.getStorageSync("schoolpics");
+    for (var i = 0; i < schoolpics.length; i++) {
+      if (schoolpics[i].enname == enname) { return schoolpics[i].logo; }
+    }
+  },
 })

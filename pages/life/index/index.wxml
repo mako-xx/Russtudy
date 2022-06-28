@@ -97,8 +97,8 @@
 </view>
 <view class="grid col-3" style="margin:auto">
     <view class="padding-xs" wx:for="{{showcitys}}">
-        <view class="bg-red radius-xx" id="city-{{index}}"
-            style="height:{{citywidth}}rpx;width:80%;margin:auto;background-image: url('{{item.pic}}');background-size:100% 100%;no-repeat;display: flex;align-items: center;justify-content: center;text-align: center;font-family:cursive;font-size:large;font-weight:600"
+        <view class="bg-white radius-xx" id="city-{{index}}"
+            style="height:{{citywidth}}rpx;width:80%;margin:auto;background-image: url('{{item.pic}}');background-size:100% 100%;no-repeat;display: flex;align-items: center;justify-content: center;text-align: center;font-family:cursive;font-size:large;font-weight:600;color:white"
             bindtap="clickcity" data-id="{{item.id}}">
             {{item.name}}
         </view>
