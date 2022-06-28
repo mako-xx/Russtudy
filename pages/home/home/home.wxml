@@ -26,6 +26,9 @@ style="height: auto; position: absolute; top: 15rpx; color: black; left: 38rpx">
     <text class="textbody" decode = "{{true}}">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在俄罗斯留学能够获取各个方面的基础知识，俄罗斯在物理数学和自然科学领域闻名。俄罗斯是全世界公认培养数学家、物理家、化学家、地质学家、工程师、程序设计员、医生以及其他自然科学专家领先的国家。
     </text>
+    <text class="textbody" decode = "{{true}}">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在俄罗斯留学能够获取各个方面的基础知识，俄罗斯在物理数学和自然科学领域闻名。俄罗斯是全世界公认培养数学家、物理家、化学家、地质学家、工程师、程序设计员、医生以及其他自然科学专家领先的国家。
+    </text>
     <view class="cu-bar bg-white margin-top solid-bottom">
       <view class="action">
         <text class="cuIcon-title text-" style="color: rgb(255, 94, 0);">2.成本更低，经济实惠</text>

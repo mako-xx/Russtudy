@@ -50,7 +50,7 @@ style="height: 54rpx; position: absolute; top: 200rpx; color: black; left: -8rpx
   <view class="radio_view">
       <view class="view_title">2.你的年龄是？</view>
       <view class="cu-form-group margin-top-xs round">
-        <view class="title">当前选择是：</view>
+        <view class="title margin-left">当前选择是：</view>
         <picker bindchange="bindAgeChange" value="{{AGEindex}}" range="{{AGE}}" name="age">
           <view class="picker">
             {{AGE[AGEindex]}}岁
@@ -91,13 +91,22 @@ style="height: 54rpx; position: absolute; top: 200rpx; color: black; left: -8rpx
           <label>
               <radio  class="blue margin-left-sm" value="10万及以上" /> 10万及以上
           </label>
-
       </radio-group>
-
   </view>
-
   <view class="radio_view">
-      <view class="view_title">5.你希望选择的专业方向？</view>
+    <view class="view_title">5.您是否会俄语</view>
+    <radio-group bindchange="change9" data-temp="14" name="Russian" class="radio">
+        <label>
+            <radio  class="blue margin-left-sm" value="5万及以下" /> 是
+        </label>
+        <label>
+            <radio class="blue margin-left-sm"  value="5万 ~ 7万" /> 否
+        </label>
+
+    </radio-group>
+</view>
+  <view class="radio_view">
+      <view class="view_title">6.你希望选择的专业方向？</view>
       <radio-group bindchange="change5" data-temp="5" name="profession" class="radio">
           <label>
               <radio  class="blue margin-left-sm" value="文科"/> 文科
@@ -274,9 +283,10 @@ style="height: 54rpx; position: absolute; top: 200rpx; color: black; left: -8rpx
           </label>
         </checkbox-group>
       </view>
-    </view>
+  </view>
+
   <view class="radio_view">
-      <view class="view_title">6.您预计的留学时间？</view>
+      <view class="view_title">7.您预计的留学时间？</view>
       <radio-group bindchange="change6" data-temp="6" name="duration" class="radio">
           <label>
               <radio  class="blue .margin-left-sm" value="2年或以下" /> 2年或以下
@@ -294,8 +304,9 @@ style="height: 54rpx; position: absolute; top: 200rpx; color: black; left: -8rpx
       </radio-group>
 
   </view>
+
   <view class="radio_view">
-    <view class="view_title">7.您以前是否有过留学经验？</view>
+    <view class="view_title">8.您以前是否有过留学经验？</view>
     <radio-group bindchange="change7" data-temp="7" name="exp" class="radio">
         <label>
             <radio  class="blue .margin-left-sm" value="1"/> 是
@@ -307,21 +318,29 @@ style="height: 54rpx; position: absolute; top: 200rpx; color: black; left: -8rpx
     <view wx:if="{{isShow7}}" style="padding-top: 10rpx;">
         <view class="view_title">您的留学经历有几年？</view>
         <view class="cu-form-group margin-top-xs round">
-          <view class="title">当前选择是：</view>
+          <view class="title margin-left">当前选择是：</view>
           <picker bindchange="bindExpChange" value="{{EXPindex}}" range="{{EXP}}"  name="expAge">
             <view class="picker">
               {{EXP[EXPindex]}}年
             </view>
           </picker>
-        </view>
-  
+        </view> 
     </view>
-</view>
+  </view>
 
-  <!-- <view class="radio_view">
-      <view class="view_title">7.您对招标采购工作的合理化建议：(选填)</view>
-      <input bindinput="changeinput" data-temp="7" name="ans7" style="width:100%;height:400rpx" placeholder="" />
-  </view> -->
+  <view class="radio_view">
+  <view class="view_title">9.您希望去哪个城市读书？</view>
+  <radio-group bindchange="change8" data-temp="13" name="lovecity" class="radio">
+      <label wx:for="{{city}}" wx:key="{{city.value}}"> 
+          <radio  class="blue .margin-left-sm" value="{{item.value}}" /> <text>{{item.name}}</text>
+      </label>
+  </radio-group>
+  </view>
+
+
+
+
+
   <view class="btn-area">
       <button form-type="submit">提交</button>
   </view>
