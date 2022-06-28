@@ -152,5 +152,19 @@ Page({
     wx.navigateTo({
       url: "../question/question",
     })
+  },
+  clickrecommend() {
+    var questions = wx.getStorageSync("questions");
+    if (!questions) {
+      wx.showModal({
+        title: '提示',
+        content: '完成留学自测后即可解锁该功能',
+        showCancel: false
+      })
+    } else {
+      wx.navigateTo({
+        url: '../recommend/recommend'
+      })
+    }
   }
 })

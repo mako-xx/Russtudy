@@ -57,6 +57,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/school/recommend/recommend",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
