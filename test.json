@@ -1,0 +1,45 @@
+{
+    "contact": [
+        {
+            "enschoolname": "fefu",
+            "linkmen": [
+                {
+                    "name": "王同学",
+                    "index": "1",
+                    "desc": "在俄留学2年",
+                    "degree": "工程学博士",
+                    "pis": "https:",
+                },
+                {
+                    "name": "张同学",
+                    "index": "2",
+                    "desc": "在俄留学2年",
+                    "degree": "工程学硕士",
+                    "pis": "https:",
+                }
+                {}
+            ]
+        },
+        {
+            "enschoolname": "hse",
+            "linkmen": [
+                {
+                    "name": "王同学",
+                    "index": "3",
+                    "desc": "在俄留学2年",
+                    "degree": "工程学博士",
+                    "pis": "https:",
+                },
+                {
+                    "name": "张同学",
+                    "index": "4",
+                    "desc": "在俄留学2年",
+                    "degree": "工程学硕士",
+                    "pis": "https:",
+                }
+                {}
+            ]
+        },
+        {}
+    ]
+}

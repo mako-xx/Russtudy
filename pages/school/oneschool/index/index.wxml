@@ -61,6 +61,11 @@
   所在城市：{{school.city}}
 </view>
 <view class='division'></view>
+
+
+
+
+
 <view class="cu-bar bg-white margin-top solid-bottom">
   <view class="action">
     <text class="cuIcon-title text-blue"></text>简要信息
@@ -106,16 +111,16 @@
 </view>
 
 <view class="bg-white padding-sm" style="width:100%;height:auto">
-  表格之后要改，目前还没找到好看的样式
   <view class="tableHome" style="width:80%;display:flex;flex-direction:column;margin: 0 auto 0 auto;"
     wx:if="{{index!=-1}}">
-    <view class="tableLine" style="height: 40rpx;display: flex;flex-direction: row;" wx:for="{{table}}">
-      <view class="tableItem"
-        style="flex:7;border-style: solid;border-width: 3rpx;height: 100%;display: flex;flex-direction: row;align-items: center;padding-left:10rpx;">
+    <view class="tableLine" style="height: 40rpx;display: flex;flex-direction: row;" wx:for="{{table}}"
+      wx:for-index="sub">
+      <view class="tableItem bg-green"
+        style="flex:{{28-sub}};border-style: solid;border-width: 3rpx;height: 100%;display: flex;flex-direction: row;align-items: center;padding-left:1em;{{sub==0?'border-top-left-radius: 20rpx;':''}}">
         {{item.label}}
       </view>
-      <view class="tableItem"
-        style="flex:3;border-style: solid;border-width: 3rpx;height: 100%;display: flex;flex-direction: row;align-items: center;padding-left:10rpx;">
+      <view class="tableItem bg-grey"
+        style="flex:{{12+sub}};border-style: solid;border-width: 3rpx;height: 100%;display: flex;flex-direction: row;align-items: center;padding-left:10rpx;{{sub==table.length-1?'border-bottom-right-radius: 20rpx;':''}}background-color:#A7A7A7">
         {{item.num}}
       </view>
     </view>
@@ -162,6 +167,28 @@
 
 
 <view class="blank"></view>
+
+
+
+<view class="cu-bar bg-white margin-top solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>校友咨询
+  </view>
+</view>
+<view class="cu-list grid col-2 no-border">
+  <view class="cu-item " wx:for="{{linkman}}" wx:key>
+    <text>{{item.desc}}</text>
+    <image class="" id="stu-image-{{index}}" style="width:60%;height:{{stuwidth?stuwidth:0}}rpx;margin: auto;"
+      bindtap="asklinker" data-index="{{index}}" src="{{item.pic}}" mode="aspectFit">
+
+    </image>
+    <text>{{item.name}}</text>
+    <text>{{item.position}}</text>
+  </view>
+</view>
+
+
+
 
 <view class="myTxtCenter text-gray">
   KeLi 赴俄留学小助手

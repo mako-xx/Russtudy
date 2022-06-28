@@ -16,7 +16,7 @@ function initData(that) {
     {
       speaker: 'mid',
       contentType: 'text',
-      content: '中俄留学小助手为您解答'
+      content: '中俄留学小助手为您服务'
     },
     {
       speaker: 'server',
@@ -67,31 +67,94 @@ Page({
     var index = parseInt(options.index);
     if (!index) index = 0
 
-    var msgList;
-    if (messages.length > index)
-      msgList = messages[index];
+    var msgList, serverinfo;
+    if (messages.length > index) {
+      msgList = messages[index].list;
+      serverinfo = messages[index].info;
+    }
+    this.setData({
+      serverinfo
+    })
+
     console.log(msgList)
     if (!msgList || !msgList.length) {
-      msgList = [
-        {
+      if (!index) {
+        if (!options.carry)
+          msgList = [
+            {
+              speaker: 'mid',
+              contentType: 'text',
+              content: '中俄留学小助手为您服务'
+            },
+            {
+              speaker: 'server',
+              contentType: 'text',
+              content: '这里是中俄留学小助手客服，请问您有什么想咨询的吗'
+            }
+          ]
+        else
+          msgList = [
+            {
+              speaker: 'mid',
+              contentType: 'text',
+              content: '中俄留学小助手为您服务'
+            },
+            {
+              speaker: 'mid',
+              contentType: 'text',
+              content: '您正在咨询的是' + options.carry
+            },
+            {
+              speaker: 'server',
+              contentType: 'text',
+              content: '这里是中俄留学小助手客服，请问您有什么想咨询的吗'
+            }
+          ]
+      }
+      else {
+        msgList = [
+          {
+            speaker: 'mid',
+            contentType: 'text',
+            content: '正在与您对接的是' + serverinfo.school + '-' + serverinfo.name
+          },
+          {
+            speaker: 'server',
+            contentType: 'text',
+            content: '这里是' + serverinfo.school + '，请问您有什么想咨询的吗'
+          }
+        ]
+      }
+    } else if (msgList[msgList.length - 1].speaker != 'mid') {
+      if (!index) {
+        if (!options.carry)
+          msgList.push({
+            speaker: 'mid',
+            contentType: 'text',
+            content: '中俄留学小助手为您服务'
+          })
+        else
+          msgList.push({
+            speaker: 'mid',
+            contentType: 'text',
+            content: '您正在咨询的是' + options.carry
+          })
+      }
+
+      else
+        msgList.push({
           speaker: 'mid',
           contentType: 'text',
-          content: '中俄留学小助手为您解答'
-        },
-        {
-          speaker: 'server',
-          contentType: 'text',
-          content: '这里是中俄留学小助手客服，请问您有什么想咨询的吗'
-        }
-      ]
-    } else if (msgList[msgList.length - 1].speaker != 'mid') {
-      msgList.push({
-        speaker: 'mid',
-        contentType: 'text',
-        content: '中俄留学小助手为您解答'
-      })
+          content: serverinfo.school + '-' + serverinfo.name + '为您解疑'
+        })
+    } else if (msgList[msgList.length - 1].speaker == 'mid') {
+      if (!index) {
+        if (options.carry) msgList[msgList.length - 1].content = '您正在咨询的是' + options.carry
+        else msgList[msgList.length - 1].content = '中俄留学小助手为您服务'
+      }
+
     }
-    messages[index] = msgList
+    messages[index].list = msgList
     this.setData({
       msgList: msgList,
       messages: messages,
@@ -157,6 +220,7 @@ Page({
    * 发送点击监听
    */
   sendClick: function (e) {
+    console.log("begin")
     if (e.detail.value) {
       var messages = this.data.messages;
       var msgList = this.data.msgList;
@@ -166,7 +230,7 @@ Page({
         contentType: 'text',
         content: e.detail.value
       })
-      messages[msgindex] = msgList;
+      messages[msgindex].list = msgList;
       inputVal = '';
       this.setData({
         messages,
@@ -174,6 +238,7 @@ Page({
         inputVal,
         text: ''
       });
+      console.log("end")
       wx.setStorageSync("messages", messages)
     }
   },
@@ -187,7 +252,7 @@ Page({
         contentType: 'text',
         content: this.data.text
       })
-      messages[msgindex] = msgList;
+      messages[msgindex].list = msgList;
       inputVal = '';
       this.setData({
         messages,

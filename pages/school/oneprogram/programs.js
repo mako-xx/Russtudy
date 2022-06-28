@@ -219,5 +219,11 @@ Page({
         url: "../oneschool/index/index?school_id=" + id
       })
     }
-  }
+  },
+  kefu() {
+    var pro = this.data.program
+    wx.navigateTo({
+      url: '../../my/contact/contact?index=0&carry=' + pro.schoolname + '-' + pro.name,
+    })
+  },
 })

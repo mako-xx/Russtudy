@@ -221,7 +221,10 @@ App({
     const messages = wx.getStorageSync('messages')
     var msg = messages
     if (!msg) {
-      msg = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]
+
+
+
+      msg = [{ "info": { "name": "中俄留学小助手", "school": "***", "pic": "https://wx3.sinaimg.cn/mw2000/008tQ72zly1h3mmxzu8taj30dz0ggq5x.jpg" }, "list": [] }, { "info": { "name": "王同学", "school": "***", "pic": "https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2q4mp6kluj305k05k3yi.jpg" }, "list": [] }, { "list": [] }, { "list": [] }, { "list": [] }, { "list": [] }, { "list": [] }, { "list": [] }, { "list": [] }, { "list": [] }]
       wx.setStorageSync('messages', msg)
       console.log(msg);
     }

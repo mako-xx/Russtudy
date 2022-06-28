@@ -222,9 +222,10 @@ Page({
       if (schoolpics[i].enname == enname) { return schoolpics[i].logo; }
     }
   },
-  kefu() {
+  kefu(e) {
+    var pro = this.data.showprograms[e.currentTarget.dataset.value]
     wx.navigateTo({
-      url: '../../my/contact/contact',
+      url: '../../my/contact/contact?index=0&carry=' + pro.schoolname + '-' + pro.name,
     })
   },
   learn_more(e) {
