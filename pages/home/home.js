@@ -30,7 +30,11 @@ Page({
       })
     }
   },
-
+  how(){
+    wx.navigateTo({
+      url: '../home/how/how',
+    })
+  },
   whyrussia() {
     wx.navigateTo({
       url: '../home/home/home',

@@ -1,4 +1,5 @@
-// pages/home/how/how.js
+// pages/home/home/home.js
+const app = getApp()
 Page({
 
   /**
@@ -12,7 +13,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
+    var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight - app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
+    this.setData({
+      HeadBar: HeadBar,
+      ShowHeight: ShowHeight
+    })
   },
 
   /**

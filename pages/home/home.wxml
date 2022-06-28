@@ -56,7 +56,7 @@
  </text>
  <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/russia.png"class="bimage" style="width: 164rpx; height: 147rpx; display: block; box-sizing: border-box; left: -10rpx; top: 14rpx; position: relative"></image>
 </view>
-<view class="button.white" style="position: relative; left: -24rpx; top: -1695rpx">
+<view class="button.white" style="position: relative; left: -24rpx; top: -1695rpx" bindtap="how">
   <text class="btext">
 如何学习俄语
   </text>

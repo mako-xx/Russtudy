@@ -7,7 +7,7 @@
 .blank{
   z-index: 40;
   position: relative;
-  top: 20rpx;
+  top: 1400rpx;
   height: 50rpx;
 }
 .card {
