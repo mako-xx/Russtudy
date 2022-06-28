@@ -8,6 +8,7 @@ Page({
     topIndex: 0,
     MainCur: 0,
     VerticalNavTop: 0,
+    isloading: 1,
     allownavigate: 1,
     // src: ['https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e188mpn7j30rs0ijn1l.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e187stc7j30ws0kathf.jpg', 'https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e18a31bsj31kw11ykjl.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e188bymfj313d0mvwiq.jpg'],
     subject_direction: [{ "name": "全部", "directions": [] },
@@ -92,6 +93,9 @@ Page({
             // that.beginprocess();
             that.repick1();
             that.getshow();
+            that.setData({
+              isloading: 0
+            })
             // if (school_id) {
             //   that.changeschoollabels(school_id);
             //   that.repick();
@@ -251,7 +255,7 @@ Page({
     newpro["name"] = program.name
     newpro["enschoolname"] = program.enschoolname
     newpro["schoolname"] = program.schoolname
-    newpro["rank"] = program.rank
+    newpro["schoolrank"] = program.schoolrank
     newpro["logo"] = this.findlogo(newpro["enschoolname"])
     const city_uni = this.data.city_uni;
     for (var i = 0; i < city_uni.length; i++) {
@@ -314,11 +318,15 @@ Page({
     var questions = wx.getStorageSync("questions");
     var processed = [];
     var allprograms = this.getallpro();
+    var professionloc = 0;
+    for (professionloc = 0; professionloc < this.data.subject_direction.length; professionloc++) {
+      if (this.data.subject_direction[professionloc].name == questions.profession) break;
+    }
     console.log(allprograms, questions)
     var selectedprograms = []
     for (var i = 0; i < allprograms.length; i++) {
       var infos = allprograms[i].info;
-
+      var subject;
       var conform = 0;
 
       //对方向进行筛选
@@ -328,35 +336,128 @@ Page({
         // console.log(infos,questions.li)
         for (index = 0; index < infos.length; index++) {
 
-          if (infos[index].label == '方向' && infos[index].answer.split(',').indexOf(questions.li[y]) != -1) {
-            conform = 1;
-            break;
+          if (infos[index].label == '方向') {
+            subject = infos[index].answer;
+            if (infos[index].answer.split(',').indexOf(questions.li[y]) != -1) {
+              conform = 1;
+              break;
+            }
           }
         }
         if (conform == 1)
           break;
       }
-      if (conform == 0) { continue; }
-      selectedprograms.push(allprograms[i])
+      if (conform == 0) {
+        if (Math.random() > 0.95) {
+          if (this.data.subject_direction[professionloc].directions.indexOf(subject)) {
+            selectedprograms.push(allprograms[i])
+          }
+        }
+        continue;
+      }
+      for (var k = 0; k < 10; k++)
+        selectedprograms.push(allprograms[i])
     }
     selectedprograms.sort(function (a, b) { return b.fakerank - a.fakerank })
     console.log("selectedprograms", selectedprograms);
     this.setselect(selectedprograms)
     this.setData({
+      questions: questions,
       unblank: false,
       searching: 0
     })
   },
   getshow() {
+    var questions = this.data.questions;
+    questions.citys = ["莫斯科", "喀山"]
     var selectedprograms1 = this.data.selectedprograms1;
     console.log("selectedprograms1", selectedprograms1)
     var show1 = [];
-    for (var i = 0; i < 20; i++) {
-      var pro = selectedprograms1[i];
-      console.log(pro)
+    for (var i = 0; i < 50; i++) {
+      parseInt(Math.random() * (selectedprograms1.length), 10);
+      var pro = selectedprograms1[Math.floor(Math.random() * (selectedprograms1.length))];
       var cityname = this.getcity(pro.schoolname)
-      console.log(cityname)
+      if (questions.citys.indexOf(cityname) == -1 && Math.random() > 1) {
+        i--;
+        continue;
+      }
+      var j = -1;
+      if (show1.length)
+        for (j = 0; j < show1.length; j++) {
+          console.log(pro, show1[j])
+          if (show1[j].index == pro.index) break;
+        }
+      if (j == show1.length || !show1.length)
+        show1.push(pro);
+      if (show1.length >= 3) break;
     }
+    show1.sort(function (a, b) { return a.fakerank - b.fakerank })
+    var reallyshow1 = [];
+    for (var j = 0; j < show1.length; j++) {
+      reallyshow1.push(this.dataprocess(show1[j]));
+    }
+
+    var selectedprograms2 = this.data.selectedprograms2;
+    console.log("selectedprograms2", selectedprograms2)
+    var show2 = [];
+    for (var i = 0; i < 50; i++) {
+      parseInt(Math.random() * (selectedprograms2.length), 10);
+      var pro = selectedprograms2[Math.floor(Math.random() * (selectedprograms2.length))];
+      var cityname = this.getcity(pro.schoolname)
+      if (questions.citys.indexOf(cityname) == -1 && Math.random() > 1) {
+        i--;
+        continue;
+      }
+      var j = -1;
+      if (show2.length)
+        for (j = 0; j < show2.length; j++) {
+          console.log(pro, show2[j])
+          if (show2[j].index == pro.index) break;
+        }
+      if (j == show2.length || !show2.length)
+        show2.push(pro);
+      if (show2.length >= 3) break;
+    }
+    show2.sort(function (a, b) { return a.fakerank - b.fakerank })
+    var reallyshow2 = [];
+    for (var j = 0; j < show2.length; j++) {
+      reallyshow2.push(this.dataprocess(show2[j]));
+    }
+    var selectedprograms3 = this.data.selectedprograms3;
+    console.log("selectedprograms3", selectedprograms3)
+    var show3 = [];
+    for (var i = 0; i < 50; i++) {
+      parseInt(Math.random() * (selectedprograms3.length), 10);
+      var pro = selectedprograms3[Math.floor(Math.random() * (selectedprograms3.length))];
+      var cityname = this.getcity(pro.schoolname)
+      if (questions.citys.indexOf(cityname) == -1 && Math.random() > 1) {
+        i--;
+        continue;
+      }
+      var j = -1;
+      if (show3.length)
+        for (j = 0; j < show3.length; j++) {
+          console.log(pro, show3[j])
+          if (show3[j].index == pro.index) break;
+        }
+      if (j == show3.length || !show3.length)
+        show3.push(pro);
+      if (show3.length >= 3) break;
+    }
+    show3.sort(function (a, b) { return a.fakerank - b.fakerank })
+    var reallyshow3 = [];
+    for (var j = 0; j < show3.length; j++) {
+      reallyshow3.push(this.dataprocess(show3[j]));
+    }
+    console.log(reallyshow1, reallyshow2, reallyshow3)
+    this.setData({
+      reallyshow1,
+      reallyshow2,
+      reallyshow3,
+      show1,
+      show2,
+      show3
+    })
   },
   // pushMore(e) {
   //   var processed = this.data.showprograms;
@@ -390,7 +491,12 @@ Page({
       })
       var that = this
       var index = e.currentTarget.dataset.value;
-      var selectedprograms = this.getselectpro();
+      var id = e.currentTarget.dataset.id;
+      console.log(id, this.data.show1, index)
+      var selectedprograms
+      if (id == '1') selectedprograms = this.data.show1
+      else if (id == '2') selectedprograms = this.data.show2
+      else if (id == '3') selectedprograms = this.data.show3
       var giveProgram = selectedprograms[index]
       console.log("giveProgram", giveProgram, this)
       this.setData({
@@ -440,7 +546,7 @@ Page({
     for (i = 0; i < city_uni.length; i++) {
       var find = 0;
       for (var j = 0; j < city_uni[i].schools.length; j++) {
-        if (city_uni[i].schools[j] == uniname) {
+        if (city_uni[i].schools[j].name == uniname) {
           find = 1;
           break;
         }
@@ -449,6 +555,5 @@ Page({
     }
     return city_uni[i].city;
   }
-
 
 })
