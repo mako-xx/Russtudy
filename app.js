@@ -81,125 +81,14 @@ App({
                 schools.push(allvalue.data[i])
               wx.setStorageSync('schools', schools)
               that.globalData.schools = schools;
+
+              that.findprogram(schools);
+
             })
         })
-    }
+    } else that.findprogram(schools)
 
-    schools.sort(function (a, b) { return a.qsdome - b.qsdome });
-    const provalue1 = wx.getStorageSync('programs1')
-    var programs1 = provalue1
-    if (!programs1) {
-      console.log("缓存获取programs1失败,进行数据库查询");
-      var allvalue;
-      db.collection("programs").limit(5).get()
-        .then(res => {
-          allvalue = res
-          programs1 = [];
-          for (var i = 0; i < allvalue.data.length; i++) {
-            var prs = allvalue.data[i].programs;
-            var schname = prs[0].schoolname;
-            var index;
-            for (var index = 0; index < schools.length; index++) {
-              if (schools[index].name == schname) break;
-            }
-            var rank = schools[index].qsdome;
-            var relativerank = parseInt(index / 5) + 1;
-            for (var j = 0; j < prs.length; j++) {
-              prs[j].schoolrank = rank;
-              prs[j].relativerank = relativerank;
-              var max = 2 * relativerank > 8 ? 2 * relativerank : 8;
-              var move = that.randn_bm() * max - max / 2;
-              prs[j].fakerank = relativerank - move;
-              if (prs[j].fakerank < 0) prs[j].fakerank = relativerank + move;
-              // if (relativerank <= 2) prs[j].fakerank = prs[j].fakerank + that.randn_bm() * 4.3;
-              // console.log(prs[j].fakerank)
-            }
-            programs1 = programs1.concat(prs)
-          }
 
-          console.log("programs1完成", programs1);
-          // wx.setStorageSync('programs1', programs1)
-          that.globalData.programs1 = programs1;
-        })
-    } else {
-      that.globalData.programs1 = programs1
-    }
-
-    const provalue2 = wx.getStorageSync('programs2')
-    var programs2 = provalue2
-    if (!programs2) {
-      console.log("缓存获取programs2失败,进行数据库查询");
-      var allvalue;
-      db.collection("programs").skip(6).limit(5).get()
-        .then(res => {
-          allvalue = res
-          programs2 = [];
-          for (var i = 0; i < allvalue.data.length; i++) {
-            var prs = allvalue.data[i].programs;
-            var schname = prs[0].schoolname;
-            var index;
-            for (var index = 0; index < schools.length; index++) {
-              if (schools[index].name == schname) break;
-            }
-            var rank = schools[index].qsdome;
-            var relativerank = parseInt(index / 5) + 1;
-            for (var j = 0; j < prs.length; j++) {
-              prs[j].schoolrank = rank;
-              prs[j].relativerank = relativerank;
-              var max = 2 * relativerank > 8 ? 2 * relativerank : 8;
-              var move = that.randn_bm() * max - max / 2;
-              prs[j].fakerank = relativerank - move;
-              if (prs[j].fakerank < 0) prs[j].fakerank = relativerank + move;
-              // if (relativerank <= 2) prs[j].fakerank = prs[j].fakerank + that.randn_bm() * 4.3;
-              // console.log(prs[j].fakerank)
-            }
-            programs2 = programs2.concat(prs)
-          }
-          console.log("programs2完成", programs2);
-          // wx.setStorageSync('programs2', programs2)
-          that.globalData.programs2 = programs2;
-        })
-    } else {
-      that.globalData.programs2 = programs2
-    }
-
-    const provalue3 = wx.getStorageSync('programs3')
-    var programs3 = provalue3
-    if (!programs3) {
-      console.log("缓存获取programs3失败,进行数据库查询");
-      var allvalue;
-      db.collection("programs").skip(11).limit(5).get()
-        .then(res => {
-          allvalue = res
-          programs3 = [];
-          for (var i = 0; i < allvalue.data.length; i++) {
-            var prs = allvalue.data[i].programs;
-            var schname = prs[0].schoolname;
-            var index;
-            for (var index = 0; index < schools.length; index++) {
-              if (schools[index].name == schname) break;
-            }
-            var rank = schools[index].qsdome;
-            var relativerank = parseInt(index / 5) + 1;
-            for (var j = 0; j < prs.length; j++) {
-              prs[j].schoolrank = rank;
-              prs[j].relativerank = relativerank;
-              var max = 2 * relativerank > 8 ? 2 * relativerank : 8;
-              var move = that.randn_bm() * max - max / 2;
-              prs[j].fakerank = relativerank - move;
-              if (prs[j].fakerank < 0) prs[j].fakerank = relativerank + move;
-              // if (relativerank <= 2) prs[j].fakerank = prs[j].fakerank + that.randn_bm() * 4.3;
-              // console.log(prs[j].fakerank)
-            }
-            programs3 = programs3.concat(prs)
-          }
-          console.log("programs3完成", programs3);
-          // wx.setStorageSync('programs3', programs3)
-          that.globalData.programs3 = programs3;
-        })
-    } else {
-      that.globalData.programs3 = programs3
-    }
 
     that.globalData.intervalID = setInterval(that.process, 1000)
 
@@ -314,9 +203,130 @@ App({
     if (num > 1 || num < 0) return randn_bm() // resample between 0 and 1
     return num
   },
+  findprogram(schools) {
+    var that = this;
+    schools.sort(function (a, b) { return a.qsdome - b.qsdome });
+    const provalue1 = wx.getStorageSync('programs1')
+    var programs1 = provalue1
+    if (!programs1) {
+      console.log("缓存获取programs1失败,进行数据库查询");
+      var allvalue;
+      db.collection("programs").limit(5).get()
+        .then(res => {
+          allvalue = res
+          programs1 = [];
+          for (var i = 0; i < allvalue.data.length; i++) {
+            var prs = allvalue.data[i].programs;
+            var schname = prs[0].schoolname;
+            var index;
+            for (var index = 0; index < schools.length; index++) {
+              if (schools[index].name == schname) break;
+            }
+            var rank = schools[index].qsdome;
+            var relativerank = parseInt(index / 5) + 1;
+            for (var j = 0; j < prs.length; j++) {
+              prs[j].schoolrank = rank;
+              prs[j].relativerank = relativerank;
+              var max = 2 * relativerank > 8 ? 2 * relativerank : 8;
+              var move = that.randn_bm() * max - max / 2;
+              prs[j].fakerank = relativerank - move;
+              if (prs[j].fakerank < 0) prs[j].fakerank = relativerank + move;
+              // if (relativerank <= 2) prs[j].fakerank = prs[j].fakerank + that.randn_bm() * 4.3;
+              // console.log(prs[j].fakerank)
+            }
+            programs1 = programs1.concat(prs)
+          }
+
+          console.log("programs1完成", programs1);
+          // wx.setStorageSync('programs1', programs1)
+          that.globalData.programs1 = programs1;
+          console.log(programs1)
+        })
+    } else {
+      that.globalData.programs1 = programs1
+      console.log(programs1)
+    }
+
+    const provalue2 = wx.getStorageSync('programs2')
+    var programs2 = provalue2
+    if (!programs2) {
+      console.log("缓存获取programs2失败,进行数据库查询");
+      var allvalue;
+      db.collection("programs").skip(6).limit(5).get()
+        .then(res => {
+          allvalue = res
+          programs2 = [];
+          for (var i = 0; i < allvalue.data.length; i++) {
+            var prs = allvalue.data[i].programs;
+            var schname = prs[0].schoolname;
+            var index;
+            for (var index = 0; index < schools.length; index++) {
+              if (schools[index].name == schname) break;
+            }
+            var rank = schools[index].qsdome;
+            var relativerank = parseInt(index / 5) + 1;
+            for (var j = 0; j < prs.length; j++) {
+              prs[j].schoolrank = rank;
+              prs[j].relativerank = relativerank;
+              var max = 2 * relativerank > 8 ? 2 * relativerank : 8;
+              var move = that.randn_bm() * max - max / 2;
+              prs[j].fakerank = relativerank - move;
+              if (prs[j].fakerank < 0) prs[j].fakerank = relativerank + move;
+              // if (relativerank <= 2) prs[j].fakerank = prs[j].fakerank + that.randn_bm() * 4.3;
+              // console.log(prs[j].fakerank)
+            }
+            programs2 = programs2.concat(prs)
+          }
+          console.log("programs2完成", programs2);
+          // wx.setStorageSync('programs2', programs2)
+          that.globalData.programs2 = programs2;
+        })
+    } else {
+      that.globalData.programs2 = programs2
+    }
+
+    const provalue3 = wx.getStorageSync('programs3')
+    var programs3 = provalue3
+    if (!programs3) {
+      console.log("缓存获取programs3失败,进行数据库查询");
+      var allvalue;
+      db.collection("programs").skip(11).limit(5).get()
+        .then(res => {
+          allvalue = res
+          programs3 = [];
+          for (var i = 0; i < allvalue.data.length; i++) {
+            var prs = allvalue.data[i].programs;
+            var schname = prs[0].schoolname;
+            var index;
+            for (var index = 0; index < schools.length; index++) {
+              if (schools[index].name == schname) break;
+            }
+            var rank = schools[index].qsdome;
+            var relativerank = parseInt(index / 5) + 1;
+            for (var j = 0; j < prs.length; j++) {
+              prs[j].schoolrank = rank;
+              prs[j].relativerank = relativerank;
+              var max = 2 * relativerank > 8 ? 2 * relativerank : 8;
+              var move = that.randn_bm() * max - max / 2;
+              prs[j].fakerank = relativerank - move;
+              if (prs[j].fakerank < 0) prs[j].fakerank = relativerank + move;
+              // if (relativerank <= 2) prs[j].fakerank = prs[j].fakerank + that.randn_bm() * 4.3;
+              // console.log(prs[j].fakerank)
+            }
+            programs3 = programs3.concat(prs)
+          }
+          console.log("programs3完成", programs3);
+          // wx.setStorageSync('programs3', programs3)
+          that.globalData.programs3 = programs3;
+        })
+    } else {
+      that.globalData.programs3 = programs3
+    }
+  },
   process() {
     console.log("interval in app调用一次");
     // console.log(this.globalData.programs1)
+    console.log(this)
     if (this.globalData.programs1 && this.globalData.programs2 && this.globalData.programs3) {
       var allprograms = this.globalData.programs1.concat(this.globalData.programs2).concat(this.globalData.programs3);
       allprograms = allprograms.sort(function (a, b) { return a.fakerank - b.fakerank })

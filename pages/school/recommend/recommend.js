@@ -223,14 +223,13 @@ Page({
 
       //对方向进行筛选
       conform = 0;
-      for (var y = 0; y < questions.li.length; y++) {
+      for (var y = 0; y < questions.subjects.length; y++) {
         var index;
-        // console.log(infos,questions.li)
         for (index = 0; index < infos.length; index++) {
 
           if (infos[index].label == '方向') {
             subject = infos[index].answer;
-            if (infos[index].answer.split(',').indexOf(questions.li[y]) != -1) {
+            if (infos[index].answer.split(',').indexOf(questions.subjects[y]) != -1) {
               conform = 1;
               break;
             }
@@ -261,7 +260,7 @@ Page({
   },
   getshow() {
     var questions = this.data.questions;
-    questions.citys = ["莫斯科", "喀山"]
+    console.log("citys", questions.citys)
     var selectedprograms1 = this.data.selectedprograms1;
     console.log("selectedprograms1", selectedprograms1)
     var show1 = [];

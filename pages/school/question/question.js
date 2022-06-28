@@ -1,6 +1,6 @@
 // pages/school/question/question.js
 const app = getApp()
-const db=wx.cloud.database()
+const db = wx.cloud.database()
 Page({
 
   /**
@@ -19,31 +19,38 @@ Page({
     AGEindex: 0,
     EXPindex: 0,
     city: [
-      {value: '0', name: "莫斯科"},
-      {value: '1',name: '圣彼得堡'},
-      {value: '2',name: '喀山'},
-      {value: '3',name: '下诺夫哥罗德'},
-      {value: '4',name: '新西伯利亚'},
-      {value: '5',name: '托木斯克'},
-      {value: '6',name: '符拉迪沃斯托克'},
-      {value: '7',name: '彼得罗扎沃茨克'},
-      {value: '8',name: '萨马拉'},
-      {value: '9',name: '彼尔姆'},
-      {value: '10',name: '乌苏里斯克'},
-      {value: '11',name: '索契'},
-      {value: '12',name: '阿尔扎马斯'},
-      {value: '13',name: '阿巴坎'},
-      {value: '14',name: '卡马河畔切尔尼'},
-      {value: '15',name: '奥布宁斯克'},
-      {value: '16',name: '车里雅宾斯克'},
-      {value: '17',name: '加里宁格勒'},
-      {value: '18',name: '秋明'},
-      {value: '19',name: '克拉斯诺亚尔斯克'},
+      { value: '0', name: "莫斯科" },
+      { value: '1', name: '圣彼得堡' },
+      { value: '2', name: '喀山' },
+      { value: '3', name: '下诺夫哥罗德' },
+      { value: '4', name: '新西伯利亚' },
+      { value: '5', name: '托木斯克' },
+      { value: '6', name: '符拉迪沃斯托克' },
+      { value: '7', name: '彼得罗扎沃茨克' },
+      { value: '8', name: '萨马拉' },
+      { value: '9', name: '彼尔姆' },
+      { value: '10', name: '乌苏里斯克' },
+      { value: '11', name: '索契' },
+      { value: '12', name: '阿尔扎马斯' },
+      { value: '13', name: '阿巴坎' },
+      { value: '14', name: '卡马河畔切尔尼' },
+      { value: '15', name: '奥布宁斯克' },
+      { value: '16', name: '车里雅宾斯克' },
+      { value: '17', name: '加里宁格勒' },
+      { value: '18', name: '秋明' },
+      { value: '19', name: '克拉斯诺亚尔斯克' },
     ]
   },
-  change8(e){
-console.log(e)
-console.log(this.data.city[0].name)
+  change8(e) {
+    console.log(e.detail.value.length)
+    this.setData({
+      flag: true,
+    })
+    if (e.detail.value.length == 0) {
+      this.setData({
+        flag: false,
+      })
+    }
   },
   changeG(e) {
     console.log(e.detail.value.length)
@@ -234,7 +241,7 @@ console.log(this.data.city[0].name)
       })
     }
   },
-  handleBack(){
+  handleBack() {
 
   },
   /**
