@@ -8,7 +8,7 @@ Page({
     swiperList: [{
       id: 0,
       type: 'image',
-      url: 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e189ay2fj30ws0ka0yb.jpg'
+      url: 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2ds8dlvnjj30zk0nngur.jpg'
     }, {
       id: 1,
       type: 'image',

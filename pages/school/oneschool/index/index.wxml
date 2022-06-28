@@ -178,7 +178,7 @@
 <view class="cu-list grid col-2 no-border">
   <view class="cu-item " wx:for="{{linkman}}" wx:key>
     <text>{{item.desc}}</text>
-    <image class="" id="stu-image-{{index}}" style="width:60%;height:{{stuwidth?stuwidth:0}}rpx;margin: auto;"
+    <image class="" id="stu-image-{{index}}"style="width:60%;height:{{stuwidth?stuwidth:0}}rpx;margin: auto;"
       bindtap="asklinker" data-index="{{index}}" src="{{item.pic}}" mode="aspectFit">
 
     </image>

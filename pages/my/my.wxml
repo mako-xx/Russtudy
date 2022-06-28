@@ -9,7 +9,7 @@
   </view>
 </view>
 <!-- <scroll-view scroll-y="true" style="height:{{ShowHeight}}rpx;" class="bg-gray"> -->
-<view class="triangleD" style="position: relative; left: -604rpx; top: 0rpx">
+<view class="triangleD" style="position: relative; left: -606rpx; top: -10rpx; width: -20rpx; height: 260rpx; display: block; box-sizing: border-box">
 
 </view>
 <view class="login">
@@ -23,7 +23,6 @@
   <view class="ligin-bu">
     <button class="cu-btn.round" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" bindtap="login"
       style="position: relative; top: -1200rpx; left: -175rpx">
-
     </button>
   </view>
 </view>
@@ -64,6 +63,8 @@
       src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/关于我们1 1.png">
     </image>
     <text class="tdetail">关于我们</text>
+    <text class="text-ABC text-red  text-bold "
+    style="position: absolute; left: 100rpx; top: 45rpx; opacity:0.5; font-size: 20rpx;">about us</text>
     <image class="jiantou"
       src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/箭头 右.png"></image>
   </button>
