@@ -1,6 +1,6 @@
 /* pages/home/home/home.wxss */
 .back {
-  background-image: linear-gradient(to top, #d3d3d3, #dedede, #e9e9e9, #f4f4f4, #ffffff);
+  color: lightgrey;
 }
 
 .row {
@@ -22,7 +22,7 @@
   background: transparent;
 }
 
-.bg_ware {
+.bg_wave {
   position: absolute;
   left: 0;
   bottom: -2rpx;
@@ -32,9 +32,9 @@
 }
 
 .btext {
-
   font-size: 35rpx;
   font-weight: 550;
+  color: rgb(85, 85, 85);
 }
 
 .bimage {
@@ -48,14 +48,20 @@
 
 .button {
   position: relative;
-  width: 300rpx;
-  height: 250rpx;
+  width: 45%;
+  height: 300rpx;
   color: white;
-  border-radius: 25px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-items: center;
+  opacity: 0.8;
+  z-index: 9;
+}
+
+.button.white {
+  background-color: white;
 }
 
 .button.red {
@@ -103,7 +109,7 @@
 .yun1 {
   width: 340rpx;
   height: 200rpx;
-  z-index: 10;
+  z-index: 5;
   animation: cloud1 5s infinite;
   background-color: transparent;
 }
@@ -111,14 +117,14 @@
 .yun2 {
   width: 170rpx;
   height: 100rpx;
-  z-index: 10;
+  z-index: 5;
   animation: cloud2 10s infinite;
 }
 
 .yun3 {
   width: 238rpx;
   height: 140rpx;
-  z-index: 10;
+  z-index: 5;
   animation: cloud3 7s infinite;
 }
 

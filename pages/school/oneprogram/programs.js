@@ -19,6 +19,11 @@ Page({
     })
 
   },
+  toKefu(){
+    wx.navigateTo({
+      url: '../../my/contact/contact?message_="这里是专业相关询问界面，可以询问学校专业有关问题。"',
+    })
+  },
   onLoad(options) {
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
     var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight - app.globalData.navigationHeight) * app.globalData.pxToRpxScale;

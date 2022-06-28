@@ -103,7 +103,7 @@
                                 style="height: 100%; left: 120rpx; width: auto; position: absolute; top: 0rpx">
 
                                 <view class="text-grey text-sm oneline"
-                                    style="color: #996179; display: -webkit-box; width: 264rpx; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
+                                    style="color: #996179; display: -webkit-box; width: 264rpx; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 10rpx">
                                     {{it.name}}
                                 </view>
                                 <view class="text-gray text-sm" style="position: relative; left: 0rpx; top: 10rpx">

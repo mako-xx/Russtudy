@@ -46,7 +46,7 @@
         },
         {
           "name": "",
-          "pathName": "pages/school/classify/classify",
+          "pathName": "pages/home/home",
           "query": "",
           "launchMode": "default",
           "scene": null

@@ -7,10 +7,67 @@ Page({
    */
   data: {
     isShow7: false,
+    isShow_Gong: false,
+    isShow_Li: false,
+    isShow_Wen: false,
+    isShow_Shang: false,
+    isShow_Ti: false,
+    flag: false,
     AGE: ['18','19','20','21','22','23','24','25','26'],
     EXP: ['1','2','3','4','5','6','7','8'],
     AGEindex: 0,
     EXPindex: 0,
+  },
+  changeG(e){
+    console.log(e.detail.value.length)
+    this.setData({
+      flag: true,
+    })
+    if(e.detail.value.length == 0){
+    this.setData({
+      flag: false,
+    })
+  }
+  },
+  changeS(e){
+    this.setData({
+      flag: true,
+    })
+    if(e.detail.value.length == 0){
+      this.setData({
+        flag: false,
+      })
+    }
+  },
+  changeT(e){
+    this.setData({
+      flag: true,
+    })
+    if(e.detail.value.length == 0){
+      this.setData({
+        flag: false,
+      })
+     }
+  },
+  changeL(e){
+    this.setData({
+      flag: true,
+    })
+    if(e.detail.value.length == 0){
+      this.setData({
+        flag: false,
+      })
+    }
+  },
+  changeW(e){
+    this.setData({
+      flag: true,
+    })
+    if(e.detail.value.length == 0){
+      this.setData({
+        flag: false,
+      })
+    }
   },
   bindAgeChange(e){
     console.log(e)
@@ -25,9 +82,7 @@ Page({
     })
   },
   formSubmit_(e){
-    console.log(e)
-    console.log(e.detail.value.sex.length)
-    console.log(this.data.isShow7)
+    console.log(this.data.flag)
   if(e.detail.value.sex.length == 0){
     wx.showToast({
       title: '请填选性别',
@@ -82,7 +137,17 @@ Page({
     setTimeout(function () {
       wx.hideToast()
     }, 2000)
+  }else if(this.data.flag == false){
+    wx.showToast({
+      title: '请填选专业',
+      icon: 'error',
+      duration: 1500
+    })
+    setTimeout(function () {
+      wx.hideToast()
+    }, 2000)
   }
+  
 },
   change7(e){
       console.log(e.detail.value)
@@ -95,6 +160,40 @@ Page({
         isShow7: false,
        })
       }
+  },
+  change5(e){
+    this.setData({
+      isShow_Gong: false,
+      isShow_Li: false,
+      isShow_Wen: false,
+      isShow_Shang: false,
+      isShow_Ti: false,
+      flag: false,
+    })
+    console.log(e.detail.value)
+    if(e.detail.value == "文科"){
+      console.log(e.detail.value)
+      this.setData({
+        isShow_Wen: true,
+       })
+    }else if(e.detail.value == "理科"){
+      console.log(e.detail.value)
+      this.setData({
+        isShow_Li: true,
+      })
+     }else if(e.detail.value == "商科"){
+      this.setData({
+        isShow_Shang: true,
+      })
+     }else if(e.detail.value == "工科"){
+      this.setData({
+        isShow_Gong: true,
+      })
+     }else if(e.detail.value == "体育"){
+      this.setData({
+        isShow_Ti: true,
+      })
+     }
   },
   /**
    * 生命周期函数--监听页面加载
