@@ -153,6 +153,11 @@ Page({
       url: "../question/question",
     })
   },
+  clickcontact(){
+    wx.navigateTo({
+      url: "../../my/contact/contact",
+    })
+  },
   clickrecommend() {
     var questions = wx.getStorageSync("questions");
     if (!questions) {

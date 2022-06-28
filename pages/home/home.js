@@ -41,13 +41,13 @@ Page({
     })
   },
   college() {
-    wx.switchTab({
-      url: '../school/index/school',
+    wx.navigateTo({
+      url: '../school/classify/classify',
     })
   },
-  life() {
-    wx.switchTab({
-      url: '../life/index/index',
+  profession() {
+    wx.navigateTo({
+      url: '../school/programs/programs',
     })
   },
   /**
