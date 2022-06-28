@@ -18,7 +18,8 @@
     "pages/school/oneschool/rank/rank",
     "pages/school/oneprogram/programs",
     "pages/my/contact/contact",
-    "pages/school/search/search"
+    "pages/school/search/search",
+    "pages/home/how/how"
   ],
   "tabBar": {
     "custom": true,

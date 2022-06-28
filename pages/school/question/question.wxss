@@ -39,6 +39,7 @@ button {
 .radio{
   display: flex;
   flex-direction: column;
+
 }
 .checkbox{
   display: flex;
@@ -71,21 +72,7 @@ label {
     padding: 10rpx;
 }
 
-checkbox .wx-checkbox-input {
-    border-radius: 50%;
 
-}
-
-checkbox .wx-checkbox-input.wx-checkbox-input-checked {
-    border: 1rpx solid #15C469;
-    background: #15C469;
-}
-
-checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
-    color: #fff;
-    /* 对勾颜色 白色 */
-
-}
 
 
 .modal-mask {
