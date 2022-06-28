@@ -82,7 +82,7 @@ Page({
     })
   },
   formSubmit_(e){
-    console.log(this.data.flag)
+    console.log(e)
   if(e.detail.value.sex.length == 0){
     wx.showToast({
       title: '请填选性别',

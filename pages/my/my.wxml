@@ -42,19 +42,19 @@
     </button>
     <button class="collection-item" bindtap="switchschool">
       <image class="collection-icons"
-        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/学校2 1.png">
+        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/学校2 1.png" style="width: 125rpx; height: 125rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: -10rpx; position: relative">
       </image>
     </button>
     <button class="collection-item" bindtap="switchprogram">
       <image class="collection-icons"
-        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/项目2 1.png">
+        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/项目2 1.png" style="width: 100rpx; height: 100rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: 0rpx">
       </image>
     </button>
   </view>
   <view class="collection-3-text">
     <text class="collection-item-text">城市</text>
     <text class="collection-item-text">学校</text>
-    <text class="collection-item-text">项目</text>
+    <text class="collection-item-text">专业</text>
   </view>
 </view>
 
