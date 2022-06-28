@@ -24,8 +24,7 @@ Page({
     ],
     intervaltime1: 0
   },
-  onLoad(options) {
-    var school_id = options.school_id;
+  onLoad() {
     console.log("here")
     wx.showLoading({  // 显示加载中loading效果 
       title: "加载中",
@@ -150,106 +149,6 @@ Page({
       selectedprograms3: selectedprograms3,
     })
   },
-  // //获得筛选标签
-  // beginprocess() {
-
-  //   //获得城市-学校对应表
-  //   var schools = this.data.schools;
-  //   var city_uni = [];
-  //   var _;
-  //   for (var i = 0; i < schools.length; i++) {
-  //     var _city = schools[i].city;
-  //     var _name = schools[i].name;
-  //     var _id = schools[i]._id;
-  //     var find = 0;
-  //     for (var j = 0; j < city_uni.length; j++) {
-  //       if (city_uni[j].city == _city) {
-  //         find = 1;
-  //         city_uni[j].schools.push({ "name": _name, "id": _id });
-  //         break;
-  //       }
-  //     }
-  //     if (find == 0) {
-  //       var dic = { "city": _city, "schools": [{ "name": _name, "id": _id }] }
-  //       city_uni.push(dic)
-  //     }
-  //   }
-  //   city_uni.sort(function (a, b) { return b.schools.length - a.schools.length })
-  //   this.setData({
-  //     city_uni: city_uni
-  //   })
-
-
-
-  //   var subject_direction = this.data.subject_direction
-
-  //   var programs = this.getallpro();
-  //   var processed = [];
-  //   var level = ["所有"]
-  //   var directions = ["所有"]
-  //   var subjects = [["所有"]]
-  //   var mode = ["所有"]
-  //   var language = ["所有"]
-  //   var schoolnames = ["所有"]
-  //   for (var i = 0; i < programs.length; i++) {
-  //     var index = -1;
-  //     for (var j = 0; j < programs[i].info.length; j++) {
-  //       //产生筛选选项
-  //       if (programs[i].info[j].label == "水平" && level.indexOf(programs[i].info[j].answer) == -1) {
-  //         level.push(programs[i].info[j].answer);
-  //       }
-  //       var index;
-  //       if (programs[i].info[j].label == "方向") {
-  //         index = directions.indexOf(programs[i].info[j].answer);
-  //         if (index == -1) {
-  //           directions.push(programs[i].info[j].answer);
-  //           subjects.push(["所有"]);
-  //           index = directions.length - 1;
-  //         }
-
-  //       }
-  //       if (index != -1 && programs[i].info[j].label == "科目" && subjects[index].indexOf(programs[i].info[j].answer) == -1) {
-  //         subjects[index].push(programs[i].info[j].answer);
-  //       }
-  //       if (programs[i].info[j].label == "学习方式") {
-  //         var ways = programs[i].info[j].answer.split(",");
-  //         for (var t = 0; t < ways.length; t++) {
-  //           if (mode.indexOf(ways[t]) == -1 && ways[t] != '') {
-  //             mode.push(ways[t]);
-  //           }
-  //         }
-  //       }
-  //       if (programs[i].info[j].label == "学习语言") {
-  //         var languages = programs[i].info[j].answer.split(",");
-  //         for (var t = 0; t < languages.length; t++) {
-  //           if (language.indexOf(languages[t]) == -1 && languages[t] != '') {
-  //             language.push(languages[t]);
-  //           }
-  //         }
-  //       }
-  //     }
-  //     var name = programs[i].schoolname;
-  //     if (schoolnames.indexOf(name) == -1) {
-  //       schoolnames.push(name);
-  //     }
-  //     // processed.push(this.dataprocess(programs[i]))
-  //   }
-  //   this.setData({
-  //     levels: level,
-  //     levelindex: 0,
-  //     directions: directions,
-  //     directionindex: 0,
-  //     subjects: subjects,
-  //     subjectindex: 0,
-  //     modes: mode,
-  //     modeindex: 0,
-  //     languages: language,
-  //     languageindex: 0,
-  //     schoolnames: schoolnames
-  //   })
-
-
-  // },
   dataprocess(program) {
     var newpro = {}
     newpro["name"] = program.name
@@ -290,14 +189,7 @@ Page({
     while (newinfo.length < 4) {
       newinfo.push({})
     }
-    // var collectedPros = this.data.collection.programs;
     newpro["ifcollected"] = 0;
-    // for (var i = 0; i < collectedPros.length; i++) {
-    //   if (collectedPros[i] == program.index) {
-    //     newpro["ifcollected"] = 1;
-    //     break;
-    //   }
-    // }
     newpro["info"] = newinfo;
     return newpro
   },
@@ -554,6 +446,16 @@ Page({
       if (find == 1) break;
     }
     return city_uni[i].city;
+  },
+  clickchange() {
+    wx.pageScrollTo({
+      scrollTop: 0
+    })
+    this.setData({
+      isloading: 1
+    })
+    this.onLoad();
+
   }
 
 })

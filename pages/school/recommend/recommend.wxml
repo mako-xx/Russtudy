@@ -141,3 +141,18 @@
 
     </view>
 </view>
+<view class="" style="height:30rpx"></view>
+<view class="grid col-2" style="height:auto">
+    <button class="cu-btn bg-red}} margin-tb-sm lg" bindtap="clickchange">换一批</button>
+</view>
+<view class="blank"></view>
+<view class="" style="height:100rpx">
+
+</view>
+<view class="myTxtCenter text-gray">
+    KeLi 赴俄留学小助手
+</view>
+<view class="myTxtCenter text-gray">
+    更多咨询，请联系135555555
+</view>
+<view class="blank"></view>
