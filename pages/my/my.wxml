@@ -1,4 +1,4 @@
-<view class="head" style="height:{{HeadBar}}rpx; z-index: 50;">
+<view class="head" style="height:{{HeadBar}}rpx; z-index: 50;position:fixed">
   <view class="titles">
     <view class="title">
       KeLi
@@ -9,7 +9,7 @@
   </view>
 </view>
 <!-- <scroll-view scroll-y="true" style="height:{{ShowHeight}}rpx;" class="bg-gray"> -->
-<view class="back"style="position: relative; width:100%;">
+<view class="back"style="position: absolute;top:{{HeadBar}}rpx; width:100%;">
 <view class="triangleD" style="position: absolute; left: -606rpx; top:-10rpx;width: -20rpx; height: 260rpx; display: block; box-sizing: border-box">
 
 </view>
