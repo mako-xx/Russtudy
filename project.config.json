@@ -30,7 +30,7 @@
     "minifyWXML": true,
     "useIsolateContext": true,
     "ignoreUploadUnusedFiles": true,
-    "compileHotReLoad": true
+    "compileHotReLoad": false
   },
   "condition": {},
   "editorSetting": {
@@ -38,11 +38,9 @@
     "tabSize": 2
   },
   "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
-  "libVersion": "2.24.2",
+  "libVersion": "2.24.6",
   "packOptions": {
     "ignore": [],
     "include": []
-  },
-  "appid": "wxc20df05a36138054",
-  "projectname": "Russtudy"
+  }
 }
