@@ -47,9 +47,17 @@
    <text class="textbody" decode = "{{true}}">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;俄罗斯与中国互为陆上邻国，两国往来交通便利。特别是中国东北部的黑河市与俄罗斯远东地区的符拉其瓦斯托克，两个城市关系密切有较频祭的贸易往来与文化交流，地理环境大体相似。
   </text>
-  <text class="textbody" decode = "{{true}}">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国东北部与俄罗斯远东地区相差不远的地城环境及气候条件在一定程度上导致了两地生活习惯相近。比如中国东北部经常损到的-哈尔滨大列巴”、“格瓦斯"实从俄罗斯流传至国内，这两样食物是俄罗斯人民的主食及具有代 表性的饮料。双方相似的生活习性有利于在俄罗斯生活的中国留学生习惯当地环境，避免出现水土不服等状况。
-  </text>
+ 
+  <view class="bg-white margin-top" style="width: 100%;">
+    <image class="margin-right-xs  margin-top-lg" src="https://wx3.sinaimg.cn/mw690/008qNTbqly1h3pj7idjrnj31900u0q9s.jpg"
+    style="height: 280rpx; width: 402rpx; float:right ">
+    </image> 
+    <text class="textbody" style="color: rgba(0, 0, 0, 0.863);word-break:break-all;"  decode = "{{true}}">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国东北部与俄罗斯远东地区相差不远的地城环境及气候条件在一定程度上导致了两地生活习惯相近。比如中国东北部经常提到的"哈尔滨大列巴”、“格瓦斯"实从俄罗斯流传至国内，这两样食物是俄罗斯人民的主食及具有代 表性的饮料。双方相似的生活习性有利于在俄罗斯生活的中国留学生习惯当地环境，避免出现水土不服等状况。
+    </text>    
+   
+    </view>
+
   <text class="textbody" decode = "{{true}}">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同时，在俄罗斯留学的中国人逐年增多，降低了中国留学生在俄罗斯遭到排挤、孤立的可能性。俄罗斯高校一般会将同一国籍的学生安排在同一个宿舍，因此学生们也不需耍财生活习性的差异有太大顾忠。加之不同于欧美国家大多数留学生是亚洲人的情况，在俄留学生遍布，这在一定程度上减緩种族歧视的现象。
   </text>
