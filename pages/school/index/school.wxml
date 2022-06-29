@@ -6,7 +6,6 @@
     <view class="sudtitle">
       在俄罗斯留学
     </view>
-
   </view>
 </view>
 <view class="cu-bar bg-white search fixed" id="main-search" style="position: fixed;margin-top:{{HeadBar-1}}rpx">
