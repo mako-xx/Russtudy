@@ -43,7 +43,6 @@ Component({
   methods: {
     switchTab(e) {
       let key = Number(e.currentTarget.dataset.index);
-      console.log("key", key)
       let tabList = this.data.tabList;
       let selected = this.data.selected;
       if (selected !== key) {
