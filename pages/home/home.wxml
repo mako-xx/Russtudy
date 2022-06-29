@@ -20,7 +20,7 @@
   </swiper-item>
 </swiper>
 
-  <image class="bg_wave" src="https://codermoyv.gitee.io/coder-moyv/assets/images/wechat/bg_wave.gif" style="position: absolute;bottom: 0rpx;width: 100%; z-index: 10;"></image>
+  <image class="bg_wave" src="https://codermoyv.gitee.io/coder-moyv/assets/images/wechat/bg_wave.gif" style="position: absolute;bottom: -2rpx;width: 100%; z-index: 10;"></image>
 
 </view>
 
