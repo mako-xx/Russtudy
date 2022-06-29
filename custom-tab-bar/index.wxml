@@ -5,7 +5,8 @@
   </view>
   <view class="action {{selected === 1 ? 'active' : 'default'}}" data-index="1" bindtap="switchTab"
     style="position: relative; left: -41rpx; top: 18rpx">
-    <image class="college" mode="widthFix" src="{{icon_college}}"
+    <image class="college" mode="widthFix"
+      src="{{selected === 1 ? 'https://wx2.sinaimg.cn/mw690/008qNTbqly1h3mv29avz4j306z05kdfs.jpg' : 'https://wx2.sinaimg.cn/mw690/008qNTbqly1h3mv29fql8j306z05kdfq.jpg'}}"
       style="position: relative; left: 52rpx; top: -30rpx; width: 45rpx; height: 45rpx; display: inline-block; box-sizing: border-box">
     </image>
     学校
@@ -17,7 +18,8 @@
   </view>
   <view class="action {{selected === 3 ? 'active' : 'default'}}" data-index="3" bindtap="switchTab"
     style="position: relative; left: -29rpx; top: 12rpx">
-    <image class="life" mode="widthFix" src="{{icon_life}}"
+    <image class="life" mode="widthFix"
+      src="{{selected === 3 ? 'https://wx4.sinaimg.cn/mw690/008qNTbqly1h3mv3e6wecj305k05kq2u.jpg' : 'https://wx4.sinaimg.cn/mw690/008qNTbqly1h3mv3e0x4mj305k05k3yd.jpg'}}"
       style="position: relative; left: 52rpx; top: -26rpx; width: 42rpx; height: 42rpx; display: inline-block; box-sizing: border-box">
     </image>
     生活

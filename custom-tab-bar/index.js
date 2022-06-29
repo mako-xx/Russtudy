@@ -43,13 +43,9 @@ Component({
   methods: {
     switchTab(e) {
       let key = Number(e.currentTarget.dataset.index);
-      console.log("key", key)
       let tabList = this.data.tabList;
       let selected = this.data.selected;
       if (selected !== key) {
-        this.setData({
-          selected: key
-        });
         wx.switchTab({
           url: `/${tabList[key].pagePath}`,
           success: res => {
@@ -58,29 +54,6 @@ Component({
           }
         })
       }
-      selected = key
-      console.log("sel", selected)
-      if (selected == 1) {
-        this.setData({
-          icon_college: 'https://wx2.sinaimg.cn/mw690/008qNTbqly1h3mv29avz4j306z05kdfs.jpg',
-        })
-        console.log("in1")
-      } else {
-        this.setData({
-          icon_college: 'https://wx2.sinaimg.cn/mw690/008qNTbqly1h3mv29fql8j306z05kdfq.jpg',
-        })
-        console.log("in2")
-      }
-      if (selected == 3) {
-        this.setData({
-          icon_life: 'https://wx4.sinaimg.cn/mw690/008qNTbqly1h3mv3e6wecj305k05kq2u.jpg',
-        })
-      } else {
-        this.setData({
-          icon_life: 'https://wx4.sinaimg.cn/mw690/008qNTbqly1h3mv3e0x4mj305k05k3yd.jpg',
-        })
-      }
-      console.log(this.data.icon_college, this.data.icon_life)
     },
 
   }
