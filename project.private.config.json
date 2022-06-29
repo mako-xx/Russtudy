@@ -71,6 +71,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/home/home",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/home/how/how",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

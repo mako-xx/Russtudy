@@ -1,24 +1,28 @@
-<view class="head"style="height:{{HeadBar}}rpx;">
+<view class="head"style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
   <view class="titles">
-      <view class="title">
-          KeLi
-      </view>
-      <view class="sudtitle">
-          副标题
-      </view>
+    <view class="title">
+      KeLi
+    </view>
+    <view class="sudtitle">
+      在俄罗斯留学
+    </view>
   </view>
 </view>
-
-<scroll-view class="scv" scroll-y="true"style="height:{{ShowHeight}}rpx;">  
-  <navigator class='action' open-type="navigateBack" delta="1" hover-class="none"
-style="height: auto; position: absolute; top: 15rpx; color: black; left: 38rpx">
-<text class='cuIcon-back'></text> 返回
+<view class="back" style="position: fixed;top: {{HeadBar}}rpx;">
+  <navigator class='navi' open-type="navigateBack" delta="1" hover-class="none"style="position:relative; top: 20%; color: black; left: 38rpx">
+<view style="opacity: 1;">
+  <text class="cuIcon-back"></text> 返回
+</view>
 </navigator>
-  <text class="bgtitle" style="position: relative; left: 176rpx; top: 29rpx">为什么选择俄罗斯</text>
-<view class="card">  
-  <view class="text" style="position: relative; left: 0rpx; top: 30rpx; width: 750rpx; height: 1300rpx; display: block; box-sizing: border-box">
+<text class="bgtitle" style="position: relative; top: 10% ;left: 175rpx;">为什么选择俄罗斯</text>
+</view>
 
-  <view class="cu-bar bg-white margin-top">
+
+<view class="card" style="position: absolute;top: {{1.5*HeadBar}}rpx;">  
+  <view class="text" style="width: 750rpx; ">
+
+
+    <view class="cu-bar bg-white margin-top">
       <view class="action">
         <text class="cuIcon-title text-" style="color: rgb(255, 94, 0);">1.教育资源充沛</text>
       </view>
@@ -58,15 +62,17 @@ style="height: auto; position: absolute; top: 15rpx; color: black; left: 38rpx">
     <text class="textbody" decode = "{{true}}">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中俄两国政府签署了相互承认对方学位及学历的友好协议，归国回来的学生取得的学历及学位证书在中国教育部留学服务中心即可办理认证手续。俄罗斯是与我国签订互认学历协议的少数国家之一，所以俄罗斯留学所获得的学历文凭，自然会得到我国的绝对认可。这也就消除了众多学子们学成归来后学历认可问题的后顾之忧。且伴随着我国“一带一路”的发展与升温，中俄关系合作日益紧密，中国与俄罗斯在很多方面都展开了合作，石油产业，通讯产业，贸易产业等诸多产业。与此成鲜明对比的，是国内俄语人才的紧缺。按照中俄合作的发展趋势，俄语的复合型人才缺口最大，也就是说熟练掌握俄语，并在某一专业领域拥有经验和突出表现的人，将在未来十分抢手。
     </text>
+    <view class="blank">
+      <view class="myTxtCenter text-gray">
+      KeLi 赴俄留学小助手
+    </view>
+    <view class="myTxtCenter text-gray">
+      更多咨询，请联系135555555
+    </view>
+    </view>
+ 
   </view>
 </view>
-<view class="blank">
-  <view class="myTxtCenter text-gray">
-  KeLi 赴俄留学小助手
-</view>
-<view class="myTxtCenter text-gray">
-  更多咨询，请联系135555555
-</view>
-</view>
-<view class="blank"></view>
-</scroll-view>
+
+
+

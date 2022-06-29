@@ -6,8 +6,6 @@
 
 .blank{
   z-index: 40;
-  position: relative;
-  top: 900rpx;
   height: 50rpx;
 }
 .card {
@@ -17,9 +15,7 @@
 }
 .text{
   background-color:white;
-  width: 90%;
-  position: relative;
-  left: 40rpx;
+  width: 100%; 
   padding-left: 50rpx;
   padding-right: 50rpx;
   padding-bottom: 80rpx;
@@ -51,9 +47,8 @@
 .bgtitle{
   font-size: 50rpx;
   color: black;
-  position: relative;
-  bottom: 0rpx;
   background-color: white;
+  height: auto;
 }
 .scv{
   background-color: white;
@@ -63,6 +58,23 @@
   height: 50rpx;
   font-size: 35rpx;
 }
+.navi{
+  height: 50rpx;
+  font-size: 35rpx;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 20%;
+  height: 5%;
+  border-radius: 10px;
+}
+
+.back{
+  background-color: white;
+  z-index: 10;
+  width: 100%;
+  height: 100rpx;
+
+}
+
 .texttile{
   font-size: large;
   font-weight: 600;

@@ -1,22 +1,23 @@
-<view class="head"style="height:{{HeadBar}}rpx;">
+<view class="head"style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
   <view class="titles">
-      <view class="title">
-          KeLi
-      </view>
-      <view class="sudtitle">
-          副标题
-      </view>
+    <view class="title">
+      KeLi
+    </view>
+    <view class="sudtitle">
+      在俄罗斯留学
+    </view>
   </view>
 </view>
-
-<scroll-view class="scv" scroll-y="true"style="height:{{ShowHeight}}rpx;">  
-  <navigator class='action' open-type="navigateBack" delta="1" hover-class="none"
-style="height: auto; position: absolute; top: 15rpx; color: black; left: 38rpx">
-<text class='cuIcon-back'></text> 返回
-</navigator>
-  <text class="bgtitle" style="position: relative; left: 225rpx; top: 29rpx">如何学习俄语</text>
-<view class="card">  
-  <view class="text" style="position: relative; left: 0rpx; top: 30rpx; width: 750rpx; height: 1300rpx; display: block; box-sizing: border-box">
+  <view class="back" style="position: fixed;top: {{HeadBar}}rpx;">
+    <navigator class='navi' open-type="navigateBack" delta="1" hover-class="none"style="position:relative; top: 20%; color: black; left: 38rpx">
+  <view style="opacity: 1;">
+    <text class="cuIcon-back"></text> 返回
+  </view>
+  </navigator>
+  <text class="bgtitle" style="position: relative; top: 10% ;left: 225rpx;">如何学习俄语</text>
+  </view>
+<view class="card" style="position: absolute;top: {{1.5*HeadBar}}rpx;">  
+  <view class="text" style="width: 750rpx; ">
 
   <view class="cu-bar bg-white margin-top">
       <view class="action">
@@ -59,10 +60,6 @@ style="height: auto; position: absolute; top: 15rpx; color: black; left: 38rpx">
     <text class="textbody" decode = "{{true}}">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;喜欢做饭？那就请俄罗斯朋友教你做俄罗斯传统菜肴。喜欢音乐？那就学一些俄罗斯传统歌曲和流行歌曲。这会使你成为一个更有趣的聊天者，更好地理解俄罗斯心态，这样你可以很快和俄罗斯人找到共同语言。
     </text>
-
- 
-  </view>
-</view>
 <view class="blank">
   <view class="myTxtCenter text-gray">
   KeLi 赴俄留学小助手
@@ -71,5 +68,9 @@ style="height: auto; position: absolute; top: 15rpx; color: black; left: 38rpx">
   更多咨询，请联系135555555
 </view>
 </view>
-<view class="blank"></view>
-</scroll-view>
+
+ 
+  </view>
+</view>
+
+
