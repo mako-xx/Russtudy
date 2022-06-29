@@ -29,23 +29,6 @@
     <swiper-item style="min-height:2000rpx">
         <scroll-view class="margin" scroll-x="false" scroll-y="true"
             style="height:{{WinHeight-titleheight-stepsheight-HeadBar}}rpx;width:auto;">
-            <view class="" style="height:500rpx;width:400rpx;background-color: #996179;">
-
-            </view>
-        </scroll-view>
-    </swiper-item>
-
-    <swiper-item style="min-height:2000rpx">
-        <scroll-view class="margin" scroll-x="false" scroll-y="true"
-            style="height:{{WinHeight-titleheight-stepsheight-HeadBar}}rpx;width:auto;">
-            <view class="" style="height:500rpx;width:400rpx;background-color: #676199;">
-
-            </view>
-        </scroll-view>
-    </swiper-item>
-    <swiper-item style="min-height:2000rpx">
-        <scroll-view class="margin" scroll-x="false" scroll-y="true"
-            style="height:{{WinHeight-titleheight-stepsheight-HeadBar}}rpx;width:auto;">
             <view class="bg-white padding" style="text-indent:2em;font-weight: 600;">
                 挑选想去的学校，开启一段留学生活吧！
             </view>
