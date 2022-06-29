@@ -12,13 +12,13 @@
   
 <view style="position: relative;">
     <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
-  autoplay="true" interval="5000" duration="500" style="height: 200rpx; position: relative; left: 0rpx; top: 0rpx">
-  <swiper-item wx:for="{{swiperList}}" wx:key style="position: relative; left: 0rpx; top: 0rpx">
-    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
-    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
-      wx:if="{{item.type=='video'}}"></video>
-  </swiper-item>
-</swiper>
+    autoplay="true" interval="5000" duration="500" style="height:200rpx">
+    <swiper-item wx:for="{{swiperList}}" wx:key>
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
+        wx:if="{{item.type=='video'}}"></video>
+    </swiper-item>
+  </swiper>
 
   <image class="bg_wave" src="https://codermoyv.gitee.io/coder-moyv/assets/images/wechat/bg_wave.gif" style="position: absolute;bottom: -2rpx;width: 100%; z-index: 10;"></image>
 

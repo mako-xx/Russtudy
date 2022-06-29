@@ -26,23 +26,9 @@
 <swiper class="screen-swiper" style="height:{{WinHeight-titleheight-stepsheight-HeadBar}}rpx" indicator-dots=""
     bindchange="bindchange" current="{{currentId}}" circular="true" duration="500">
 
-    <swiper-item style="min-height:2000rpx">
-        <scroll-view class="margin" scroll-x="false" scroll-y="true"
-            style="height:{{WinHeight-titleheight-stepsheight-HeadBar}}rpx;width:auto;">
-            <view class="" style="height:500rpx;width:400rpx;background-color: #996179;">
 
-            </view>
-        </scroll-view>
-    </swiper-item>
 
-    <swiper-item style="min-height:2000rpx">
-        <scroll-view class="margin" scroll-x="false" scroll-y="true"
-            style="height:{{WinHeight-titleheight-stepsheight-HeadBar}}rpx;width:auto;">
-            <view class="" style="height:500rpx;width:400rpx;background-color: #676199;">
 
-            </view>
-        </scroll-view>
-    </swiper-item>
     <swiper-item style="min-height:2000rpx">
         <scroll-view class="margin" scroll-x="false" scroll-y="true"
             style="height:{{WinHeight-titleheight-stepsheight-HeadBar}}rpx;width:auto;">

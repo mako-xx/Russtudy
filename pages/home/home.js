@@ -8,19 +8,19 @@ Page({
     swiperList: [{
       id: 0,
       type: 'image',
-      url: 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2ds8dlvnjj30zk0nngur.jpg'
+      url: 'http://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e189ay2fj30ws0ka0yb.jpg'
     }, {
       id: 1,
       type: 'image',
-      url: 'https://wx3.sinaimg.cn/mw2000/0085wEMdly1h2e185weafj30n60gradm.jpg',
+      url: 'http://wx3.sinaimg.cn/mw2000/0085wEMdly1h2e185weafj30n60gradm.jpg',
     }, {
       id: 2,
       type: 'image',
-      url: 'https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e188mpn7j30rs0ijn1l.jpg'
+      url: 'http://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e188mpn7j30rs0ijn1l.jpg'
     }, {
       id: 3,
       type: 'image',
-      url: 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e187stc7j30ws0kathf.jpg'
+      url: 'http://wx2.sinaimg.cn/mw2000/0085wEMdly1h2e187stc7j30ws0kathf.jpg'
     }],
   },
   tabBar() {
