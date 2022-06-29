@@ -1,7 +1,7 @@
 <view class="head" style="height:{{HeadBar}}rpx;">
   <view class="titles">
     <view class="title">
-      KeLi
+      Russtudy
     </view>
     <view class="sudtitle">
       在俄罗斯留学
@@ -9,14 +9,16 @@
   </view>
 </view>
 <!-- <scroll-view scroll-y="true" style="height:{{ShowHeight}}rpx;" class="bg-gray"> -->
-<view class="triangleD" style="position: relative; left: -606rpx; top: -10rpx; width: -20rpx; height: 260rpx; display: block; box-sizing: border-box">
+<view class="triangleD"
+  style="position: relative; left: -606rpx; top: -10rpx; width: -20rpx; height: 260rpx; display: block; box-sizing: border-box">
 
 </view>
 <view class="login">
 
   <view class="ava-nick">
     <image class="cu-avatar.xl" src='{{avatarUrl}}' style="position: relative; left: 0rpx; top: -1200rpx"></image>
-    <view class="nickname" bindtap="changeNickname" style="position: relative; left: -21rpx; top: -1200rpx; width: 191rpx; height: 35rpx; display: flex; box-sizing: border-box">
+    <view class="nickname" bindtap="changeNickname"
+      style="position: relative; left: -21rpx; top: -1200rpx; width: 191rpx; height: 35rpx; display: flex; box-sizing: border-box">
       {{nickname}}
     </view>
   </view>
@@ -41,12 +43,14 @@
     </button>
     <button class="collection-item" bindtap="switchschool">
       <image class="collection-icons"
-        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/学校2 1.png" style="width: 125rpx; height: 125rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: -10rpx; position: relative">
+        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/学校2 1.png"
+        style="width: 125rpx; height: 125rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: -10rpx; position: relative">
       </image>
     </button>
     <button class="collection-item" bindtap="switchprogram">
       <image class="collection-icons"
-        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/项目2 1.png" style="width: 100rpx; height: 100rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: 0rpx">
+        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/项目2 1.png"
+        style="width: 100rpx; height: 100rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: 0rpx">
       </image>
     </button>
   </view>
@@ -64,7 +68,7 @@
     </image>
     <text class="tdetail">关于我们</text>
     <text class="text-ABC text-red  text-bold "
-    style="position: absolute; left: 100rpx; top: 45rpx; opacity:0.5; font-size: 20rpx;">about us</text>
+      style="position: absolute; left: 100rpx; top: 45rpx; opacity:0.5; font-size: 20rpx;">about us</text>
     <image class="jiantou"
       src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/箭头 右.png"></image>
   </button>
