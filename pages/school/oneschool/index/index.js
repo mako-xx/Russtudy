@@ -12,6 +12,7 @@ Page({
     iconList: [],
     intervaltime1: 0,
     intervaltime2: 0,
+    iflove: 0,
     linkman: [{ "pic": "https://wx3.sinaimg.cn/mw2000/008tQ72zly1h3mmxzu8taj30dz0ggq5x.jpg", "name": "王同学", "position": "在读硕士", "desc": "奖学金获得者" }, { "pic": "https://wx3.sinaimg.cn/mw2000/008tQ72zly1h3mmxzu8taj30dz0ggq5x.jpg", "name": "王同学", "position": "在读硕士", "desc": "奖学金获得者" }]
   },
   dataprocess() {
