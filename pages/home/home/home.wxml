@@ -9,7 +9,7 @@
   </view>
 </view>
 <view class="back" style="position: fixed;top: {{HeadBar}}rpx;">
-  <navigator class='navi' open-type="navigateBack" delta="1" hover-class="none"style="position:relative; top: 20%; color: black; left: 38rpx">
+  <navigator class='navi' open-type="navigateBack" delta="1" hover-class="none"style="position:relative; top: 25%; color: black; left: 38rpx">
 <view style="opacity: 1;">
   <text class="cuIcon-back"></text> 返回
 </view>

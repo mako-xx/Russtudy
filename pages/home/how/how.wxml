@@ -9,7 +9,7 @@
   </view>
 </view>
   <view class="back" style="position: fixed;top: {{HeadBar}}rpx;">
-    <navigator class='navi' open-type="navigateBack" delta="1" hover-class="none"style="position:relative; top: 20%; color: black; left: 38rpx">
+    <navigator class='navi' open-type="navigateBack" delta="1" hover-class="none"style="position:relative; top: 25%; color: black; left: 38rpx">
   <view style="opacity: 1;">
     <text class="cuIcon-back"></text> 返回
   </view>
@@ -18,7 +18,6 @@
   </view>
 <view class="card" style="position: absolute;top: {{1.5*HeadBar}}rpx;">  
   <view class="text" style="width: 750rpx; ">
-
   <view class="cu-bar bg-white margin-top">
       <view class="action">
         <text class="cuIcon-title text-" style="color: rgb(255, 94, 0);">1.学习俄语的第一步，是掌握它的字母。</text>
