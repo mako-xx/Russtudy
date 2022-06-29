@@ -1,7 +1,7 @@
 <view class="head" style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
     <view class="titles">
         <view class="title">
-            KeLi
+            RusStudy
         </view>
         <view class="sudtitle">
             在俄罗斯留学
@@ -25,9 +25,6 @@
 </view>
 <swiper class="screen-swiper" style="height:{{WinHeight-titleheight-stepsheight-HeadBar}}rpx" indicator-dots=""
     bindchange="bindchange" current="{{currentId}}" circular="true" duration="500">
-
-
-
 
     <swiper-item style="min-height:2000rpx">
         <scroll-view class="margin" scroll-x="false" scroll-y="true"
