@@ -1,28 +1,29 @@
 <view class="head" style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
   <view class="titles">
     <view class="title">
-      KeLi
+      Russtudy
     </view>
     <view class="sudtitle">
       在俄罗斯留学
     </view>
   </view>
 </view>
-<view class="back"style="position: relative;margin-top:{{HeadBar-1}}rpx; width:100%;">
-  
-<view style="position: relative;">
+<view class="back" style="position: relative;margin-top:{{HeadBar-1}}rpx; width:100%;">
+
+  <view style="position: relative;">
     <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
-  autoplay="true" interval="5000" duration="500" style="height: 200rpx; position: relative; left: 0rpx; top: 0rpx">
-  <swiper-item wx:for="{{swiperList}}" wx:key style="position: relative; left: 0rpx; top: 0rpx">
-    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
-    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
-      wx:if="{{item.type=='video'}}"></video>
-  </swiper-item>
-</swiper>
+      autoplay="true" interval="5000" duration="500" style="height: 200rpx; position: relative; left: 0rpx; top: 0rpx">
+      <swiper-item wx:for="{{swiperList}}" wx:key style="position: relative; left: 0rpx; top: 0rpx">
+        <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+        <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
+          wx:if="{{item.type=='video'}}"></video>
+      </swiper-item>
+    </swiper>
 
-  <image class="bg_wave" src="https://codermoyv.gitee.io/coder-moyv/assets/images/wechat/bg_wave.gif" style="position: absolute;bottom: 0rpx;width: 100%; z-index: 10;"></image>
+    <image class="bg_wave" src="https://codermoyv.gitee.io/coder-moyv/assets/images/wechat/bg_wave.gif"
+      style="position: absolute;bottom: 0rpx;width: 100%; z-index: 10;"></image>
 
-</view>
+  </view>
 
 
   <image animation="{{animationCloudData}}" class="yun1"
@@ -39,56 +40,64 @@
     src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png"
     style="opacity: 0.4"></image>
 
-<view class="box" wx:if="{{true}}">
-  <view class="cu-bar bg-white" style="position: relative; left: 0rpx; top: 0rpx; z-index: 8; opacity: 0.8;">
-    <view class="action sub-title" style="left:0">
-      <text class="cuIcon-title text-blue"></text>
-      <text class="text-xl text-bold text-blue">初步了解</text>
-      <text class="text-ABC text-blue" style="position: absolute; left: 51rpx; top: 16rpx">Why</text>
-      <!-- last-child选择器-->
+  <view class="box" wx:if="{{true}}">
+    <view class="cu-bar bg-white" style="position: relative; left: 0rpx; top: 0rpx; z-index: 8; opacity: 0.8;">
+      <view class="action sub-title" style="left:0">
+        <text class="cuIcon-title text-blue"></text>
+        <text class="text-xl text-bold text-blue">初步了解</text>
+        <text class="text-ABC text-blue" style="position: absolute; left: 51rpx; top: 16rpx">Why</text>
+        <!-- last-child选择器-->
+      </view>
     </view>
   </view>
-</view>
-<view class="row margin-top margin-bottom">
-<view class="button.white" style="position: relative; left: 24rpx; top: 0rpx" bindtap="whyrussia">
- <text class="btext">
- 为什么选择俄罗斯
- </text>
- <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/russia.png"class="bimage" style="width: 179rpx; height: 160rpx; display: block; box-sizing: border-box; left: 0rpx; top: -1rpx; position: relative"></image>
-</view>
-<view class="button.white" style="position: relative; left: -24rpx; top: 0rpx" bindtap="how">
-  <text class="btext">
-如何学习俄语
-  </text>
-  <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/book.png" class="bimage" style="width: 130rpx; height: 130rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
-</view>
-</view>
-<view class="box" wx:if="{{true}}">
-  <view class="cu-bar bg-white" style="position: relative; left: 0rpx; top: 0rpx; z-index: 8; opacity: 0.8">
-    <view class="action sub-title" style="left:0">
-      <text class="cuIcon-title text-green"></text>
-      <text class="text-xl text-bold text-green">快捷跳转</text>
-      <text class="text-ABC text-green" style="position: absolute; left: 51rpx; top: 16rpx">jump</text>
-      <!-- last-child选择器-->
+  <view class="row margin-top margin-bottom">
+    <view class="button.white" style="position: relative; left: 24rpx; top: 0rpx" bindtap="whyrussia">
+      <text class="btext">
+        为什么选择俄罗斯
+      </text>
+      <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/russia.png"
+        class="bimage"
+        style="width: 179rpx; height: 160rpx; display: block; box-sizing: border-box; left: 0rpx; top: -1rpx; position: relative">
+      </image>
+    </view>
+    <view class="button.white" style="position: relative; left: -24rpx; top: 0rpx" bindtap="how">
+      <text class="btext">
+        如何学习俄语
+      </text>
+      <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/book.png"
+        class="bimage"
+        style="width: 130rpx; height: 130rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
     </view>
   </view>
-</view>
+  <view class="box" wx:if="{{true}}">
+    <view class="cu-bar bg-white" style="position: relative; left: 0rpx; top: 0rpx; z-index: 8; opacity: 0.8">
+      <view class="action sub-title" style="left:0">
+        <text class="cuIcon-title text-green"></text>
+        <text class="text-xl text-bold text-green">快捷跳转</text>
+        <text class="text-ABC text-green" style="position: absolute; left: 51rpx; top: 16rpx">jump</text>
+        <!-- last-child选择器-->
+      </view>
+    </view>
+  </view>
   <view class="row margin-top margin-bottom">
     <view class="button.white" style="position: relative; left: 24rpx; top: 0rpx" bindtap="college">
       <text class="btext">
         俄罗斯的高校
       </text>
-      <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/college.png"class="bimage" style="width: 175rpx; height: 129rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
+      <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/college.png"
+        class="bimage"
+        style="width: 175rpx; height: 129rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
     </view>
     <view class="button.white" style="position: relative; left: -24rpx; top: 0rpx" bindtap="profession">
       <text class="btext">
         俄罗斯高校专业
       </text>
-    <image src="https://wx2.sinaimg.cn/mw690/008qNTbqly1h3o7rap849j305k05kq2y.jpg"class="bimage" style="width: 140rpx; height: 140rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
+      <image src="https://wx2.sinaimg.cn/mw690/008qNTbqly1h3o7rap849j305k05kq2y.jpg" class="bimage"
+        style="width: 140rpx; height: 140rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
     </view>
   </view>
-  
-<view class="whitecard" style="height:250rpx;">
 
-</view>
+  <view class="whitecard" style="height:250rpx;">
+
+  </view>
 </view>

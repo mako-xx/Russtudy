@@ -1,16 +1,16 @@
-<view class="head"style="height:{{HeadBar}}rpx;">
-  <view class="titles">
-      <view class="title">
-          KeLi
-      </view>
-      <view class="sudtitle">
-          副标题
-      </view>
-  </view>
+<view class="head" style="height:{{HeadBar}}rpx;">
+    <view class="titles">
+        <view class="title">
+            Russtudy
+        </view>
+        <view class="sudtitle">
+            副标题
+        </view>
+    </view>
 </view>
-<scroll-view scroll-y="true"style="height:{{ShowHeight}}rpx;">
+<scroll-view scroll-y="true" style="height:{{ShowHeight}}rpx;">
 
- 
+
 
 
 
