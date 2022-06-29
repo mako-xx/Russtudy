@@ -1,7 +1,7 @@
 <view class="head" style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
   <view class="titles">
     <view class="title">
-      Russtudy
+      KeLi
     </view>
     <view class="sudtitle">
       在俄罗斯留学
@@ -113,9 +113,9 @@
 
 </view>
 <view class="myTxtCenter text-gray">
-  Russtudy 赴俄留学小助手
+  KeLi 赴俄留学小助手
 </view>
 <view class="myTxtCenter text-gray">
-  更多咨询，请联系13915321806
+  更多咨询，请联系135555555
 </view>
 <view class="blank"></view>

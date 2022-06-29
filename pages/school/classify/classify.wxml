@@ -1,7 +1,7 @@
 <view class="head" style="height:{{HeadBar}}rpx;position:relative">
     <view class="titles">
         <view class="title">
-            Russtudy
+            KeLi
         </view>
         <view class="sudtitle">
             在俄罗斯学习
