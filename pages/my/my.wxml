@@ -1,4 +1,4 @@
-<view class="head" style="height:{{HeadBar}}rpx; z-index: 50;">
+<view class="head" style="height:{{HeadBar}}rpx; z-index: 50;position:fixed">
   <view class="titles">
     <view class="title">
       KeLi
