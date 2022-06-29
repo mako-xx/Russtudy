@@ -22,10 +22,8 @@
   background: transparent;
 }
 
-.bg_wave {
-  position: absolute;
+.bg_wave { 
   left: 0;
-  bottom: -2rpx;
   width: 100%;
   mix-blend-mode: screen;
   height: 120rpx;
