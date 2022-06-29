@@ -30,7 +30,8 @@
     "minifyWXML": true,
     "useIsolateContext": true,
     "ignoreUploadUnusedFiles": true,
-    "compileHotReLoad": false
+    "compileHotReLoad": false,
+    "localPlugins": false
   },
   "condition": {},
   "editorSetting": {
