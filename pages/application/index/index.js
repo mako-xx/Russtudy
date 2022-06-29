@@ -37,34 +37,6 @@ Page({
     }
   },
   onLoad() {
-    var that = this;
-    this.setData({
-      interval2: setInterval(function () {
-        let query = wx.createSelectorQuery()
-        query.select('#main-title').boundingClientRect((rect) => {
-          if (rect) {
-            let height = rect.height * app.globalData.pxToRpxScale
-            var titleheight = height;
-            that.setData({
-              titleheight: titleheight
-            })
-          }
-        }).exec()
-        query.select('#main-steps').boundingClientRect((rect) => {
-          if (rect) {
-            let height = rect.height * app.globalData.pxToRpxScale
-            var stepsheight = height;
-            that.setData({
-              stepsheight: stepsheight
-            })
-          }
-        }).exec()
-        if (that.data.titleheight && that.data.stepsheight) clearInterval(that.data.interval2)
-      }, 1000)
-    })
-  },
-  onShow() {
-    this.tabBar();
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
     var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight) * app.globalData.pxToRpxScale;
     var WinHeight = app.globalData.ktxWindowHeight * app.globalData.pxToRpxScale;
@@ -117,6 +89,34 @@ Page({
         }
       }, 1000)
     })
+    this.setData({
+      interval2: setInterval(function () {
+        console.log("interval2 调用一次")
+        let query = wx.createSelectorQuery()
+        query.select('#main-title').boundingClientRect((rect) => {
+          if (rect) {
+            let height = rect.height * app.globalData.pxToRpxScale
+            var titleheight = height;
+            that.setData({
+              titleheight: titleheight
+            })
+          }
+        }).exec()
+        query.select('#main-steps').boundingClientRect((rect) => {
+          if (rect) {
+            let height = rect.height * app.globalData.pxToRpxScale
+            var stepsheight = height;
+            that.setData({
+              stepsheight: stepsheight
+            })
+          }
+        }).exec()
+        if (that.data.titleheight && that.data.stepsheight) { console.log("interval2 调用完成 "); clearInterval(that.data.interval2) }
+      }, 1000)
+    })
+  },
+  onShow() {
+    this.tabBar();
 
   },
   getshow() {
