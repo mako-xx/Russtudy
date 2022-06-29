@@ -1,4 +1,4 @@
-<view class="head" style="height:{{HeadBar}}rpx;">
+<view class="head" style="height:{{HeadBar}}rpx; z-index: 50;">
   <view class="titles">
     <view class="title">
       KeLi
@@ -9,24 +9,25 @@
   </view>
 </view>
 <!-- <scroll-view scroll-y="true" style="height:{{ShowHeight}}rpx;" class="bg-gray"> -->
-<view class="triangleD" style="position: relative; left: -606rpx; top: -10rpx; width: -20rpx; height: 260rpx; display: block; box-sizing: border-box">
+<view class="back"style="position: relative; width:100%;">
+<view class="triangleD" style="position: absolute; left: -606rpx; top:-10rpx;width: -20rpx; height: 260rpx; display: block; box-sizing: border-box">
 
 </view>
 <view class="login">
 
   <view class="ava-nick">
-    <image class="cu-avatar.xl" src='{{avatarUrl}}' style="position: relative; left: 0rpx; top: -1200rpx"></image>
-    <view class="nickname" bindtap="changeNickname" style="position: relative; left: -21rpx; top: -1200rpx; width: 191rpx; height: 35rpx; display: flex; box-sizing: border-box">
+    <image class="cu-avatar.xl" src='{{avatarUrl}}' style="position: relative; left: 0rpx; top: 0rpx"></image>
+    <view class="nickname" bindtap="changeNickname" style="position: relative; left: -21rpx; top: 0rpx; width: 191rpx; height: 35rpx; display: flex; box-sizing: border-box">
       {{nickname}}
     </view>
   </view>
   <view class="ligin-bu">
     <button class="cu-btn.round" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" bindtap="login"
-      style="position: relative; top: -1200rpx; left: -175rpx">
+      style="position: relative; top: 0rpx; left: -175rpx">
     </button>
   </view>
 </view>
-<view class="collection" style="position: relative; left: 50rpx; top: -1314rpx">
+<view class="collection" style="position: relative; left: 50rpx; top: 0rpx">
   <view class="collection-2">
     <text class=" text-bold text-blue collection-text">收藏</text>
     <text class="text-ABC text-blue  text-bold "
@@ -57,7 +58,7 @@
   </view>
 </view>
 
-<view class="detail" style="position: relative; left: 50rpx; top: -1224rpx">
+<view class="detail" style="position: relative; left: 50rpx; top: 50rpx;">
   <button class="bdetail">
     <image class="idetail"
       src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/关于我们1 1.png">
@@ -106,8 +107,11 @@
   </view>
   <view style="width:94%" class='wishbnt' bindtap='name'>确定</view>
 </view>
+<view class="whitecard" style="height:300rpx;">
 
+</view>
 
+</view>
 
 
 <!-- </scroll-view> -->
