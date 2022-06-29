@@ -85,6 +85,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/home/home",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "fdjglidfg",
+          "pathName": "pages/life/onecity/onecity",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
