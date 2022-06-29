@@ -17,7 +17,7 @@
 <view class="head" style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
   <view class="titles">
     <view class="title">
-      Russtudy
+      RusStudy
     </view>
     <view class="sudtitle">
       在俄罗斯留学
