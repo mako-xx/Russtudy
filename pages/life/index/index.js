@@ -51,10 +51,12 @@ Page({
       interval2: setInterval(function () {
         let query = wx.createSelectorQuery()
         query.select('#city-0').boundingClientRect((rect) => {
-          let width = rect.width * app.globalData.pxToRpxScale
-          that.setData({
-            citywidth: width
-          })
+          if (rect) {
+            let width = rect.width * app.globalData.pxToRpxScale
+            that.setData({
+              citywidth: width
+            })
+          }
         }).exec()
         if (that.data.citywidth) clearInterval(that.data.interval2)
       }, 1000)

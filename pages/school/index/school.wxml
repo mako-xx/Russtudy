@@ -49,7 +49,7 @@
     </view>
     <view class="content" style="height:100%;width:60%;margin:auto;padding: 30rpx;">
       <view class="desc" style="height:100%;width:50%;margin:auto">
-        <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large"> 选学校</view>
+        <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large;color:rgb(58, 58, 58)"> 选学校</view>
         <view class="text-content"
           style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 多维搜索，精确定位</view>
         <view class="margin-tb-sm text-center" style="height:25%;">
@@ -69,7 +69,7 @@
     </view>
     <view class="content" style="height:100%;width:60%;margin:auto;padding: 30rpx;">
       <view class="desc" style="height:100%;width:50%;margin:auto">
-        <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large"> 挑专业</view>
+        <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large;color:rgb(58, 58, 58)"> 挑专业</view>
         <view class="text-content"
           style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 3000余项专业，超大范围供您选择
         </view>

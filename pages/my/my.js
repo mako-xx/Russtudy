@@ -18,9 +18,18 @@ Page({
     holder: '请输入欲修改的姓名'
   },
   kefu() {
-    wx.navigateTo({
-      url: '../my/contact/contact?index=0',
-    })
+    var collections = wx.getStorageSync('collections')
+    if (collections && collections.openid) {
+      wx.navigateTo({
+        url: '../my/contact/contact?index=0',
+      })
+    }
+    else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'error'
+      })
+    }
   },
   holder_disappear() {
     console.log('点击')
@@ -233,7 +242,7 @@ Page({
             }
           })
           wx.clearStorageSync();
-          wx.setStorageSync("collections", { "programs": [], "citys": [], "schools": [], "openid": '', "nickname": '' })
+          wx.setStorageSync("collections", { "programs": [], "citys": [], "schools": [], "openid": '', "nicename": '' })
           that.setData({
             avatarUrl: defaultAvatarUrl,
             iflogin: false

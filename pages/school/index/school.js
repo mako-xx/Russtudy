@@ -149,14 +149,32 @@ Page({
     })
   },
   clickquestion() {
-    wx.navigateTo({
-      url: "../question/question",
-    })
+    var collections = wx.getStorageSync('collections')
+    if (collections && collections.openid) {
+      wx.navigateTo({
+        url: "../question/question",
+      })
+    }
+    else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'error'
+      })
+    }
   },
-  clickcontact(){
-    wx.navigateTo({
-      url: "../../my/contact/contact",
-    })
+  clickcontact() {
+    var collections = wx.getStorageSync('collections')
+    if (collections && collections.openid) {
+      wx.navigateTo({
+        url: "../../my/contact/contact",
+      })
+    }
+    else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'error'
+      })
+    }
   },
   clickrecommend() {
     var questions = wx.getStorageSync("questions");

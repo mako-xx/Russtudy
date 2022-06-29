@@ -42,24 +42,26 @@ Page({
       interval2: setInterval(function () {
         let query = wx.createSelectorQuery()
         query.select('#main-title').boundingClientRect((rect) => {
-          let height = rect.height * app.globalData.pxToRpxScale
-          var titleheight = height;
-          that.setData({
-            titleheight: titleheight
-          })
+          if (rect) {
+            let height = rect.height * app.globalData.pxToRpxScale
+            var titleheight = height;
+            that.setData({
+              titleheight: titleheight
+            })
+          }
         }).exec()
         query.select('#main-steps').boundingClientRect((rect) => {
-          let height = rect.height * app.globalData.pxToRpxScale
-          var stepsheight = height;
-          that.setData({
-            stepsheight: stepsheight
-          })
+          if (rect) {
+            let height = rect.height * app.globalData.pxToRpxScale
+            var stepsheight = height;
+            that.setData({
+              stepsheight: stepsheight
+            })
+          }
         }).exec()
         if (that.data.titleheight && that.data.stepsheight) clearInterval(that.data.interval2)
       }, 1000)
     })
-
-
   },
   onShow() {
     this.tabBar();
@@ -222,11 +224,35 @@ Page({
       if (schoolpics[i].enname == enname) { return schoolpics[i].logo; }
     }
   },
+  contact() {
+    var collections = wx.getStorageSync('collections')
+    if (collections && collections.openid) {
+      wx.navigateTo({
+        url: '../../my/contact/contact?index=0',
+      })
+    }
+    else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'error'
+      })
+    }
+
+  },
   kefu(e) {
-    var pro = this.data.showprograms[e.currentTarget.dataset.value]
-    wx.navigateTo({
-      url: '../../my/contact/contact?index=0&carry=' + pro.schoolname + '-' + pro.name,
-    })
+    var collections = wx.getStorageSync('collections')
+    if (collections && collections.openid) {
+      var pro = this.data.showprograms[e.currentTarget.dataset.value]
+      wx.navigateTo({
+        url: '../../my/contact/contact?index=0&carry=' + pro.schoolname + '-' + pro.name,
+      })
+    }
+    else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'error'
+      })
+    }
   },
   learn_more(e) {
     console.log(e.currentTarget.dataset.id);

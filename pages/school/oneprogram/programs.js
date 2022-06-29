@@ -19,10 +19,19 @@ Page({
     })
 
   },
-  toKefu(){
-    wx.navigateTo({
-      url: '../../my/contact/contact?message_="这里是专业相关询问界面，可以询问学校专业有关问题。"',
-    })
+  toKefu() {
+    var collections = wx.getStorageSync('collections')
+    if (collections && collections.openid) {
+      wx.navigateTo({
+        url: '../../my/contact/contact?message_="这里是专业相关询问界面，可以询问学校专业有关问题。"',
+      })
+    }
+    else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'error'
+      })
+    }
   },
   onLoad(options) {
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
@@ -221,9 +230,18 @@ Page({
     }
   },
   kefu() {
-    var pro = this.data.program
-    wx.navigateTo({
-      url: '../../my/contact/contact?index=0&carry=' + pro.schoolname + '-' + pro.name,
-    })
+    var collections = wx.getStorageSync('collections')
+    if (collections && collections.openid) {
+      var pro = this.data.program
+      wx.navigateTo({
+        url: '../../my/contact/contact?index=0&carry=' + pro.schoolname + '-' + pro.name,
+      })
+    }
+    else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'error'
+      })
+    }
   },
 })

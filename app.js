@@ -82,11 +82,11 @@ App({
               wx.setStorageSync('schools', schools)
               that.globalData.schools = schools;
 
-              that.findprogram(schools);
+              that.findprogram(schools, db);
 
             })
         })
-    } else that.findprogram(schools)
+    } else that.findprogram(schools, db)
 
 
 
@@ -203,7 +203,7 @@ App({
     if (num > 1 || num < 0) return randn_bm() // resample between 0 and 1
     return num
   },
-  findprogram(schools) {
+  findprogram(schools, db) {
     var that = this;
     schools.sort(function (a, b) { return a.qsdome - b.qsdome });
     const provalue1 = wx.getStorageSync('programs1')

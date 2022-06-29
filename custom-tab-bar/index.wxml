@@ -3,8 +3,11 @@
     <view class="cuIcon-home"></view>
     首页
   </view>
-  <view class="action {{selected === 1 ? 'active' : 'default'}}" data-index="1" bindtap="switchTab" style="position: relative; left: -41rpx; top: 18rpx">
-    <image class="college" mode="widthFix" src='{{icon_college}}' style="position: relative; left: 52rpx; top: -30rpx; width: 45rpx; height: 45rpx; display: inline-block; box-sizing: border-box"></image>
+  <view class="action {{selected === 1 ? 'active' : 'default'}}" data-index="1" bindtap="switchTab"
+    style="position: relative; left: -41rpx; top: 18rpx">
+    <image class="college" mode="widthFix" src="{{icon_college}}"
+      style="position: relative; left: 52rpx; top: -30rpx; width: 45rpx; height: 45rpx; display: inline-block; box-sizing: border-box">
+    </image>
     学校
   </view>
   <view class="action {{selected === 2 ? 'active' : 'default'}} text-gray add-action" data-index="2"
@@ -12,8 +15,10 @@
     <button class="cu-btn cuIcon-add bg-green shadow"></button>
     申请
   </view>
-  <view class="action {{selected === 3 ? 'active' : 'default'}}" data-index="3" bindtap="switchTab" style="position: relative; left: -29rpx; top: 12rpx">
-    <image class="life" mode="widthFix" src='{{icon_life}}' style="position: relative; left: 52rpx; top: -26rpx; width: 42rpx; height: 42rpx; display: inline-block; box-sizing: border-box">
+  <view class="action {{selected === 3 ? 'active' : 'default'}}" data-index="3" bindtap="switchTab"
+    style="position: relative; left: -29rpx; top: 12rpx">
+    <image class="life" mode="widthFix" src="{{icon_life}}"
+      style="position: relative; left: 52rpx; top: -26rpx; width: 42rpx; height: 42rpx; display: inline-block; box-sizing: border-box">
     </image>
     生活
   </view>

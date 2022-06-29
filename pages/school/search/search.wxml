@@ -1,4 +1,4 @@
-<view class="cu-bar bg-white search" id="main-search">
+<view class="cu-bar bg-white search" id="main-search" style="position: fixed;z-index: 99;width: 100%;">
     <view class="search-form round">
         <text class="cuIcon-search"></text>
         <input type="text" placeholder="输入高校或城市关键字进行搜索" confirm-type="search" value="{{searchValue}}"
@@ -8,9 +8,10 @@
         <button class="cu-btn bg-gradual-green shadow-blur round" bindtap="suo">搜索</button>
     </view>
 </view>
-<scroll-view class="" scroll-y scroll-with-animation style="height:{{WinHeight-searchheight}}rpx">
+<view style="height:{{searchheight}}rpx"></view>
+<scroll-view class="" scroll-y scroll-with-animation style="height:{{WinHeight}}rpx;width:95%;margin:auto">
     <view class="cu-list menu-avatar">
-
+      <view style="height:30rpx"></view>
         <view class="cu-item solids-top" wx:for="{{schoollist}}" wx:key wx:for-index="sub" wx:for-item="it">
             <!-- <view class="cu-avatar round lg">1</view> -->
             <view class="cu-avatar round lg  shadow-blur" style="background-image:url({{it.logo}});left:10rpx;">

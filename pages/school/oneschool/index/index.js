@@ -388,9 +388,17 @@ Page({
     });
   },
   asklinker: function (e) {
-    console.log(e)
-    wx.navigateTo({
-      url: "../../../my/contact/contact?index=1"
-    })
+    var collections = wx.getStorageSync('collections')
+    if (collections && collections.openid) {
+      wx.navigateTo({
+        url: "../../../my/contact/contact?index=1"
+      })
+    }
+    else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'error'
+      })
+    }
   }
 })

@@ -320,7 +320,7 @@
             <view class="" style="height:30rpx">
 
             </view>
-            <button class=" bg-red lg">行动起来！</button>
+            <button class=" bg-red lg" bindtap="contact">行动起来！</button>
             <view class="" style="height:200rpx">
 
             </view>
