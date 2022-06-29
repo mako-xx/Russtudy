@@ -177,24 +177,22 @@
 </view>
 <view class="cu-list grid col-2 no-border">
   <view class="cu-item ">
-    <text>123</text>
-    <image class="" id="stu-image-0" style="width:60%;height:{{stuwidth?stuwidth:0}}rpx;margin: auto;"
+    <text>管理学硕士</text>
+    <image class="round" id="stu-image-0" style="width:60%;height:{{stuwidth?stuwidth:0}}rpx;margin: auto;"
       bindtap="asklinker" data-index="0" src="https://wx1.sinaimg.cn/mw2000/0085wEMdly1h3pk8eywfoj30u00u0tci.jpg"
       mode="aspectFit">
 
     </image>
-    <text>KeLi</text>
-    <text>123</text>
+    <text>Zamkox Kirill</text>
   </view>
   <view class="cu-item ">
-    <text></text>
-    <image class="" id="stu-image-1" style="width:60%;height:{{stuwidth?stuwidth:0}}rpx;margin: auto;"
+    <text>金融学博士</text>
+    <image class="round" id="stu-image-1" style="width:60%;height:{{stuwidth?stuwidth:0}}rpx;margin: auto;"
       bindtap="asklinker" data-index="1" src="https://wx4.sinaimg.cn/mw2000/0085wEMdly1h3pk8g2vztj30u00vy112.jpg"
       mode="aspectFit">
 
     </image>
-    <text>123</text>
-    <text>123</text>
+    <text>Balobasox Roman</text>
   </view>
 </view>
 
