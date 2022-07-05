@@ -7,23 +7,11 @@ Page({
     })
   },
   onShow() {
-    var intervalHeight = 10;
-    var SearchHeight = 50;
-    var windowHeight = (app.globalData.ktxWindowHeight) * app.globalData.pxToRpxScale;
-    var topHeight = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
-    var trueHeight = windowHeight - topHeight + SearchHeight + app.globalData.navigationHeight;//非导航栏页需加navigationHeight，非搜索栏页须加SearchHeight
-    var scrollHeight = trueHeight - SearchHeight - 2 * intervalHeight;
-    // var containerPercentage=100*app.globalData.ktxWindowHeight/app.globalData.ktxScreentHeight;
-    // var statusBarHeightPercentage=100*(app.globalData.navigationHeight+app.globalData.ktxStatusHeight)/app.globalData.ktxWindowHeight;
-    // var statusContainerHeightPercentage=100-statusBarHeightPercentage;
-    console.log(app.globalData);
+    var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
+    var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight - app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
     this.setData({
-      windowHeight: windowHeight,
-      topHeight: topHeight,
-      trueHeight: trueHeight,
-      scrollHeight: scrollHeight,
-      intervalHeight: intervalHeight,
-      SearchHeight: SearchHeight
+      HeadBar: HeadBar,
+      ShowHeight: ShowHeight
     })
     this.getschool();
   },
@@ -48,7 +36,7 @@ Page({
       this.setData({
         printvalue: printvalue
       })
-      console.log(printvalue);
+      console.log("printvalue", printvalue);
     }
   }
 })

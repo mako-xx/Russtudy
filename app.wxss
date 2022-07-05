@@ -31,10 +31,44 @@
     justify-content: center;
 }
 
+.tower-swiper .tower-item {
+    transform: scale(calc(0.5 + var(--index) / 10));
+    margin-left: calc(var(--left) * 100rpx - 150rpx);
+    z-index: var(--index);
+}
+
 .oneline {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.twoline {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.blank {
+    height: 20rpx;
+}
+
+.division {
+    height: 1rpx;
+    width: 60%;
+    margin: 20rpx auto 20rpx auto;
+    background-color: rgb(29, 189, 109);
+}
+
+.topImg {
+    position: fixed;
+    height: 70rpx;
+    width: 70rpx;
+    z-index: 10;
+    margin-top: 20rpx;
+    margin-left: 20rpx
 }

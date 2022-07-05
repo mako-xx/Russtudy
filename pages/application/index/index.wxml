@@ -1,0 +1,330 @@
+<view class="head" style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
+    <view class="titles">
+        <view class="title">
+            RusStudy
+        </view>
+        <view class="sudtitle">
+            在俄罗斯留学
+        </view>
+
+    </view>
+</view>
+<view class="" style="height:{{HeadBar}}rpx;">
+
+</view>
+<view class="bg-white padding myTxtCenter" id="main-title" style="font-size: large;font-weight: 600;">
+    四步进入俄罗斯大学
+</view>
+<view class="bg-white padding" id="main-steps">
+    <view class="cu-steps">
+        <view class="cu-item {{index>num?'':'text-blue'}}" wx:for="{{numList}}" wx:key bindtap="clickitem"
+            data-index="{{index}}">
+            <text class="num" data-index="{{index + 1}}"></text> {{item.name}}
+        </view>
+    </view>
+</view>
+<swiper class="screen-swiper" style="height:{{WinHeight-titleheight-stepsheight-HeadBar}}rpx" indicator-dots=""
+    bindchange="bindchange" current="{{currentId}}" circular="true" duration="500">
+
+    <swiper-item style="min-height:2000rpx">
+        <scroll-view class="margin" scroll-x="false" scroll-y="true"
+            style="height:{{WinHeight-titleheight-stepsheight-HeadBar}}rpx;width:auto;">
+            <view class="bg-white padding" style="text-indent:2em;font-weight: 600;">
+                挑选想去的学校，开启一段留学生活吧！
+            </view>
+            <view class="" style="height:15rpx">
+
+            </view>
+            <view class='cu-bar solid-bottom bg-white'>
+                <view class='action'>
+                    <text class='cuIcon-title text-green'></text> 我收藏的学校
+                </view>
+            </view>
+            <view class="cu-list menu-avatar" style="height:auto">
+
+                <view class="cu-item solids-top" wx:for="{{CollectList}}" wx:key wx:for-index="sub">
+                    <!-- <view class="cu-avatar round lg">1</view> -->
+                    <view class="cu-avatar round lg  shadow-blur"
+                        style="background-image:url({{item.logo}});left:10rpx;">
+                    </view>
+                    <view class="content"
+                        style="height: 100%; left: 120rpx; width: auto; position: absolute; top: 0rpx">
+
+                        <view class="text-grey text-sm oneline"
+                            style="color: #996179; display: -webkit-box; width: 264rpx; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
+                            {{item.name}}
+                        </view>
+                        <view class="text-gray text-sm" style="position: relative; left: 0rpx; top: 10rpx">
+                            QS世界排名：{{item.QS_all}}
+                        </view>
+                        <view class="text-gray text-sm"
+                            style="width: 264rpx; height: 42rpx; display: block; box-sizing: border-box">
+                            QS国内排名：{{item.QS_dome}}
+                        </view>
+                    </view>
+                    <view class="radius fr padding-sm shadow-blur myTxtCenter"
+                        style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695;color:#EDE3E0; position: relative; left: -8rpx; top: 0rpx"
+                        bindtap="learn_more" data-id="{{item.id}}">
+                        了解更多
+                    </view>
+
+                </view>
+                <view class="cu-item padding text-gray"
+                    style="height: auto;display: flex;align-items: center;justify-content: center;"
+                    wx:if="{{CollectList.length==0}}">
+                    您目前还没有任何收藏~
+                </view>
+            </view>
+            <view class="" style="height:3rpx">
+
+            </view>
+            <view class='cu-bar solid-bottom bg-white' style="margin-top:15rpx">
+                <view class='action'>
+                    <text class='cuIcon-title text-green'></text> 我收藏的专业
+                </view>
+            </view>
+            <view class="cu-list menu-avatar">
+
+                <view class="cu-item solids-top" wx:for="{{showprograms}}" wx:key wx:for-index="sub">
+                    <!-- <view class="cu-avatar round lg">1</view> -->
+                    <!-- <view class="cu-avatar round lg  shadow-blur"
+                        style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);left:10rpx;">
+                    </view> -->
+                    <view class="cu-avatar round lg  shadow-blur"
+                        style="background-image:url({{item.logo}});left:10rpx;">
+                    </view>
+                    <view class="content"
+                        style="height: 100%; left: 120rpx; width: auto; position: absolute; top: 0rpx">
+
+                        <view class="text-grey text-sm oneline"
+                            style="color: #996179; display: -webkit-box; width: 264rpx; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
+                            {{item.name}}
+                        </view>
+                        <view class="text-gray text-sm twoline" style="position: relative; left: 0rpx; top: 10rpx">
+                            {{item.schoolname}}{{item.level?'/':''}}{{item.level}}
+                        </view>
+                        <!-- <view class="text-gray text-sm"
+                            style="width: 264rpx; height: 42rpx; display: block; box-sizing: border-box">
+                            综合排名：{{item.rank}}
+                        </view> -->
+                    </view>
+                    <!-- <view class="content">
+
+                        <view class="text-grey oneline" style="color:#996179;display: -webkit-box;">
+                            {{item.name}}
+                        </view>
+                        <view class="text-gray text-sm oneline">
+                            {{item.schoolname}}{{item.level?'/':''}}{{item.level}}
+                        </view>
+                        <view class="text-gray text-sm">
+                            综合排名：{{item.rank}}
+                        </view>
+                    </view> -->
+                    <view class="radius fr padding-sm shadow-blur myTxtCenter margin-right"
+                        style=" height:4em;width:4em;font-size: 20rpx;background-color: #ff08009f;color:#EDE3E0;right:10rpx"
+                        bindtap="kefu" data-value="{{sub}}">
+                        我要申请
+                    </view>
+                    <view class="radius fr padding-sm shadow-blur myTxtCenter"
+                        style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;color:#EDE3E0;right:10rpx"
+                        bindtap="learnmore" data-value="{{sub}}">
+                        了解更多
+                    </view>
+
+                </view>
+                <!-- <view class="text-grey padding-sm" style="display: flex;justify-content: center;height:200rpx">
+                    {{showprograms.length==0?'这里空空如也':''}}
+                </view> -->
+                <view class="cu-item padding text-gray"
+                    style="height: auto;display: flex;align-items: center;justify-content: center;"
+                    wx:if="{{CollectList.length==0}}">
+                    {{showprograms.length==0?'这里空空如也':''}}
+                </view>
+
+            </view>
+            <view class="" style="height:200rpx">
+
+            </view>
+        </scroll-view>
+
+    </swiper-item>
+    <swiper-item>
+        <scroll-view class="margin" scroll-x="false" scroll-y="true"
+            style="height:{{WinHeight-titleheight-stepsheight-HeadBar}}rpx;width:auto;">
+            <view class="bg-white padding" style="text-indent:2em;">
+                提交文件时你首先需要提交初步申请单，在到达俄罗斯之后再提交正式文件。
+            </view>
+
+            <view class='cu-bar solid-bottom bg-white' style="margin-top:15rpx">
+                <view class='action'>
+                    <text class='cuIcon-title text-green'></text> 提交初步申请单
+                </view>
+            </view>
+            <view class="bg-white padding" style="">
+                你需要准备以下材料：
+            </view>
+            <view class="bg-white padding" style="display: flex;flex-direction: row;">
+                <view class="" style="flex:2">
+                    <view class="">
+                        <text class='cuIcon-title text-black'></text>关于学过的科目和成绩文件的复印件和俄文翻译件
+                    </view>
+                    <view class="">
+                        <text class='cuIcon-title text-black'></text>填妥的申请表格 （由学校或者俄罗斯合作署提供）
+                    </view>
+                    <view class="">
+                        <text class='cuIcon-title text-black'></text>身份证复印件
+                    </view>
+                    <view class="">
+                        <text class='cuIcon-title text-black'></text>照片
+                    </view>
+                </view>
+                <view class="" style="flex:1">
+                    <image class="" src="https://wx3.sinaimg.cn/mw2000/008tQ72zly1h3mupbrm1uj303w04gaab.jpg"
+                        mode="aspectFill">
+
+                    </image>
+                </view>
+            </view>
+
+
+            <view class="bg-white padding" style="text-indent:2em; color:red">
+                注意，1.所有文件必须翻译成俄文，并按照规定程序核证（公证或在使馆领事部）2.请找相关高校确定所需的资料清单与认证程序
+            </view>
+            <view class='cu-bar solid-bottom bg-white' style="margin-top:15rpx">
+                <view class='action'>
+                    <text class='cuIcon-title text-green'></text> 提交文件到大学时
+                </view>
+            </view>
+            <view class="bg-white padding-left padding">
+                你需要做出的准备：
+            </view>
+            <view class="bg-white padding-left padding-right">
+                <text class='cuIcon-title text-black'></text>标明选择的专业和教育形式的入学申请单
+            </view>
+            <view class="bg-white padding-left padding-right">
+                <text class='cuIcon-title text-black'></text>应招生的身份和国籍的证明文件（原件及公证的俄文翻译件）。
+            </view>
+            <view class="bg-white padding-left padding-right">
+                <text class='cuIcon-title text-black'></text>标明学习科目和成绩证明的文件（原件及公证的俄文翻译件）。
+            </view>
+            <view class="bg-white padding-left padding-right">
+                <text class='cuIcon-title text-black'></text>证明应招生没有在俄罗斯学习的禁忌医疗证，上面需要标出艾滋病毒感染化验结果（或者医学证书）。
+            </view>
+            <view class="bg-white padding-left padding-right padding-bottom">
+                <text class='cuIcon-title text-black'></text>确认照片
+            </view>
+            <view class="bg-white padding" style="text-indent:2em;color:red;margin-top:15rpx">
+                如果您是自己入学，您可以向大学国际部门的工作人员寻求每个阶段所需文件相关的信息。
+            </view>
+            <view class="bg-white padding padding-top-0" style="text-indent:2em;color:red;">
+                如果您参与奖学金名额竞争选择，您可以向中国的俄罗斯大使馆或者俄罗斯合作署代表处的工作人员寻求每个阶段所需文件相关的信息。
+            </view>
+            <view class="" style="height:250rpx">
+
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <scroll-view class="margin" scroll-x="false" scroll-y="true"
+            style="height:{{WinHeight-titleheight-stepsheight-HeadBar}}rpx;width:auto;">
+            <view class="bg-white padding" style="text-indent:2em;">
+                你可以通过一下几种方式进行竞赛选择进入俄罗斯高校
+            </view>
+            <view class='cu-bar solid-bottom bg-white' style="margin-top:15rpx">
+                <view class='action'>
+                    <text class='cuIcon-title text-green'></text> 入学考试和国家统一考试
+                </view>
+            </view>
+            <view class="bg-white padding-left padding-right padding-top" style="text-indent:2em; ">
+                一般情况下，进入俄罗斯大学时，应招生应提供国家考试的结果或通过入学考试。
+            </view>
+            <view class="bg-white padding-left padding-right" style="text-indent:2em; ">
+                国家统一考试是俄罗斯所有的中学毕业生需要通过的考试。 其结果将会被认作入学凭证。
+            </view>
+            <view class="bg-white padding-left padding-right" style="text-indent:2em; ">
+                外国应招生在入学时，也可以通过该考试。 所有详细信息在国家统考试官方网站(http://www.ege.edu.ru/)上可以找到。
+            </view>
+            <view class="bg-white padding-left padding-right padding-bottom" style="text-indent:2em; ">
+                此外，有些大学根据选择的专业，进行笔试和口试。 根据其结果，决定是否录取。 有些大学对外国人进行单独的入学考试。
+            </view>
+            <view class='cu-bar solid-bottom bg-white' style="margin-top:15rpx">
+                <view class='action'>
+                    <text class='cuIcon-title text-green'></text> 奥林匹克竞赛
+                </view>
+            </view>
+            <view class="bg-white padding" style="text-indent:2em; ">
+                每年在俄罗斯和国外组织举行十多个奥林匹克竞赛。 其中对于一些优胜者或者获奖者进入俄罗斯大学时，不需要进行考试或者享有特惠条款。
+            </view>
+            <view class="bg-white padding" style="display: flex;flex-direction: row;text-indent:2em;padding-top: 0;">
+                <view class="" style="flex:1">
+                    外国人也可以参加在俄罗斯举行的以及由大学的各种协会为他们专门举行的奥林匹克竞赛。
+                </view>
+                <view class="" style="flex:2">
+                    <image class="" src="https://wx4.sinaimg.cn/mw2000/008tQ72zly1h3mupbl3uyj30mw0cuk1g.jpg"
+                        mode="aspectFill">
+                    </image>
+                </view>
+            </view>
+
+
+
+            <view class='cu-bar solid-bottom bg-white' style="margin-top:15rpx">
+                <view class='action'>
+                    <text class='cuIcon-title text-green'></text> 测试
+                </view>
+            </view>
+            <view class="bg-white padding" style="text-indent:2em; ">
+                许多俄罗斯高校单独或联合进行测试，其目的是选择有才能的外国学生。 为此，高校的代表前往不同的国家，或将课题发送给他的同事们进行测试。 对于在测试中，成绩突出的应届生，具有优先进入俄罗斯高校的资格。
+            </view>
+            <view class="" style="height:300rpx">
+
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <scroll-view class="margin" scroll-x="false" scroll-y="true"
+            style="height:{{WinHeight-titleheight-stepsheight-HeadBar}}rpx;width:auto;">
+            <view class="bg-white padding" style="text-indent:2em;">
+                当您收到邀请函并办理完学生签证便完成了入学俄罗斯的最后一步
+            </view>
+            <view class="" style="display:flex;flex-direction: row;">
+                <view class="bg-white padding" style="flex:2">
+                    <view class="" style="text-indent:2em; ">
+                        持有俄罗斯免签证制度国家的应招生，进入其领土只需要出示护照。
+                        （具有俄罗斯免签证制度国家的名单公布在俄罗斯外交部网站https://mid.ru/ru/上）。
+                    </view>
+                    <view class="" style="text-indent:2em; ">
+                        在其他情况下，进入俄罗斯境内，除了身份证明文件以外，还需要出示学生签证。
+                    </view>
+                    <view class=" padding-bottom" style="text-indent:2em; ">
+                        办理签证，您需要出示由俄罗斯外交部和俄罗斯联邦移民局签发的邀请函。
+                    </view>
+                </view>
+                <view class="bg-white padding" style="flex:1">
+                    <image class="" src="https://wx2.sinaimg.cn/mw2000/008tQ72zly1h3mupd25t6j30fn0kq13m.jpg"
+                        mode="aspectFill">
+
+                    </image>
+                </view>
+            </view>
+
+            <view class="" style="height:15rpx">
+
+            </view>
+            <view class="bg-white padding" style="text-indent:2em;display:flex;flex-direction: row;">
+                预祝您的赴俄留学生活顺利愉悦！<image class="" src="../../../image/icons/zan.bmp" mode="aspectFill"
+                    style="height:50rpx;width:100rpx">
+
+                </image>
+            </view>
+            <view class="" style="height:30rpx">
+
+            </view>
+            <button class=" bg-red lg" bindtap="contact">行动起来！</button>
+            <view class="" style="height:200rpx">
+
+            </view>
+        </scroll-view>
+
+    </swiper-item>
+</swiper>

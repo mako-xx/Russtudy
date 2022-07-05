@@ -1,20 +1,26 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/school/classify/classify",
-    "pages/application/all/application",
+    "pages/school/oneschool/index/index",
+    "pages/life/index/index",
+    "pages/application/index/index",
+    "pages/life/onecity/onecity",
+    "pages/school/classify/classify",    
     "pages/my/my",
-    "pages/life/life",
     "pages/school/index/school",
-    "pages/home/home/home"
+    "pages/home/home/home",
     "pages/school/programs/programs",
     "pages/school/question/question",
     "pages/school/oneschool/condition/condition",
     "pages/school/oneschool/dorm/dorm",
     "pages/school/oneschool/faculty/faculty",
-    "pages/school/oneschool/index/index",
     "pages/school/oneschool/preparatory/preparatory",
-    "pages/school/oneschool/rank/rank"
+    "pages/school/oneschool/rank/rank",
+    "pages/school/oneprogram/programs",
+    "pages/my/contact/contact",
+    "pages/school/search/search",
+    "pages/home/how/how",
+    "pages/school/recommend/recommend"
   ],
   "tabBar": {
     "custom": true,
@@ -25,10 +31,14 @@
       },
       {
         "pagePath": "pages/school/index/school",
-        "text": "选学校"
+        "text": "学校"
       },
       {
-        "pagePath": "pages/life/life",
+        "pagePath": "pages/application/index/index",
+        "text": "申请"
+      },
+      {
+        "pagePath": "pages/life/index/index",
         "text": "生活"
       },
       {

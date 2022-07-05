@@ -1,17 +1,117 @@
-<view class="head"style="height:{{HeadBar}}rpx;">
+<view class="head" style="height:{{HeadBar}}rpx; z-index: 50;position:fixed">
   <view class="titles">
-      <view class="title">
-          KeLi
-      </view>
-      <view class="sudtitle">
-          副标题
-      </view>
+    <view class="title">
+      RusStudy
+    </view>
+    <view class="sudtitle">
+      在俄罗斯留学
+    </view>
   </view>
 </view>
-<scroll-view scroll-y="true"style="height:{{ShowHeight}}rpx;">
+<!-- <scroll-view scroll-y="true" style="height:{{ShowHeight}}rpx;" class="bg-gray"> -->
+<view class="back"style="position: absolute;top:{{HeadBar}}rpx; width:100%;">
+<view class="triangleD" style="position: absolute; left: -606rpx; top:-10rpx;width: -20rpx; height: 260rpx; display: block; box-sizing: border-box">
 
- 
+</view>
+<view class="login">
+
+  <view class="ava-nick">
+    <image class="cu-avatar.xl" src='{{avatarUrl}}' style="position: relative; left: 0rpx; top: 0rpx"></image>
+    <view class="nickname" bindtap="changeNickname" style="position: relative; left: -21rpx; top: 0rpx; width: 191rpx; height: 35rpx; display: flex; box-sizing: border-box">
+      {{nickname}}
+    </view>
+  </view>
+  <view class="ligin-bu">
+    <button class="cu-btn.round" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" bindtap="login"
+      style="position: relative; top: 0rpx; left: -175rpx">
+    </button>
+  </view>
+</view>
+<view class="collection" style="position: relative; left: 50rpx; top: 0rpx">
+  <view class="collection-2">
+    <text class=" text-bold text-blue collection-text">收藏</text>
+    <text class="text-ABC text-blue  text-bold "
+      style="position: absolute; left: -30rpx; top: 47rpx; opacity:0.5">collection</text>
+
+  </view>
+  <view class="collection-3">
+    <button class="collection-item" bindtap="switchcity">
+      <image class="collection-icons"
+        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/城市2 1.png">
+      </image>
+    </button>
+    <button class="collection-item" bindtap="switchschool">
+      <image class="collection-icons"
+        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/学校2 1.png" style="width: 125rpx; height: 125rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: -10rpx; position: relative">
+      </image>
+    </button>
+    <button class="collection-item" bindtap="switchprogram">
+      <image class="collection-icons"
+        src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/项目2 1.png" style="width: 100rpx; height: 100rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: 0rpx">
+      </image>
+    </button>
+  </view>
+  <view class="collection-3-text">
+    <text class="collection-item-text">城市</text>
+    <text class="collection-item-text">学校</text>
+    <text class="collection-item-text">专业</text>
+  </view>
+</view>
+
+<view class="detail" style="position: relative; left: 50rpx; top: 50rpx;">
+  <button class="bdetail">
+    <image class="idetail"
+      src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/关于我们1 1.png">
+    </image>
+    <text class="tdetail">关于我们</text>
+    <!-- <text class="text-ABC text-red  text-bold "
+    style="position: absolute; left: 100rpx; top: 45rpx; opacity:0.5; font-size: 20rpx;">about us</text> -->
+    <image class="jiantou"
+      src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/箭头 右.png"></image>
+  </button>
+  <button class="bdetail" bindtap="kefu">
+    <image class="idetail"
+      src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/客服1 1.png"></image>
+    <text class="tdetail">联系客服</text>
+    <image class="jiantou"
+      src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/箭头 右.png"></image>
+  </button>
+  <button class="bdetail" bindtap="clean">
+    <image class="idetail"
+      src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/清空缓存1 1.png">
+    </image>
+    <text class="tdetail">清空缓存</text>
+    <image class="jiantou"
+      src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/箭头 右.png"></image>
+  </button>
+  <button class="bdetail" bindtap="{{iflogin?'exit':''}}">
+    <image class=" idetail"
+      src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/退出1 1.png"></image>
+    <text class="tdetail">退出登录</text>
+    <image class="jiantou"
+      src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/箭头 右.png"></image>
+  </button>
+</view>
+
+<view class="model" catchtouchmove='preventTouchMove' wx:if='{{showModal}}'></view>
+<view class="modalDlg" catchtouchmove='preventTouchMove' wx:if='{{showModal}}'
+  style="width: 678rpx; height: 444rpx; display: flex; box-sizing: border-box; left: -6rpx; top: 580rpx; position: fixed">
+  <view class='windowRow'>
+    <text class='userTitle'>修改姓名</text>
+    <view class='back' bindtap='back'>返回</view>
+  </view>
+  <view style="width: 570rpx; height: 146rpx; display: flex; box-sizing: border-box" class='wishName'>
+    <input style="width: 566rpx; height: 90rpx; display: block; box-sizing: border-box" bindinput='wish_put'
+      placeholder='{{holder}}' placeholder-class="holder_cls" class='wish_put' bindfocus="holder_disappear"
+      bindblur="holder_appear"></input>
+  </view>
+  <view style="width:94%" class='wishbnt' bindtap='name'>确定</view>
+</view>
+<view class="whitecard" style="height:300rpx;">
+
+</view>
+
+</view>
 
 
-
-</scroll-view>
+<!-- </scroll-view> -->
