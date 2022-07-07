@@ -27,7 +27,7 @@
     </button>
   </view>
 </view>
-<view class="collection" style="position: relative; left: 50rpx; top: 0rpx">
+<view class="collection" style="position: relative; left: 50rpx; top: -50rpx">
   <view class="collection-2">
     <text class=" text-bold text-blue collection-text">收藏</text>
     <text class="text-ABC text-blue  text-bold "
@@ -58,7 +58,7 @@
   </view>
 </view>
 
-<view class="detail" style="position: relative; left: 50rpx; top: 50rpx;">
+<view class="detail" style="position: relative; left: 50rpx; top: 0rpx;">
   <button class="bdetail">
     <image class="idetail"
       src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/关于我们1 1.png">
@@ -99,13 +99,16 @@
   <view class='windowRow'>
     <text class='userTitle'>修改姓名</text>
     <view class='back' bindtap='back'>返回</view>
+  </view> 
+  <form catchsubmit="formSubmit">
+  <view class="wishinput"> 
+      <input style="width: 566rpx; height: 90rpx; display: block; box-sizing: border-box" bindinput='wish_put' placeholder='{{holder}}' placeholder-class="holder_cls" class='wish_put'  type="nickname" bindfocus="holder_disappear"
+      bindblur="holder_appear" name="nickname"></input>      
+      <button style="width:94%" class='wishbnt' bindtap='name' formType="submit">确定</button>  
   </view>
-  <view style="width: 570rpx; height: 146rpx; display: flex; box-sizing: border-box" class='wishName'>
-    <input style="width: 566rpx; height: 90rpx; display: block; box-sizing: border-box" bindinput='wish_put'
-      placeholder='{{holder}}' placeholder-class="holder_cls" class='wish_put' bindfocus="holder_disappear"
-      bindblur="holder_appear"></input>
-  </view>
-  <view style="width:94%" class='wishbnt' bindtap='name'>确定</view>
+    </form>
+  
+
 </view>
 <view class="whitecard" style="height:300rpx;">
 

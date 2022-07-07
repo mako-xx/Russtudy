@@ -73,15 +73,15 @@ Page({
     this.setData({
       textV: e.detail.value
     })
-
   },
   /**
   * 点击确定按钮获取input值并且关闭弹窗
   */
-  name: function () {
+ formSubmit(e) {
+    console.log(e)
     this.setData({
       showModal: false,
-      nickname: this.data.textV
+      nickname: e.detail.value.nickname
     })
     console.log("nickname", this.data.nickname)
     //将数据保存到本地
@@ -89,7 +89,7 @@ Page({
     _user.nickname = this.data.nickname;
     console.log(this.data.nickname)
     wx.setStorageSync('collections', _user);
-    onslotchange.log("finish")
+    // onslotchange.log("finish")
   },
   // //登录按钮兼头像更换
   onChooseAvatar(e) {
@@ -121,7 +121,7 @@ Page({
       const info = await wx.getUserProfile({
         desc: '用于完善用户资料',
       });
-      nickname = info.userInfo.nickName
+      // nickname = info.userInfo.nickName
       console.log("nicename", nickname)
       avatarUrl = info.userInfo.avatarUrl
     } else {
