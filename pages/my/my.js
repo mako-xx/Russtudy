@@ -118,12 +118,12 @@ Page({
     var nickname
     var avatarUrl
     if (this.data.iflogin == false) {
-      const info = await wx.getUserProfile({
-        desc: '用于完善用户资料',
-      });
-      // nickname = info.userInfo.nickName
-      console.log("nicename", nickname)
-      avatarUrl = info.userInfo.avatarUrl
+      // const info = await wx.getUserProfile({
+      //   desc: '用于完善用户资料',
+      // });
+      
+      // console.log("info", info)
+      // // avatarUrl = info.userInfota.avarUrl
     } else {
       var collection = wx.getStorageSync("collections")
       db.collection("user").where({
@@ -318,7 +318,7 @@ Page({
   },
   switchprogram() {
     wx.navigateTo({
-      url: '../school/programs/programs?lookcollect=1'
+      url: '../school/progams/programs?lookcollect=1'
     });
   },
   /**
@@ -368,6 +368,10 @@ Page({
         }
       }, 1000)
     })
+
+    if(this.iflogin == true){
+
+    }
   },
 
   /**
