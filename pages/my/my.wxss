@@ -1,7 +1,5 @@
 /* pages/my/my.wxss */
-page {
-	background-color: lightblue;
-}
+
 
 .cu-avatar.xl {
 	position: relative;
@@ -276,7 +274,7 @@ height: ;
 	width: 650rpx;
 	position: relative;
 	bottom: 40rpx;
-	height: 450rpx;
+	height: 500rpx;
 }
 
 .bdetail {

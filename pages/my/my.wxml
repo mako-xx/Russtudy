@@ -57,7 +57,7 @@
   </view>
 </view>
 
-<view class="detail" style="position: relative; left: 50rpx; top: -100rpx;">
+<view class="detail" style="position: relative; left: 50rpx; top: -120rpx;">
   <button class="bdetail">
     <image class="idetail"
       src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/关于我们1 1.png">
@@ -77,7 +77,7 @@
   </button>
   <button class="bdetail" bindtap="">
     <image class="idetail"
-      src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/客服1 1.png"></image>
+      src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/意见反馈.png"></image>
     <text class="tdetail">意见反馈</text>
     <image class="jiantou"
       src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/箭头 右.png"></image>
