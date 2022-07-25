@@ -338,7 +338,7 @@
     </radio-group>
   </view> -->
 
-  <view style="padding-top: 10rpx;">
+  <view class="radio_view">
     <view class="view_title">9.如果去俄罗斯读书，你最希望能去哪些城市？</view>
     <checkbox-group bindchange="change8" data-temp="13" name="citys" class="checkbox">
       <label wx:for="{{city}}" wx:key="{{item.value}}">

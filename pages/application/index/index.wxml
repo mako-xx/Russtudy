@@ -47,11 +47,10 @@
                     <view class="cu-avatar round lg  shadow-blur"
                         style="background-image:url({{item.logo}});left:10rpx;">
                     </view>
-                    <view class="content"
-                        style="height: 100%; left: 120rpx; width: auto; position: absolute; top: 0rpx">
+                    <view class="content" style="height: 100%; left: 120rpx; width: 70%; position: absolute; top: 0rpx">
 
                         <view class="text-grey text-sm oneline"
-                            style="color: #996179; display: -webkit-box; width: 264rpx; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
+                            style="color: #996179; display: -webkit-box; width: 100%; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
                             {{item.name}}
                         </view>
                         <view class="text-gray text-sm" style="position: relative; left: 0rpx; top: 10rpx">
@@ -86,40 +85,24 @@
             <view class="cu-list menu-avatar">
 
                 <view class="cu-item solids-top" wx:for="{{showprograms}}" wx:key wx:for-index="sub">
-                    <!-- <view class="cu-avatar round lg">1</view> -->
-                    <!-- <view class="cu-avatar round lg  shadow-blur"
-                        style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);left:10rpx;">
-                    </view> -->
                     <view class="cu-avatar round lg  shadow-blur"
                         style="background-image:url({{item.logo}});left:10rpx;">
                     </view>
-                    <view class="content"
-                        style="height: 100%; left: 120rpx; width: auto; position: absolute; top: 0rpx">
+                    <view class="content" style="height: 100%; left: 120rpx; width: 50%; position: absolute; top: 0rpx">
 
                         <view class="text-grey text-sm oneline"
-                            style="color: #996179; display: -webkit-box; width: 264rpx; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
+                            style="color: #996179; display: -webkit-box; width: 100%; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
                             {{item.name}}
                         </view>
-                        <view class="text-gray text-sm twoline" style="position: relative; left: 0rpx; top: 10rpx">
-                            {{item.schoolname}}{{item.level?'/':''}}{{item.level}}
+                        <view class="text-gray text-sm oneline"
+                            style="position: relative; left: 0rpx; top: 10rpx;overflow: hidden;">
+                            {{item.schoolname}}
                         </view>
-                        <!-- <view class="text-gray text-sm"
-                            style="width: 264rpx; height: 42rpx; display: block; box-sizing: border-box">
-                            综合排名：{{item.rank}}
-                        </view> -->
+                        <view class="text-gray text-sm oneline"
+                            style="position: relative; left: 0rpx; top: 10rpx;overflow: hidden;">
+                            {{item.level}}
+                        </view>
                     </view>
-                    <!-- <view class="content">
-
-                        <view class="text-grey oneline" style="color:#996179;display: -webkit-box;">
-                            {{item.name}}
-                        </view>
-                        <view class="text-gray text-sm oneline">
-                            {{item.schoolname}}{{item.level?'/':''}}{{item.level}}
-                        </view>
-                        <view class="text-gray text-sm">
-                            综合排名：{{item.rank}}
-                        </view>
-                    </view> -->
                     <view class="radius fr padding-sm shadow-blur myTxtCenter margin-right"
                         style=" height:4em;width:4em;font-size: 20rpx;background-color: #ff08009f;color:#EDE3E0;right:10rpx"
                         bindtap="kefu" data-value="{{sub}}">
@@ -290,8 +273,8 @@
             <view class="" style="display:flex;flex-direction: row;">
                 <view class="bg-white padding" style="flex:2">
                     <view class="" style="text-indent:2em; ">
-                        持有俄罗斯免签证制度国家的应招生，进入其领土只需要出示护照。
-                        （具有俄罗斯免签证制度国家的名单公布在俄罗斯外交部网站https://mid.ru/ru/上）。
+                        持有俄罗斯免签证制度国家的应招生，进入其领土只需要出示护照。（具有俄罗斯免签证制度国家的名单公布在俄罗斯外交部网站 <text
+                            style="text-decoration:underline;color:blue">https://mid.ru/ru/</text>上）。
                     </view>
                     <view class="" style="text-indent:2em; ">
                         在其他情况下，进入俄罗斯境内，除了身份证明文件以外，还需要出示学生签证。
