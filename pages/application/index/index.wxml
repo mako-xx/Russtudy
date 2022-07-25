@@ -37,7 +37,7 @@
             </view>
             <view class='cu-bar solid-bottom bg-white'>
                 <view class='action'>
-                    <text class='cuIcon-title text-green'></text> 我收藏的学校
+                    <text class='cuIcon-radioboxfill text-green'></text> 我收藏的学校
                 </view>
             </view>
             <view class="cu-list menu-avatar" style="height:auto">
@@ -80,7 +80,7 @@
             </view>
             <view class='cu-bar solid-bottom bg-white' style="margin-top:15rpx">
                 <view class='action'>
-                    <text class='cuIcon-title text-green'></text> 我收藏的专业
+                    <text class='cuIcon-radioboxfill text-green'></text> 我收藏的专业
                 </view>
             </view>
             <view class="cu-list menu-avatar">
@@ -157,7 +157,7 @@
 
             <view class='cu-bar solid-bottom bg-white' style="margin-top:15rpx">
                 <view class='action'>
-                    <text class='cuIcon-title text-green'></text> 提交初步申请单
+                    <text class='cuIcon-radioboxfill text-green'></text> 提交初步申请单
                 </view>
             </view>
             <view class="bg-white padding" style="">
@@ -166,16 +166,16 @@
             <view class="bg-white padding" style="display: flex;flex-direction: row;">
                 <view class="" style="flex:2">
                     <view class="">
-                        <text class='cuIcon-title text-black'></text>关于学过的科目和成绩文件的复印件和俄文翻译件
+                        <text class='cuIcon-radioboxfill text-black'></text>关于学过的科目和成绩文件的复印件和俄文翻译件
                     </view>
                     <view class="">
-                        <text class='cuIcon-title text-black'></text>填妥的申请表格 （由学校或者俄罗斯合作署提供）
+                        <text class='cuIcon-radioboxfill text-black'></text>填妥的申请表格 （由学校或者俄罗斯合作署提供）
                     </view>
                     <view class="">
-                        <text class='cuIcon-title text-black'></text>身份证复印件
+                        <text class='cuIcon-radioboxfill text-black'></text>身份证复印件
                     </view>
                     <view class="">
-                        <text class='cuIcon-title text-black'></text>照片
+                        <text class='cuIcon-radioboxfill text-black'></text>照片
                     </view>
                 </view>
                 <view class="" style="flex:1">
@@ -192,26 +192,26 @@
             </view>
             <view class='cu-bar solid-bottom bg-white' style="margin-top:15rpx">
                 <view class='action'>
-                    <text class='cuIcon-title text-green'></text> 提交文件到大学时
+                    <text class='cuIcon-radioboxfill text-green'></text> 提交文件到大学时
                 </view>
             </view>
             <view class="bg-white padding-left padding">
                 你需要做出的准备：
             </view>
             <view class="bg-white padding-left padding-right">
-                <text class='cuIcon-title text-black'></text>标明选择的专业和教育形式的入学申请单
+                <text class='cuIcon-radioboxfill text-black'></text>标明选择的专业和教育形式的入学申请单
             </view>
             <view class="bg-white padding-left padding-right">
-                <text class='cuIcon-title text-black'></text>应招生的身份和国籍的证明文件（原件及公证的俄文翻译件）。
+                <text class='cuIcon-radioboxfill text-black'></text>应招生的身份和国籍的证明文件（原件及公证的俄文翻译件）。
             </view>
             <view class="bg-white padding-left padding-right">
-                <text class='cuIcon-title text-black'></text>标明学习科目和成绩证明的文件（原件及公证的俄文翻译件）。
+                <text class='cuIcon-radioboxfill text-black'></text>标明学习科目和成绩证明的文件（原件及公证的俄文翻译件）。
             </view>
             <view class="bg-white padding-left padding-right">
-                <text class='cuIcon-title text-black'></text>证明应招生没有在俄罗斯学习的禁忌医疗证，上面需要标出艾滋病毒感染化验结果（或者医学证书）。
+                <text class='cuIcon-radioboxfill text-black'></text>证明应招生没有在俄罗斯学习的禁忌医疗证，上面需要标出艾滋病毒感染化验结果（或者医学证书）。
             </view>
             <view class="bg-white padding-left padding-right padding-bottom">
-                <text class='cuIcon-title text-black'></text>确认照片
+                <text class='cuIcon-radioboxfill text-black'></text>确认照片
             </view>
             <view class="bg-white padding" style="text-indent:2em;color:red;margin-top:15rpx">
                 如果您是自己入学，您可以向大学国际部门的工作人员寻求每个阶段所需文件相关的信息。
@@ -232,7 +232,7 @@
             </view>
             <view class='cu-bar solid-bottom bg-white' style="margin-top:15rpx">
                 <view class='action'>
-                    <text class='cuIcon-title text-green'></text> 入学考试和国家统一考试
+                    <text class='cuIcon-radioboxfill text-green'></text> 入学考试和国家统一考试
                 </view>
             </view>
             <view class="bg-white padding-left padding-right padding-top" style="text-indent:2em; ">
@@ -249,7 +249,7 @@
             </view>
             <view class='cu-bar solid-bottom bg-white' style="margin-top:15rpx">
                 <view class='action'>
-                    <text class='cuIcon-title text-green'></text> 奥林匹克竞赛
+                    <text class='cuIcon-radioboxfill text-green'></text> 奥林匹克竞赛
                 </view>
             </view>
             <view class="bg-white padding" style="text-indent:2em; ">
@@ -270,7 +270,7 @@
 
             <view class='cu-bar solid-bottom bg-white' style="margin-top:15rpx">
                 <view class='action'>
-                    <text class='cuIcon-title text-green'></text> 测试
+                    <text class='cuIcon-radioboxfill text-green'></text> 测试
                 </view>
             </view>
             <view class="bg-white padding" style="text-indent:2em; ">

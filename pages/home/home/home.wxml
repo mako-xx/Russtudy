@@ -1,4 +1,4 @@
-<view class="head"style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
+<view class="head" style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
   <view class="titles">
     <view class="title">
       RusStudy
@@ -9,80 +9,80 @@
   </view>
 </view>
 <view class="back" style="position: fixed;top: {{HeadBar}}rpx;">
-  <navigator class='navi' open-type="navigateBack" delta="1" hover-class="none"style="position:relative; top: 25%; color: black; left: 38rpx">
-<view style="opacity: 1;">
-  <text class="cuIcon-back"></text> 返回
-</view>
-</navigator>
-<text class="bgtitle" style="position: relative; top: 10% ;left: 175rpx;">为什么选择俄罗斯</text>
+  <navigator class='navi' open-type="navigateBack" delta="1" hover-class="none"
+    style="position:relative; top: 25%; color: black; left: 38rpx">
+    <view style="opacity: 1;">
+      <text class="cuIcon-back"></text> 返回
+    </view>
+  </navigator>
+  <text class="bgtitle" style="position: relative; top: 10% ;left: 175rpx;">为什么选择俄罗斯</text>
 </view>
 
 
-<view class="card" style="position: absolute;top: {{1.5*HeadBar}}rpx;">  
+<view class="card" style="position: absolute;top: {{1.5*HeadBar}}rpx;">
   <view class="text" style="width: 750rpx; ">
 
 
     <view class="cu-bar bg-white margin-top">
       <view class="action">
-        <text class="cuIcon-title text-" style="color: rgb(255, 94, 0);">1.教育资源充沛</text>
+        <text class="cuIcon-radioboxfill text-" style="color: rgb(255, 94, 0);">1.教育资源充沛</text>
       </view>
-   </view>
-    <text class="textbody" decode = "{{true}}">
+    </view>
+    <text class="textbody" decode="{{true}}">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在俄罗斯留学能够获取各个方面的基础知识，俄罗斯在物理数学和自然科学领域闻名。俄罗斯是全世界公认培养数学家、物理家、化学家、地质学家、工程师、程序设计员、医生以及其他自然科学专家领先的国家。
     </text>
-    <text class="textbody" decode = "{{true}}">
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作为拥有千年历史的大国，俄罗斯效育已经进入发展成熟阶段，科目配备合理，教学方法独树一帆，自主构建了从学前教脊到高等放脊的完备的故育体系。截止2015年9月，在俄境内包括分校近2250所，这还是经过政府饰检优化以后的数量。其中不乏世界知名顶尖学府，比如莫斯科罗蒙诺索夫国立大学、圣彼得堡国立大学等等，俄罗斯在各个教育领城都有建树，牢固的理论教育与实践开发培养了一批又一批人才。俄教育体系与大部分亚欧国家稍有不同，大学本科修读五年后即可获得专家学位．再修读3-4年即可获得副博士学位(相当于国内的硕士学位)。俄罗斯高等院校的课时普遍多于国内，每日均有2至5节课，每节课45分钟，第为两节课连上，没有课间。  
+    <text class="textbody" decode="{{true}}">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作为拥有千年历史的大国，俄罗斯效育已经进入发展成熟阶段，科目配备合理，教学方法独树一帆，自主构建了从学前教脊到高等放脊的完备的故育体系。截止2015年9月，在俄境内包括分校近2250所，这还是经过政府饰检优化以后的数量。其中不乏世界知名顶尖学府，比如莫斯科罗蒙诺索夫国立大学、圣彼得堡国立大学等等，俄罗斯在各个教育领城都有建树，牢固的理论教育与实践开发培养了一批又一批人才。俄教育体系与大部分亚欧国家稍有不同，大学本科修读五年后即可获得专家学位．再修读3-4年即可获得副博士学位(相当于国内的硕士学位)。俄罗斯高等院校的课时普遍多于国内，每日均有2至5节课，每节课45分钟，第为两节课连上，没有课间。
     </text>
-    <text class="textbody" decode = "{{true}}">
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    同时俄罗斯老师普遍有责任心，学在课上主动邀请学生提出疑问，耐心且慎重地回答每一个问题。他们十分重视基础知识的掌握。
+    <text class="textbody" decode="{{true}}">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 同时俄罗斯老师普遍有责任心，学在课上主动邀请学生提出疑问，耐心且慎重地回答每一个问题。他们十分重视基础知识的掌握。
     </text>
     <view class="cu-bar bg-white margin-top">
       <view class="action">
-        <text class="cuIcon-title text-" style="color: rgb(255, 94, 0);">2.方便快捷、成本更低</text>
+        <text class="cuIcon-radioboxfill text-" style="color: rgb(255, 94, 0);">2.方便快捷、成本更低</text>
       </view>
-   </view>
-  <text class="textbody" decode = "{{true}}">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;相比欧美国家，中国留学生更易于适应俄罗斯的留学环境。
-  </text>
-   <text class="textbody" decode = "{{true}}">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;俄罗斯与中国互为陆上邻国，两国往来交通便利。特别是中国东北部的黑河市与俄罗斯远东地区的符拉其瓦斯托克，两个城市关系密切有较频祭的贸易往来与文化交流，地理环境大体相似。
-  </text>
- 
-  <view class="bg-white margin-top" style="width: 100%;">
-    <image class="margin-right-xs  margin-top-lg" src="https://wx3.sinaimg.cn/mw690/008qNTbqly1h3pj7idjrnj31900u0q9s.jpg"
-    style="height: 280rpx; width: 402rpx; float:right ">
-    </image> 
-    <text class="textbody" style="color: rgba(0, 0, 0, 0.863);word-break:break-all;"  decode = "{{true}}">
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国东北部与俄罗斯远东地区相差不远的地城环境及气候条件在一定程度上导致了两地生活习惯相近。比如中国东北部经常提到的"哈尔滨大列巴”、“格瓦斯"实从俄罗斯流传至国内，这两样食物是俄罗斯人民的主食及具有代 表性的饮料。双方相似的生活习性有利于在俄罗斯生活的中国留学生习惯当地环境，避免出现水土不服等状况。
-    </text>    
-   
+    </view>
+    <text class="textbody" decode="{{true}}">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;相比欧美国家，中国留学生更易于适应俄罗斯的留学环境。
+    </text>
+    <text class="textbody" decode="{{true}}">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;俄罗斯与中国互为陆上邻国，两国往来交通便利。特别是中国东北部的黑河市与俄罗斯远东地区的符拉其瓦斯托克，两个城市关系密切有较频祭的贸易往来与文化交流，地理环境大体相似。
+    </text>
+
+    <view class="bg-white margin-top" style="width: 100%;">
+      <image class="margin-right-xs  margin-top-lg"
+        src="https://wx3.sinaimg.cn/mw690/008qNTbqly1h3pj7idjrnj31900u0q9s.jpg"
+        style="height: 280rpx; width: 402rpx; float:right ">
+      </image>
+      <text class="textbody" style="color: rgba(0, 0, 0, 0.863);word-break:break-all;" decode="{{true}}">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国东北部与俄罗斯远东地区相差不远的地城环境及气候条件在一定程度上导致了两地生活习惯相近。比如中国东北部经常提到的"哈尔滨大列巴”、“格瓦斯"实从俄罗斯流传至国内，这两样食物是俄罗斯人民的主食及具有代
+        表性的饮料。双方相似的生活习性有利于在俄罗斯生活的中国留学生习惯当地环境，避免出现水土不服等状况。
+      </text>
+
     </view>
 
-  <text class="textbody" decode = "{{true}}">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同时，在俄罗斯留学的中国人逐年增多，降低了中国留学生在俄罗斯遭到排挤、孤立的可能性。俄罗斯高校一般会将同一国籍的学生安排在同一个宿舍，因此学生们也不需耍财生活习性的差异有太大顾忠。加之不同于欧美国家大多数留学生是亚洲人的情况，在俄留学生遍布，这在一定程度上减緩种族歧视的现象。
-  </text>
-    <text class="textbody" decode = "{{true}}">
+    <text class="textbody" decode="{{true}}">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同时，在俄罗斯留学的中国人逐年增多，降低了中国留学生在俄罗斯遭到排挤、孤立的可能性。俄罗斯高校一般会将同一国籍的学生安排在同一个宿舍，因此学生们也不需耍财生活习性的差异有太大顾忠。加之不同于欧美国家大多数留学生是亚洲人的情况，在俄留学生遍布，这在一定程度上减緩种族歧视的现象。
+    </text>
+    <text class="textbody" decode="{{true}}">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;俄罗斯教育与其他国家相比，比如，美国或英国，费用更低廉。且每年俄罗斯政府给外国人提供几千个奖学金（名额）。比如，2019年一共有一万五千个奖学金。此外，某些类别的外国人能获得额外奖学金。还有一种机会是参加大学举办的奥林匹克竞赛，在入学考试时，优胜者和获奖者也能享受优惠。
     </text>
     <view class="cu-bar bg-white margin-top ">
       <view class="action">
-        <text class="cuIcon-title text-" style="color: rgb(255, 94, 0);">3.中俄关系紧密，极具就业潜力</text>
+        <text class="cuIcon-radioboxfill text-" style="color: rgb(255, 94, 0);">3.中俄关系紧密，极具就业潜力</text>
       </view>
-   </view>
-    <text class="textbody" decode = "{{true}}">
+    </view>
+    <text class="textbody" decode="{{true}}">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中俄两国政府签署了相互承认对方学位及学历的友好协议，归国回来的学生取得的学历及学位证书在中国教育部留学服务中心即可办理认证手续。俄罗斯是与我国签订互认学历协议的少数国家之一，所以俄罗斯留学所获得的学历文凭，自然会得到我国的绝对认可。这也就消除了众多学子们学成归来后学历认可问题的后顾之忧。且伴随着我国“一带一路”的发展与升温，中俄关系合作日益紧密，中国与俄罗斯在很多方面都展开了合作，石油产业，通讯产业，贸易产业等诸多产业。与此成鲜明对比的，是国内俄语人才的紧缺。按照中俄合作的发展趋势，俄语的复合型人才缺口最大，也就是说熟练掌握俄语，并在某一专业领域拥有经验和突出表现的人，将在未来十分抢手。
     </text>
     <view class="blank">
       <view class="myTxtCenter text-gray">
-      KeLi 赴俄留学小助手
+        KeLi 赴俄留学小助手
+      </view>
+      <view class="myTxtCenter text-gray">
+        更多咨询，请联系135555555
+      </view>
     </view>
-    <view class="myTxtCenter text-gray">
-      更多咨询，请联系135555555
-    </view>
-    </view>
- 
+
   </view>
 </view>
-
-
-

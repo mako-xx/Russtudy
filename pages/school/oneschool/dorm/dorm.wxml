@@ -33,7 +33,7 @@
 <block wx:for="{{printvalue}}">
   <view class="cu-bar bg-white margin-top solid-bottom">
     <view class="action">
-      <text class="cuIcon-title text-yellow"></text>{{item.question}}
+      <text class="cuIcon-titlesss text-yellow"></text>{{item.question}}
     </view>
   </view>
   <view class="text bg-white padding"
