@@ -21,11 +21,9 @@
 
 <view class="card" style="position: absolute;top: {{1.5*HeadBar}}rpx;">
   <view class="text" style="width: 750rpx; ">
-
-
     <view class="cu-bar bg-white margin-top">
       <view class="action">
-        <text class="" style="color: rgb(255, 94, 0);font-size: larger;font-weight: 600;">1.教育资源充沛</text>
+        <text class="cuIcon-radioboxfill text-" style="color:rgb(56, 109, 255) ;">1.教育资源充沛</text>
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
@@ -39,7 +37,7 @@
     </text>
     <view class="cu-bar bg-white margin-top">
       <view class="action">
-        <text class="" style="color: rgb(255, 94, 0);font-size: larger;font-weight: 600;">2.方便快捷、成本更低</text>
+        <text class="cuIcon-radioboxfill text-" style="color:rgb(56, 109, 255)">2.方便快捷、成本更低</text>
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
@@ -69,7 +67,7 @@
     </text>
     <view class="cu-bar bg-white margin-top ">
       <view class="action">
-        <text class="" style="color: rgb(255, 94, 0);font-size: larger;font-weight: 600;">3.中俄关系紧密，极具就业潜力</text>
+        <text class="cuIcon-radioboxfill text-" style="color:rgb(56, 109, 255)">3.中俄关系紧密，极具就业潜力</text>
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
@@ -80,7 +78,7 @@
         KeLi 赴俄留学小助手
       </view>
       <view class="myTxtCenter text-gray">
-        更多咨询，请联系135555555
+        更多咨询，请联系13915321806
       </view>
     </view>
 

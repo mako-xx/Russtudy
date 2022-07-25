@@ -21,7 +21,7 @@
   <view class="text" style="width: 750rpx; ">
     <view class="cu-bar bg-white margin-top">
       <view class="action">
-        <text class="" style="color: rgb(255, 94, 0);font-size: larger;font-weight: 600;">1.学习俄语的第一步，是掌握它的字母。</text>
+        <text class="cuIcon-radioboxfill text-" style="color:rgb(56, 109, 255)">1.学习俄语的第一步，是掌握它的字母。</text>
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
@@ -29,7 +29,7 @@
     </text>
     <view class="cu-bar bg-white margin-top">
       <view class="action">
-        <text class="" style="color: rgb(255, 94, 0);font-size: larger;font-weight: 600;">2.时常接触俄语，并及时记录新单词</text>
+        <text class="cuIcon-radioboxfill text-" style="color:rgb(56, 109, 255)">2.时常接触俄语，并及时记录新单词</text>
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
@@ -40,7 +40,7 @@
     </text>
     <view class="cu-bar bg-white margin-top ">
       <view class="action">
-        <text class="" style="color: rgb(255, 94, 0);font-size: larger;font-weight: 600;">3.利用互联网的社交或流媒体平台多样化学习俄语</text>
+        <text class="cuIcon-radioboxfill text-" style="color:rgb(56, 109, 255)">3.利用互联网的社交或流媒体平台多样化学习俄语</text>
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
@@ -52,7 +52,7 @@
     </text>
     <view class="cu-bar bg-white margin-top ">
       <view class="action">
-        <text class="" style="color: rgb(255, 94, 0);">4.完全沉浸在语言环境中是学习俄语的快速方法之一</text>
+        <text class="cuIcon-radioboxfill text-" style="color:rgb(56, 109, 255)">4.完全沉浸在语言环境中是学习俄语的快速方法之一</text>
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
@@ -66,7 +66,7 @@
         KeLi 赴俄留学小助手
       </view>
       <view class="myTxtCenter text-gray">
-        更多咨询，请联系135555555
+        更多咨询，请联系13915321806
       </view>
     </view>
 
