@@ -1,0 +1,109 @@
+<view class="head" style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
+    <view class="titles">
+        <view class="title">
+            RusStudy
+        </view>
+        <view class="sudtitle">
+            在俄罗斯留学
+        </view>
+    </view>
+</view>
+<view class="blank" style="height:{{HeadBar}}rpx;"></view>
+
+<!-- <view class="myTxtCenter" style="width:90%;margin: auto;">
+    如果你已经到达了俄罗斯，在俄罗斯的生活是什么样的呢？
+</view> -->
+<view class="myTxtCenter margin-top" style="font-size: large;font-weight: 600;">
+    在 俄 罗 斯 的
+</view>
+<view class="grid col-4" style="font-family:cursive;width:90%;margin:30rpx auto 30rpx auto;font-size: x-large;">
+    <view>
+        <view class="bg-gradual-{{shownum!=0?'red':'green'}} round myTxtCenter"
+            style="margin:auto;height:100rpx;width:100rpx;" bindtap="changeshow" data-num="0">
+            衣
+        </view>
+    </view>
+    <view>
+        <view class="bg-gradual-{{shownum!=1?'red':'green'}} round myTxtCenter"
+            style="margin:auto;height:100rpx;width:100rpx" bindtap="changeshow" data-num="1">
+            食
+        </view>
+    </view>
+    <view>
+        <view class="bg-gradual-{{shownum!=2?'red':'green'}} round myTxtCenter"
+            style="margin:auto;height:100rpx;width:100rpx" bindtap="changeshow" data-num="2">
+            住
+        </view>
+    </view>
+    <view>
+        <view class="bg-gradual-{{shownum!=3?'red':'green'}} round myTxtCenter"
+            style="margin:auto;height:100rpx;width:100rpx" bindtap="changeshow" data-num="3">
+            行
+        </view>
+    </view>
+</view>
+<view class="bg-white"
+    style="font-family:‘Courier New’, Courier, monospace;text-indent:2em;overflow: hidden;text-overflow: ellipsis;{{shownum==0?'padding:30rpx;':'height:0;'}}">
+    <view class="" style="">
+        俄罗斯的冬期较长（11月到次年4月），但室内温度都在20度左右，故在室内只需穿薄衣类外出只需要套上羽绒服即可。
+    </view>
+    <view class="" style="text-indent:2em;">
+        夏天的温度不高，最热的时候也就30度，所以空调较少使用，但夏天日照较强，建议女生带把遮阳伞。 
+    </view>
+</view>
+<view class="bg-white"
+    style="font-family:‘Courier New’, Courier, monospace;text-indent:2em;overflow: hidden;text-overflow: ellipsis;{{shownum==1?'padding:30rpx;':'height:0;'}}">
+    <view class="" style="">
+        食堂：半自助式食堂。俄罗斯沙拉、三道菜都是有的。一顿午饭价格在15-25元。 
+    </view>
+    <view class="" style="">
+        外卖 ：学校集中区域有中国人外卖业务，送餐方便。有中国人自己做的凉皮、肉夹馍、饺子、馄饨等等，买的份数比较多吗送餐费可免。
+    </view>
+    <view class="" style="">
+        自己做饭， 超市很多，分布的很广，而且里面品种也十分齐全，蔬菜水果的价格比国内稍微贵一些，但是都还是能接受的价格。 可以一周去一次超市，买回一星期的菜和水果零食，放在宿舍冰箱中。
+    </view>
+</view>
+<view class="bg-white"
+    style="font-family:‘Courier New’, Courier, monospace;text-indent:2em;overflow: hidden;text-overflow: ellipsis;{{shownum==2?'padding:30rpx;':'height:0;'}}">
+    <view class="" style="">
+        在宿舍中水电都是免费的，而且是24小时冷热水，洗澡非常方便。宿舍负责更换床单，屋子里面写字台，床，椅子，大衣柜基本生活家居都是宿舍配备，还可以向宿舍申请电视机冰箱等家用电器，每层都有公用厨房，都是免费使用的。 
+    </view>
+</view>
+<view class="bg-white"
+    style="font-family:‘Courier New’, Courier, monospace;text-indent:2em;overflow: hidden;text-overflow: ellipsis;{{shownum==3?'padding:30rpx;':'height:0;'}}">
+    <view class="" style="">
+        第一位：地铁。俄罗斯有8座城市有地铁：莫斯科、圣彼得堡、下诺夫哥罗德、喀山、新西伯利亚、萨马拉、叶卡捷琳堡、伏尔加格勒
+    </view>
+    <view class="" style="text-indent:2em;">
+        第二位：公交车和小巴 
+    </view>
+    <view class="" style="text-indent:2em;">
+        第三位：出租车。类似滴滴app 打车 
+    </view>
+</view>
+
+
+<!-- <view class="myTxtCenter">
+    若您想对在俄生活有更多了解，<text style="color:blue;text-decoration:underline;">请点击此处</text>
+</view> -->
+<view class="" style="height:50rpx">
+
+</view>
+<view class="cu-bar">
+    <view class="action sub-title" style="margin: auto;">
+        <text class="text-xl text-bold text-blue">热门城市</text>
+        <text class="bg-gradual-blue" style="width:3rem"></text>
+    </view>
+</view>
+<view class="grid col-3" style="margin:auto">
+    <view class="padding-xs" wx:for="{{showcitys}}">
+        <view class="bg-white radius-xx" id="city-{{index}}"
+            style="height:{{citywidth}}rpx;width:80%;margin:auto;background-image: url('{{item.pic}}');background-size:100% 100%;no-repeat;display: flex;align-items: center;justify-content: center;text-align: center;font-family:cursive;font-size:large;font-weight:600;color:white"
+            bindtap="clickcity" data-id="{{item.id}}">
+            {{item.name}}
+        </view>
+    </view>
+</view>
+<view class="" style="height:300rpx">
+
+</view>

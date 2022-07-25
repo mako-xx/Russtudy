@@ -1,37 +1,94 @@
-<view class="head"style="height:{{HeadBar}}rpx;">
+<view class="head"style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
   <view class="titles">
-      <view class="title">
-          KeLi
-      </view>
-      <view class="sudtitle">
-          副标题
-      </view>
+    <view class="title">
+      RusStudy
+    </view>
+    <view class="sudtitle">
+      在俄罗斯留学
+    </view>
   </view>
 </view>
-<scroll-view scroll-y="true"style="height:{{ShowHeight}}rpx;">
-
+<view class="back"style="position: relative;margin-top:{{HeadBar-1}}rpx; width:100%;">
   
-  <text class="bgtitle" style="position: relative; left: 175rpx; top: 4rpx">为什么选择俄罗斯</text>
-<view class="card">  
-  <view class="text" style="position: relative; left: 1rpx; top: 30rpx; width: 750rpx; height: 1185rpx; display: block; box-sizing: border-box">
-    <view class="texttile">
-    1.教育资源充沛
-    </view>
-    <view class="textbody">
-    在俄罗斯留学能够获取各个方面的基础知识，俄罗斯在物理数学和自然科学领域闻名。俄罗斯是全世界公认培养数学家、物理家、化学家、地质学家、工程师、程序设计员、医生以及其他自然科学专家领先的国家。
-    </view>
-    <view class="texttile">
-    2.成本更低，经济实惠
-    </view>
-    <view class="textbody">
-    俄罗斯教育与其他国家相比，比如，美国或英国，费用更低廉。且每年俄罗斯政府给外国人提供几千个奖学金（名额）。比如，2019年一共有一万五千个奖学金。此外，某些类别的外国人能获得额外奖学金。还有一种机会是参加大学举办的奥林匹克竞赛，在入学考试时，优胜者和获奖者也能享受优惠。
-    </view>
-    <view class="texttile">
-    3.中俄关系紧密，极具就业潜力
-    </view>
-    <view class="textbody">
-    中俄两国政府签署了相互承认对方学位及学历的友好协议，归国回来的学生取得的学历及学位证书在中国教育部留学服务中心即可办理认证手续。俄罗斯是与我国签订互认学历协议的少数国家之一，所以俄罗斯留学所获得的学历文凭，自然会得到我国的绝对认可。这也就消除了众多学子们学成归来后学历认可问题的后顾之忧。且伴随着我国“一带一路”的发展与升温，中俄关系合作日益紧密，中国与俄罗斯在很多方面都展开了合作，石油产业，通讯产业，贸易产业等诸多产业。与此成鲜明对比的，是国内俄语人才的紧缺。按照中俄合作的发展趋势，俄语的复合型人才缺口最大，也就是说熟练掌握俄语，并在某一专业领域拥有经验和突出表现的人，将在未来十分抢手。
+<view style="position: relative;">
+    <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
+    autoplay="true" interval="5000" duration="500" style="height:200rpx">
+    <swiper-item wx:for="{{swiperList}}" wx:key>
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
+        wx:if="{{item.type=='video'}}"></video>
+    </swiper-item>
+  </swiper>
+
+  <image class="bg_wave" src="https://codermoyv.gitee.io/coder-moyv/assets/images/wechat/bg_wave.gif" style="position: absolute;bottom: -2rpx;width: 100%; z-index: 10;"></image>
+
+</view>
+
+
+  <image animation="{{animationCloudData}}" class="yun1"
+    src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png"
+    style="opacity: 0.4"></image>
+
+
+  <image animation="{{animationCloudData}}" class="yun2"
+    src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png"
+    style="opacity: 0.4"></image>
+
+
+  <image animation="{{animationCloudData}}" class="yun3"
+    src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png"
+    style="opacity: 0.4"></image>
+
+<view class="box" wx:if="{{true}}">
+  <view class="cu-bar bg-white" style="position: relative; left: 0rpx; top: 0rpx; z-index: 8; opacity: 0.8;">
+    <view class="action sub-title" style="left:0">
+      <text class="cuIcon-title text-blue"></text>
+      <text class="text-xl text-bold text-blue">初步了解</text>
+      <text class="text-ABC text-blue" style="position: absolute; left: 51rpx; top: 16rpx">Why</text>
+      <!-- last-child选择器-->
     </view>
   </view>
 </view>
-</scroll-view>
+<view class="row margin-top margin-bottom">
+<view class="button.white" style="position: relative; left: 24rpx; top: 0rpx" bindtap="whyrussia">
+ <text class="btext">
+ 为什么选择俄罗斯
+ </text>
+ <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/russia.png"class="bimage" style="width: 179rpx; height: 160rpx; display: block; box-sizing: border-box; left: 0rpx; top: -1rpx; position: relative"></image>
+</view>
+<view class="button.white" style="position: relative; left: -24rpx; top: 0rpx" bindtap="how">
+  <text class="btext">
+如何学习俄语
+  </text>
+  <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/book.png" class="bimage" style="width: 130rpx; height: 130rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
+</view>
+</view>
+<view class="box" wx:if="{{true}}">
+  <view class="cu-bar bg-white" style="position: relative; left: 0rpx; top: 0rpx; z-index: 8; opacity: 0.8">
+    <view class="action sub-title" style="left:0">
+      <text class="cuIcon-title text-green"></text>
+      <text class="text-xl text-bold text-green">快捷跳转</text>
+      <text class="text-ABC text-green" style="position: absolute; left: 51rpx; top: 16rpx">jump</text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+</view>
+  <view class="row margin-top margin-bottom">
+    <view class="button.white" style="position: relative; left: 24rpx; top: 0rpx" bindtap="college">
+      <text class="btext">
+        俄罗斯的高校
+      </text>
+      <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/college.png"class="bimage" style="width: 175rpx; height: 129rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
+    </view>
+    <view class="button.white" style="position: relative; left: -24rpx; top: 0rpx" bindtap="profession">
+      <text class="btext">
+        俄罗斯高校专业
+      </text>
+    <image src="https://wx2.sinaimg.cn/mw690/008qNTbqly1h3o7rap849j305k05kq2y.jpg"class="bimage" style="width: 140rpx; height: 140rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
+    </view>
+  </view>
+  
+<view class="whitecard" style="height:250rpx;">
+
+</view>
+</view>

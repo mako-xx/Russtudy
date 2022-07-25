@@ -1,0 +1,7 @@
+.clouds{
+  margin-top:320rpx; 
+}
+.yun1{
+  width:320rpx;
+  height: 120rpx;
+}

@@ -15,191 +15,350 @@
     </view>
 </view> -->
 <view class="head" style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
-    <view class="titles">
-        <view class="title">
-            KeLi
-        </view>
-        <view class="sudtitle">
-            去俄罗斯留学
-        </view>
+  <view class="titles">
+    <view class="title">
+      RusStudy
     </view>
+    <view class="sudtitle">
+      在俄罗斯留学
+    </view>
+  </view>
 </view>
 <view class="" style="height:{{HeadBar+50}}rpx;">
+  <navigator class='action' open-type="navigateBack" delta="1" hover-class="none" bindtap="handleBack"
+    style="height: 54rpx; position: absolute; top: 200rpx; color: black; left: -8rpx; width: 162rpx; display: block; box-sizing: border-box">
+    <text class='cuIcon-back'></text> 返回
+  </navigator>
 
 </view>
-<text style="text-align: center;font-weight: bolder;padding-left: 15rpx;padding-right: 15rpx;">招标项目中标单位实施及相关工作情况反馈评价表
-</text>
-
-
-
-<text style="font-size:medium;">亲爱的同学，您好！如果您对于留学方面抱有疑惑，可以完成这份调查问卷，我们将为您推荐最适合的学校以及专业！
-</text>
-<text style="text-indent: 2em;font-size: medium;color: #18222c;">如果您
-</text>
-<text style="text-indent: 2em;font-size: medium;color: #18222c;">请您对<text
-        style="text-decoration: underline;">{{pramgramname}}({{pramgramtime}})</text>项目做出评价。
+<text
+  style="font-size: 50rpx; position: relative; left: 91rpx; top: -31rpx; color: rgb(63, 134, 241); font-weight: 600">
+  俄罗斯留学智能推荐问卷
 </text>
 
 <form bindsubmit="formSubmit_">
-    <view class="radio_view">
-        <view class="view_title">1.您对招标采购的设备（或服务）质量是否满意？</view>
-        <radio-group bindchange="change" data-temp="1" name="ans1">
-            <label>
-                <radio value="0" />满意
-            </label>
-            <label>
-                <radio value="1" />较满意
-            </label>
-            <label>
-                <radio value="2" />一般
-            </label>
-            <label>
-                <radio value="3" />不满意
-            </label>
-
-        </radio-group>
-        <view wx:if="{{isShow1}}" style="padding-top: 10rpx;">
-            <view class="view_title">您不满意的原因是：</view>
-            <input bindinput="changeinput" data-temp="1_false" name="ans1_false" style="width:100%;height:400rpx"
-                placeholder="" />
+  <view class="radio_view">
+    <view class="view_title">1.您的性别是：</view>
+    <radio-group bindchange="change1" data-temp="1" name="sex" class="radio">
+      <label>
+        <radio class="blue margin-left-sm" value="男" /> 男
+      </label>
+      <label>
+        <radio class="blue margin-left-sm" value="女" /> 女
+      </label>
+    </radio-group>
+  </view>
+  <view class="radio_view">
+    <view class="view_title">2.你的年龄是？</view>
+    <view class="cu-form-group margin-top-xs round">
+      <view class="title margin-left">当前选择是：</view>
+      <picker bindchange="bindAgeChange" value="{{AGEindex}}" range="{{AGE}}" name="age">
+        <view class="picker">
+          {{AGE[AGEindex]}}岁
         </view>
+      </picker>
     </view>
 
-    <view class="radio_view">
-        <view class="view_title">2.您对最终的中标价格是否满意？</view>
-        <radio-group bindchange="change" data-temp="2" name="ans2">
-            <label>
-                <radio value="0" />满意
-            </label>
-            <label>
-                <radio value="1" />较满意
-            </label>
-            <label>
-                <radio value="2" />一般
-            </label>
-            <label>
-                <radio value="3" />不满意
-            </label>
+  </view>
 
-        </radio-group>
-        <view wx:if="{{isShow2}}" style="padding-top: 10rpx;">
-            <view class="view_title">您不满意的原因是：</view>
-            <input bindinput="changeinput" data-temp="2_false" name="ans2_false" style="width:100%;height:400rpx"
-                placeholder="" />
-        </view>
+  <view class="radio_view">
+    <view class="view_title">3.您的学历是？</view>
+    <radio-group bindchange="change3" data-temp="3" name="degree" class="radio">
+      <label>
+        <radio class="blue margin-left-sm" value="本科" /> 本科
+      </label>
+      <label>
+        <radio class="blue margin-left-sm" value="研究生" /> 研究生
+      </label>
+      <label>
+        <radio class="blue margin-left-sm" value="博士生" /> 博士生
+      </label>
+    </radio-group>
+
+  </view>
+
+  <view class="radio_view">
+    <view class="view_title">4.您可接受的留学成本？(每年)</view>
+    <radio-group bindchange="change4" data-temp="4" name="cost" class="radio">
+      <label>
+        <radio class="blue margin-left-sm" value="5万及以下" /> 5万及以下
+      </label>
+      <label>
+        <radio class="blue margin-left-sm" value="5万 ~ 7万" /> 5万 ~ 7万
+      </label>
+      <label>
+        <radio class="blue margin-left-sm" value="7万 ~ 10万" /> 7万 ~ 10万
+      </label>
+      <label>
+        <radio class="blue margin-left-sm" value="10万及以上" /> 10万及以上
+      </label>
+    </radio-group>
+  </view>
+  <view class="radio_view">
+    <view class="view_title">5.您是否会俄语</view>
+    <radio-group bindchange="change9" data-temp="14" name="Russian" class="radio">
+      <label>
+        <radio class="blue margin-left-sm" value="5万及以下" /> 是
+      </label>
+      <label>
+        <radio class="blue margin-left-sm" value="5万 ~ 7万" /> 否
+      </label>
+
+    </radio-group>
+  </view>
+  <view class="radio_view">
+    <view class="view_title">6.你希望选择的专业方向？</view>
+    <radio-group bindchange="change5" data-temp="5" name="profession" class="radio">
+      <label>
+        <radio class="blue margin-left-sm" value="文科" /> 文科
+      </label>
+      <label>
+        <radio class="blue margin-left-sm" value="理科" /> 理科
+      </label>
+      <label>
+        <radio class="blue margin-left-sm" value="工科" /> 工科
+      </label>
+      <label>
+        <radio class="blue margin-left-sm" value="商科" /> 商科
+      </label>
+      <label>
+        <radio class="blue margin-left-sm" value="体育" /> 体育
+      </label>
+    </radio-group>
+    <view wx:if="{{isShow_Gong}}" style="padding-top: 10rpx;">
+      <view class="view_title">你希望选择的专业是？</view>
+      <checkbox-group bindchange="changeG" data-temp="8" name="subjects" class="checkbox">
+        <label>
+          <checkbox value="信息安全" class="blue margin-left-lg" /> 信息安全
+        </label>
+        <label>
+          <checkbox value="信息学和计算机技术" class="blue .margin-left-lg" /> 信息学和计算机技术
+        </label>
+        <label>
+          <checkbox value="电子、无线电技术和通讯系统" class="blue .margin-left-lg" /> 电子、无线电技术和通讯系统
+        </label>
+        <label>
+          <checkbox value="建筑学" class="blue .margin-left-lg" /> 建筑学
+        </label>
+        <label>
+          <checkbox value="工程系统管理" class="blue .margin-left-lg" /> 工程系统管理
+        </label>
+        <label>
+          <checkbox value="光电，仪器仪表，光电和生物技术系统和技术" class="blue .margin-left-lg" /> 光电，仪器仪表，光电和生物技术系统和技术
+        </label>
+        <label>
+          <checkbox value="地面交通技术和工艺学" class="blue .margin-left-lg" /> 地面交通技术和工艺学
+        </label>
+        <label>
+          <checkbox value="航空和火箭和空间技术" class="blue .margin-left-lg" /> 航空和火箭和空间技术
+        </label>
+        <label>
+          <checkbox value="物理技术科学和工艺学" class="blue .margin-left-lg" /> 物理技术科学和工艺学
+        </label>
+        <label>
+          <checkbox value="核能与核技术" class="blue .margin-left-lg" /> 核能与核技术
+        </label>
+        <label>
+          <checkbox value="化学技术" class="blue .margin-left-lg" /> 化学技术
+        </label>
+        <label>
+          <checkbox value="工业生态与生物技术" class="blue .margin-left-lg" /> 工业生态与生物技术
+        </label>
+        <label>
+          <checkbox value="机械制造" class="blue .margin-left-lg" /> 机械制造
+        </label>
+        <label>
+          <checkbox value="工艺领域安全和自然设备安装" class="blue .margin-left-lg" /> 工艺领域安全和自然设备安装
+        </label>
+        <label>
+          <checkbox value="电力和热力工程学" class="blue .margin-left-lg" /> 电力和热力工程学
+        </label>
+        <label>
+          <checkbox value="计算机和信息学" class="blue .margin-left-lg" /> 计算机和信息学
+        </label>
+        <label>
+          <checkbox value="纳米技术和纳米材料" class="blue .margin-left-lg" /> 纳米技术和纳米材料
+        </label>
+        <label>
+          <checkbox value="应用地质学、矿业、石油天然气业和测量学" class="blue .margin-left-lg" /> 应用地质学、矿业、石油天然气业和测量学
+        </label>
+        <label>
+          <checkbox value="材料工艺学" class="blue .margin-left-lg" /> 材料工艺学
+        </label>
+        <label>
+          <checkbox value="航空导航和火箭和空间技术操作" class="blue .margin-left-lg" /> 航空导航和火箭和空间技术操作
+        </label>
+        <label>
+          <checkbox value="农业，林业和渔业" class="blue .margin-left-lg" /> 农业，林业和渔业
+        </label>
+        <label>
+          <checkbox value="基础医学" class="blue .margin-left-lg" /> 基础医学
+        </label>
+      </checkbox-group>
+    </view>
+    <view wx:if="{{isShow_Li}}" style="padding-top: 10rpx;">
+      <view class="view_title">你希望选择的专业是？</view>
+      <checkbox-group bindchange="changeL" data-temp="9" name="subjects" class="checkbox">
+        <label>
+          <checkbox value="数学和力学" class="blue .margin-left-lg" /> 数学和力学
+        </label>
+        <label>
+          <checkbox value="心理科学" class="blue .margin-left-lg" /> 心理科学
+        </label>
+        <label>
+          <checkbox value="教育和师范科学" class="blue .margin-left-lg" /> 教育和师范科学
+        </label>
+        <label>
+          <checkbox value="物理学和天文学" class="blue .margin-left-lg" /> 物理学和天文学
+        </label>
+        <label>
+          <checkbox value="化学" class="blue .margin-left-lg" /> 化学
+        </label>
+        <label>
+          <checkbox value="生物科学" class="blue .margin-left-lg" /> 生物科学
+        </label>
+      </checkbox-group>
+    </view>
+    <view wx:if="{{isShow_Wen}}" style="padding-top: 10rpx;">
+      <view class="view_title">你希望选择的专业是？</view>
+      <checkbox-group bindchange="changeW" data-temp="10" name="subjects" class="checkbox">
+        <label>
+          <checkbox value="法律学" class="blue .margin-left-lg" /> 法律学
+        </label>
+        <label>
+          <checkbox value="语言学和文艺学" class="blue .margin-left-lg" /> 语言学和文艺学
+        </label>
+        <label>
+          <checkbox value="历史学和考古学" class="blue .margin-left-lg" /> 历史学和考古学
+        </label>
+        <label>
+          <checkbox value="政治学和区域学" class="blue .margin-left-lg" /> 政治学和区域学
+        </label>
+        <label>
+          <checkbox value="媒体和出版业" class="blue .margin-left-lg" /> 媒体和出版业
+        </label>
+        <label>
+          <checkbox value="美术和应用艺术" class="blue .margin-left-lg" /> 美术和应用艺术
+        </label>
+        <label>
+          <checkbox value="社会学和社会工作" class="blue .margin-left-lg" /> 社会学和社会工作
+        </label>
+        <label>
+          <checkbox value="哲学、伦理学和宗教学" class="blue .margin-left-lg" /> 哲学、伦理学和宗教学
+        </label>
+        <label>
+          <checkbox value="教育和师范科学" class="blue .margin-left-lg" /> 教育和师范科学
+        </label>
+        <label>
+          <checkbox value="心理科学" class="blue .margin-left-lg" /> 心理科学
+        </label>
+        <label>
+          <checkbox value="文化学和社会文化计划" class="blue .margin-left-lg" /> 文化学和社会文化计划
+        </label>
+        <label>
+          <checkbox value="艺术史" class="blue .margin-left-lg" /> 艺术史
+        </label>
+        <label>
+          <checkbox value="神学" class="blue .margin-left-lg" /> 神学
+        </label>
+      </checkbox-group>
     </view>
 
-    <view class="radio_view">
-        <view class="view_title">3.您对中标单位的配合程度是否满意？</view>
-        <radio-group bindchange="change" data-temp="3" name="ans3">
-            <label>
-                <radio value="0" />满意
-            </label>
-            <label>
-                <radio value="1" />较满意
-            </label>
-            <label>
-                <radio value="2" />一般
-            </label>
-            <label>
-                <radio value="3" />不满意
-            </label>
-
-        </radio-group>
-        <view wx:if="{{isShow3}}" style="padding-top: 10rpx;">
-            <view class="view_title">您不满意的原因是：</view>
-            <input bindinput="changeinput" data-temp="3_false" name="ans3_false" style="width:100%;height:400rpx"
-                placeholder="" />
-        </view>
+    <view wx:if="{{isShow_Shang}}" style="padding-top: 10rpx;">
+      <view class="view_title">你希望选择的专业是？</view>
+      <checkbox-group bindchange="changeS" data-temp="11" name="subjects" class="checkbox">
+        <label>
+          <checkbox value="经济和管理" class="blue .margin-left-lg" /> 经济和管理
+        </label>
+        <label>
+          <checkbox value="服务和旅游" class="blue .margin-left-lg" /> 服务和旅游
+        </label>
+      </checkbox-group>
     </view>
 
-    <view class="radio_view">
-        <view class="view_title">4.您对中标单位的服务质量是否满意？</view>
-        <radio-group bindchange="change" data-temp="4" name="ans4">
-            <label>
-                <radio value="0" />满意
-            </label>
-            <label>
-                <radio value="1" />较满意
-            </label>
-            <label>
-                <radio value="2" />一般
-            </label>
-            <label>
-                <radio value="3" />不满意
-            </label>
-
-        </radio-group>
-        <view wx:if="{{isShow4}}" style="padding-top: 10rpx;">
-            <view class="view_title">您不满意的原因是：</view>
-            <input bindinput="changeinput" data-temp="4_false" name="ans4_false" style="width:100%;height:400rpx"
-                placeholder="" />
-        </view>
+    <view wx:if="{{isShow_Ti}}" style="padding-top: 10rpx;">
+      <view class="view_title">你希望选择的专业是？</view>
+      <checkbox-group bindchange="changeT" data-temp="12" name="subjects" class="checkbox">
+        <label>
+          <checkbox value="体育与运动" class="blue" /> 体育与运动
+        </label>
+      </checkbox-group>
     </view>
+  </view>
 
-    <view class="radio_view">
-        <view class="view_title">5.您对招采中心招标程序及效率是否满意？</view>
-        <radio-group bindchange="change" data-temp="5" name="ans5">
-            <label>
-                <radio value="0" />满意
-            </label>
-            <label>
-                <radio value="1" />较满意
-            </label>
-            <label>
-                <radio value="2" />一般
-            </label>
-            <label>
-                <radio value="3" />不满意
-            </label>
+  <view class="radio_view">
+    <view class="view_title">7.您预计的留学时间？</view>
+    <radio-group bindchange="change6" data-temp="6" name="duration" class="radio">
+      <label>
+        <radio class="blue .margin-left-sm" value="2年或以下" /> 2年或以下
+      </label>
+      <label>
+        <radio class="blue .margin-left-sm" value="3年" /> 3年
+      </label>
+      <label>
+        <radio class="blue .margin-left-sm" value="4年" /> 4年
+      </label>
+      <label>
+        <radio class="blue .margin-left-sm" value="5年及以上" /> 5年及以上
+      </label>
 
-        </radio-group>
-        <view wx:if="{{isShow5}}" style="padding-top: 10rpx;">
-            <view class="view_title">您不满意的原因是：</view>
-            <input bindinput="changeinput" data-temp="5_false" name="ans5_false" style="width:100%;height:400rpx"
-                placeholder="" />
-        </view>
+    </radio-group>
+
+  </view>
+
+  <view class="radio_view">
+    <view class="view_title">8.您以前是否有过留学经验？</view>
+    <radio-group bindchange="change7" data-temp="7" name="exp" class="radio">
+      <label>
+        <radio class="blue .margin-left-sm" value="1" /> 是
+      </label>
+      <label>
+        <radio class="blue .margin-left-sm" value="0" /> 否
+      </label>
+    </radio-group>
+    <view wx:if="{{isShow7}}" style="padding-top: 10rpx;">
+      <view class="view_title">您的留学经历有几年？</view>
+      <view class="cu-form-group margin-top-xs round">
+        <view class="title margin-left">当前选择是：</view>
+        <picker bindchange="bindExpChange" value="{{EXPindex}}" range="{{EXP}}" name="expAge">
+          <view class="picker">
+            {{EXP[EXPindex]}}年
+          </view>
+        </picker>
+      </view>
     </view>
+  </view>
 
-    <view class="radio_view">
-        <view class="view_title">6.您对招采中心工作人员服务质量是否满意？</view>
-        <radio-group bindchange="change" data-temp="6" name="ans6">
-            <label>
-                <radio value="0" />满意
-            </label>
-            <label>
-                <radio value="1" />较满意
-            </label>
-            <label>
-                <radio value="2" />一般
-            </label>
-            <label>
-                <radio value="3" />不满意
-            </label>
+  <!-- <view class="radio_view">
+    <view class="view_title">9.您希望去哪个城市读书？</view>
+    <radio-group bindchange="change8" data-temp="13" name="lovecity" class="radio">
+      <label wx:for="{{city}}" wx:key="{{city.value}}">
+        <radio class="blue .margin-left-sm" value="{{item.value}}" /> <text>{{item.name}}</text>
+      </label>
+    </radio-group>
+  </view> -->
 
-        </radio-group>
-        <view wx:if="{{isShow6}}" style="padding-top: 10rpx;">
-            <view class="view_title">您不满意的原因是：</view>
-            <input bindinput="changeinput" data-temp="6_false" name="ans6_false" style="width:100%;height:400rpx"
-                placeholder="" />
-        </view>
-    </view>
+  <view style="padding-top: 10rpx;">
+    <view class="view_title">9.如果去俄罗斯读书，你最希望能去哪些城市？</view>
+    <checkbox-group bindchange="change8" data-temp="13" name="citys" class="checkbox">
+      <label wx:for="{{city}}" wx:key="{{item.value}}">
+        <checkbox value="{{item.name}}" class="blue .margin-left-lg" /> {{item.name}}
+      </label>
+    </checkbox-group>
+  </view>
 
-    <!-- <view class="radio_view">
-        <view class="view_title">7.您对招标采购工作的合理化建议：(选填)</view>
-        <input bindinput="changeinput" data-temp="7" name="ans7" style="width:100%;height:400rpx" placeholder="" />
-    </view> -->
-    <view class="btn-area">
-        <button form-type="submit">提交</button>
-    </view>
+
+
+  <view class="btn-area">
+    <button form-type="submit">提交</button>
+  </view>
 </form>
 
 <view class="modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showModa2}}"></view>
 <view class="modal-dialog" wx:if="{{showModa2}}">
-    <view class="modal-title1">感谢填写</view>
+  <view class="modal-title1">感谢填写</view>
 
-
-    <view class="modal-footer">
-        <navigator class="btn-confirm1" target="miniProgram" open-type="exit">确定</navigator>
-    </view>
+  <view class="modal-footer">
+    <navigator class="btn-confirm1" target="miniProgram" open-type="exit">确定</navigator>
+  </view>
 </view>

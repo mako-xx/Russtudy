@@ -1,9 +1,20 @@
-import * as echarts from '../../ec-canvas/echarts';
+import * as echarts from '../../../../ec-canvas/echarts';
 
 const app = getApp()
 const db = wx.cloud.database()
 
 Page({
+  data: {
+    backheight: 0,
+    gridCol: 3,
+    titlepos: false,
+    cardCur: 0,
+    iconList: [],
+    intervaltime1: 0,
+    intervaltime2: 0,
+    iflove: 0,
+    linkman: [{ "pic": "https://wx3.sinaimg.cn/mw2000/008tQ72zly1h3mmxzu8taj30dz0ggq5x.jpg", "name": "王同学", "position": "在读硕士", "desc": "奖学金获得者" }, { "pic": "https://wx3.sinaimg.cn/mw2000/008tQ72zly1h3mmxzu8taj30dz0ggq5x.jpg", "name": "王同学", "position": "在读硕士", "desc": "奖学金获得者" }]
+  },
   dataprocess() {
     var school = this.data.school;
     var schoolpics = this.data.schoolpics;
@@ -45,6 +56,7 @@ Page({
       tableindex: tableindex,
       describe: describe,
       pic: pic,
+      logo: logo,
       labels: labels,
     })
     var labnav = school.labnav;
@@ -131,6 +143,61 @@ Page({
         break;
       }
     }
+    var lab = school.labnav;
+    var prepare = lab["准备"];
+    var facu = lab["院系"];
+    var dorm = lab["宿舍"];
+    var condition = lab["留学生环境条件"];
+    var rank = 1;
+    var programs = lab["教育项目"];
+    var iconList = [{
+      icon: 'writefill',
+      color: 'red',
+      badge: 0,
+      name: '预科室',
+      type: prepare
+    }, {
+      icon: 'group_fill',
+      color: 'orange',
+      badge: 0,
+      name: '院系',
+      type: facu
+    }, {
+      icon: 'locationfill',
+      color: 'yellow',
+      badge: 0,
+      name: '宿舍',
+      type: dorm
+    }, {
+      icon: 'skin',
+      color: 'olive',
+      badge: 0,
+      name: '留学环境',
+      type: condition
+    }, {
+      icon: 'upstagefill',
+      color: 'cyan',
+      badge: 0,
+      name: '历年排名',
+      type: rank
+    }, {
+      icon: 'sort',
+      color: 'blue',
+      badge: 100,
+      name: '教育项目',
+      type: programs
+    }]
+    var count = 0;
+    for (var i = 0; i < iconList.length; i++) {
+      if (iconList[i].type == 1) count++;
+    }
+    if (count == 4)
+      this.setData({
+        gridCol: 2
+      })
+    this.setData({
+      iconList: iconList
+    })
     var iflove = this.data.collections.schools.indexOf(school._id)
     if (iflove == -1) iflove = 0
     else iflove = 1
@@ -141,25 +208,33 @@ Page({
     if (school)
       wx.setStorageSync("school", school)
     console.log(this.data.school);
-
   },
   onLoad(options) {
-    var intervalHeight = 10;
-    var SearchHeight = 50;
-    var windowHeight = (app.globalData.ktxWindowHeight) * app.globalData.pxToRpxScale;
-    var topHeight = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
-    var trueHeight = windowHeight;
+    wx.showLoading({
+      title: '加载中...',
+      mask: true,
+    });
+    var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
+    var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight - app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
     this.setData({
-      windowHeight: windowHeight,
-      topHeight: topHeight,
-      trueHeight: trueHeight,
-      intervalHeight: intervalHeight,
-      SearchHeight: SearchHeight,
+      HeadBar: HeadBar,
+      ShowHeight: ShowHeight
+    })
+    this.setData({
       school_id: options.school_id,
       loading: true,
       iflove: 0
     })
     var that = this
+    let query = wx.createSelectorQuery()
+    query.select('#main-back').boundingClientRect((rect) => {
+      let height = rect.height * app.globalData.pxToRpxScale
+      console.log("hei", height, app.globalData.pxToRpxScale)
+      var backheight = (height + 2 * 30); console.log("h", backheight)
+      that.setData({
+        backheight: backheight
+      })
+    }).exec()
     this.setData({
       interval: setInterval(function () {
         console.log("interval in oneschool 调用一次");
@@ -188,23 +263,55 @@ Page({
             loading: false
           })
           console.log(that.data.loading);
+          wx.hideLoading()
           clearInterval(that.data.interval)
 
+        }
+      }, 1000),
+      interval2: setInterval(function () {
+        console.log("interval2调用一次", that.data.mainheadheight)
+        that.setData({
+          intervaltime2: that.data.intervaltime2 + 1
+        })
+        if (that.data.intervaltime2 > 10) { console.log("interval2调用结束,失败"); clearInterval(that.data.interval2) }
+        let query = wx.createSelectorQuery()
+        query.select('#stu-image-0').boundingClientRect((rect) => {
+          var width = rect.width //* app.globalData.pxToRpxScale;
+          that.setData({
+            stuwidth: width * app.globalData.pxToRpxScale
+          })
+        }).exec()
+        if (that.data.stuwidth) {
+          clearInterval(that.data.interval2)
         }
       }, 1000)
     })
 
   },
-  back() {
-    wx.navigateBack({
-      delta: 1
-    })
-  },
-  clicklabel(e) {
-    var labels = this.data.labels;
-    labels[this.data.tableindex].state = 1;
-    var index = e.target.dataset.value;
+  // onPageScroll: function (e) {
+  //   var that = this
+  //   this.setData({
+  //     scrollTop: e.scrollTop
+  //   })
+  //   let query = wx.createSelectorQuery()
+  //   query.select('#main-title').boundingClientRect((rect) => {
+  //     let top = rect.top
+  //     var titlepos = false
+  //     if (top < (app.globalData.ktxStatusHeight + app.globalData.navigationHeight))
+  //       titlepos = true
+  //     that.setData({
+  //       titlepos: titlepos
+  //     })
 
+  //   }).exec()
+  // },
+  clicklabel(e) {
+    console.log(e)
+    var labels = this.data.labels;
+    console.log(labels)
+    labels[this.data.tableindex].state = 1;
+    var index = e.currentTarget.dataset.value;
+    console.log(index)
     labels[index].state = 2;
     this.setData({
       tableindex: index,
@@ -222,15 +329,15 @@ Page({
       wx.navigateTo({
         url: '../dorm/dorm',
       })
-    } else if (gotoname == "排名") {
+    } else if (gotoname == "历年排名") {
       wx.navigateTo({
         url: '../rank/rank',
       })
     } else if (gotoname == "教育项目") {
       wx.navigateTo({
-        url: '../programs/programs?schoolname=' + this.data.school.name,
+        url: '../../programs/programs?school_id=' + this.data.school._id,
       })
-    } else if (gotoname == "留学生环境条件") {
+    } else if (gotoname == "留学环境") {
       wx.navigateTo({
         url: '../condition/condition',
       })
@@ -254,31 +361,44 @@ Page({
     this.setData({
       iflove: iflove
     })
-    // var pages = getCurrentPages();   //当前页面
-    // if (pages.length > 1) {
-    //   var prevPage = pages[pages.length - 2];   //上个页面
-    // }
-    // prevPage.changeStorUni(this.data.school._id)
     var collections = wx.getStorageSync("collections")
+    var uni_collections = collections.schools;
+    var school_id = this.data.school_id;
+    var index = uni_collections.indexOf(school_id)
+    if (index == -1) {
+      uni_collections.push(school_id);
+    } else {
+      uni_collections[index] = uni_collections[uni_collections.length - 1];
+      uni_collections.pop();
+    }
+    collections.schools = uni_collections;
     this.setData({
       collections: collections
     })
+    wx.setStorageSync("collections", collections)
+    console.log(collections)
   },
-  onUnload() {
-    var pages = getCurrentPages();
-    var schoolcollections = this.data.collections.schools;
-    if (pages.length > 1) {
-      var prevPage = pages[pages.length - 2];
-      var info = prevPage.data;
-      var simpleschools = info.simpleschools
-      for (var i = 0; i < simpleschools.length; i++) {
-        if (schoolcollections.indexOf(simpleschools[i].id) != -1) simpleschools[i].ifcollected = 1;
-        else simpleschools[i].ifcollected = 0;
-      }
-      prevPage.setData({
-        iffrash: 0,
-        simpleschools: simpleschools,
-        collections: this.data.collections
+  gridchange: function (e) {
+    this.setData({
+      gridCol: e.detail.value
+    });
+  },
+  gridswitch: function (e) {
+    this.setData({
+      gridBorder: e.detail.value
+    });
+  },
+  asklinker: function (e) {
+    var collections = wx.getStorageSync('collections')
+    if (collections && collections.openid) {
+      wx.navigateTo({
+        url: "../../../my/contact/contact?index=1"
+      })
+    }
+    else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'error'
       })
     }
   }

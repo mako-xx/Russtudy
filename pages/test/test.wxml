@@ -1,0 +1,4 @@
+<view class="clouds">
+      <image animation="{{animationCloudData}}"  class="yun1" 
+      src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png"></image>
+</view>

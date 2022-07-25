@@ -1,0 +1,75 @@
+<view class="head"style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
+  <view class="titles">
+    <view class="title">
+      RusStudy
+    </view>
+    <view class="sudtitle">
+      在俄罗斯留学
+    </view>
+  </view>
+</view>
+  <view class="back" style="position: fixed;top: {{HeadBar}}rpx;">
+    <navigator class='navi' open-type="navigateBack" delta="1" hover-class="none"style="position:relative; top: 25%; color: black; left: 38rpx">
+  <view style="opacity: 1;">
+    <text class="cuIcon-back"></text> 返回
+  </view>
+  </navigator>
+  <text class="bgtitle" style="position: relative; top: 10% ;left: 225rpx;">如何学习俄语</text>
+  </view>
+<view class="card" style="position: absolute;top: {{1.5*HeadBar}}rpx;">  
+  <view class="text" style="width: 750rpx; ">
+  <view class="cu-bar bg-white margin-top">
+      <view class="action">
+        <text class="cuIcon-title text-" style="color: rgb(255, 94, 0);">1.学习俄语的第一步，是掌握它的字母。</text>
+      </view>
+   </view>
+    <text class="textbody" decode = "{{true}}">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;西里尔字母和拉丁字母不同，它是基于希腊字母，因此虽然很多字母和拉丁字母相似，但是读音完全不同，还有一些字母是独一无二的。如果最开始学习的时候着重掌握好字母和语音学基础知识，那么接下来的学习就会容易一些，进步的也会更快。对于学习阅读来说，最好是阅读一些童话故事，因为童话都是用一些简单正确又易于理解的词汇表达。这样的阅读帮你去感受语言的基础，学习如何正确造出好的句子。
+    </text>
+    <view class="cu-bar bg-white margin-top">
+      <view class="action">
+        <text class="cuIcon-title text-" style="color: rgb(255, 94, 0);">2.时常接触俄语，并及时记录新单词</text>
+      </view>
+   </view>
+  <text class="textbody" decode = "{{true}}">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将写有俄语单词的纸条贴在你经常出现的地方，家里、办公室和车里，家具上、电器上、餐具上等等。这样做使你总是能看到一些新单词，并且慢慢地记住它们。
+  </text>
+   <text class="textbody" decode = "{{true}}">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;你周围的一切都是新的，应该随身携带笔记本或者手机，方便随时做笔记，然后每天晚上看一遍自己当天的笔记，其中肯定有值得你记住的知识。
+  </text>
+    <view class="cu-bar bg-white margin-top ">
+      <view class="action">
+        <text class="cuIcon-title text-" style="color: rgb(255, 94, 0);">3.利用互联网的社交或流媒体平台多样化学习俄语</text>
+      </view>
+   </view>
+    <text class="textbody" decode = "{{true}}">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;利用Вконтакте（相当于俄罗斯的Facebook），在这里你可以认识俄语母语的人，这对学习俄语非常有好处。由于当今社交网发达，我们可以快速提高口语，了解外国网络文化。
+    </text>
+    <text class="textbody" decode = "{{true}}">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于很多外语学习者来说看电影听音乐是最有趣的学习方式之一。可以多多利用莫斯科电影制片厂的官方频道。在那里有很多俄罗斯老电影，而且该频道有单独的带字幕的电影播放列表。你也可以去Far From Moscow，Far From Moscow是一个收听俄罗斯、乌克兰、白俄罗斯和其他国家的俄语歌曲的非常好的平台。这里有各个类型和流派的音乐，你可以合法的收听和下载。利用这些媒体资源进行俄语的学习也是不错的选择。
+    </text>
+    <view class="cu-bar bg-white margin-top ">
+      <view class="action">
+        <text class="cuIcon-title text-" style="color: rgb(255, 94, 0);">4.完全沉浸在语言环境中是学习俄语的快速方法之一</text>
+      </view>
+   </view>
+    <text class="textbody" decode = "{{true}}">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在前苏联国家俄语是非常普遍的，不一定非要去俄罗斯。如果有可能的话，尽量不要住在酒店，而是住在当地人家中，如果你没去过俄罗斯人家里做客，那你可能会觉得俄罗斯人看起来不是十分友好，很冷淡。如果你被邀请去参加聚会或者去喝茶，那么你就会被以最好的食物来款待，会和你分享最不寻常的故事。这样的活泼轻松的交往是提高口语的最好方式，还能了解新的文化，认识新的朋友。
+    </text>
+    <text class="textbody" decode = "{{true}}">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;喜欢做饭？那就请俄罗斯朋友教你做俄罗斯传统菜肴。喜欢音乐？那就学一些俄罗斯传统歌曲和流行歌曲。这会使你成为一个更有趣的聊天者，更好地理解俄罗斯心态，这样你可以很快和俄罗斯人找到共同语言。
+    </text>
+<view class="blank">
+  <view class="myTxtCenter text-gray">
+  KeLi 赴俄留学小助手
+</view>
+<view class="myTxtCenter text-gray">
+  更多咨询，请联系135555555
+</view>
+</view>
+
+ 
+  </view>
+</view>
+
+
