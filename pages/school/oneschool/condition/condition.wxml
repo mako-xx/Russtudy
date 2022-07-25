@@ -7,24 +7,25 @@
             在俄罗斯留学
         </view>
     </view>
-    <view class=""
-        style="height:auto;width:100%;position:absolute;font-size:40rpx;display:flex;justify-content:center;bottom:10rpx">
-        留学环境
-    </view>
 </view>
 
-<view class="" style="height:{{HeadBar}}rpx">
 
+<view class="bg-white text-center myTxtCenter text-lg text-bold"
+    style="height:{{backheight}}rpx;width:100%;position:fixed; z-index: 10;top:{{HeadBar}}rpx;font-size:40rpx;"
+    wx:if="{{true}}">
+    留学环境
 </view>
-
 <view class='cu-custom'>
     <view class="cu-bar fixed bg-shadeTop" style="height:{{0}}px;padding-top:{{StatusBar}}px;">
-        <navigator class='action' open-type="navigateBack" delta="1" hover-class="none"
-            style="height:auto;position: absolute;top:{{HeadBar+20}}rpx;color:black">
+        <navigator class='action' id="main-back" open-type="navigateBack" delta="1" hover-class="none"
+            wx:if="{{!modalName}}" style="height:auto;position: absolute;top:{{HeadBar+30}}rpx;color:black;z-index: 2;">
             <text class='cuIcon-back'></text> 返回
         </navigator>
         <view class='content' style='top:{{0}}px;'>Tab索引</view>
     </view>
+</view>
+<view class="" style="height:{{HeadBar+backheight}}rpx">
+
 </view>
 <view class="blank"></view>
 

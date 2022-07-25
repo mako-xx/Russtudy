@@ -5,7 +5,6 @@ const db = wx.cloud.database()
 
 Page({
   data: {
-    backheight: 0,
     gridCol: 3,
     titlepos: false,
     cardCur: 0,
@@ -223,18 +222,24 @@ Page({
     this.setData({
       school_id: options.school_id,
       loading: true,
-      iflove: 0
+      iflove: 0,
+      backheight: app.globalData.backheight
     })
-    var that = this
-    let query = wx.createSelectorQuery()
-    query.select('#main-back').boundingClientRect((rect) => {
-      let height = rect.height * app.globalData.pxToRpxScale
-      console.log("hei", height, app.globalData.pxToRpxScale)
-      var backheight = (height + 2 * 30); console.log("h", backheight)
-      that.setData({
-        backheight: backheight
-      })
-    }).exec()
+    if (!this.data.backheight) {
+      console.log('in')
+      console.log(this.data.backheight)
+      var that = this
+      let query = wx.createSelectorQuery()
+      query.select('#main-back').boundingClientRect((rect) => {
+        let height = rect.height * app.globalData.pxToRpxScale
+        console.log("hei", height, app.globalData.pxToRpxScale)
+        var backheight = (height + 2 * 30);
+        that.setData({
+          backheight: backheight
+        })
+        getApp().globalData.backheight = backheight
+      }).exec()
+    }
     this.setData({
       interval: setInterval(function () {
         console.log("interval in oneschool 调用一次");
