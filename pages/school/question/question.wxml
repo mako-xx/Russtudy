@@ -1,19 +1,3 @@
-<!--pages/surveys/survey2/survey2.wxml-->
-<!--弹窗-->
-<!-- <view class="modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
-<view class="modal-dialog" wx:if="{{showModal}}">
-    <view class="modal-title">请输入学工号</view>
-    <view class="modal-content">
-        <view class="modal-input">
-            <input placeholder-class="input-holder" maxlength="10" bindinput="inputnum" class="input"
-                placeholder="请输入学工号"></input>
-        </view>
-    </view>
-    <view class="modal-footer">
-        <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
-        <view class="btn-confirm" bindtap="input_num_submit" data-status="confirm">确定</view>
-    </view>
-</view> -->
 <view class="head" style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
   <view class="titles">
     <view class="title">
@@ -24,11 +8,16 @@
     </view>
   </view>
 </view>
-<view class="" style="height:{{HeadBar+50}}rpx;">
-  <navigator class='action' open-type="navigateBack" delta="1" hover-class="none" bindtap="handleBack"
-    style="height: 54rpx; position: absolute; top: 200rpx; color: black; left: -8rpx; width: 162rpx; display: block; box-sizing: border-box">
-    <text class='cuIcon-back'></text> 返回
-  </navigator>
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-shadeTop" style="height:{{0}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' id="main-back" open-type="navigateBack" delta="1" hover-class="none"
+      wx:if="{{!modalName}}" style="height:auto;position:fixed;top:{{HeadBar+30}}rpx;color:black;z-index: 2;">
+      <text class='cuIcon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{0}}px;'>Tab索引</view>
+  </view>
+</view>
+<view class="" style="height:{{HeadBar+backheight}}rpx">
 
 </view>
 <text
@@ -329,15 +318,6 @@
     </view>
   </view>
 
-  <!-- <view class="radio_view">
-    <view class="view_title">9.您希望去哪个城市读书？</view>
-    <radio-group bindchange="change8" data-temp="13" name="lovecity" class="radio">
-      <label wx:for="{{city}}" wx:key="{{city.value}}">
-        <radio class="blue .margin-left-sm" value="{{item.value}}" /> <text>{{item.name}}</text>
-      </label>
-    </radio-group>
-  </view> -->
-
   <view class="radio_view">
     <view class="view_title">9.如果去俄罗斯读书，你最希望能去哪些城市？</view>
     <checkbox-group bindchange="change8" data-temp="13" name="citys" class="checkbox">
@@ -351,6 +331,9 @@
 
   <view class="btn-area">
     <button form-type="submit">提交</button>
+  </view>
+  <view class="" style="height: 50rpx;">
+
   </view>
 </form>
 

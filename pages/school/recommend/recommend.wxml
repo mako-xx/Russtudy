@@ -32,42 +32,6 @@
     大数据智能选校推荐
 </view>
 <view class="bg-white padding-lg" style="border-radius:100rpx;width:90%;height:auto;margin: 20rpx auto 40rpx auto">
-    <view class="bg-purple myTxtCenter padding-xs" wx:if="{{reallyshow2.length||isloading}}"
-        style="border-radius:10rpx;width:100rpx">
-        稳
-    </view>
-    <view class="cu-list menu-avatar" style="height:auto">
-
-        <view class="cu-item solids-top" wx:for="{{reallyshow2}}" wx:key wx:for-index="sub">
-            <!-- <view class="cu-avatar round lg">1</view> -->
-            <view class="cu-avatar round lg  shadow-blur" style="background-image:url({{item.logo}});left:10rpx;">
-            </view>
-            <view class="content" style="height: 100%; left: 120rpx; width: auto; position: absolute; top: 0rpx">
-
-                <view class="text-grey text-sm oneline"
-                    style="color: #996179; display: -webkit-box; width: 352rpx; height: 40rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
-                    {{item.name}}
-                </view>
-                <view class="text-gray text-sm oneline"
-                    style="position: relative; left: 0rpx; top: 10rpx; width: 352rpx; height: 40rpx; display: -webkit-box; box-sizing: border-box">
-                    所在大学:{{item.schoolname}}
-                </view>
-                <view class="text-gray text-sm oneline"
-                    style="width: 264rpx; height: 42rpx; display: block; box-sizing: border-box">
-                    学校排名{{item.schoolrank}}
-                </view>
-            </view>
-            <view class="radius fr padding-sm shadow-blur myTxtCenter"
-                style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695;color:#EDE3E0; position: relative; left: -8rpx; top: 0rpx"
-                bindtap="learnmore" data-value="{{sub}}" data-id="1">
-                了解更多
-            </view>
-
-        </view>
-    </view>
-    <view class="" style="width: 100%;height: 40rpx;border-top: 1rpx dashed #a7a8a8;border-width: 10rpx;">
-
-    </view>
     <view class="bg-red myTxtCenter padding-xs" wx:if="{{reallyshow1.length||isloading}}"
         style="border-radius:10rpx;width:100rpx">
         冲
@@ -95,15 +59,49 @@
             </view>
             <view class="radius fr padding-sm shadow-blur myTxtCenter"
                 style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695;color:#EDE3E0; position: relative; left: -8rpx; top: 0rpx"
+                bindtap="learnmore" data-value="{{sub}}" data-id="1">
+                了解更多
+            </view>
+
+        </view>
+    </view>
+    <view class="margin-bottom-sm margin-top-sm"
+        style="width: 100%;height: auto;border-top: 1rpx dashed #a7a8a8;border-width: 10rpx;"></view>
+    <view class="bg-purple myTxtCenter padding-xs" wx:if="{{reallyshow2.length||isloading}}"
+        style="border-radius:10rpx;width:100rpx">
+        稳
+    </view>
+    <view class="cu-list menu-avatar" style="height:auto">
+
+        <view class="cu-item solids-top" wx:for="{{reallyshow2}}" wx:key wx:for-index="sub">
+            <!-- <view class="cu-avatar round lg">1</view> -->
+            <view class="cu-avatar round lg  shadow-blur" style="background-image:url({{item.logo}});left:10rpx;">
+            </view>
+            <view class="content" style="height: 100%; left: 120rpx; width: auto; position: absolute; top: 0rpx">
+
+                <view class="text-grey text-sm oneline"
+                    style="color: #996179; display: -webkit-box; width: 352rpx; height: 40rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
+                    {{item.name}}
+                </view>
+                <view class="text-gray text-sm oneline"
+                    style="position: relative; left: 0rpx; top: 10rpx; width: 352rpx; height: 40rpx; display: -webkit-box; box-sizing: border-box">
+                    所在大学:{{item.schoolname}}
+                </view>
+                <view class="text-gray text-sm oneline"
+                    style="width: 264rpx; height: 42rpx; display: block; box-sizing: border-box">
+                    学校排名{{item.schoolrank}}
+                </view>
+            </view>
+            <view class="radius fr padding-sm shadow-blur myTxtCenter"
+                style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695;color:#EDE3E0; position: relative; left: -8rpx; top: 0rpx"
                 bindtap="learnmore" data-value="{{sub}}" data-id="2">
                 了解更多
             </view>
 
         </view>
     </view>
-    <view class="" style="width: 100%;height: 40rpx;border-top: 1rpx dashed #a7a8a8;border-width: 10rpx;">
-
-    </view>
+    <view class="margin-bottom-sm margin-top-sm"
+        style="width: 100%;height: auto;border-top: 1rpx dashed #a7a8a8;border-width: 10rpx;"></view>
     <view class="bg-blue myTxtCenter padding-xs" wx:if="{{reallyshow3.length||isloading}}"
         style="border-radius:10rpx;width:100rpx">
         保
@@ -137,9 +135,7 @@
 
         </view>
     </view>
-    <view class="" style="width: 100%;height: 40rpx;border-top: 1rpx dashed #a7a8a8;border-width: 10rpx;">
 
-    </view>
 </view>
 <view class="" style="height:30rpx"></view>
 <view class="grid col-2" style="height:auto">

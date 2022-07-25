@@ -8,28 +8,41 @@
     </view>
   </view>
 </view>
-<view class="back" style="position: fixed;top: {{HeadBar}}rpx;">
-  <navigator class='navi' open-type="navigateBack" delta="1" hover-class="none"
-    style="position:relative; top: 25%; color: black; left: 38rpx">
-    <view style="opacity: 1;">
-      <text class="cuIcon-back"></text> 返回
-    </view>
-  </navigator>
-  <text class="bgtitle" style="position: relative; top: 10% ;left: 225rpx;">如何学习俄语</text>
+
+
+<view class="bg-white text-center myTxtCenter text-lg text-bold"
+  style="height:{{backheight}}rpx;width:100%;position:fixed; z-index: 10;top:{{HeadBar}}rpx;font-size:40rpx;"
+  wx:if="{{true}}">
+  如何学习俄语
 </view>
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-shadeTop" style="height:{{0}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' id="main-back" open-type="navigateBack" delta="1" hover-class="none"
+      wx:if="{{!modalName}}" style="height:auto;position: absolute;top:{{HeadBar+30}}rpx;color:black;z-index: 2;">
+      <text class='cuIcon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{0}}px;'>Tab索引</view>
+  </view>
+</view>
+<view class="" style="height:{{HeadBar+backheight}}rpx">
+
+</view>
+
+
+
 <view class="card" style="position: absolute;top: {{1.5*HeadBar}}rpx;">
   <view class="text" style="width: 750rpx; ">
     <view class="cu-bar bg-white margin-top">
-      <view class="action">
-        <text class="cuIcon-radioboxfill text-" style="color:rgb(56, 109, 255)">1.学习俄语的第一步，是掌握它的字母。</text>
+      <view class="action" style="font-size: large;font-weight: 550;">
+        <text class="cuIcon-titles text-blue"></text>学习俄语的第一步，是掌握它的字母。
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;西里尔字母和拉丁字母不同，它是基于希腊字母，因此虽然很多字母和拉丁字母相似，但是读音完全不同，还有一些字母是独一无二的。如果最开始学习的时候着重掌握好字母和语音学基础知识，那么接下来的学习就会容易一些，进步的也会更快。对于学习阅读来说，最好是阅读一些童话故事，因为童话都是用一些简单正确又易于理解的词汇表达。这样的阅读帮你去感受语言的基础，学习如何正确造出好的句子。
     </text>
     <view class="cu-bar bg-white margin-top">
-      <view class="action">
-        <text class="cuIcon-radioboxfill text-" style="color:rgb(56, 109, 255)">2.时常接触俄语，并及时记录新单词</text>
+      <view class="action" style="font-size: large;font-weight: 550;">
+        <text class="cuIcon-titles text-blue"></text>时常接触俄语，并及时记录新单词
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
@@ -39,8 +52,8 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;你周围的一切都是新的，应该随身携带笔记本或者手机，方便随时做笔记，然后每天晚上看一遍自己当天的笔记，其中肯定有值得你记住的知识。
     </text>
     <view class="cu-bar bg-white margin-top ">
-      <view class="action">
-        <text class="cuIcon-radioboxfill text-" style="color:rgb(56, 109, 255)">3.利用互联网的社交或流媒体平台多样化学习俄语</text>
+      <view class="action" style="font-size: large;font-weight: 550;">
+        <text class="cuIcon-titles text-blue"></text>利用互联网的社交或流媒体平台多样化学习俄语
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
@@ -51,8 +64,8 @@
       From Moscow，Far From Moscow是一个收听俄罗斯、乌克兰、白俄罗斯和其他国家的俄语歌曲的非常好的平台。这里有各个类型和流派的音乐，你可以合法的收听和下载。利用这些媒体资源进行俄语的学习也是不错的选择。
     </text>
     <view class="cu-bar bg-white margin-top ">
-      <view class="action">
-        <text class="cuIcon-radioboxfill text-" style="color:rgb(56, 109, 255)">4.完全沉浸在语言环境中是学习俄语的快速方法之一</text>
+      <view class="action" style="font-size: large;font-weight: 550;">
+        <text class="cuIcon-titles text-blue"></text>完全沉浸在语言环境中是学习俄语的快速方法之一
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
@@ -61,15 +74,13 @@
     <text class="textbody" decode="{{true}}">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;喜欢做饭？那就请俄罗斯朋友教你做俄罗斯传统菜肴。喜欢音乐？那就学一些俄罗斯传统歌曲和流行歌曲。这会使你成为一个更有趣的聊天者，更好地理解俄罗斯心态，这样你可以很快和俄罗斯人找到共同语言。
     </text>
-    <view class="blank">
-      <view class="myTxtCenter text-gray">
-        KeLi 赴俄留学小助手
-      </view>
-      <view class="myTxtCenter text-gray">
-        更多咨询，请联系13915321806
-      </view>
+    <view class="blank"> </view>
+
+    <view class="myTxtCenter text-gray">
+      KeLi 赴俄留学小助手
     </view>
-
-
+    <view class="myTxtCenter text-gray">
+      更多咨询，请联系13915321806
+    </view>
   </view>
 </view>

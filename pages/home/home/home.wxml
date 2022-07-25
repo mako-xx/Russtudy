@@ -8,22 +8,33 @@
     </view>
   </view>
 </view>
-<view class="back" style="position: fixed;top: {{HeadBar}}rpx;">
-  <navigator class='navi' open-type="navigateBack" delta="1" hover-class="none"
-    style="position:relative; top: 25%; color: black; left: 38rpx">
-    <view style="opacity: 1;">
-      <text class="cuIcon-back"></text> 返回
-    </view>
-  </navigator>
-  <text class="bgtitle" style="position: relative; top: 10% ;left: 175rpx;">为什么选择俄罗斯</text>
+
+
+<view class="bg-white text-center myTxtCenter text-lg text-bold"
+  style="height:{{backheight}}rpx;width:100%;position:fixed; z-index: 10;top:{{HeadBar}}rpx;font-size:40rpx;"
+  wx:if="{{true}}">
+  为什么选择俄罗斯
 </view>
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-shadeTop" style="height:{{0}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' id="main-back" open-type="navigateBack" delta="1" hover-class="none"
+      wx:if="{{!modalName}}" style="height:auto;position: absolute;top:{{HeadBar+30}}rpx;color:black;z-index: 2;">
+      <text class='cuIcon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{0}}px;'>Tab索引</view>
+  </view>
+</view>
+<view class="" style="height:{{HeadBar+backheight}}rpx">
+
+</view>
+
 
 
 <view class="card" style="position: absolute;top: {{1.5*HeadBar}}rpx;">
   <view class="text" style="width: 750rpx; ">
     <view class="cu-bar bg-white margin-top">
-      <view class="action">
-        <text class="cuIcon-radioboxfill text-" style="color:rgb(56, 109, 255) ;">1.教育资源充沛</text>
+      <view class="action" style="font-size: large;font-weight: 550;">
+        <text class="cuIcon-titles text-blue"></text>教育资源充沛
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
@@ -36,8 +47,10 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 同时俄罗斯老师普遍有责任心，学在课上主动邀请学生提出疑问，耐心且慎重地回答每一个问题。他们十分重视基础知识的掌握。
     </text>
     <view class="cu-bar bg-white margin-top">
-      <view class="action">
-        <text class="cuIcon-radioboxfill text-" style="color:rgb(56, 109, 255)">2.方便快捷、成本更低</text>
+      <view class="cu-bar bg-white margin-top">
+        <view class="action" style="font-size: large;font-weight: 550;">
+          <text class="cuIcon-titles text-blue"></text>方便快捷、成本更低
+        </view>
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
@@ -66,21 +79,21 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;俄罗斯教育与其他国家相比，比如，美国或英国，费用更低廉。且每年俄罗斯政府给外国人提供几千个奖学金（名额）。比如，2019年一共有一万五千个奖学金。此外，某些类别的外国人能获得额外奖学金。还有一种机会是参加大学举办的奥林匹克竞赛，在入学考试时，优胜者和获奖者也能享受优惠。
     </text>
     <view class="cu-bar bg-white margin-top ">
-      <view class="action">
-        <text class="cuIcon-radioboxfill text-" style="color:rgb(56, 109, 255)">3.中俄关系紧密，极具就业潜力</text>
+      <view class="action" style="font-size: large;font-weight: 550;">
+        <text class="cuIcon-titles text-blue"></text>中俄关系紧密，极具就业潜力
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中俄两国政府签署了相互承认对方学位及学历的友好协议，归国回来的学生取得的学历及学位证书在中国教育部留学服务中心即可办理认证手续。俄罗斯是与我国签订互认学历协议的少数国家之一，所以俄罗斯留学所获得的学历文凭，自然会得到我国的绝对认可。这也就消除了众多学子们学成归来后学历认可问题的后顾之忧。且伴随着我国“一带一路”的发展与升温，中俄关系合作日益紧密，中国与俄罗斯在很多方面都展开了合作，石油产业，通讯产业，贸易产业等诸多产业。与此成鲜明对比的，是国内俄语人才的紧缺。按照中俄合作的发展趋势，俄语的复合型人才缺口最大，也就是说熟练掌握俄语，并在某一专业领域拥有经验和突出表现的人，将在未来十分抢手。
     </text>
     <view class="blank">
-      <view class="myTxtCenter text-gray">
-        KeLi 赴俄留学小助手
-      </view>
-      <view class="myTxtCenter text-gray">
-        更多咨询，请联系13915321806
-      </view>
-    </view>
 
+    </view>
+    <view class="myTxtCenter text-gray">
+      KeLi 赴俄留学小助手
+    </view>
+    <view class="myTxtCenter text-gray">
+      更多咨询，请联系13915321806
+    </view>
   </view>
 </view>

@@ -25,7 +25,6 @@ Page({
     intervaltime1: 0
   },
   onLoad() {
-    console.log("here")
     wx.showLoading({  // 显示加载中loading效果 
       title: "加载中",
       mask: true  //开启蒙版遮罩
@@ -38,26 +37,6 @@ Page({
       WinWidth: app.globalData.ktxWindowWidth * app.globalData.pxToRpxScale
     })
     var that = this
-    // if (school_id) {
-
-    //   var selectlist = that.data.selectlist;
-    //   for (var j = 0; j < selectlist.length; j++) {
-    //     if (selectlist[j].mode == "sel_sch") {
-    //       selectlist[j].type = 0;
-    //       break;
-    //     }
-    //   }
-    //   that.setData({
-    //     selectlist: selectlist
-    //   })
-    // }
-    // if (options.lookcollect == 1) {
-    //   var selectlist = that.data.selectlist;
-    //   selectlist[6].type = 0;
-    //   that.setData({
-    //     selectlist: selectlist
-    //   })
-    // }
     this.setData({
       interval: setInterval(function () {
         console.log("interval in programs调用一次");
@@ -114,7 +93,7 @@ Page({
 
   },
   setselect(selectedprograms) {
-    var len = selectedprograms.length;
+    var len = selectedprograms.length / 2;
     var selectedprograms1;
     var selectedprograms2;
     var selectedprograms3
@@ -123,11 +102,11 @@ Page({
     //   while (selectedprograms[i].rank <= 0) selectedprograms[i].rank = selectedprograms[i].schoolrank + parseInt(Math.random() * (4 + 3) - 3);
     // }
 
-    // selectedprograms.sort(function (a, b) { return a.rank - b.rank })
+    selectedprograms.sort(function (a, b) { return a.fakerank - b.fakerank })
     if (len > 5) {
       len = len - 5;
-      var one = parseInt(len / 3);
-      var two = parseInt((2 * len) / 3);
+      var one = parseInt(len / 6);
+      var two = parseInt((5 * len) / 6);
       selectedprograms1 = selectedprograms.slice(0, one);
       selectedprograms2 = selectedprograms.slice(one, two + 5);
       selectedprograms3 = selectedprograms.slice(two + 5, len + 5);
@@ -350,31 +329,6 @@ Page({
       show3
     })
   },
-  // pushMore(e) {
-  //   var processed = this.data.showprograms;
-  //   var len = this.data.showprograms.length
-  //   var selectedprograms = this.data.selectedprograms1.concat(this.data.selectedprograms2).concat(this.data.selectedprograms3)
-  //   var checkfinish = 0;
-  //   if (Math.min(selectedprograms.length, len + 10) == selectedprograms.length) checkfinish = 1;
-  //   for (var i = len; i < Math.min(selectedprograms.length, len + 10); i++) {
-  //     var simpro = selectedprograms[i]
-
-  //     processed.push(this.dataprocess(simpro))
-
-  //   }
-  //   var unblank;
-  //   if (processed.length != 0) {
-  //     unblank = true;
-  //   } else {
-  //     unblank = false;
-  //   }
-  //   this.setData({
-  //     showprograms: processed,
-  //     unblank: unblank,
-  //     searching: 0,
-  //     checkfinish: checkfinish
-  //   })
-  // },
   learnmore: function (e) {
     if (this.data.allownavigate) {
       this.setData({

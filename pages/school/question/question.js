@@ -123,7 +123,7 @@ Page({
         delta: 1
       })
       wx.showToast({
-        title: '留学自测已完成，解锁智能推荐功能！',
+        title: '留学自测已完成，为您解锁智能推荐功能！',
         icon: 'none',
         duration: 2000//持续的时间
       })
@@ -267,7 +267,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.setData({
+      backheight: app.globalData.backheight
+    })
+    if (!this.data.backheight) {
+      console.log('in')
+      console.log(this.data.backheight)
+      var that = this
+      let query = wx.createSelectorQuery()
+      query.select('#main-back').boundingClientRect((rect) => {
+        let height = rect.height * app.globalData.pxToRpxScale
+        console.log("hei", height, app.globalData.pxToRpxScale)
+        var backheight = (height + 2 * 30);
+        that.setData({
+          backheight: backheight
+        })
+        getApp().globalData.backheight = backheight
+      }).exec()
+    }
   },
 
   /**
