@@ -90,6 +90,16 @@ Page({
     console.log(this.data.nickname)
     wx.setStorageSync('collections', _user);
     // onslotchange.log("finish")
+    //将数据保存至云端
+    var collection = wx.getStorageSync("collections")
+    console.log(collection)
+    db.collection("user").where({
+      _openid: collection.openid
+    }).update({
+      data: {
+        nickname: collection.nickname        
+      }
+    })
   },
   // //登录按钮兼头像更换
   onChooseAvatar(e) {
@@ -173,10 +183,12 @@ Page({
             collection.citys = [];
             collection.schools = [];
             collection.programs = [];
+            collection.nickname = "";
           }
           that.setData({
             nickname: nickname
           })
+          console.log(that)
           db.collection("user").add({
             data: {
               openid: collection.openid,
@@ -195,7 +207,7 @@ Page({
           })
         }
         else if (!res.data.length == 0) {
-          console.log(res)
+          console.log(res.data[0].nickname)
           var nick = res.data[0].nickname;
           if (!nick) nick = nickname;
           that.setData({
@@ -203,7 +215,7 @@ Page({
             schools: res.data[0].collegecollection,
             programs: res.data[0].programecollection,
             avatarurl: res.data[0].avatarurl,
-            nickname: nickname,
+            nickname: res.data[0].nickname,
           })
           console.log("nick", that.data.nickname);
           wx.setStorageSync('collections', {
