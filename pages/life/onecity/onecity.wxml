@@ -57,7 +57,7 @@
 
 <view class="cu-bar bg-white margin-top solid-bottom">
   <view class="action">
-    <text class="cuIcon-title text-blue"></text>详细信息
+    <text class="cuIcon-info text-blue"></text>详细信息
   </view>
 </view>
 <block wx:for="{{city.text}}">
@@ -76,6 +76,6 @@
   RusStudy 赴俄留学小助手
 </view>
 <view class="myTxtCenter text-gray">
-  更多咨询，请联系135555555
+  更多咨询，请联系13915321806
 </view>
 <view class="blank"></view>
