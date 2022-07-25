@@ -32,7 +32,7 @@
 <block wx:for="{{printvalue}}">
   <view class="cu-bar bg-white margin-top solid-bottom">
     <view class="action">
-      <text class="cuIcon-radioboxfill text-yellow"></text>{{item.title}}
+      <text class="cuIcon-titles text-yellow"></text>{{item.title}}
     </view>
   </view>
   <!-- <view class="textTitle" style="font-size: large;">
@@ -50,6 +50,6 @@
   RusStudy 赴俄留学小助手
 </view>
 <view class="myTxtCenter text-gray">
-  更多咨询，请联系135555555
+  更多咨询，请联系13915321806
 </view>
 <view class="blank"></view>
