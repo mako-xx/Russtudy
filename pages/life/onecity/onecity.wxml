@@ -57,7 +57,7 @@
 
 <view class="cu-bar bg-white margin-top solid-bottom">
   <view class="action">
-    <text class="cuIcon-title text-blue"></text>详细信息
+    <text class="cuIcon-radioboxfill text-blue"></text>详细信息
   </view>
 </view>
 <block wx:for="{{city.text}}">

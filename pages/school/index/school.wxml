@@ -32,7 +32,7 @@
 <view class="box" wx:if="{{true}}">
   <view class="cu-bar bg-white">
     <view class="action sub-title" style="left:0">
-      <text class="cuIcon-title text-blue"></text>
+      <text class="cuIcon-radioboxfill text-blue"></text>
       <text class="text-xl text-bold text-blue">快速查询</text>
       <text class="text-ABC text-blue" style="position: absolute; left: 51rpx; top: 16rpx">Begin</text>
       <!-- last-child选择器-->
@@ -48,7 +48,8 @@
     </view>
     <view class="content" style="height:100%;width:60%;margin:auto;padding: 30rpx;">
       <view class="desc" style="height:100%;width:50%;margin:auto">
-        <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large;color:rgb(58, 58, 58)"> 选学校</view>
+        <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large;color:rgb(58, 58, 58)">
+          选学校</view>
         <view class="text-content"
           style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 多维搜索，精确定位</view>
         <view class="margin-tb-sm text-center" style="height:25%;">
@@ -68,7 +69,8 @@
     </view>
     <view class="content" style="height:100%;width:60%;margin:auto;padding: 30rpx;">
       <view class="desc" style="height:100%;width:50%;margin:auto">
-        <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large;color:rgb(58, 58, 58)"> 挑专业</view>
+        <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large;color:rgb(58, 58, 58)">
+          挑专业</view>
         <view class="text-content"
           style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 3000余项专业，超大范围供您选择
         </view>
@@ -83,7 +85,7 @@
 <view class="box" wx:if="{{true}}">
   <view class="cu-bar bg-white">
     <view class="action sub-title" style="left:0">
-      <text class="cuIcon-title text-green"></text>
+      <text class="cuIcon-radioboxfill text-green"></text>
       <text class="text-xl text-bold text-green">工具箱</text>
       <text class="text-ABC text-green" style="position: absolute; left: 51rpx; top: 16rpx">Tools</text>
       <!-- last-child选择器-->

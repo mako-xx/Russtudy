@@ -33,7 +33,7 @@
 <block wx:for="{{printvalue}}">
   <view class="cu-bar bg-white margin-top solid-bottom">
     <view class="action">
-      <text class="cuIcon-title text-yellow"></text>{{item.title}}
+      <text class="cuIcon-radioboxfill text-yellow"></text>{{item.title}}
     </view>
   </view>
   <view class="text bg-white padding {{index!=0?'padding-top-0':''}}" wx:for="{{item.text}}" wx:for-item="txt"
