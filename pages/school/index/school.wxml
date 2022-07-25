@@ -53,7 +53,7 @@
         <view class="text-content"
           style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 多维搜索，精确定位</view>
         <view class="margin-tb-sm text-center" style="height:25%;">
-          <button class="cu-btn round" bindtap="chooseschool"
+          <button class="cu-btn round blue" bindtap="chooseschool"
             style="font-family:‘Times New Roman’, Times, serif;">点击进入</button>
         </view>
       </view>
