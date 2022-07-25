@@ -26,7 +26,7 @@
 <swiper class="screen-swiper" style="height:{{WinHeight-titleheight-stepsheight-HeadBar}}rpx" indicator-dots=""
     bindchange="bindchange" current="{{currentId}}" circular="true" duration="500">
 
-    <swiper-item style="min-height:2000rpx">
+    <swiper-item>
         <scroll-view class="margin" scroll-x="false" scroll-y="true"
             style="height:{{WinHeight-titleheight-stepsheight-HeadBar}}rpx;width:auto;">
             <view class="bg-white padding" style="text-indent:2em;font-weight: 600;">

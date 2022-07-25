@@ -42,7 +42,7 @@
             <view class="padding-top padding-lr">
                 <view class='cu-bar solid-bottom bg-white'>
                     <view class='action'>
-                        <text class='cuIcon-radioboxfill text-green'></text> QS排名
+                        <text class='cuIcon-icloading text-green'></text> QS排名
                     </view>
                 </view>
                 <view class="cu-list menu-avatar">
@@ -81,14 +81,14 @@
             <view class="padding-top padding-lr">
                 <view class='cu-bar solid-bottom bg-white'>
                     <view class='action'>
-                        <text class='cuIcon-radioboxfill text-green'></text> 城市分类
+                        <text class='cuIcon-icloading text-green'></text> 城市分类
                     </view>
                 </view>
                 <block wx:for="{{CityList}}" wx:key>
                     <view class='cu-bar solid-bottom '
                         style="min-height: 0;background-color: rgba(120, 130, 138, 0.2);">
                         <view class='action text-gray' style="">
-                            <text class='cuIcon-radioboxfill text-red'></text> {{item.name}}
+                            <text class='cuIcon-title text-red'></text> {{item.name}}
                         </view>
                     </view>
                     <view class="cu-list menu-avatar">
@@ -129,7 +129,7 @@
             <view class="padding-top padding-lr">
                 <view class='cu-bar solid-bottom bg-white'>
                     <view class='action'>
-                        <text class='cuIcon-radioboxfill text-green'></text> 智能推荐
+                        <text class='cuIcon-icloading text-green'></text> 智能推荐
                     </view>
                 </view>
                 <view class="cu-list menu-avatar">
@@ -167,7 +167,7 @@
             <view class="padding-top padding-lr">
                 <view class='cu-bar solid-bottom bg-white'>
                     <view class='action'>
-                        <text class='cuIcon-radioboxfill text-green'></text> 热度排行
+                        <text class='cuIcon-icloading text-green'></text> 热度排行
                     </view>
                 </view>
                 <view class="cu-list menu-avatar">
@@ -204,7 +204,7 @@
             <view class="padding-top padding-lr">
                 <view class='cu-bar solid-bottom bg-white'>
                     <view class='action'>
-                        <text class='cuIcon-radioboxfill text-green'></text> 我的收藏
+                        <text class='cuIcon-icloading text-green'></text> 我的收藏
                     </view>
                 </view>
                 <view class="cu-list menu-avatar">

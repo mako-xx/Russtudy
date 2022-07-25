@@ -43,7 +43,7 @@
   <view class="box" wx:if="{{true}}">
     <view class="cu-bar bg-white" style="position: relative; left: 0rpx; top: 0rpx; z-index: 8; opacity: 0.8;">
       <view class="action sub-title" style="left:0">
-        <text class="cuIcon-radioboxfill text-blue"></text>
+        <text class="blue"></text>
         <text class="text-xl text-bold text-blue">初步了解</text>
         <text class="text-ABC text-blue" style="position: absolute; left: 51rpx; top: 16rpx">Why</text>
         <!-- last-child选择器-->
@@ -72,7 +72,7 @@
   <view class="box" wx:if="{{true}}">
     <view class="cu-bar bg-white" style="position: relative; left: 0rpx; top: 0rpx; z-index: 8; opacity: 0.8">
       <view class="action sub-title" style="left:0">
-        <text class="cuIcon-radioboxfill text-green"></text>
+        <text class="green"></text>
         <text class="text-xl text-bold text-green">快捷跳转</text>
         <text class="text-ABC text-green" style="position: absolute; left: 51rpx; top: 16rpx">jump</text>
         <!-- last-child选择器-->

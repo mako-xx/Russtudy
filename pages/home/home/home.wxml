@@ -25,7 +25,7 @@
 
     <view class="cu-bar bg-white margin-top">
       <view class="action">
-        <text class="cuIcon-radioboxfill text-" style="color: rgb(255, 94, 0);">1.教育资源充沛</text>
+        <text class="" style="color: rgb(255, 94, 0);font-size: larger;font-weight: 600;">1.教育资源充沛</text>
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
@@ -39,7 +39,7 @@
     </text>
     <view class="cu-bar bg-white margin-top">
       <view class="action">
-        <text class="cuIcon-radioboxfill text-" style="color: rgb(255, 94, 0);">2.方便快捷、成本更低</text>
+        <text class="" style="color: rgb(255, 94, 0);font-size: larger;font-weight: 600;">2.方便快捷、成本更低</text>
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
@@ -69,7 +69,7 @@
     </text>
     <view class="cu-bar bg-white margin-top ">
       <view class="action">
-        <text class="cuIcon-radioboxfill text-" style="color: rgb(255, 94, 0);">3.中俄关系紧密，极具就业潜力</text>
+        <text class="" style="color: rgb(255, 94, 0);font-size: larger;font-weight: 600;">3.中俄关系紧密，极具就业潜力</text>
       </view>
     </view>
     <text class="textbody" decode="{{true}}">
