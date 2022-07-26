@@ -7,13 +7,16 @@
       在俄罗斯留学
     </view>
   </view>
+  <view class=""
+    style="height:auto;width:100%;position:absolute;font-size:40rpx;display:flex;justify-content:center;bottom:10rpx">
+    宿舍
+  </view>
 </view>
 
 
 <view class="bg-white text-center myTxtCenter text-lg text-bold"
-  style="height:{{backheight}}rpx;width:100%;position:fixed; z-index: 10;top:{{HeadBar}}rpx;font-size:40rpx;"
-  wx:if="{{true}}">
-  宿舍
+  style="height:{{backheight}}rpx;width:100%;position:fixed;z-index: 10;top:{{HeadBar}}rpx" wx:if="{{true}}">
+  {{school.name}}
 </view>
 <view class='cu-custom'>
   <view class="cu-bar fixed bg-shadeTop" style="height:{{0}}px;padding-top:{{StatusBar}}px;">

@@ -288,14 +288,17 @@ Page({
         that.setData({
           intervaltime2: that.data.intervaltime2 + 1
         })
-        if (that.data.intervaltime2 > 10) { console.log("interval2调用结束,失败"); clearInterval(that.data.interval2) }
-        let query = wx.createSelectorQuery()
-        query.select('#stu-image-0').boundingClientRect((rect) => {
-          var width = rect.width //* app.globalData.pxToRpxScale;
-          that.setData({
-            stuwidth: width * app.globalData.pxToRpxScale
-          })
-        }).exec()
+        if (that.data.intervaltime2 > 10 || !that.data.linkman || that.data.linkman.length == 0) { console.log("interval2调用结束,失败"); clearInterval(that.data.interval2) }
+        else {
+          let query = wx.createSelectorQuery()
+          query.select('#stu-image-0').boundingClientRect((rect) => {
+            var width = rect.width //* app.globalData.pxToRpxScale;
+            that.setData({
+              stuwidth: width * app.globalData.pxToRpxScale
+            })
+          }).exec()
+        }
+
         if (that.data.stuwidth) {
           clearInterval(that.data.interval2)
         }
@@ -402,7 +405,7 @@ Page({
     var collections = wx.getStorageSync('collections')
     if (collections && collections.openid) {
       wx.navigateTo({
-        url: "../../../my/contact/contact?index=1"
+        url: "../../../my/contact/contact?index=" + e.currentTarget.dataset.index
       })
     }
     else {

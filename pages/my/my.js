@@ -77,7 +77,7 @@ Page({
   /**
   * 点击确定按钮获取input值并且关闭弹窗
   */
- formSubmit(e) {
+  formSubmit(e) {
     console.log(e)
     this.setData({
       showModal: false,
@@ -97,7 +97,7 @@ Page({
       _openid: collection.openid
     }).update({
       data: {
-        nickname: collection.nickname        
+        nickname: collection.nickname
       }
     })
   },
@@ -131,7 +131,7 @@ Page({
       // const info = await wx.getUserProfile({
       //   desc: '用于完善用户资料',
       // });
-      
+
       // console.log("info", info)
       // // avatarUrl = info.userInfota.avarUrl
     } else {
@@ -330,7 +330,7 @@ Page({
   },
   switchprogram() {
     wx.navigateTo({
-      url: '../school/progams/programs?lookcollect=1'
+      url: '../school/programs/programs?lookcollect=1'
     });
   },
   /**
@@ -381,7 +381,7 @@ Page({
       }, 1000)
     })
 
-    if(this.iflogin == true){
+    if (this.iflogin == true) {
 
     }
   },

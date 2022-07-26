@@ -23,7 +23,7 @@
     <!-- <view class="cuIcon-like}"
       style="height:{{backheight}}rpx;width:{{backheight}}rpx;position: relative;top:{{HeadBar}}rpx;color:black;z-index: 2;right:20rpx"
       bindtap="clicklove"></view> -->
-    <image class="padding-sm" src="../../../../image/icons/love{{iflove}}.png" mode="aspectFit"
+    <image class="padding-sm" src="../../../../image/icons/love{{iflove}}.png" mode="aspectFit" wx:if="{{backheight}}"
       style="height:{{backheight}}rpx;width:{{backheight}}rpx;position: absolute;top:{{HeadBar}}rpx;color:black;z-index: 2;right:20rpx"
       bindtap="clicklove">
     </image>

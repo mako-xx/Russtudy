@@ -13,6 +13,11 @@
   </view>
 </view>
 
+<view class="bg-white text-center myTxtCenter text-lg text-bold"
+  style="height:{{backheight}}rpx;width:100%;position:fixed; z-index: 10;top:{{HeadBar}}rpx;font-size:40rpx;"
+  wx:if="{{true}}">
+  {{program.schoolname}}
+</view>
 <view class='cu-custom'>
   <view class="cu-bar fixed bg-shadeTop" style="height:{{0}}px;padding-top:{{StatusBar}}px;">
     <navigator class='action' id="main-back" open-type="navigateBack" delta="1" hover-class="none"
@@ -22,10 +27,10 @@
     <view class='content' style='top:{{0}}px;'>Tab索引</view>
   </view>
 </view>
-
 <view class="" style="height:{{HeadBar+backheight}}rpx">
 
 </view>
+<view class="blank"></view>
 
 <view class="" style="height:50rpx">
 

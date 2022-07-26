@@ -70,8 +70,9 @@ Page({
     var msgList, serverinfo;
     if (messages.length > index) {
       msgList = messages[index].list;
-      serverinfo = messages[index].info;
+      serverinfo = messages[index];
     }
+    console.log(serverinfo)
     this.setData({
       serverinfo
     })
@@ -121,7 +122,7 @@ Page({
           {
             speaker: 'server',
             contentType: 'text',
-            content: '这里是' + serverinfo.school + '，请问您有什么想咨询的吗'
+            content: '这里是' + serverinfo.school + '对接员，请问您有什么想咨询的吗'
           }
         ]
       }

@@ -9,9 +9,7 @@
   </view>
 </view>
 <!-- <scroll-view scroll-y="true" style="height:{{ShowHeight}}rpx;" class="bg-gray"> -->
-<view class="back" style="position: absolute;top:{{HeadBar}}rpx; width:100%;">
-  <!-- <view class="triangleD" style="position: absolute; left: -606rpx; top:-10rpx;width: -20rpx; height: 260rpx; display: block; box-sizing: border-box">
-</view> -->
+<view class="back" style="position: absolute;top:{{HeadBar}}rpx; width:100%;height:auto">
   <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/background.png"
     class="image" mode="aspectFill"></image>
 
@@ -118,11 +116,6 @@
           style="background-color:cornflowerblue">确定</button>
       </view>
     </form>
-
-
-  </view>
-  <view class="whitecard" style="height:300rpx;">
-
   </view>
 
 </view>

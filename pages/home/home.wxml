@@ -96,8 +96,10 @@
         style="width: 140rpx; height: 140rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
     </view>
   </view>
-
-  <view class="whitecard" style="height:250rpx;">
-
-  </view>
+  <view class="blank"></view>
+  <view class="blank"></view>
+  <view class="blank"></view>
+  <view class="blank"></view>
+  <view class="blank"></view>
+  <view class="blank"></view>
 </view>

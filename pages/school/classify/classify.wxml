@@ -88,7 +88,7 @@
                     <view class='cu-bar solid-bottom '
                         style="min-height: 0;background-color: rgba(120, 130, 138, 0.2);">
                         <view class='action text-gray' style="">
-                            <text class='cuIcon-radioboxfill text-red'></text> {{item.name}}
+                            <text class='cuIcon-title text-red'></text> {{item.name}}
                         </view>
                     </view>
                     <view class="cu-list menu-avatar">
@@ -116,7 +116,7 @@
                             </view>
                             <view class="radius fr padding-sm shadow-blur myTxtCenter"
                                 style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695;color:white; position: relative; left: -8rpx; top: 0rpx"
-                                bindtap="learn_more" data-id="{{item.id}}">
+                                bindtap="learn_more" data-id="{{it.id}}">
                                 了解更多
                             </view>
 

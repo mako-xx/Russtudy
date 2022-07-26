@@ -18,7 +18,8 @@ Page({
     this.setData({
       HeadBar: HeadBar,
       ShowHeight: ShowHeight,
-      backheight: app.globalData.backheight
+      backheight: app.globalData.backheight,
+      schoolname: wx.getStorageSync("uni_name")
     })
     if (!this.data.backheight) {
       console.log('in')
