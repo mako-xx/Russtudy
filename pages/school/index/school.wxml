@@ -53,8 +53,7 @@
         <view class="text-content"
           style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 多维搜索，精确定位</view>
         <view class="margin-tb-sm text-center" style="height:25%;">
-          <button class="cu-btn round" bindtap="chooseschool"
-            style="font-family:‘Times New Roman’, Times, serif;">点击进入</button>
+          <button class="cu-btn round bg-gradual-blue" bindtap="chooseschool" style="">点击进入</button>
         </view>
       </view>
     </view>
@@ -75,8 +74,7 @@
           style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 3000余项专业，超大范围供您选择
         </view>
         <view class="margin-tb-sm text-center" style="height:25%;">
-          <button class="cu-btn round" bindtap="choosesubject"
-            style="font-family:‘Times New Roman’, Times, serif;">点击进入</button>
+          <button class="cu-btn round bg-gradual-blue" bindtap="choosesubject" style="">点击进入</button>
         </view>
       </view>
     </view>

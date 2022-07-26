@@ -43,7 +43,7 @@
     </view>
 </view>
 <view class="bg-white"
-    style="font-family:‘Courier New’, Courier, monospace;text-indent:2em;overflow: hidden;text-overflow: ellipsis;{{shownum==0?'padding:30rpx;':'height:0;'}}">
+    style="text-indent:2em;overflow: hidden;text-overflow: ellipsis;{{shownum==0?'padding:30rpx;':'height:0;'}}">
     <view class="" style="">
         俄罗斯的冬期较长（11月到次年4月），但室内温度都在20度左右，故在室内只需穿薄衣类外出只需要套上羽绒服即可。
     </view>
@@ -52,7 +52,7 @@
     </view>
 </view>
 <view class="bg-white"
-    style="font-family:‘Courier New’, Courier, monospace;text-indent:2em;overflow: hidden;text-overflow: ellipsis;{{shownum==1?'padding:30rpx;':'height:0;'}}">
+    style="text-indent:2em;overflow: hidden;text-overflow: ellipsis;{{shownum==1?'padding:30rpx;':'height:0;'}}">
     <view class="" style="">
         食堂：半自助式食堂。俄罗斯沙拉、三道菜都是有的。一顿午饭价格在15-25元。 
     </view>
@@ -64,13 +64,13 @@
     </view>
 </view>
 <view class="bg-white"
-    style="font-family:‘Courier New’, Courier, monospace;text-indent:2em;overflow: hidden;text-overflow: ellipsis;{{shownum==2?'padding:30rpx;':'height:0;'}}">
+    style="text-indent:2em;overflow: hidden;text-overflow: ellipsis;{{shownum==2?'padding:30rpx;':'height:0;'}}">
     <view class="" style="">
         在宿舍中水电都是免费的，而且是24小时冷热水，洗澡非常方便。宿舍负责更换床单，屋子里面写字台，床，椅子，大衣柜基本生活家居都是宿舍配备，还可以向宿舍申请电视机冰箱等家用电器，每层都有公用厨房，都是免费使用的。 
     </view>
 </view>
 <view class="bg-white"
-    style="font-family:‘Courier New’, Courier, monospace;text-indent:2em;overflow: hidden;text-overflow: ellipsis;{{shownum==3?'padding:30rpx;':'height:0;'}}">
+    style="text-indent:2em;overflow: hidden;text-overflow: ellipsis;{{shownum==3?'padding:30rpx;':'height:0;'}}">
     <view class="" style="">
         第一位：地铁。俄罗斯有8座城市有地铁：莫斯科、圣彼得堡、下诺夫哥罗德、喀山、新西伯利亚、萨马拉、叶卡捷琳堡、伏尔加格勒
     </view>
@@ -98,7 +98,7 @@
 <view class="grid col-3" style="margin:auto">
     <view class="padding-xs" wx:for="{{showcitys}}">
         <view class="bg-white radius-xx" id="city-{{index}}"
-            style="height:{{citywidth}}rpx;width:80%;margin:auto;background-image: url('{{item.pic}}');background-size:100% 100%;no-repeat;display: flex;align-items: center;justify-content: center;text-align: center;font-family:cursive;font-size:large;font-weight:600;color:white"
+            style="height:{{citywidth}}rpx;width:80%;margin:auto;background-image: url('{{item.pic}}');background-size:100% 100%;no-repeat;display: flex;align-items: center;justify-content: center;text-align: center;font-size:large;font-weight:600;color:white"
             bindtap="clickcity" data-id="{{item.id}}">
             {{item.name}}
         </view>

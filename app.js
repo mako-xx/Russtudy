@@ -9,15 +9,6 @@ App({
       traceUser: true,
       env: 'cloudtest-3g82y8a0d914b437'
     })
-    // 获取openid等登录信息，对应的代码在cloudfunctions/getInformation/index.js下
-    // wx.cloud.callFunction({
-    //   name: 'getInformation',
-    // }).then(res => {
-    //   console.log(res)
-    // }).catch(err => {
-    //   console.log(err)
-    // })
-    // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
@@ -223,7 +214,7 @@ App({
               if (schools[index].name == schname) break;
             }
             var rank = schools[index].qsdome;
-            var relativerank = parseInt(index / 5) + 1;
+            var relativerank = parseInt(index / 3) + 1;
             for (var j = 0; j < prs.length; j++) {
               prs[j].schoolrank = rank;
               prs[j].relativerank = relativerank;
@@ -264,7 +255,7 @@ App({
               if (schools[index].name == schname) break;
             }
             var rank = schools[index].qsdome;
-            var relativerank = parseInt(index / 5) + 1;
+            var relativerank = parseInt(index / 3) + 1;
             for (var j = 0; j < prs.length; j++) {
               prs[j].schoolrank = rank;
               prs[j].relativerank = relativerank;
@@ -302,7 +293,7 @@ App({
               if (schools[index].name == schname) break;
             }
             var rank = schools[index].qsdome;
-            var relativerank = parseInt(index / 5) + 1;
+            var relativerank = parseInt(index / 3) + 1;
             for (var j = 0; j < prs.length; j++) {
               prs[j].schoolrank = rank;
               prs[j].relativerank = relativerank;

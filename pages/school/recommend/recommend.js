@@ -103,11 +103,12 @@ Page({
     // }
 
     selectedprograms.sort(function (a, b) { return a.fakerank - b.fakerank })
+    console.log('sel', selectedprograms)
     if (len > 5) {
       len = len - 5;
-      var one = parseInt(len / 6);
+      var one = parseInt(len / 3);
       var two = parseInt((5 * len) / 6);
-      selectedprograms1 = selectedprograms.slice(0, one);
+      selectedprograms1 = selectedprograms.slice(0, parseInt(one / 2));
       selectedprograms2 = selectedprograms.slice(one, two + 5);
       selectedprograms3 = selectedprograms.slice(two + 5, len + 5);
     }
