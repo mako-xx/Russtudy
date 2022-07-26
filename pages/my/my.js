@@ -54,9 +54,18 @@ Page({
    * 控制显示
    */
   changeNickname: function () {
-    this.setData({
-      showModal: true
-    })
+    var iflogin = this.data.iflogin
+    if (iflogin)
+      this.setData({
+        showModal: true
+      })
+    else {
+      wx.showToast({
+        title: '点击头像登录',
+        icon: 'error',
+        duration: 1000
+      })
+    }
   },
   /**
     * 点击返回按钮隐藏
@@ -253,12 +262,18 @@ Page({
               console.log("更新缓存失败")
             }
           })
-          wx.clearStorageSync();
-          wx.setStorageSync("collections", { "programs": [], "citys": [], "schools": [], "openid": '', "nicename": '' })
+          // wx.clearStorageSync();
+          var collections = { "programs": [], "citys": [], "schools": [], "openid": '', "nickname": '' }
           that.setData({
+            collections: collections,
             avatarUrl: defaultAvatarUrl,
+            nickname: "点击修改昵称",
             iflogin: false
           })
+
+          wx.setStorageSync("collections", collections)
+
+          getApp().globalData.collection = collections
           wx.showToast({
             title: '清空缓存成功',
             icon: 'success',
@@ -385,54 +400,10 @@ Page({
 
     }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-    this.tabBar();
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  about() {
+    wx.showModal({
+      content: 'RusStudy团队致力于为您提供最优异的留学体验',
+      showCancel: false
+    })
   }
 })

@@ -1,64 +1,78 @@
 /* pages/home/home.wxss */
 .page {
-  background-color:white;
+  background-color: white;
 }
 
+.textbody {
+  letter-spacing: 4rpx;
+  line-height: 40rpx;
+}
 
-.blank{
+.blank {
   z-index: 40;
   height: 50rpx;
 }
+
 .card {
   background-color: white;
   display: flex;
   flex-direction: column;
 }
-.text{
-  background-color:white;
-  width: 100%; 
+
+.text {
+  background-color: white;
+  width: 100%;
   padding-left: 50rpx;
   padding-right: 50rpx;
   padding-bottom: 80rpx;
 }
-.mask{
+
+.mask {
   height: 50rpx;
-  width:90%;
+  width: 90%;
   border-top-left-radius: 30rpx;
   border-top-right-radius: 30rpx;
-  background-color:white;
+  background-color: white;
   position: relative;
   bottom: 50rpx;
   left: 40rpx;
 }
-.home{
+
+.home {
   height: 700rpx;
 }
-.buttonarea{
+
+.buttonarea {
   display: flex;
   flex-direction: row;
   position: relative;
   bottom: 250rpx;
 }
-.button{
+
+.button {
   height: 70rpx;
   width: 300rpx;
   border: 3rpx solid black;
 }
-.bgtitle{
+
+.bgtitle {
   font-size: 50rpx;
   color: black;
   background-color: white;
   height: auto;
 }
-.scv{
+
+.scv {
   background-color: white;
 }
-.action{
+
+.action {
   z-index: 5;
   height: 50rpx;
   font-size: 35rpx;
 }
-.navi{
+
+.navi {
   height: 50rpx;
   font-size: 35rpx;
   background-color: rgba(255, 255, 255, 0.5);
@@ -67,7 +81,7 @@
   border-radius: 10px;
 }
 
-.back{
+.back {
   background-color: white;
   z-index: 10;
   width: 100%;
@@ -75,7 +89,7 @@
 
 }
 
-.texttile{
+.texttile {
   font-size: large;
   font-weight: 600;
   color: coral;
@@ -84,7 +98,3 @@
   margin-top: 15rpx;
   margin-bottom: 20rpx;
 }
-
-
-
-

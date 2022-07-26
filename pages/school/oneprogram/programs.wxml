@@ -12,10 +12,8 @@
     教育项目
   </view>
 </view>
-
 <view class="bg-white text-center myTxtCenter text-lg text-bold"
-  style="height:{{backheight}}rpx;width:100%;position:fixed; z-index: 10;top:{{HeadBar}}rpx;font-size:40rpx;"
-  wx:if="{{true}}">
+  style="height:{{backheight}}rpx;width:100%;position:fixed;z-index: 10;top:{{HeadBar}}rpx" wx:if="{{true}}">
   {{program.schoolname}}
 </view>
 <view class='cu-custom'>
@@ -45,7 +43,7 @@
     <view class="" style="flex:2">
       <view class="" wx:for="{{block1}}" style="width:90%;margin: 0 auto 0 auto;">
         <view class="" style="display:flex;flex-direction: row;">
-          <view class="" style="font-weight: 600;">
+          <view class="" style="font-weight: 600;word-break:keep-all;">
             {{item.label}}:
           </view>
           <view class="">
@@ -66,7 +64,7 @@
   </view>
   <view class="" wx:for="{{block2}}" style="width:90%;margin: 0 auto 0 auto;">
     <view class="" style="display:flex;flex-direction: row;">
-      <view class="" style="font-weight: 600;">
+      <view class="" style="font-weight: 600;word-break:keep-all;">
         {{item.label}}:
       </view>
       <view class=""

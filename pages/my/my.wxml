@@ -59,7 +59,7 @@
   </view>
 
   <view class="detail" style="position: relative; left: 50rpx; top: -120rpx;">
-    <button class="bdetail">
+    <button class="bdetail" bindtap="about">
       <image class="idetail"
         src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/user_page/关于我们1 1.png">
       </image>
