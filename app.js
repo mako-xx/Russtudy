@@ -104,7 +104,17 @@ App({
 
 
 
-      msg = [{ "info": { "name": "中俄留学小助手", "school": "***", "pic": "https://wx3.sinaimg.cn/mw2000/008tQ72zly1h3mmxzu8taj30dz0ggq5x.jpg" }, "list": [] }, { "info": { "name": "王同学", "school": "***", "pic": "https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2q4mp6kluj305k05k3yi.jpg" }, "list": [] }, { "list": [] }, { "list": [] }, { "list": [] }, { "list": [] }, { "list": [] }, { "list": [] }, { "list": [] }, { "list": [] }]
+      msg = [
+        { "name": "中俄留学小助手", "school": "***", "pic": "https://wx3.sinaimg.cn/mw2000/008tQ72zly1h3mmxzu8taj30dz0ggq5x.jpg", "id": 0, "list": [] },
+        { "name": "Zamkox Kirill", "school": "新西伯利亚国立大学", "pic": "https://wx1.sinaimg.cn/mw2000/0085wEMdly1h3pk8eywfoj30u00u0tci.jpg", "degree": "管理学硕士", "id": 1, "list": [] },
+        { "name": "Balobasox Roman", "school": "新西伯利亚国立大学", "pic": "https://wx4.sinaimg.cn/mw2000/0085wEMdly1h3pk8g2vztj30u00vy112.jpg", "degree": "金融学博士", "id": 2, "list": [] },
+        { "list": [] },
+        { "list": [] },
+        { "list": [] },
+        { "list": [] },
+        { "list": [] },
+        { "list": [] },
+        { "list": [] }]
       wx.setStorageSync('messages', msg)
       console.log(msg);
     }
@@ -174,17 +184,6 @@ App({
       console.log("出错", e)// Do something when catch error
     }
   },
-  // getProgramDatas(db) {
-  //   var value;
-  //   var allprograms;
-  //   db.collection("programs").get()
-  //     .then(res => {
-  //       value = res
-  //       allprograms = value.data[0].programs
-  //       console.log("allpro", allprograms);
-  //       wx.setStorageSync('programs', allprograms)
-  //     })
-  // },
   randn_bm() {
     let u = 0, v = 0;
     while (u === 0) u = Math.random(); //Converting [0,1) to (0,1)

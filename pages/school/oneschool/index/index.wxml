@@ -42,16 +42,6 @@
     <image src="{{item}}" mode="aspectFill"></image>
   </swiper-item>
 </swiper>
-<!-- <view class="bg-white  text-lg text-bold .padding-left" id="main-title" hover-class="none"
-  style="height:{{backheight}}rpx;width:100%;display: flex;align-items: center;" hover-stop-propagation="false">
-  {{school.name}}
-</view> -->
-
-
-
-<!-- <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas> -->
-
-
 
 <view class='division'></view>
 <view class="myTxtCenter " style="color:#aaaaaa;">
@@ -140,14 +130,6 @@
 </view>
 
 
-<!-- <view class="v-card" bindtap="clickcard" wx:for="{{cards}}" wx:key="this" data-value="{{item.name}}">
-  <view class="item"
-    style="background-image: url('{{item.img}}');background-position-y: center;background-position-x: center;background-size: 100% 100%;">
-    <view class="" style="width:90%">
-      {{item.name}}
-    </view>
-  </view>
-</view> -->
 <view class="cu-bar bg-white margin-top solid-bottom">
   <view class="action">
     <text class="cuIcon-titles text-blue"></text>更多信息
@@ -174,30 +156,23 @@
     <text class="cuIcon-titles text-blue"></text>校友咨询
   </view>
 </view>
-<view class="cu-list grid col-2 no-border">
-  <view class="cu-item ">
-    <text>管理学硕士</text>
-    <image class="round" id="stu-image-0" style="width:60%;height:{{stuwidth?stuwidth:0}}rpx;margin: auto;"
-      bindtap="asklinker" data-index="0" src="https://wx1.sinaimg.cn/mw2000/0085wEMdly1h3pk8eywfoj30u00u0tci.jpg"
-      mode="aspectFit">
+<view class="cu-list grid {{linkman.length==0?'':'col-2'}} no-border">
+  <view class="cu-item " wx:for="{{linkman}}">
+    <text>{{item.degree}}</text>
+    <image class="round" id="stu-image-{{index}}" style="width:60%;height:{{stuwidth?stuwidth:0}}rpx;margin: auto;"
+      bindtap="asklinker" data-index="{{item.id}}" src="{{item.pic}}" mode="aspectFit">
 
     </image>
-    <text>Zamkox Kirill</text>
+    <text>{{item.name}}</text>
   </view>
-  <view class="cu-item ">
-    <text>金融学博士</text>
-    <image class="round" id="stu-image-1" style="width:60%;height:{{stuwidth?stuwidth:0}}rpx;margin: auto;"
-      bindtap="asklinker" data-index="1" src="https://wx4.sinaimg.cn/mw2000/0085wEMdly1h3pk8g2vztj30u00vy112.jpg"
-      mode="aspectFit">
-
-    </image>
-    <text>Balobasox Roman</text>
+  <view wx:if="{{linkman.length==0}}" class="padding myTxtCenter text-gray">
+    我们正在努力与当地校友取得联系。。。
   </view>
 </view>
 
 
 
-
+<view class="blank"></view>
 <view class="myTxtCenter text-gray">
   RusStudy 赴俄留学小助手
 </view>

@@ -1,4 +1,3 @@
-import * as echarts from '../../../../ec-canvas/echarts';
 
 const app = getApp()
 const db = wx.cloud.database()
@@ -11,8 +10,7 @@ Page({
     iconList: [],
     intervaltime1: 0,
     intervaltime2: 0,
-    iflove: 0,
-    linkman: [{ "pic": "https://wx3.sinaimg.cn/mw2000/008tQ72zly1h3mmxzu8taj30dz0ggq5x.jpg", "name": "王同学", "position": "在读硕士", "desc": "奖学金获得者" }, { "pic": "https://wx3.sinaimg.cn/mw2000/008tQ72zly1h3mmxzu8taj30dz0ggq5x.jpg", "name": "王同学", "position": "在读硕士", "desc": "奖学金获得者" }]
+    iflove: 0
   },
   dataprocess() {
     var school = this.data.school;
@@ -225,10 +223,11 @@ Page({
       iflove: 0,
       backheight: app.globalData.backheight
     })
+    var that = this
     if (!this.data.backheight) {
       console.log('in')
       console.log(this.data.backheight)
-      var that = this
+
       let query = wx.createSelectorQuery()
       query.select('#main-back').boundingClientRect((rect) => {
         let height = rect.height * app.globalData.pxToRpxScale
@@ -246,6 +245,7 @@ Page({
         var schools = that.data.schools;
         var schoolpics = that.data.schoolpics;
         var collections = that.data.collections;
+        var messages = that.data.messages;
         if (!schools) {
           schools = wx.getStorageSync('schools');
         }
@@ -255,15 +255,25 @@ Page({
         if (!collections) {
           collections = wx.getStorageSync('collections');
         }
+        if (!messages) {
+          messages = wx.getStorageSync('messages');
+        }
         that.setData({
           schools: schools,
           schoolpics: schoolpics,
-          collections: collections
+          collections: collections,
+          messages: messages
         })
-        if (that.data.schools && that.data.collections) {
+
+        if (that.data.schools && that.data.collections && that.data.schoolpics && that.data.messages) {
           console.log("interval in oneschool 调用完成", that.data.schools)
-          that.getschool();
-          that.dataprocess();
+          try {
+            that.getschool();
+            that.dataprocess();
+            that.sellinkmen();
+          } catch (e) {
+            console.log('error', e)
+          }
           that.setData({
             loading: false
           })
@@ -293,23 +303,6 @@ Page({
     })
 
   },
-  // onPageScroll: function (e) {
-  //   var that = this
-  //   this.setData({
-  //     scrollTop: e.scrollTop
-  //   })
-  //   let query = wx.createSelectorQuery()
-  //   query.select('#main-title').boundingClientRect((rect) => {
-  //     let top = rect.top
-  //     var titlepos = false
-  //     if (top < (app.globalData.ktxStatusHeight + app.globalData.navigationHeight))
-  //       titlepos = true
-  //     that.setData({
-  //       titlepos: titlepos
-  //     })
-
-  //   }).exec()
-  // },
   clicklabel(e) {
     console.log(e)
     var labels = this.data.labels;
@@ -392,6 +385,18 @@ Page({
     this.setData({
       gridBorder: e.detail.value
     });
+  },
+  sellinkmen: function (e) {
+    var messages = this.data.messages;
+    var linkman = [];
+    for (var i = 0; i < messages.length; i++) {
+      if (messages[i].school == this.data.school.name) {
+        linkman.push(messages[i]);
+      }
+    }
+    this.setData({
+      linkman: linkman
+    })
   },
   asklinker: function (e) {
     var collections = wx.getStorageSync('collections')
