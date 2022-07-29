@@ -18,25 +18,25 @@
 </view>
 <view class="grid col-4" style="font-family:cursive;width:90%;margin:30rpx auto 30rpx auto;font-size: x-large;">
     <view>
-        <view class="bg-gradual-{{shownum!=0?'red':'green'}} round myTxtCenter"
+        <view class="bg-gradual-{{shownum!=0?'blue':'green'}} round myTxtCenter"
             style="margin:auto;height:100rpx;width:100rpx;" bindtap="changeshow" data-num="0">
             衣
         </view>
     </view>
     <view>
-        <view class="bg-gradual-{{shownum!=1?'red':'green'}} round myTxtCenter"
+        <view class="bg-gradual-{{shownum!=1?'blue':'green'}} round myTxtCenter"
             style="margin:auto;height:100rpx;width:100rpx" bindtap="changeshow" data-num="1">
             食
         </view>
     </view>
     <view>
-        <view class="bg-gradual-{{shownum!=2?'red':'green'}} round myTxtCenter"
+        <view class="bg-gradual-{{shownum!=2?'blue':'green'}} round myTxtCenter"
             style="margin:auto;height:100rpx;width:100rpx" bindtap="changeshow" data-num="2">
             住
         </view>
     </view>
     <view>
-        <view class="bg-gradual-{{shownum!=3?'red':'green'}} round myTxtCenter"
+        <view class="bg-gradual-{{shownum!=3?'blue':'green'}} round myTxtCenter"
             style="margin:auto;height:100rpx;width:100rpx" bindtap="changeshow" data-num="3">
             行
         </view>
