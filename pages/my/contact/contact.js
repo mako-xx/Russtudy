@@ -261,7 +261,6 @@ Page({
         inputVal,
         text: ''
       });
-      wx.setStorageSync("messages", messages)
     }
 
 

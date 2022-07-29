@@ -107,14 +107,12 @@ App({
       msg = [
         { "name": "中俄留学小助手", "school": "***", "pic": "https://wx3.sinaimg.cn/mw2000/008tQ72zly1h3mmxzu8taj30dz0ggq5x.jpg", "id": 0, "list": [] },
         { "name": "Zamkox Kirill", "school": "新西伯利亚国立大学", "pic": "https://wx1.sinaimg.cn/mw2000/0085wEMdly1h3pk8eywfoj30u00u0tci.jpg", "degree": "管理学硕士", "id": 1, "list": [] },
-        { "name": "Balobasox Roman", "school": "新西伯利亚国立大学", "pic": "https://wx4.sinaimg.cn/mw2000/0085wEMdly1h3pk8g2vztj30u00vy112.jpg", "degree": "金融学博士", "id": 2, "list": [] },
-        { "list": [] },
-        { "list": [] },
-        { "list": [] },
-        { "list": [] },
-        { "list": [] },
-        { "list": [] },
-        { "list": [] }]
+        { "name": "Balobasov Roman", "school": "新西伯利亚国立大学", "pic": "https://wx1.sinaimg.cn/mw2000/0085wEMdly1h4nmlevqq5j30j80j9aak.jpg", "degree": "力学学士", "id": 2, "list": [] },
+        { "name": "Trepezaev Egor", "school": "托木斯克国立大学", "pic": "https://wx4.sinaimg.cn/mw2000/0085wEMdly1h4nmle7zsnj30np0nqmy4.jpg", "degree": "法学博士", "id": 3, "list": [] },
+        { "name": "杰斌", "school": "托木斯克国立大学", "pic": "https://wx1.sinaimg.cn/mw2000/0085wEMdly1h4nn1ojn2wj30u00u1dj8.jpg", "degree": "金融学博士", "id": 4, "list": [] },
+        { "name": "Devlesupova Alina", "school": "莫斯科物理技术学院", "pic": "https://wx2.sinaimg.cn/mw2000/0085wEMdly1h4nmlefloqj30mz0n0ta0.jpg", "degree": "物理学硕士", "id": 5, "list": [] },
+        { "name": "Irina Boginskaia", "school": "俄罗斯高等经济研究大学", "pic": "https://wx4.sinaimg.cn/mw2000/0085wEMdly1h4nmlepg49j30qo0qpq4e.jpg", "degree": "经济学学士", "id": 6, "list": [] },
+        { "name": "Devlesupova Alina", "school": "俄罗斯人民友谊大学", "pic": "https://wx1.sinaimg.cn/mw2000/0085wEMdly1h4nmlf2dbrj30mr0msab8.jpg", "degree": "管理学硕士", "id": 7, "list": [] },]
       wx.setStorageSync('messages', msg)
       console.log(msg);
     }

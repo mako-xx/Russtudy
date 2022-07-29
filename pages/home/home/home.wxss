@@ -22,8 +22,8 @@
 .text {
   background-color: white;
   width: 100%;
-  padding-left: 50rpx;
-  padding-right: 50rpx;
+  padding-left: 70rpx;
+  padding-right: 70rpx;
   padding-bottom: 80rpx;
 }
 

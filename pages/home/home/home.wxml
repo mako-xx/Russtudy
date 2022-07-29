@@ -33,7 +33,7 @@
 <view class="card" style="position: absolute;top: {{1.5*HeadBar}}rpx;">
   <view class="text" style="width: 750rpx; ">
     <view class="cu-bar bg-white margin-top">
-      <view class="action" style="font-size: large;font-weight: 550;">
+      <view class="action" style="font-size: large;font-weight: 550;margin-left: 0;">
         <text class="cuIcon-titles text-blue"></text>教育资源充沛
       </view>
     </view>
@@ -48,7 +48,7 @@
     </text>
     <view class="cu-bar bg-white margin-top">
       <view class="cu-bar bg-white margin-top">
-        <view class="action" style="font-size: large;font-weight: 550;">
+        <view class="action" style="font-size: large;font-weight: 550;margin-left: 0;">
           <text class="cuIcon-titles text-blue"></text>方便快捷、成本更低
         </view>
       </view>
@@ -79,7 +79,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;俄罗斯教育与其他国家相比，比如，美国或英国，费用更低廉。且每年俄罗斯政府给外国人提供几千个奖学金（名额）。比如，2019年一共有一万五千个奖学金。此外，某些类别的外国人能获得额外奖学金。还有一种机会是参加大学举办的奥林匹克竞赛，在入学考试时，优胜者和获奖者也能享受优惠。
     </text>
     <view class="cu-bar bg-white margin-top ">
-      <view class="action" style="font-size: large;font-weight: 550;">
+      <view class="action" style="font-size: large;font-weight: 550;margin-left: 0;">
         <text class="cuIcon-titles text-blue"></text>中俄关系紧密，极具就业潜力
       </view>
     </view>
