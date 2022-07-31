@@ -127,28 +127,6 @@ Page({
           }
         ]
       }
-    } else if (msgList[msgList.length - 1].speaker != 'mid') {
-      if (!index) {
-        if (!options.carry)
-          msgList.push({
-            speaker: 'mid',
-            contentType: 'text',
-            content: '中俄留学小助手为您服务'
-          })
-        else
-          msgList.push({
-            speaker: 'mid',
-            contentType: 'text',
-            content: '您正在咨询的是' + options.carry
-          })
-      }
-
-      else
-        msgList.push({
-          speaker: 'mid',
-          contentType: 'text',
-          content: serverinfo.school + '-' + serverinfo.name + '为您解疑'
-        })
     } else if (msgList[msgList.length - 1].speaker == 'mid') {
       if (!index) {
         if (options.carry) msgList[msgList.length - 1].content = '您正在咨询的是' + options.carry
@@ -240,7 +218,6 @@ Page({
         inputVal,
         text: ''
       });
-      console.log("end")
       wx.setStorageSync("messages", messages)
     }
   },
@@ -262,6 +239,8 @@ Page({
         inputVal,
         text: ''
       });
+      wx.setStorageSync("messages", messages)
+
     }
 
 

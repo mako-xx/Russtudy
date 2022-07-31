@@ -29,7 +29,7 @@
 </view>
 
 <view class="myTxtCenter" style="color:orange;font-weight:700;font-size: xx-large;">
-    大数据智能选校推荐
+    智能选校推荐
 </view>
 <view class="bg-white padding-lg" style="border-radius:100rpx;width:90%;height:auto;margin: 20rpx auto 40rpx auto">
     <view class="bg-red myTxtCenter padding-xs" wx:if="{{reallyshow1.length||isloading}}"
