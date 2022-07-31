@@ -59,8 +59,8 @@ Page({
     var collection = wx.getStorageSync("collections")
     console.log("res", collection.openid)
     this.setData({
-      // cusHeadIcon: 'cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/avatar/' + collection.openid + '.png'
-      cusHeadIcon: 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2q4mp6kluj305k05k3yi.jpg'
+      cusHeadIcon: 'cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/avatar/' + collection.openid + '.png'
+      // cusHeadIcon: 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2q4mp6kluj305k05k3yi.jpg'
     });
     var messages = wx.getStorageSync("messages");
 
@@ -126,28 +126,6 @@ Page({
           }
         ]
       }
-    } else if (msgList[msgList.length - 1].speaker != 'mid') {
-      if (!index) {
-        if (!options.carry)
-          msgList.push({
-            speaker: 'mid',
-            contentType: 'text',
-            content: '中俄留学小助手为您服务'
-          })
-        else
-          msgList.push({
-            speaker: 'mid',
-            contentType: 'text',
-            content: '您正在咨询的是' + options.carry
-          })
-      }
-
-      else
-        msgList.push({
-          speaker: 'mid',
-          contentType: 'text',
-          content: serverinfo.school + '-' + serverinfo.name + '为您解疑'
-        })
     } else if (msgList[msgList.length - 1].speaker == 'mid') {
       if (!index) {
         if (options.carry) msgList[msgList.length - 1].content = '您正在咨询的是' + options.carry
@@ -239,7 +217,6 @@ Page({
         inputVal,
         text: ''
       });
-      console.log("end")
       wx.setStorageSync("messages", messages)
     }
   },
@@ -261,6 +238,8 @@ Page({
         inputVal,
         text: ''
       });
+      wx.setStorageSync("messages", messages)
+
     }
 
 

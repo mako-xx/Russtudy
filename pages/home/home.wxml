@@ -62,7 +62,7 @@
     </view>
     <view class="button.white" style="position: relative; left: -24rpx; top: 0rpx" bindtap="how">
       <text class="btext">
-        如何学习俄语
+        智能推荐选校
       </text>
       <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/book.png"
         class="bimage"
