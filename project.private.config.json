@@ -57,6 +57,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/school/search/search",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/school/linkmen/linkmen",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

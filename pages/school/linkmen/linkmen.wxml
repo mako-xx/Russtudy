@@ -1,0 +1,46 @@
+<view class="cu-bar bg-white search" id="main-search" style="position: fixed;z-index: 99;width: 100%;">
+    <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder="输入学生姓名、所在学校、学位关键字" confirm-type="search" value="{{searchValue}}"
+            bindinput="searchValueInput" bindblur="suo"></input>
+    </view>
+    <view class="action" style="width:120rpx">
+        <button class="cu-btn bg-gradual-green shadow-blur round" bindtap="suo">搜索</button>
+    </view>
+</view>
+<view style="height:{{searchheight}}rpx"></view>
+<scroll-view class="" scroll-y scroll-with-animation style="height:{{WinHeight}}rpx;width:95%;margin:auto">
+    <view class="cu-list menu-avatar">
+        <view style="height:30rpx"></view>
+        <view class="cu-item solids-top" wx:for="{{messages}}" wx:key wx:for-index="sub" wx:for-item="it">
+            <!-- <view class="cu-avatar round lg">1</view> -->
+            <view class="cu-avatar round lg  shadow-blur" style="background-image:url({{it.pic}});left:10rpx;">
+            </view>
+            <view class="content" style="height: 100%; left: 120rpx; width: auto; position: absolute; top: 0rpx">
+
+                <view class="text-grey text-sm oneline"
+                    style="color: #996179; display: -webkit-box; width: 500rpx; height: 44rpx; box-sizing: border-box; position: relative; left: 0rpx; top: 15rpx">
+                    {{it.name}}/{{it.degree}}
+                </view>
+                <view class="text-gray text-sm" style="position: relative; left: 0rpx; top: 10rpx">
+                    所在院校：{{it.school}}
+                </view>
+                <view class="text-gray text-sm"
+                    style="width: 264rpx; height: 42rpx; display: block; box-sizing: border-box;color:green">
+                    已取得学生身份认证
+                </view>
+            </view>
+            <view class="radius fr padding-sm shadow-blur myTxtCenter" bindtap="asklinker" data-index="{{it.id}}"
+                style="height: 80rpx; width: 80rpx; font-size: 20rpx; background-color: #C8A695;color:white; position: relative; left: -8rpx; top: 0rpx">
+                我要咨询
+            </view>
+
+        </view>
+        <view class="myTxtCenter text-grey" style="margin-top:20rpx">
+            我们仍在努力匹配更多校友
+        </view>
+        <view class="" style="height:200rpx">
+
+        </view>
+    </view>
+</scroll-view>

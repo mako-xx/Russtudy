@@ -56,13 +56,16 @@ Page({
   onLoad: function (options) {
     console.log("op", options)
     initData(this);
-    
+
     var collection = wx.getStorageSync("collections")
     console.log("res", collection.openid)
     this.setData({
-      cusHeadIcon: 'cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/avatar/' + collection.openid + '.png'
+      cusHeadIcon: 'cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/avatar/' + collection.openid + '.png',
+      serverHeadIcan: 'cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/icons/logo.png'
       // cusHeadIcon: 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2q4mp6kluj305k05k3yi.jpg'
-    });
+
+    })
+
     var messages = wx.getStorageSync("messages");
 
     var index = parseInt(options.index);
@@ -72,6 +75,9 @@ Page({
     if (messages.length > index) {
       msgList = messages[index].list;
       serverinfo = messages[index];
+      this.setData({
+        serverHeadIcan: messages[index].pic
+      })
     }
     console.log(serverinfo)
     this.setData({

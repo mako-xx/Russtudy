@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "中俄留学小助手"
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "留学咨询"
 }

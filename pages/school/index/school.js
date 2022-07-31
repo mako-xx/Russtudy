@@ -133,9 +133,9 @@ Page({
       })
     }
   },
-  choosesearch() {
+  linkmenlist() {
     wx.navigateTo({
-      url: "../search/search",
+      url: "../linkmen/linkmen",
     })
   },
   chooseschool() {
