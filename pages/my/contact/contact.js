@@ -56,6 +56,7 @@ Page({
   onLoad: function (options) {
     console.log("op", options)
     initData(this);
+    
     var collection = wx.getStorageSync("collections")
     console.log("res", collection.openid)
     this.setData({

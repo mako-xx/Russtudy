@@ -4,7 +4,7 @@
       RusStudy
     </view>
     <view class="sudtitle">
-      在俄罗斯留学
+      俄罗斯留学
     </view>
   </view>
 </view>
@@ -51,7 +51,7 @@
         <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large;color:rgb(58, 58, 58)">
           选学校</view>
         <view class="text-content"
-          style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 多维搜索，精确定位</view>
+          style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 覆盖QS前1000名俄罗斯院校，多维搜索，精确定位</view>
         <view class="margin-tb-sm text-center" style="height:25%;">
           <button class="cu-btn round bg-gradual-blue" bindtap="chooseschool" style="">点击进入</button>
         </view>
@@ -71,7 +71,7 @@
         <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large;color:rgb(58, 58, 58)">
           挑专业</view>
         <view class="text-content"
-          style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 3000余项专业，超大范围供您选择
+          style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 近2000项专业，超大范围供您选择
         </view>
         <view class="margin-tb-sm text-center" style="height:25%;">
           <button class="cu-btn round bg-gradual-blue" bindtap="choosesubject" style="">点击进入</button>
@@ -112,19 +112,19 @@
   </view>
   <view class="padding-sm">
     <view class="bg-white shadow-blur text-center padding-sm" style="height:250rpx" bindtap="choosesearch">
-      <image class="" src="../../../image/icons/search.png" style="height:160rpx" mode="aspectFit">
+      <image class="" src="../../../image/icons/ask.png" style="height:160rpx" mode="aspectFit">
       </image>
       <view class="margin-top-sm text-lg" style="font-family:‘Courier New’, Courier, monospace;font-weight: 600;">
-        精确查找
+        对话在校学生
       </view>
     </view>
   </view>
   <view class="padding-sm">
     <view class="bg-white shadow-blur text-center padding-sm" style="height:250rpx" bindtap="clickcontact">
-      <image class="" src="../../../image/icons/ask.png" style="height:160rpx" mode="aspectFit">
+      <image class="" src="../../../image/icons/consultation.png" style="height:160rpx" mode="aspectFit">
       </image>
       <view class="margin-top-sm text-lg" style="font-family:‘Courier New’, Courier, monospace;font-weight: 600;">
-        留学咨询
+        留学顾问咨询
       </view>
     </view>
   </view>

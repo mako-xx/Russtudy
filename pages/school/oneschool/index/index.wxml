@@ -4,7 +4,7 @@
       RusStudy
     </view>
     <view class="sudtitle">
-      在俄罗斯留学
+      俄罗斯留学
     </view>
   </view>
   <view class=""
@@ -153,7 +153,7 @@
 
 <view class="cu-bar bg-white margin-top solid-bottom">
   <view class="action">
-    <text class="cuIcon-titles text-blue"></text>校友咨询
+    <text class="cuIcon-titles text-blue"></text>在校学生咨询 （已验证在校学生身份）
   </view>
 </view>
 <view class="cu-list grid {{linkman.length==0?'':'col-2'}} no-border">
