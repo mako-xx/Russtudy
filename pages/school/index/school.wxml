@@ -51,7 +51,7 @@
         <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large;color:rgb(58, 58, 58)">
           选学校</view>
         <view class="text-content"
-          style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 多维搜索，精确定位</view>
+          style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 覆盖QS前1000名俄罗斯院校，多维搜索，精确定位</view>
         <view class="margin-tb-sm text-center" style="height:25%;">
           <button class="cu-btn round bg-gradual-blue" bindtap="chooseschool" style="">点击进入</button>
         </view>
@@ -71,7 +71,7 @@
         <view class="text-content text-black" style="height:auto;font-weight:600;font-size:large;color:rgb(58, 58, 58)">
           挑专业</view>
         <view class="text-content"
-          style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 3000余项专业，超大范围供您选择
+          style="height:auto;font-family:Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;"> 近2000项专业，超大范围供您选择
         </view>
         <view class="margin-tb-sm text-center" style="height:25%;">
           <button class="cu-btn round bg-gradual-blue" bindtap="choosesubject" style="">点击进入</button>
