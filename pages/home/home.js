@@ -62,7 +62,7 @@ Page({
       HeadBar: HeadBar,
       ShowHeight: ShowHeight
     })
-
+    this.tabBar();
   },
   clickrecommend() {
     console.log('here1')

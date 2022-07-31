@@ -399,6 +399,7 @@ Page({
     if (this.iflogin == true) {
 
     }
+    this.tabBar();
   },
   about() {
     wx.showModal({
