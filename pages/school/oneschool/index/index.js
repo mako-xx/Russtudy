@@ -409,9 +409,14 @@ Page({
       })
     }
     else {
-      wx.showToast({
-        title: '请先登录',
-        icon: 'error'
+      wx.switchTab({
+        url: '../../../my/my',
+        complete: function () {
+          wx.showToast({
+            title: '请先登录',
+            icon: 'error',
+          })
+        }
       })
     }
   }

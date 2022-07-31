@@ -333,7 +333,10 @@
 
 
   <view class="btn-area">
-    <button form-type="submit">提交</button>
+    <button form-type="submit" data-labelnum='1'>提交</button>
+  </view>
+  <view class="btn-area">
+    <button form-type="submit" style="background-color: red;color :white" data-labelnum='2'>提交并推荐选校</button>
   </view>
   <view class="" style="height: 50rpx;">
 

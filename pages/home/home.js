@@ -30,7 +30,7 @@ Page({
       })
     }
   },
-  how(){
+  how() {
     wx.navigateTo({
       url: '../home/how/how',
     })
@@ -64,53 +64,39 @@ Page({
     })
 
   },
+  clickrecommend() {
+    console.log('here1')
+    var questions = wx.getStorageSync("questions");
+    var collections = wx.getStorageSync('collections')
+    if (!collections || !collections.openid) {
+      console.log('here2')
+      wx.switchTab({
+        url: '../my/my',
+        complete: function () {
+          wx.showToast({
+            title: '请先登录',
+            icon: 'error',
+          })
+        }
+      })
+    }
+    else if (!questions) {
+      console.log('here2')
+      wx.navigateTo({
+        url: "../school/question/question",
+        complete: function () {
+          wx.showToast({
+            title: '完成智能调查问卷后即可进行院校推荐',
+            icon: 'none',
+            duration: 2000//持续的时间
+          })
+        }
+      })
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-    this.tabBar();
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+    } else {
+      wx.navigateTo({
+        url: "../school/recommend/recommend"
+      })
+    }
   }
 })

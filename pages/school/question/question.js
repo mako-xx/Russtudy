@@ -119,14 +119,21 @@ Page({
     if (this.data.flag) {
       console.log(e.detail.value)
       wx.setStorageSync("questions", e.detail.value)
-      wx.navigateBack({
-        delta: 1
-      })
+
+      if (e.detail.target.dataset.labelnum == '1')
+        wx.navigateBack({
+          delta: 1
+        })
+      else
+        wx.navigateTo({
+          url: '../recommend/recommend'
+        })
       wx.showToast({
         title: '留学自测已完成，为您解锁智能推荐功能！',
         icon: 'none',
         duration: 2000//持续的时间
       })
+
     }
 
     if (e.detail.value.sex.length == 0) {

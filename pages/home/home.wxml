@@ -60,7 +60,7 @@
         style="width: 179rpx; height: 160rpx; display: block; box-sizing: border-box; left: 0rpx; top: -1rpx; position: relative">
       </image>
     </view>
-    <view class="button.white" style="position: relative; left: -24rpx; top: 0rpx" bindtap="how">
+    <view class="button.white" style="position: relative; left: -24rpx; top: 0rpx" bindtap="clickrecommend">
       <text class="btext">
         智能推荐选校
       </text>

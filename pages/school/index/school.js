@@ -156,9 +156,14 @@ Page({
       })
     }
     else {
-      wx.showToast({
-        title: '请先登录',
-        icon: 'error'
+      wx.switchTab({
+        url: '../../my/my',
+        complete: function () {
+          wx.showToast({
+            title: '请先登录',
+            icon: 'error',
+          })
+        }
       })
     }
   },
@@ -170,24 +175,44 @@ Page({
       })
     }
     else {
-      wx.showToast({
-        title: '请先登录',
-        icon: 'error'
+      wx.switchTab({
+        url: '../../my/my',
+        complete: function () {
+          wx.showToast({
+            title: '请先登录',
+            icon: 'error'
+          })
+        }
       })
     }
   },
   clickrecommend() {
     var questions = wx.getStorageSync("questions");
-    if (!questions) {
-      wx.showModal({
-        title: '提示',
-        content: '完成留学自测后即可解锁该功能',
-        showCancel: false
-      })
-    } else {
-      wx.navigateTo({
-        url: '../recommend/recommend'
+    var collections = wx.getStorageSync('collections')
+    if (collections && collections.openid) {
+      if (!questions) {
+        wx.showModal({
+          title: '提示',
+          content: '完成留学自测后即可解锁该功能',
+          showCancel: false
+        })
+      } else {
+        wx.navigateTo({
+          url: '../recommend/recommend'
+        })
+      }
+    }
+    else {
+      wx.switchTab({
+        url: '../../my/my',
+        complete: function () {
+          wx.showToast({
+            title: '请先登录',
+            icon: 'error',
+          })
+        }
       })
     }
+
   }
 })
