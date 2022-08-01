@@ -57,6 +57,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/stu-list/stu-list",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

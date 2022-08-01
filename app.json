@@ -20,7 +20,8 @@
     "pages/my/contact/contact",
     "pages/school/search/search",
     "pages/home/how/how",
-    "pages/school/recommend/recommend"
+    "pages/school/recommend/recommend",
+    "pages/stu-list/stu-list"
   ],
   "tabBar": {
     "custom": true,
