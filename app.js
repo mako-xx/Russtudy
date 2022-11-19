@@ -1,14 +1,24 @@
 
 // app.js
+// app.js
+import MPServerless from '@alicloud/mpserverless-sdk'
+const mpserverless = new MPServerless(wx, {
+  appId: 'wxc20df05a36138054',
+  spaceId: 'mp-a8d11352-d876-4102-b592-65e139ec9f80',
+  clientSecret: 'GlDovJLJcSy7A6ELfw7zFw==',
+  endpoint: 'https://api.next.bspapp.com'
+});
 App({
+  mpserverless: mpserverless,
   globalData: {
   },
   onLaunch() {
-    //建立云
-    wx.cloud.init({
-      traceUser: true,
-      env: 'cloudtest-3g82y8a0d914b437'
-    })
+    mpserverless.init();
+    // //建立云
+    // wx.cloud.init({
+    //   traceUser: true,
+    //   env: 'cloudtest-3g82y8a0d914b437'
+    // })
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
@@ -49,9 +59,12 @@ App({
     that.globalData.selectimg = ['https://wx4.sinaimg.cn/mw2000/0085wEMdly1h2lwjl5m50j305k05kjrc.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2lwjl9itxj305k05kt8z.jpg']
     that.globalData.loveimg = ['https://wx4.sinaimg.cn/mw2000/0085wEMdly1h2lwjkq947j303m03kglp.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2lwjkurjtj303m03k3yk.jpg']
     //获得所有项目
-    const db = wx.cloud.database()
-
-
+    // const db = wx.cloud.database()
+    console.log(mpserverless.db)
+    mpserverless.db.collection('school').find()
+    .then(res => {console.log(res)})
+    .catch(console.log("alinb error"));
+    console.log("here2")
 
     var that = this;
     const schvalue = wx.getStorageSync('schools')
