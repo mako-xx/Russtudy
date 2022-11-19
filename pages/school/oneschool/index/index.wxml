@@ -153,7 +153,7 @@
 
 <view class="cu-bar bg-white margin-top solid-bottom">
   <view class="action">
-    <text class="cuIcon-titles text-blue"></text>在校学生咨询 （已验证在校学生身份）
+    <text class="cuIcon-titles text-blue"></text>在校学生咨询
   </view>
 </view>
 <view class="cu-list grid {{linkman.length==0?'':'col-2'}} no-border">
@@ -164,6 +164,7 @@
 
     </image>
     <text>{{item.name}}</text>
+    <text style="color:green">已验证在校学生身份</text>
   </view>
   <view wx:if="{{linkman.length==0}}" class="padding myTxtCenter text-gray">
     我们正在努力与当地校友取得联系。。。
