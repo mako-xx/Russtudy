@@ -60,12 +60,12 @@ App({
         that.globalData.selectimg = ['https://wx4.sinaimg.cn/mw2000/0085wEMdly1h2lwjl5m50j305k05kjrc.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2lwjl9itxj305k05kt8z.jpg']
         that.globalData.loveimg = ['https://wx4.sinaimg.cn/mw2000/0085wEMdly1h2lwjkq947j303m03kglp.jpg', 'https://wx2.sinaimg.cn/mw2000/0085wEMdly1h2lwjkurjtj303m03k3yk.jpg']
         //获得所有项目
-        // const db = wx.cloud.resultbase()
         // console.log(mpserverless.db)
-        // mpserverless.db.collection('schoolpic').find()
+        // mpserverless.db.collection('school').find()
         //     .then(res => { console.log(res) })
         //     .catch(console.log("alinb error"));
         // console.log("here2")
+
         const schvalue = wx.getStorageSync('schools')
         var schools = schvalue
         if (!schools) {
@@ -217,8 +217,9 @@ App({
         if (!programs1) {
             console.log("缓存获取programs1失败,进行数据库查询");
             var allvalue;
-            mpserverless.db.collection("programs").find({ limit: 5 })
+            mpserverless.db.collection("programs").find({},{limit: 5})
                 .then(res => {
+                  // console.log("pr1",res)
                     allvalue = res
                     programs1 = [];
                     for (var i = 0; i < allvalue.result.length; i++) {
@@ -258,8 +259,9 @@ App({
         if (!programs2) {
             console.log("缓存获取programs2失败,进行数据库查询");
             var allvalue;
-            mpserverless.db.collection("programs").find({ skip: 6, limit: 5 })
+            mpserverless.db.collection("programs").find({},{ skip: 6, limit: 5 })
                 .then(res => {
+                  // console.log("pr2",res)
                     allvalue = res
                     programs2 = [];
                     for (var i = 0; i < allvalue.result.length; i++) {
@@ -296,9 +298,10 @@ App({
         if (!programs3) {
             console.log("缓存获取programs3失败,进行数据库查询");
             var allvalue;
-            mpserverless.db.collection("programs").find({ skip: 11, limit: 5 })
+            mpserverless.db.collection("programs").find({},{ skip: 11, limit: 5 })
                 .then(res => {
-                    allvalue = res
+                  // console.log("pr3",res)
+                  allvalue = res
                     programs3 = [];
                     for (var i = 0; i < allvalue.result.length; i++) {
                         var prs = allvalue.result[i].programs;
