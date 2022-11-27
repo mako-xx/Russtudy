@@ -1,13 +1,15 @@
 {
-    "pages": [
+    "pages": [ 
+      "pages/life/index/index",
+      "pages/school/index/school",
         "pages/home/home",
         "pages/my/my",
         "pages/school/oneschool/index/index",
-        "pages/life/index/index",
+        
         "pages/application/index/index",
         "pages/life/onecity/onecity",
         "pages/school/classify/classify",
-        "pages/school/index/school",
+       
         "pages/home/home/home",
         "pages/school/programs/programs",
         "pages/school/question/question",

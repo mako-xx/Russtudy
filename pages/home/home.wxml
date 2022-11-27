@@ -25,21 +25,6 @@
 
   </view>
 
-
-  <image animation="{{animationCloudData}}" class="yun1"
-    src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png"
-    style="opacity: 0.4"></image>
-
-
-  <image animation="{{animationCloudData}}" class="yun2"
-    src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png"
-    style="opacity: 0.4"></image>
-
-
-  <image animation="{{animationCloudData}}" class="yun3"
-    src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/cloud.png"
-    style="opacity: 0.4"></image>
-
   <view class="box" wx:if="{{true}}">
     <view class="cu-bar bg-white" style="position: relative; left: 0rpx; top: 0rpx; z-index: 8; opacity: 0.8;">
       <view class="action sub-title" style="left:0">
@@ -55,16 +40,16 @@
       <text class="btext">
         为什么选择俄罗斯
       </text>
-      <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/russia.png"
+      <image src="https://wx3.sinaimg.cn/mw2000/008qNTbqly1h8k35q7g7lj307n06oq3y.jpg"
         class="bimage"
-        style="width: 179rpx; height: 160rpx; display: block; box-sizing: border-box; left: 0rpx; top: -1rpx; position: relative">
+        style="width: 150rpx; height: 130rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx; position: relative">
       </image>
     </view>
     <view class="button.white" style="position: relative; left: -24rpx; top: 0rpx" bindtap="clickrecommend">
       <text class="btext">
         智能推荐选校
       </text>
-      <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/book.png"
+      <image src="https://wx3.sinaimg.cn/mw2000/008qNTbqly1h8k35q0z2dj306o06omxr.jpg"
         class="bimage"
         style="width: 130rpx; height: 130rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
     </view>
@@ -84,9 +69,9 @@
       <text class="btext">
         俄罗斯的高校
       </text>
-      <image src="cloud://cloudtest-3g82y8a0d914b437.636c-cloudtest-3g82y8a0d914b437-1311354097/home/icons/college.png"
+      <image src="https://wx3.sinaimg.cn/mw2000/008qNTbqly1h8k35q3g9xj306o06oq2u.jpg"
         class="bimage"
-        style="width: 175rpx; height: 129rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
+        style="width: 160rpx; height: 140rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx"></image>
     </view>
     <view class="button.white" style="position: relative; left: -24rpx; top: 0rpx" bindtap="profession">
       <text class="btext">
