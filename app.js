@@ -4,8 +4,8 @@
 import MPServerless from '@alicloud/mpserverless-sdk'
 const mpserverless = new MPServerless(wx, {
     appId: 'wxc20df05a36138054',
-    spaceId: 'mp-d3b32039-08ad-47c1-b6d7-1268a2cad1c1',
-    clientSecret: '+R2DIt64BR7Op1JVl7X2dA==',
+    spaceId: 'mp-7add74c3-bb1e-44e8-9ee8-38b8d0232c04',
+    clientSecret: 'OhRX5TZpZjMtXbVKUtSE6Q==',
     endpoint: 'https://api.next.bspapp.com'
 });
 App({
