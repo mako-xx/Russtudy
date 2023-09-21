@@ -2,11 +2,25 @@
 @import "../colorui/main.wxss";
 @import "../colorui/icon.wxss";
 .active{
-  color: rgb(138, 208, 231);
+  color: #8ad0e7;
 }
 .default{
-  color: gray;
+  color: #808080;
 }
 .tabbar{
-  background-color: rgb(221, 221, 221);
+  background-color: rgba(255, 255, 255, 1);
+}
+.life{
+  height: 50rpx;
+  width: 50rpx; 
+}
+.college{
+  height: 50rpx;
+  width: 50rpx;
+}
+.select{
+  color: #8ad0e7;
+}
+.unselect{
+  color: #808080;
 }

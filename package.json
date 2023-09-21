@@ -1,0 +1,23 @@
+{
+  "name": "russtudy",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mako-xx/Russtudy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mako-xx/Russtudy/issues"
+  },
+  "homepage": "https://github.com/mako-xx/Russtudy#readme",
+  "dependencies": {
+    "@alicloud/mpserverless-sdk": "^3.1.3"
+  }
+}

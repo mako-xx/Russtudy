@@ -1,17 +1,122 @@
-<view class="head"style="height:{{HeadBar}}rpx;">
+<view class="head" style="height:{{HeadBar}}rpx; z-index: 50;position:fixed">
   <view class="titles">
-      <view class="title">
-          KeLi
-      </view>
-      <view class="sudtitle">
-          副标题
-      </view>
+    <view class="title">
+      RusStudy
+    </view>
+    <view class="sudtitle">
+      俄罗斯留学
+    </view>
   </view>
 </view>
-<scroll-view scroll-y="true"style="height:{{ShowHeight}}rpx;">
-
- 
+<view class="back" style="position: absolute;top:{{HeadBar}}rpx; width:100%;height:auto">
 
 
+  <view class="login">
+    <view class="ava-nick">
+      <image class="cu-avatar.xl" src='{{avatarUrl}}'></image>
+      <view class="nickname" bindtap="changeNickname" style="width: auto; height: 80rpx;box-sizing: border-box">
+        {{nickname}}
+      </view>
+    </view>
+    <view class="login-bu">
+      <button class="cu-btn.round" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" bindtap="login">
+      </button>
+    </view>
+  </view>
+  <view class="collection" style="position: relative; left: 50rpx; top: -200rpx">
+    <view class="collection-2">
+      <text class=" text-bold text-blue collection-text">收藏</text>
+      <text class="text-ABC text-blue  text-bold "
+        style="position: absolute; left: -30rpx; top: 47rpx; opacity:0.5">collection</text>
 
-</scroll-view>
+    </view>
+    <view class="collection-3">
+      <button class="collection-item" bindtap="switchcity">
+        <image class="collection-icons"
+          src="https://wx4.sinaimg.cn/orj360/008qNTbqly1h8k3ig2x7pj305k05kaa2.jpg">
+        </image>
+      </button>
+      <button class="collection-item" bindtap="switchschool">
+        <image class="collection-icons"
+          src="https://wx3.sinaimg.cn/orj360/008qNTbqly1h8k3igsnbij307s07s3yq.jpg"
+          style="width: 125rpx; height: 125rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: -10rpx; position: relative">
+        </image>
+      </button>
+      <button class="collection-item" bindtap="switchprogram">
+        <image class="collection-icons"
+          src="https://wx1.sinaimg.cn/orj360/008qNTbqly1h8k3ignb21j305k05k0sq.jpg"
+          style="width: 100rpx; height: 100rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: 0rpx">
+        </image>
+      </button>
+    </view>
+    <view class="collection-3-text">
+      <text class="collection-item-text">城市</text>
+      <text class="collection-item-text">学校</text>
+      <text class="collection-item-text">专业</text>
+    </view>
+  </view>
+
+  <view class="detail" style="position: relative; left: 50rpx; top: -120rpx;">
+    <button class="bdetail" bindtap="about">
+      <image class="idetail"
+        src="https://wx3.sinaimg.cn/orj360/008qNTbqly1h8k3ig67lmj302s02s3yh.jpg">
+      </image>
+      <text class="tdetail">关于我们</text>
+      <!-- <text class="text-ABC text-red  text-bold "
+    style="position: absolute; left: 100rpx; top: 45rpx; opacity:0.5; font-size: 20rpx;">about us</text> -->
+      <image class="jiantou"
+        src="https://wx4.sinaimg.cn/orj360/008qNTbqly1h8k3qu3qk3j306o06ogli.jpg"></image>
+    </button>
+    <button class="bdetail" bindtap="kefu">
+      <image class="idetail"
+        src="https://wx1.sinaimg.cn/orj360/008qNTbqly1h8k3ig929kj302s02sjrc.jpg"></image>
+      <text class="tdetail">联系客服</text>
+      <image class="jiantou"
+        src="https://wx4.sinaimg.cn/orj360/008qNTbqly1h8k3qu3qk3j306o06ogli.jpg"></image>
+    </button>
+    <button class="bdetail" bindtap="" open-type='feedback'>
+      <image class="idetail"
+        src="https://wx1.sinaimg.cn/orj360/008qNTbqly1h8k3oaau6jj306o06odfr.jpg"></image>
+      <text class="tdetail">意见反馈</text>
+      <image class="jiantou"
+        src="https://wx4.sinaimg.cn/orj360/008qNTbqly1h8k3qu3qk3j306o06ogli.jpg"></image>
+    </button>
+    <button class="bdetail" bindtap="clean">
+      <image class="idetail"
+        src="https://wx4.sinaimg.cn/orj360/008qNTbqly1h8k3igcfwbj302s02twef.jpg">
+      </image>
+      <text class="tdetail">清空缓存</text>
+      <image class="jiantou"
+        src="https://wx4.sinaimg.cn/orj360/008qNTbqly1h8k3qu3qk3j306o06ogli.jpg"></image>
+    </button>
+    <button class="bdetail" bindtap="{{iflogin?'exit':''}}">
+      <image class=" idetail"
+        src="https://wx2.sinaimg.cn/orj360/008qNTbqly1h8k3igjolxj302s02s0sl.jpg"></image>
+      <text class="tdetail">退出登录</text>
+      <image class="jiantou"
+        src="https://wx4.sinaimg.cn/orj360/008qNTbqly1h8k3qu3qk3j306o06ogli.jpg"></image>
+    </button>
+  </view>
+
+  <view class="model" catchtouchmove='preventTouchMove' wx:if='{{showModal}}'></view>
+  <view class="modalDlg" catchtouchmove='preventTouchMove' wx:if='{{showModal}}'
+    style="width: 678rpx; height: 444rpx; display: flex; box-sizing: border-box; left: -6rpx; top: 580rpx; position: fixed">
+    <view class='windowRow'>
+      <text class='userTitle'>修改姓名</text>
+      <view class='back' bindtap='back'>返回</view>
+    </view>
+    <form catchsubmit="formSubmit">
+      <view class="wishinput">
+        <input style="width: 566rpx; height: 90rpx; display: block; box-sizing: border-box" bindinput='wish_put'
+          placeholder='{{holder}}' placeholder-class="holder_cls" class='wish_put' type="nickname"
+          bindfocus="holder_disappear" bindblur="holder_appear" name="nickname"></input>
+        <button style="width:94%" class='wishbnt' bindtap='name' formType="submit"
+          style="background-color:cornflowerblue">确定</button>
+      </view>
+    </form>
+  </view>
+
+</view>
+
+
+<!-- </scroll-view> -->

@@ -1,48 +1,61 @@
 {
-  "pages": [
-    "pages/home/home",
-    "pages/school/classify/classify",
-    "pages/application/all/application",
-    "pages/my/my",
-    "pages/life/life",
-    "pages/school/index/school",
-    "pages/home/home/home"
-    "pages/school/programs/programs",
-    "pages/school/question/question",
-    "pages/school/oneschool/condition/condition",
-    "pages/school/oneschool/dorm/dorm",
-    "pages/school/oneschool/faculty/faculty",
-    "pages/school/oneschool/index/index",
-    "pages/school/oneschool/preparatory/preparatory",
-    "pages/school/oneschool/rank/rank"
-  ],
-  "tabBar": {
-    "custom": true,
-    "list": [
-      {
-        "pagePath": "pages/home/home",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/school/index/school",
-        "text": "选学校"
-      },
-      {
-        "pagePath": "pages/life/life",
-        "text": "生活"
-      },
-      {
-        "pagePath": "pages/my/my",
-        "text": "我的"
-      }
-    ]
-  },
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+    "pages": [ 
+      "pages/life/index/index",
+      "pages/school/index/school",
+        "pages/home/home",
+        "pages/my/my",
+        "pages/school/oneschool/index/index",
+        
+        "pages/application/index/index",
+        "pages/life/onecity/onecity",
+        "pages/school/classify/classify",
+       
+        "pages/home/home/home",
+        "pages/school/programs/programs",
+        "pages/school/question/question",
+        "pages/school/oneschool/condition/condition",
+        "pages/school/oneschool/dorm/dorm",
+        "pages/school/oneschool/faculty/faculty",
+        "pages/school/oneschool/preparatory/preparatory",
+        "pages/school/oneschool/rank/rank",
+        "pages/school/oneprogram/programs",
+        "pages/my/contact/contact",
+        "pages/school/search/search",
+        "pages/school/linkmen/linkmen",
+        "pages/home/how/how",
+        "pages/school/recommend/recommend"
+    ],
+    "tabBar": {
+        "custom": true,
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/school/index/school",
+                "text": "学校"
+            },
+            {
+                "pagePath": "pages/application/index/index",
+                "text": "申请"
+            },
+            {
+                "pagePath": "pages/life/index/index",
+                "text": "生活"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "我的"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
 }

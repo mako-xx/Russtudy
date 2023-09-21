@@ -1,30 +1,41 @@
-<view class="container" style="width:100%;height:{{windowHeight}}rpx">
-  <view class="head" style="width:100%;height:{{topHeight}}rpx;background-color: white;">
-    <view style="margin-top: auto;">
-      <view class="title" style="font-size: large;font-weight: 800;margin-left: 10%;">
-        KeLi
-      </view>
-      <view class="subhead" style="font-size: small;font-weight: 200;margin-left: 10%;">
-        在俄罗斯留学
-      </view>
+<view class="head" style="height:{{HeadBar}}rpx;position:fixed;z-index: 10;top:0">
+  <view class="titles">
+    <view class="title">
+      RusStudy
+    </view>
+    <view class="sudtitle">
+      俄罗斯留学
     </view>
   </view>
-  <view class="body" style="width:100%;height:{{trueHeight}}rpx;background-color:white;">
-    <image class="topImg" src="../../images/icons/backblank.png" mode="aspectFit" bindtap="back"
-      style="left:0 ;">
-    </image>
-    <view class=""
-      style="background-image: url('https://wx1.sinaimg.cn/mw2000/0085wEMdly1h2e18a31bsj31kw11ykjl.jpg');background-position-y: center;background-position-x: center;background-size: 100% 100%;height:30%;width:100%;display:flex;align-items:flex-end">
-      <view class="top-mask"></view>
-      <view class="top-name">
-        QS排名
-      </view>
-    </view>
-    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
-    <view
-      style="width:100%;margin: 5rpx auto 0 auto;display: flex;justify-content: center;align-self: center;font-size: x-small;">
-      {{uni_name}}近四年的QS排名
-    </view>
+  <view class=""
+    style="height:auto;width:100%;position:absolute;font-size:40rpx;display:flex;justify-content:center;bottom:10rpx">
+    历年排名
   </view>
+</view>
 
+
+<view class="bg-white text-center myTxtCenter text-lg text-bold"
+  style="height:{{backheight}}rpx;width:100%;position:fixed;z-index: 10;top:{{HeadBar}}rpx" wx:if="{{true}}">
+
+</view>
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-shadeTop" style="height:{{0}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' id="main-back" open-type="navigateBack" delta="1" hover-class="none"
+      wx:if="{{!modalName}}" style="height:auto;position: absolute;top:{{HeadBar+30}}rpx;color:black;z-index: 2;">
+      <text class='cuIcon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{0}}px;'>Tab索引</view>
+  </view>
+</view>
+<view class="" style="height:{{HeadBar+backheight}}rpx">
+
+</view>
+<view class="blank"></view>
+
+
+
+
+<ec-canvas class="bg-white" id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+<view class="text-gray myTxtCenter">
+  {{uni_name}}近四年的QS排名
 </view>

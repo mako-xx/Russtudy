@@ -1,7 +1,8 @@
-// pages/home/home.js
-const app = getApp()
+// pages/school/index/school.js
+const app = getApp();
 Page({
   data: {
+    backheight: 0,
     cardCur: 0,
     swiperList: [{
       id: 0,
@@ -28,22 +29,43 @@ Page({
       })
     }
   },
-  
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
+  onShow() {
+    this.tabBar();
     var HeadBar = (app.globalData.ktxStatusHeight + app.globalData.navigationHeight) * app.globalData.pxToRpxScale
-    // var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight) * app.globalData.pxToRpxScale;
-    var windowHeight = (app.globalData.ktxWindowHeight-app.globalData.navigationHeight) * app.globalData.pxToRpxScale;
-    var ShowHeight = windowHeight - HeadBar;
+    var ShowHeight = (app.globalData.ktxWindowHeight - app.globalData.ktxStatusHeight) * app.globalData.pxToRpxScale;
     this.setData({
       HeadBar: HeadBar,
       ShowHeight: ShowHeight
     })
+  },
+  onLoad() {
     this.towerSwiper('swiperList');
-    // 初始化towerSwiper 传已有的数组名即可
+    var that = this;
+    this.setData({
+      interval: setInterval(function () {
+        console.log("interval in school 调用一次");
+        var schools = that.data.schools;
+        if (!schools) {
+          schools = wx.getStorageSync('schools');
+        }
+        that.setData({
+          schools: schools
+        })
+        if (that.data.schools) {
+          console.log("interval in school 调用完成", that.data.schools)
+          clearInterval(that.data.interval)
+        }
+      }, 1000)
+    })
+    let query = wx.createSelectorQuery()
+    query.select('#main-search').boundingClientRect((rect) => {
+      let height = rect.height * app.globalData.pxToRpxScale
+      var searchheight = height;
+      that.setData({
+        searchheight: searchheight
+      })
+    }).exec()
   },
   DotStyle(e) {
     this.setData({
@@ -111,6 +133,11 @@ Page({
       })
     }
   },
+  linkmenlist() {
+    wx.navigateTo({
+      url: "../linkmen/linkmen",
+    })
+  },
   chooseschool() {
     wx.navigateTo({
       url: "../classify/classify",
@@ -122,8 +149,70 @@ Page({
     })
   },
   clickquestion() {
-    wx.navigateTo({
-      url: "../question/question",
-    })
+    var collections = wx.getStorageSync('collections')
+    if (collections && collections.openid) {
+      wx.navigateTo({
+        url: "../question/question",
+      })
+    }
+    else {
+      wx.switchTab({
+        url: '../../my/my',
+        complete: function () {
+          wx.showToast({
+            title: '请先登录',
+            icon: 'error',
+          })
+        }
+      })
+    }
+  },
+  clickcontact() {
+    var collections = wx.getStorageSync('collections')
+    if (collections && collections.openid) {
+      wx.navigateTo({
+        url: "../../my/contact/contact",
+      })
+    }
+    else {
+      wx.switchTab({
+        url: '../../my/my',
+        complete: function () {
+          wx.showToast({
+            title: '请先登录',
+            icon: 'error'
+          })
+        }
+      })
+    }
+  },
+  clickrecommend() {
+    var questions = wx.getStorageSync("questions");
+    var collections = wx.getStorageSync('collections')
+    if (collections && collections.openid) {
+      if (!questions) {
+        wx.showModal({
+          title: '提示',
+          content: '完成留学自测后即可解锁该功能',
+          showCancel: false
+        })
+      } else {
+        wx.navigateTo({
+          url: '../recommend/recommend'
+        })
+      }
+    }
+    else {
+      wx.switchTab({
+        url: '../../my/my',
+        complete: function () {
+          wx.showToast({
+            title: '请先登录',
+            icon: 'error',
+          })
+        }
+      })
+    }
+
   }
 })

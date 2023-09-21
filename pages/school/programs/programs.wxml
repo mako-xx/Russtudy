@@ -1,10 +1,10 @@
-<view class="head" style="height:{{HeadBar}}rpx;position:relative">
+<view class="head" style="height:{{HeadBar}}rpx;position:fixed">
     <view class="titles">
         <view class="title">
-            KeLi
+            RusStudy
         </view>
         <view class="sudtitle">
-            在俄罗斯留学
+            俄罗斯留学
         </view>
     </view>
     <view class=""
@@ -12,7 +12,6 @@
         专业全览
     </view>
 </view>
-
 <view class='cu-custom'>
     <view class="cu-bar fixed bg-shadeTop" style="height:{{0}}px;padding-top:{{StatusBar}}px;">
         <navigator class='action' open-type="navigateBack" delta="1" hover-class="none" wx:if="{{!modalName}}"
@@ -22,18 +21,23 @@
         <view class='content' style='top:{{0}}px;'>Tab索引</view>
     </view>
 </view>
+<!-- 高级搜索 -->
 <view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap="hideModal"
     style="z-index: 3;">
     <view class="cu-dialog basis-lg" catchtap style="top:{{0}}rpx;height:{{ShowHeight+HeadBar}}rpx">
-
+        <view class="myTxtCenter text-xxl text-bold"
+            style="width:100%;height:{{mainheadheight}}rpx;position:absolute;top:{{HeadBar}}rpx">
+            {{sel_name}}
+        </view>
         <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}"
             style="height:{{ShowHeight-90}}rpx;margin-top:{{HeadBar+90}}rpx;width:100%">
             <view class="cu-list menu text-left">
-                <view class="cu-item" wx:for="{{citylist}}" wx:key>
+                <view class="cu-item" wx:for="{{sel_list}}" wx:key>
                     <view class="content">
-                        <view>{{item.name}}</view>
+                        <view class="oneline" style="display:-webkit-box">{{item.name}}</view>
                     </view>
-                    <checkbox class="" value="index">
+                    <checkbox class="" value="{{index}}" checked="{{item.checked}}"
+                        bindtap="{{index==0? 'checkq':'chlik'}}" data-item="{{item}}" data-index="{{index}}">
 
                     </checkbox>
                 </view>
@@ -41,56 +45,62 @@
         </scroll-view>
     </view>
 </view>
-<!-- <swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000"
-    duration="500">
-    <swiper-item wx:for="{{4}}" wx:key>
-        <image src="{{src[index]}}" mode='aspectFill'></image>
-    </swiper-item>
-</swiper> -->
-<view class="VerticalBox">
-    <scroll-view class="VerticalNav nav padding-sm" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}"
-        style="width:{{WinWidth*0.2}}rpx;height:{{ShowHeight-90}}rpx;margin-top:90rpx;">
-        <view class="cu-form-group margin-top radius padding" bindtap="showModal" data-target="DrawerModalL">筛选城市
+
+
+<view class="VerticalBox" style="height:{{ShowHeight}}rpx;margin-top:{{HeadBar}}rpx;position: fixed;">
+    <!-- 左 -->
+    <scroll-view class="VerticalNav nav padding-sm padding-left-0" scroll-y scroll-with-animation
+        style="width:{{WinWidth*0.2}}rpx;margin-top:90rpx;">
+        <view
+            class="cu-form-group margin-top radius-xxxx radius-left-0 padding padding-left-lg bg-gradual-{{item.type==1?'green':(item.type==-1?'red':'orange')}}"
+            style="height:5em;{{item.type==-1?'filter:blur(0rpx)':''}};position:relative;right:{{item.type==1?'40rpx':(item.type==-1?'20rpx':'0')}}"
+            bindtap="showModal" wx:for="{{selectlist}}" data-target="DrawerModalL" data-mode="{{item.mode}}"
+            data-name="{{item.name}}">
+            {{item.name}}
         </view>
     </scroll-view>
-    <view class="" style="height: 0;display:flex;flex-direction: column;">
+    <view class="" style="height: {{ShowHeight}};display:flex;flex-direction: column;">
 
-
+        <!-- 头部 -->
         <scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}"
-            style="height:auto;width:{{WinWidth*0.8}}rpx">
-            <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{toplist}}" wx:key bindtap="tabSelect"
-                data-id="{{index}}">
+            id="main-headscroll" style="height:auto;width:{{WinWidth*0.8}}rpx">
+            <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{subject_direction}}" wx:key
+                bindtap="tabSelect" data-id="{{index}}">
                 {{item.name}}
             </view>
         </scroll-view>
-
-        <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:{{ShowHeight-90}}rpx"
-            scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain" scroll-into-view="main-{{MainCur}}"
-            bindscroll="VerticalMain">
-            <view class="" id="main-0">
+        <!-- 主 -->
+        <scroll-view class="VerticalMain" scroll-y scroll-with-animation bindscrolltolower="pushMore"
+            style="height:{{ShowHeight-mainheadheight}}rpx">
+            <view class="">
                 <view class="">
                     <view class="cu-list menu-avatar">
 
-                        <view class="cu-item solids-top" wx:for="{{20}}" wx:key wx:for-index="sub">
+                        <view class="cu-item solids-top" wx:for="{{showprograms}}" wx:key wx:for-index="sub">
                             <!-- <view class="cu-avatar round lg">1</view> -->
                             <view class="cu-avatar round lg  shadow-blur"
-                                style="background-image:url(https://pic4.zhimg.com/50/v2-98b210a15c5c0318589bce49804b1673_hd.jpg?source=1940ef5c);left:10rpx;">
+                                style="background-image:url({{item.logo}});left:10rpx;">
                             </view>
                             <view class="content">
 
-                                <view class="text-grey" style="color:#996179;">人员管理学
+                                <view class="text-grey oneline" style="color:#996179;display: -webkit-box;">
+                                    {{item.name}}
                                 </view>
                                 <view class="text-gray text-sm oneline">
-                                    弗拉迪沃斯拓客/远东联邦大学
+                                    {{item.schoolname}}{{item.level?'/':''}}{{item.level}}
                                 </view>
-                                <view class="text-gray text-sm">
-                                    综合排名：4
+                                <view class="text-gray text-sm" wx:if="{{selectlist[6].type==1}}">
+                                    综合排名：{{sub+1}}
                                 </view>
                             </view>
                             <view class="radius fr padding-sm shadow-blur myTxtCenter"
-                                style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;color:#EDE3E0;right:10rpx">
+                                style=" height:4em;width:4em;font-size: 20rpx;background-color: #C8A695;color:#EDE3E0;right:10rpx"
+                                bindtap="learnmore" data-value="{{sub}}">
                                 了解更多</view>
 
+                        </view>
+                        <view class="text-grey padding-sm" style="display: flex;justify-content: center;height:200rpx">
+                            {{finish1&&finish2?(showprograms.length==0?'太严格了，换个搜索条件吧~':(checkfinish==1?'没有更多了':'查看更多')):''}}
                         </view>
                     </view>
                 </view>
